@@ -10,6 +10,36 @@ import Testimonials from "../components/Testimonials";
 
 const industries = ["D2C", "SaaS", "AI-focused", "Technology"];
 
+const NavLink = ({
+  href,
+  children,
+  isScrolled,
+}: {
+  href: string;
+  children: string;
+  isScrolled: boolean;
+}) => {
+  return (
+    <a
+      href={href}
+      className={`group relative overflow-hidden inline-block h-[1.2em] font-semibold transition-colors duration-300 ${
+        isScrolled ? "text-black/70" : "text-white/80"
+      }`}
+    >
+      <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
+        {children}
+      </span>
+      <span
+        className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 ${
+          isScrolled ? "text-black font-bold" : "text-white font-bold"
+        }`}
+      >
+        {children}
+      </span>
+    </a>
+  );
+};
+
 export default function Home() {
   // Standard reveal animation variants
   const fadeInUp = {
@@ -27,6 +57,15 @@ export default function Home() {
 
   const [industryIndex, setIndustryIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -108,35 +147,55 @@ export default function Home() {
   return (
     <main id="top" className="noise-bg min-h-screen bg-white text-black">
       {/* NAVIGATION BAR */}
-      <header className="fixed top-0 z-30 w-full border-b border-black/5 bg-white/90 text-[10px] uppercase tracking-[0.35em] text-black/60 backdrop-blur sm:text-xs">
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4 sm:px-10">
-          <span className="text-black">SetZet</span>
-          <nav className="hidden items-center gap-8 text-[11px] font-semibold text-black/70 md:flex">
-            <a className="transition hover:text-black" href="#about">
+      <header
+        className={`fixed top-0 z-30 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
+          isScrolled
+            ? "bg-white/90 text-black/60 shadow-sm backdrop-blur py-3"
+            : "bg-transparent text-white py-6"
+        }`}
+      >
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
+          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>
+            SetZet
+          </span>
+          <nav
+            className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${
+              isScrolled ? "text-black/70" : "text-white/80"
+            }`}
+          >
+            <NavLink href="#about" isScrolled={isScrolled}>
               About
-            </a>
-            <a className="transition hover:text-black" href="#services">
+            </NavLink>
+            <NavLink href="#services" isScrolled={isScrolled}>
               Services
-            </a>
-            <a className="transition hover:text-black" href="#work">
+            </NavLink>
+            <NavLink href="#work" isScrolled={isScrolled}>
               Work
-            </a>
-            <a className="transition hover:text-black" href="#testimonials">
+            </NavLink>
+            <NavLink href="#testimonials" isScrolled={isScrolled}>
               Testimonials
-            </a>
-            <a className="transition hover:text-black" href="#contact">
+            </NavLink>
+            <NavLink href="#contact" isScrolled={isScrolled}>
               Contact
-            </a>
+            </NavLink>
           </nav>
           <div className="flex items-center gap-3">
             <a
-              className="hidden rounded-full border border-black/20 px-5 py-2.5 text-[11px] font-semibold text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white md:inline-flex"
+              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-semibold transition-all duration-300 md:inline-flex ${
+                isScrolled
+                  ? "border-black/20 text-black hover:bg-black hover:text-white"
+                  : "border-white/30 text-white hover:bg-white hover:text-black"
+              }`}
               href="#contact"
             >
               Start a Project
             </a>
             <button
-              className="inline-flex h-10 items-center justify-center rounded-full border border-black/20 px-4 text-[11px] font-semibold text-black transition hover:border-black md:hidden"
+              className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
+                isScrolled
+                  ? "border-black/20 text-black hover:border-black"
+                  : "border-white/30 text-white hover:border-white"
+              }`}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((prev) => !prev)}
@@ -144,19 +203,19 @@ export default function Home() {
               <span className="mr-2">{menuOpen ? "Close" : "Menu"}</span>
               <span className="relative block h-3 w-4">
                 <span
-                  className={`absolute left-0 top-0 h-[2px] w-full bg-black transition-transform duration-300 ${
+                  className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  }`}
+                  } ${isScrolled ? "bg-black" : "bg-white"}`}
                 />
                 <span
-                  className={`absolute left-0 top-[5px] h-[2px] w-full bg-black transition-opacity duration-300 ${
+                  className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
                     menuOpen ? "opacity-0" : "opacity-100"
-                  }`}
+                  } ${isScrolled ? "bg-black" : "bg-white"}`}
                 />
                 <span
-                  className={`absolute left-0 top-[10px] h-[2px] w-full bg-black transition-transform duration-300 ${
+                  className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  }`}
+                  } ${isScrolled ? "bg-black" : "bg-white"}`}
                 />
               </span>
             </button>
