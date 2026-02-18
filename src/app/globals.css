@@ -11,6 +11,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-open-sans);
   --font-heading: var(--font-montserrat);
+  --font-serif: var(--font-playfair);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +27,12 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
 
@@ -45,8 +51,16 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(circle, rgba(0, 0, 0, 0.09) 0 0.9px, transparent 1.35px),
     radial-gradient(circle, rgba(0, 0, 0, 0.07) 0 0.8px, transparent 1.25px),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='0.14'/></svg>");
-  background-position: 0 0, 35px 22px, 12px 48px, 0 0;
-  background-size: 150px 150px, 180px 180px, 220px 220px, 140px 140px;
+  background-position:
+    0 0,
+    35px 22px,
+    12px 48px,
+    0 0;
+  background-size:
+    150px 150px,
+    180px 180px,
+    220px 220px,
+    140px 140px;
   opacity: 0.55;
   pointer-events: none;
   mix-blend-mode: multiply;
@@ -61,8 +75,12 @@ h1, h2, h3, h4, h5, h6 {
   background-image:
     radial-gradient(circle, rgba(0, 0, 0, 0.08) 0 0.9px, transparent 1.35px),
     radial-gradient(circle, rgba(0, 0, 0, 0.06) 0 0.8px, transparent 1.25px);
-  background-position: 18px 30px, 60px 90px;
-  background-size: 210px 210px, 260px 260px;
+  background-position:
+    18px 30px,
+    60px 90px;
+  background-size:
+    210px 210px,
+    260px 260px;
   opacity: 0.35;
   pointer-events: none;
   mix-blend-mode: multiply;

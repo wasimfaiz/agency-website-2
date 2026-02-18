@@ -9,34 +9,21 @@ import FeaturedProjects from "../components/FeaturedProjects";
 import Testimonials from "../components/Testimonials";
 
 const industries = ["D2C", "SaaS", "AI-focused", "Technology"];
-const heroLines = [
-  "Helping our partners",
-  "build original brands",
-  "that shine.",
-];
 
 export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end end"],
-  });
-
-  const smoothHeroProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 28,
-    mass: 0.5,
-  });
-
-  // Ordered reveal: heading -> tagline -> button, then hold while section stays pinned.
-  const headingOpacity = useTransform(smoothHeroProgress, [0.03, 0.18], [0, 1]);
-  const headingY = useTransform(smoothHeroProgress, [0.03, 0.18], [45, 0]);
-
-  const descOpacity = useTransform(smoothHeroProgress, [0.2, 0.36], [0, 1]);
-  const descY = useTransform(smoothHeroProgress, [0.2, 0.36], [30, 0]);
-
-  const btnOpacity = useTransform(smoothHeroProgress, [0.38, 0.52], [0, 1]);
-  const btnY = useTransform(smoothHeroProgress, [0.38, 0.52], [30, 0]);
+  // Standard reveal animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.2, 0.65, 0.3, 0.9],
+        delay: custom * 0.2,
+      },
+    }),
+  };
 
   const [industryIndex, setIndustryIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -208,10 +195,10 @@ export default function Home() {
 
       <div className="relative z-10 min-h-screen">
         {/* HERO SECTION */}
-        <section ref={heroRef} className="relative min-h-[320vh]">
-          <div className="sticky top-0 h-screen w-full overflow-hidden">
+        <section className="relative h-screen w-full overflow-hidden">
+          <div className="absolute inset-0 h-full w-full">
             {/* Video Background */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 bg-black">
               <video
                 className="h-full w-full object-cover"
                 autoPlay
@@ -220,28 +207,54 @@ export default function Home() {
                 playsInline
                 preload="auto"
               >
-                <source src="/videos/hero/hero.mp4" type="video/mp4" />
+                <source src="/videos/hero/hero1.mp4?v=20260218" type="video/mp4" />
               </video>
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60" />
+              <div className="absolute inset-0 bg-black/85" />
             </div>
 
             {/* HERO CONTENT */}
-            <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col items-center justify-center px-4 sm:px-8 lg:px-10 text-white">
-              <div className="w-full max-w-4xl text-center">
+            <div className="relative z-10 mx-auto flex h-full w-full max-w-[90%] flex-col items-center justify-center text-white">
+              <div className="w-full text-center">
                 <motion.h1
-                  style={{ opacity: headingOpacity, y: headingY }}
-                  className="text-center text-5xl font-bold leading-[0.9] tracking-tighter sm:text-7xl lg:text-8xl"
+                  custom={0}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInUp}
+                  className="text-center text-[clamp(2.5rem,7vw,6.5rem)] font-extrabold leading-[1.1] tracking-tight drop-shadow-md"
                 >
-                  {heroLines.map((line) => (
-                    <span key={line} className="block overflow-hidden">
-                      <span className="block">{line}</span>
-                    </span>
-                  ))}
+                  <span className="block">Helping our partners</span>
+                  <span className="block mt-4">
+                    build{" "}
+                    <span className="relative inline-block px-4 mx-2">
+                       <svg
+                        className="absolute left-0 top-0 -z-10 h-[130%] w-[120%] -translate-x-[10%] -translate-y-[15%] text-red-600 opacity-90"
+                        viewBox="0 0 355 135"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                         <path 
+                           d="M15 65C15 65 35 25 105 20C175 15 295 15 325 55C355 95 315 115 195 120C75 125 35 115 15 85C-5 55 55 35 95 30" 
+                           stroke="currentColor" 
+                           strokeWidth="8" 
+                           strokeLinecap="round" 
+                           strokeLinejoin="round"
+                         />
+                      </svg>
+                      <span className="relative z-10 font-serif italic text-white">
+                        original
+                      </span>
+                    </span>{" "}
+                    brands
+                  </span>
+                  <span className="block">that shine.</span>
                 </motion.h1>
 
                 <motion.div
-                  style={{ opacity: descOpacity, y: descY }}
+                  custom={1}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInUp}
                   className="mx-auto mt-6 max-w-xl text-center text-base leading-7 text-white/80 sm:text-lg"
                 >
                   <p>
@@ -258,7 +271,10 @@ export default function Home() {
                 </motion.div>
 
                 <motion.div
-                  style={{ opacity: btnOpacity, y: btnY }}
+                  custom={2}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInUp}
                   className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium"
                 >
                   <motion.button
