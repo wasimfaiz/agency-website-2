@@ -179,13 +179,22 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
   );
 };
 
-const ProcessStep = ({ number, title, text }: { number: string, title: string, text: string }) => {
+const ProcessStep = ({ number, title, text, index }: { number: string, title: string, text: string, index: number }) => {
     return (
-        <div className="relative pl-8 border-l border-white/10 py-10">
-            <span className="absolute -left-[5px] top-10 h-2.5 w-2.5 rounded-full bg-white ring-4 ring-black" />
-            <span className="font-mono text-xs text-white/40 mb-2 block">{number}</span>
-            <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-            <p className="text-white/60 leading-relaxed max-w-sm">{text}</p>
+        <div className="sticky mb-10 min-h-[40vh] flex flex-col justify-start pt-10" style={{ top: `calc(350px + ${index * 20}px)` }}>
+            <motion.div 
+               initial={{ opacity: 0, y: 50 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5 }}
+               className="relative bg-[#111] border border-white/10 p-10 rounded-3xl shadow-2xl overflow-hidden group"
+            >
+                {/* Decorative Gradient Blob */}
+                <div className="absolute -right-20 -top-20 w-60 h-60 bg-white/5 rounded-full blur-[80px] group-hover:bg-white/10 transition-colors duration-500" />
+                
+                <span className="font-mono text-xs text-white/40 mb-4 block tracking-widest">{number}</span>
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{title}</h3>
+                <p className="text-lg text-white/60 leading-relaxed">{text}</p>
+            </motion.div>
         </div>
     );
 }
@@ -238,7 +247,7 @@ export default function ServicesPage() {
       {/* 3. APPROACH / PROCESS */}
       <section className="py-32 px-6 bg-[#0c0c0c]">
          <div className="container mx-auto grid md:grid-cols-2 gap-20">
-             <div className="sticky top-32 h-fit">
+             <div className="sticky top-32 h-fit bg-[#0c0c0c] z-10">
                  <h2 className="text-5xl md:text-7xl font-heading font-medium mb-8">
                     How We <br/> Work
                  </h2>
@@ -251,11 +260,15 @@ export default function ServicesPage() {
              </div>
              
              <div>
-                 <ProcessStep number="01" title="Discovery & Audit" text="We strip away the noise. We analyze your current state, your competitors, and your goals to find the path of least resistance." />
-                 <ProcessStep number="02" title="Architecture" text="Structure precedes design. We map out user flows, content hierarchies, and technical requirements." />
-                 <ProcessStep number="03" title="Visual System" text="We create a design language unique to you. Typography, color, and motion that speaks your brand's truth." />
-                 <ProcessStep number="04" title="Production" text="Development sprints. Pixel-perfect implementation. Testing across devices. We build for the real world." />
-                 <ProcessStep number="05" title="Launch & Scale" text="Deployment is just a milestone. We optimize, iterate, and help you grow." />
+                 {[
+                    { num: "01", title: "Discovery & Audit", text: "We strip away the noise. We analyze your current state, your competitors, and your goals to find the path of least resistance." },
+                    { num: "02", title: "Architecture", text: "Structure precedes design. We map out user flows, content hierarchies, and technical requirements." },
+                    { num: "03", title: "Visual System", text: "We create a design language unique to you. Typography, color, and motion that speaks your brand's truth." },
+                    { num: "04", title: "Production", text: "Development sprints. Pixel-perfect implementation. Testing across devices. We build for the real world." },
+                    { num: "05", title: "Launch & Scale", text: "Deployment is just a milestone. We optimize, iterate, and help you grow." }
+                 ].map((step, i) => (
+                     <ProcessStep key={i} index={i} number={step.num} title={step.title} text={step.text} />
+                 ))}
              </div>
          </div>
       </section>
