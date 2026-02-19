@@ -38,10 +38,10 @@ export default function Footer() {
                 <Link className="transition hover:text-black" href="/about">
                   About
                 </Link>
-                <Link className="transition hover:text-black" href="/#services">
+                <Link className="transition hover:text-black" href="/services">
                   Services
                 </Link>
-                <Link className="transition hover:text-black" href="/#work">
+                <Link className="transition hover:text-black" href="/work">
                   Work
                 </Link>
                 <Link className="transition hover:text-black" href="/#testimonials">
