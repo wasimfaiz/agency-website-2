@@ -16,25 +16,29 @@ const chapters = [
         id: "01",
         title: "Strategy First",
         description: "We clarify your positioning, audience, and goals so the website has a sharp point of view.",
-        icon: <BsStars className="text-2xl mb-4 text-black/60" />,
+        icon: <BsStars className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        image: "/ui-design.png",
     },
     {
         id: "02",
         title: "Design With Intent",
         description: "Visual language, hierarchy, and interaction are crafted to earn trust and keep attention.",
-        icon: <BsLayers className="text-2xl mb-4 text-black/60" />,
+        icon: <BsLayers className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        image: "/web-design.png",
     },
     {
         id: "03",
         title: "Build for Momentum",
         description: "We ship fast, optimize performance, and set you up for easy updates and growth.",
-        icon: <BsLightningCharge className="text-2xl mb-4 text-black/60" />,
+        icon: <BsLightningCharge className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        image: "/web-development.jpg",
     },
     {
         id: "04",
         title: "Refine and Evolve",
         description: "We measure, iterate, and improve so your site keeps getting sharper as your product grows.",
-        icon: <BsGraphUpArrow className="text-2xl mb-4 text-black/60" />,
+        icon: <BsGraphUpArrow className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        image: "/crm.png",
     },
 ];
 
@@ -63,7 +67,7 @@ export default function AboutSection() {
                 >
                     {/* INTRO CARD - Fixed width */}
                     <div
-                        className="group relative h-[70vh] w-[85vw] shrink-0 overflow-hidden rounded-[40px] border border-black/5 bg-[#0a0a0a] p-8 sm:w-[600px] sm:p-12 md:w-[700px]"
+                        className="group relative h-[70vh] w-[85vw] shrink-0 overflow-hidden rounded-[40px] border border-black/5 bg-[#0a0a0a] p-8 sm:w-[600px] sm:p-12 md:w-[800px] lg:w-[900px]"
                         data-animate="about"
                     >
                         {/* Background Image */}
@@ -72,7 +76,7 @@ export default function AboutSection() {
                                 src="/about_photo.png"
                                 alt="SetZet team"
                                 fill
-                                className="object-cover object-center opacity-80"
+                                className="object-cover object-top opacity-100"
                             />
                         </div>
 
@@ -113,30 +117,48 @@ export default function AboutSection() {
                     {chapters.map((chapter) => (
                         <div
                             key={chapter.id}
-                            className="relative flex h-[70vh] w-[85vw] shrink-0 flex-col justify-between rounded-[40px] border border-black/5 bg-white p-8 shadow-sm transition-colors duration-500 hover:border-black/20 sm:w-[400px] sm:p-10"
+                            className="group relative h-[70vh] w-[85vw] shrink-0 sm:w-[400px]"
                             data-animate="about"
                         >
-                            {/* Large ID Number */}
-                            <span className="absolute -right-4 -top-8 font-heading text-[12rem] font-bold leading-none text-black/[0.03] select-none">
+                            {/* Inner Container for Content & Image (Clipped) */}
+                            <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[40px] border border-black/5 bg-white p-8 shadow-sm transition-all duration-500 hover:border-black/20 sm:p-10">
+                                
+                                {/* Background Image with Zoom Effect */}
+                                <div className="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-110">
+                                    <Image
+                                        src={chapter.image}
+                                        alt={chapter.title}
+                                        fill
+                                        className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                                </div>
+
+                                {/* Glassmorphism Overlay on Hover */}
+                                <div className="absolute inset-0 z-10 bg-white/10 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:opacity-100" />
+
+                                <div className="relative z-20">
+                                    {chapter.icon}
+                                    <p className="text-xs uppercase tracking-[0.3em] text-black/40 group-hover:text-black/60 transition-colors duration-500">
+                                        Chapter {chapter.id}
+                                    </p>
+                                    <h3 className="mt-4 text-3xl font-semibold leading-tight group-hover:text-white transition-colors duration-500">
+                                        {chapter.title}
+                                    </h3>
+                                </div>
+
+                                <div className="relative z-20">
+                                    <div className="mb-8 h-px w-full bg-black/10 group-hover:bg-white/20 transition-colors duration-500" />
+                                    <p className="text-base leading-7 text-black/70 group-hover:text-white/80 transition-colors duration-500">
+                                        {chapter.description}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Large ID Number (Floating Outside) */}
+                            <span className="absolute -right-8 -top-10 z-30 font-heading text-[10rem] font-bold leading-none text-black/[0.05] select-none transition-colors duration-500 group-hover:text-white/10 sm:text-[12rem]">
                                 {chapter.id}
                             </span>
-
-                            <div className="relative z-10">
-                                {chapter.icon}
-                                <p className="text-xs uppercase tracking-[0.3em] text-black/40">
-                                    Chapter {chapter.id}
-                                </p>
-                                <h3 className="mt-4 text-3xl font-semibold leading-tight">
-                                    {chapter.title}
-                                </h3>
-                            </div>
-
-                            <div className="relative z-10">
-                                <div className="mb-8 h-px w-full bg-black/10" />
-                                <p className="text-base leading-7 text-black/70">
-                                    {chapter.description}
-                                </p>
-                            </div>
                         </div>
                     ))}
 
