@@ -84,13 +84,13 @@ export default function Testimonials() {
                     <div className="relative mb-6 overflow-hidden rounded-2xl border border-black/10 bg-black">
                         <div className="aspect-video w-full">
                             <video
+                                key="/videos/testimonial/testimonial1.mp4"
                                 className="h-full w-full object-cover"
                                 controls
                                 playsInline
                                 preload="metadata"
-                                poster="/testimonial-video-photo.png"
                             >
-                                <source src="/testimonial-video.mp4" type="video/mp4" />
+                                <source src="/videos/testimonial/testimonial1.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -136,7 +136,7 @@ export default function Testimonials() {
                             className="relative w-[350px] shrink-0 overflow-hidden rounded-2xl border border-black/10 bg-white/75 p-6 transition-colors hover:border-black/30 hover:bg-white"
                         >
                             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/20 to-transparent" />
-                            <p className="text-sm leading-7 text-black/75">"{item.quote}"</p>
+                            <p className="text-sm leading-7 text-black/75">&quot;{item.quote}&quot;</p>
                             <div className="mt-5 border-t border-black/10 pt-3">
                                 <p className="text-sm font-semibold text-black">{item.name}</p>
                                 <p className="text-[10px] uppercase tracking-[0.2em] text-black/50">
