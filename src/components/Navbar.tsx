@@ -33,9 +33,10 @@ const NavLink = ({
   );
 };
 
-export default function Navbar() {
+export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const useDarkTheme = isScrolled || forceDarkAtTop;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,43 +51,43 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
-          isScrolled
+          useDarkTheme
             ? "bg-white/90 text-black/60 shadow-sm backdrop-blur py-3"
             : "bg-transparent text-white py-6"
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
-          <Link href="/" className={`font-bold transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>
+          <Link href="/" className={`font-bold transition-colors duration-300 ${useDarkTheme ? "text-black" : "text-white"}`}>
             SetZet
           </Link>
           <nav
             className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${
-              isScrolled ? "text-black/70" : "text-white/80"
+              useDarkTheme ? "text-black/70" : "text-white/80"
             }`}
           >
-            <NavLink href="/about" isScrolled={isScrolled}>
+            <NavLink href="/about" isScrolled={useDarkTheme}>
               About
             </NavLink>
-            <NavLink href="/services" isScrolled={isScrolled}>
+            <NavLink href="/services" isScrolled={useDarkTheme}>
               Services
             </NavLink>
-            <NavLink href="/work" isScrolled={isScrolled}>
+            <NavLink href="/work" isScrolled={useDarkTheme}>
               Work
             </NavLink>
-            <NavLink href="/product" isScrolled={isScrolled}>
+            <NavLink href="/product" isScrolled={useDarkTheme}>
               Product
             </NavLink>
-            <NavLink href="/#testimonials" isScrolled={isScrolled}>
+            <NavLink href="/#testimonials" isScrolled={useDarkTheme}>
               Testimonials
             </NavLink>
-            <NavLink href="/#contact" isScrolled={isScrolled}>
+            <NavLink href="/#contact" isScrolled={useDarkTheme}>
               Contact
             </NavLink>
           </nav>
           <div className="flex items-center gap-3">
             <Link
               className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-semibold transition-all duration-300 md:inline-flex ${
-                isScrolled
+                useDarkTheme
                   ? "border-black/20 text-black hover:bg-black hover:text-white"
                   : "border-white/30 text-white hover:bg-white hover:text-black"
               }`}
@@ -96,7 +97,7 @@ export default function Navbar() {
             </Link>
             <button
               className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
-                isScrolled
+                useDarkTheme
                   ? "border-black/20 text-black hover:border-black"
                   : "border-white/30 text-white hover:border-white"
               }`}
@@ -109,17 +110,17 @@ export default function Navbar() {
                 <span
                   className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  } ${isScrolled ? "bg-black" : "bg-white"}`}
+                  } ${useDarkTheme ? "bg-black" : "bg-white"}`}
                 />
                 <span
                   className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
                     menuOpen ? "opacity-0" : "opacity-100"
-                  } ${isScrolled ? "bg-black" : "bg-white"}`}
+                  } ${useDarkTheme ? "bg-black" : "bg-white"}`}
                 />
                 <span
                   className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  } ${isScrolled ? "bg-black" : "bg-white"}`}
+                  } ${useDarkTheme ? "bg-black" : "bg-white"}`}
                 />
               </span>
             </button>

@@ -882,7 +882,7 @@ export default function ProductShowcase() {
     <main className="bg-[#FCFCFC] min-h-screen text-black selection:bg-black/20">
       <GrainTracker />
       <CustomCursor />
-      <Navbar />
+      <Navbar forceDarkAtTop />
       
       <HeroSection />
       <NarrativeSection />
