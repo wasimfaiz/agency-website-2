@@ -6,34 +6,35 @@ import Image from "next/image";
 const testimonials = [
     {
         quote:
-            "SetZet brought clarity to our product story and translated it into a design system that felt premium from day one.",
+            "SetZet brought strategic clarity to our product positioning and translated it into a cohesive UI/UX design system that elevated our brand and improved overall user experience from day one.",
         name: "Aastha Sharma",
         role: "Head of Marketing, Yastudy",
     },
     {
         quote:
-            "The team thinks in systems, not screens. Every interaction felt intentional and directly improved how users navigate.",
+            "The team thinks in systems, not just screens. Their structured UI/UX approach and product design strategy made every interaction intentional and significantly improved how users navigate our platform.",
         name: "Rajdeep Singh",
         role: "Founder, Zenfora Pvt Ltd.",
     },
     {
         quote:
-            "Fast, sharp, and deeply collaborative. The new site finally matches the quality of our product and sales narrative.",
+            "Fast, sharp, and deeply collaborative. The new website design now reflects the quality of our product, strengthens our brand positioning, and supports our sales and growth strategy.",
         name: "Mikael Ross",
         role: "VP Growth, Atlas",
     },
     {
-        quote: "An absolute game-changer for our brand identity. The attention to detail is unmatched.",
+        quote:
+            "An absolute game-changer for our brand identity. Their strategic design process and attention to detail elevated our digital presence and strengthened how customers perceive our business.",
         name: "Sarah Jenkins",
-        role: "CEO, BrightPath",
+        role: "CEO, Brightpath",
     },
     {
-        quote: "They didn't just build a website; they built a digital experience that converts.",
+        quote: "They didn’t just build a website — they crafted a high-performance digital experience designed to convert, combining strategic UX, modern development, and measurable results.",
         name: "David Chen",
         role: "CTO, TechFlow",
     },
     {
-        quote: "Professional, creative, and incredibly easy to work with. Highly recommended.",
+        quote: "Professional, creative, and exceptionally collaborative. Their strategic approach to web design and brand experience made the entire process seamless and results-driven.",
         name: "Emily Carter",
         role: "Director, Creative Solutions",
     },
@@ -62,14 +63,13 @@ export default function Testimonials() {
                         Testimonials
                     </p>
                     <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                        Partner feedback,
+                        Trusted by Founders,
                         <br />
-                        framed with clarity.
+                        Backed by Results.
                     </h2>
                 </div>
                 <p className="max-w-md text-sm leading-7 text-black/65 sm:text-base">
-                    A spotlight composition with one flagship quote and supporting
-                    voices placed as side notes.
+                    Candid reflections from partners who value strategic thinking, technical precision, and long-term collaboration — with measurable impact across product, growth, and performance.
                 </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function Testimonials() {
                     className="flex w-max gap-8"
                     animate={{ x: "-50%" }}
                     transition={{
-                        duration: 40,
+                        duration: 80,
                         repeat: Infinity,
                         ease: "linear",
                     }}

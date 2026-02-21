@@ -53,17 +53,16 @@ export default function FeaturedProjects() {
                 <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
                     <div>
                         <p className="text-xs uppercase tracking-[0.35em] text-black/60">
-                            Selected Projects
+                            SELECTED CASE STUDIES
                         </p>
                         <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl text-black">
-                            Experimental builds
+                            Experimental Digital Builds
                             <br />
-                            with editorial rhythm.
+                            with Strategic Intent.
                         </h2>
                     </div>
                     <p className="max-w-md text-sm leading-7 text-black/65 sm:text-base">
-                        A staggered portfolio layout where each case study has its own
-                        composition, pacing, and visual weight.
+                        A curated selection of web design, SaaS platforms, B2B systems, and custom development projects — where every case study is driven by business goals, scalable architecture, and refined user experience.
                     </p>
                 </div>
             </div>

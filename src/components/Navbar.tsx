@@ -73,6 +73,9 @@ export default function Navbar() {
             <NavLink href="/work" isScrolled={isScrolled}>
               Work
             </NavLink>
+            <NavLink href="/product" isScrolled={isScrolled}>
+              Product
+            </NavLink>
             <NavLink href="/#testimonials" isScrolled={isScrolled}>
               Testimonials
             </NavLink>
@@ -141,6 +144,9 @@ export default function Navbar() {
         </Link>
         <Link className="block py-2 transition hover:text-black" href="/work">
           Work
+        </Link>
+        <Link className="block py-2 transition hover:text-black" href="/product">
+          Product
         </Link>
         <Link className="block py-2 transition hover:text-black" href="/#testimonials">
           Testimonials

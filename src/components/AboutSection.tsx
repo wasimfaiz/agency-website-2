@@ -14,29 +14,29 @@ import {
 const chapters = [
     {
         id: "01",
-        title: "Strategy First",
-        description: "We clarify your positioning, audience, and goals so the website has a sharp point of view.",
+        title: "Strategic Website Planning & Brand Positioning",
+        description: "We start with in-depth research to understand your business model, target audience, and growth objectives. Our web development strategy ensures your website has a clear positioning, strong messaging, and a foundation built for long-term success.",
         icon: <BsStars className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
         image: "/ui-design.png",
     },
     {
         id: "02",
-        title: "Design With Intent",
-        description: "Visual language, hierarchy, and interaction are crafted to earn trust and keep attention.",
+        title: "Conversion-Focused UI/UX & Website Design",
+        description: "Our team designs modern, user-centric interfaces with strong visual hierarchy and seamless user experience. Every design decision is focused on building trust, improving engagement, and increasing conversions.",
         icon: <BsLayers className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
         image: "/web-design.png",
     },
     {
         id: "03",
-        title: "Build for Momentum",
-        description: "We ship fast, optimize performance, and set you up for easy updates and growth.",
+        title: "High-Performance & Scalable Web Development",
+        description: "We develop fast, secure, and SEO-optimized websites and SaaS platforms using modern technologies. Our websites are built for performance, scalability, and easy updates — ensuring sustainable business growth.",
         icon: <BsLightningCharge className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
         image: "/web-development.jpg",
     },
     {
         id: "04",
-        title: "Refine and Evolve",
-        description: "We measure, iterate, and improve so your site keeps getting sharper as your product grows.",
+        title: "Continuous Optimization & Growth Scaling",
+        description: "After launch, we measure performance, analyze user behavior, and continuously optimize your website. Through performance tuning, SEO improvements, and feature upgrades, we help your digital product evolve as your business grows.",
         icon: <BsGraphUpArrow className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
         image: "/crm.png",
     },
@@ -94,13 +94,15 @@ export default function AboutSection() {
                                     About SetZet
                                 </p>
                                 <h2 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl drop-shadow-sm">
-                                    A story-first <br />
-                                    <span className="text-white/60">studio.</span>
+                                    Building Digital Products <br />
+                                    <span className="text-white/60">for Modern Brands.</span>
                                 </h2>
-                                <div className="mt-8 max-w-md">
-                                    <p className="text-lg leading-relaxed text-white/80 drop-shadow-sm">
-                                        We don&apos;t chase trends. We craft the narrative, then design the
-                                        interface that makes it feel inevitable.
+                                <div className="mt-8 max-w-md flex flex-col gap-4">
+                                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/80 drop-shadow-sm">
+                                        Setzet is a global web development agency building high-performance websites and scalable digital platforms for ambitious brands.
+                                    </p>
+                                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/80 drop-shadow-sm">
+                                        From custom website development to SaaS and CRM solutions, we help startups and enterprises create fast, secure, and growth-focused digital experiences that perform worldwide.
                                     </p>
                                 </div>
                             </div>

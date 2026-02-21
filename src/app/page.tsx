@@ -173,6 +173,9 @@ export default function Home() {
             <NavLink href="#work" isScrolled={isScrolled}>
               Work
             </NavLink>
+            <NavLink href="/product" isScrolled={isScrolled}>
+              Product
+            </NavLink>
             <NavLink href="#testimonials" isScrolled={isScrolled}>
               Testimonials
             </NavLink>
@@ -242,6 +245,9 @@ export default function Home() {
         <a className="block py-2 transition hover:text-black" href="#work">
           Work
         </a>
+        <a className="block py-2 transition hover:text-black" href="/product">
+          Product
+        </a>
         <a
           className="block py-2 transition hover:text-black"
           href="#testimonials"
@@ -283,9 +289,9 @@ export default function Home() {
                   variants={fadeInUp}
                   className="text-center text-[clamp(2.5rem,7vw,6.5rem)] font-extrabold leading-[1.1] tracking-tight drop-shadow-md"
                 >
-                  <span className="block">Helping our partners</span>
+                  <span className="block">Web Development Agency</span>
                   <span className="block mt-4">
-                    build{" "}
+                    Building{" "}
                     <span className="relative inline-block px-4 mx-2">
                        <svg
                         className="absolute left-0 top-0 -z-10 h-[130%] w-[120%] -translate-x-[10%] -translate-y-[15%] text-red-600 opacity-90"
@@ -302,12 +308,11 @@ export default function Home() {
                          />
                       </svg>
                       <span className="relative z-10 font-serif italic text-white">
-                        original
+                        High-Converting
                       </span>
                     </span>{" "}
-                    brands
                   </span>
-                  <span className="block">that shine.</span>
+                  <span className="block">Websites.</span>
                 </motion.h1>
 
                 <motion.div
@@ -318,15 +323,8 @@ export default function Home() {
                   className="mx-auto mt-6 max-w-xl text-center text-base leading-7 text-white/80 sm:text-lg"
                 >
                   <p>
-                    A strategy-led design studio specializing in laying down the
-                    awesome sauce for{" "}
-                    <span
-                      key={industries[industryIndex]}
-                      className="rotate-word font-semibold text-white"
-                    >
-                      {industries[industryIndex]}
-                    </span>{" "}
-                    brands.
+                    A strategy-driven agency building scalable websites and
+                    digital platforms for SaaS, B2B, and modern brands.
                   </p>
                 </motion.div>
 
@@ -371,18 +369,19 @@ export default function Home() {
                 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl"
                 data-animate="services"
               >
-                A lean stack for
+                Web Design, Development &
                 <br />
-                modern brands.
+                Digital Product Services
               </h2>
             </div>
             <p
               className="max-w-xl text-base leading-7 text-black/70 sm:text-lg"
               data-animate="services"
             >
-              We build distinctive digital identities that feel effortless to
-              use and hard to forget. Strategy, design, and engineering in one
-              tight loop.
+              We provide end-to-end web design, web development, and digital
+              product development services for startups, SaaS, B2B, and modern
+              brands worldwide. Strategy, design, and engineering work together
+              to deliver scalable, high-performance digital experiences.
             </p>
           </div>
 
@@ -408,8 +407,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold">UI/UX</h3>
               <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
                 <p>
-                  User journeys, wireframes, and interfaces that feel effortless
-                  and convert with clarity.
+                  User research, wireframes, and UI/UX design focused on improving usability, increasing engagement, and boosting website conversion rates.
                 </p>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/50">
                   Research - Flows - Prototypes
@@ -438,8 +436,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold">Web Design</h3>
               <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
                 <p>
-                  High-end layouts, typography, and motion that communicate
-                  brand and build trust.
+                  Custom website design with modern layouts, responsive UI, typography systems, and brand-focused visual identity that builds trust and authority.
                 </p>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/50">
                   Art Direction - UI - Motion
@@ -468,8 +465,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold">Web Development</h3>
               <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
                 <p>
-                  Fast, modern builds with clean code, SEO, and performance
-                  baked in.
+                  Custom web development using modern frameworks like Next.js, with SEO optimization, clean code architecture, CMS integration, and performance-first builds.
                 </p>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/50">
                   Next.js - SEO - CMS
@@ -498,8 +494,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold">App Development</h3>
               <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
                 <p>
-                  Cross-platform apps built for speed, reliability, and a
-                  polished user experience.
+                  Cross-platform mobile app development for iOS and Android, built for speed, scalability, and seamless user experience.
                 </p>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/50">
                   iOS - Android - QA
@@ -528,8 +523,7 @@ export default function Home() {
               <h3 className="text-2xl font-semibold">CRM/ERP</h3>
               <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
                 <p>
-                  Custom systems that connect teams, automate workflows, and
-                  keep data organized.
+                  Custom CRM and ERP development solutions that automate workflows, centralize data, integrate systems, and improve operational efficiency.
                 </p>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/50">
                   Dashboards - Automation - Integrations
@@ -560,16 +554,10 @@ export default function Home() {
                 Contact Us
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                Let&apos;s build
-                <br />
-                your next
-                <br />
-                signature launch.
+                Ready to Design and Build Something That Performs?
               </h2>
               <p className="mt-6 max-w-md text-base leading-7 text-black/70">
-                Share your vision, timeline, and goals. We&apos;ll map a focused
-                strategy and ship a brand experience that feels unmistakably
-                yours.
+                Tell us about your goals and timeline. We partner with ambitious teams to design, develop, and launch scalable digital products that drive measurable growth.
               </p>
 
               <div className="mt-10 space-y-4 text-sm">

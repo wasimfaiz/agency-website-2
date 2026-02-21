@@ -44,6 +44,9 @@ export default function Footer() {
                 <Link className="transition hover:text-black" href="/work">
                   Work
                 </Link>
+                <Link className="transition hover:text-black" href="/product">
+                  Product
+                </Link>
                 <Link className="transition hover:text-black" href="/#testimonials">
                   Testimonials
                 </Link>
