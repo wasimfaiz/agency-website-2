@@ -77,6 +77,9 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
             <NavLink href="/product" isScrolled={useDarkTheme}>
               Product
             </NavLink>
+            <NavLink href="/blogs" isScrolled={useDarkTheme}>
+              Blogs
+            </NavLink>
             <NavLink href="/#testimonials" isScrolled={useDarkTheme}>
               Testimonials
             </NavLink>
@@ -148,6 +151,9 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
         </Link>
         <Link className="block py-2 transition hover:text-black" href="/product">
           Product
+        </Link>
+        <Link className="block py-2 transition hover:text-black" href="/blogs">
+          Blogs
         </Link>
         <Link className="block py-2 transition hover:text-black" href="/#testimonials">
           Testimonials
