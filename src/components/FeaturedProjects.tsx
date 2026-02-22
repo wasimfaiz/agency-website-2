@@ -6,13 +6,13 @@ import { useRef } from "react";
 
 const projects = [
     {
-        title: "Northline Commerce",
-        category: "E-commerce Rebrand",
+        title: "Yastudy",
+        category: "EdTech Platform",
         year: "2025",
-        image: "/web-design.png",
-        href: "#",
+        image: "/images/project1.png",
+        href: "https://www.yastudy.com",
         summary:
-            "Reframed a crowded catalog into a sharp storytelling storefront with a 41% uplift in product discovery.",
+            "Designed an intuitive, comprehensive educational platform that streamlines learning and dramatically boosts student engagement.",
     },
     {
         title: "Pulseboard SaaS",
