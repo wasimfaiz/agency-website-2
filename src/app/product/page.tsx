@@ -559,10 +559,10 @@ const ShowcaseMockup = ({ index }: { index: number }) => {
          {[1, 2, 3].map((i) => (
            <div key={i} className="flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-4 flex flex-col justify-end relative overflow-hidden">
              <div className="absolute top-4 left-4 text-[9px] font-bold text-black/40 tracking-wider uppercase">METRIC 0{i}</div>
-             <div className="text-2xl font-bold mb-2">{(Math.random() * 5 + 2).toFixed(1)}k</div>
+             <div className="text-2xl font-bold mb-2">{((i * 1.5 % 3) + 2).toFixed(1)}k</div>
              <div className="h-10 w-full flex items-end gap-1 px-1">
                {[...Array(12)].map((_, j) => (
-                 <div key={j} className="flex-1 bg-black/10 rounded-t-[2px] transition-all duration-500 hover:bg-black/30" style={{ height: `${20 + Math.random() * 80}%` }} />
+                 <div key={j} className="flex-1 bg-black/10 rounded-t-[2px] transition-all duration-500 hover:bg-black/30" style={{ height: `${20 + ((i + j) * 17) % 80}%` }} />
                ))}
              </div>
            </div>
