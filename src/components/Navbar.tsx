@@ -2,15 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavLink = ({
   href,
   children,
   isScrolled,
+  isActive = false,
 }: {
   href: string;
   children: string;
   isScrolled: boolean;
+  isActive?: boolean;
 }) => {
   return (
     <Link
@@ -19,11 +22,11 @@ const NavLink = ({
         isScrolled ? "text-black/70" : "text-white/80"
       }`}
     >
-      <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
+      <span className={`block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isActive ? '-translate-y-full' : 'group-hover:-translate-y-full'}`}>
         {children}
       </span>
       <span
-        className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 ${
+        className={`absolute left-0 top-0 block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isActive ? 'translate-y-0' : 'translate-y-full group-hover:translate-y-0'} ${
           isScrolled ? "text-black font-bold" : "text-white font-bold"
         }`}
       >
@@ -37,6 +40,14 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const useDarkTheme = isScrolled || forceDarkAtTop;
+  const pathname = usePathname();
+
+  const isHomeActive = pathname === "/";
+  const isAboutActive = pathname.startsWith("/about");
+  const isServicesActive = pathname.startsWith("/services");
+  const isWorkActive = pathname.startsWith("/work");
+  const isProductActive = pathname.startsWith("/product");
+  const isBlogsActive = pathname.startsWith("/blogs");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,22 +76,22 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
               useDarkTheme ? "text-black/70" : "text-white/80"
             }`}
           >
-            <NavLink href="/" isScrolled={useDarkTheme}>
+            <NavLink href="/" isScrolled={useDarkTheme} isActive={isHomeActive}>
               Home
             </NavLink>
-            <NavLink href="/about" isScrolled={useDarkTheme}>
+            <NavLink href="/about" isScrolled={useDarkTheme} isActive={isAboutActive}>
               About
             </NavLink>
-            <NavLink href="/services" isScrolled={useDarkTheme}>
+            <NavLink href="/services" isScrolled={useDarkTheme} isActive={isServicesActive}>
               Services
             </NavLink>
-            <NavLink href="/work" isScrolled={useDarkTheme}>
+            <NavLink href="/work" isScrolled={useDarkTheme} isActive={isWorkActive}>
               Work
             </NavLink>
-            <NavLink href="/product" isScrolled={useDarkTheme}>
+            <NavLink href="/product" isScrolled={useDarkTheme} isActive={isProductActive}>
               Product
             </NavLink>
-            <NavLink href="/blogs" isScrolled={useDarkTheme}>
+            <NavLink href="/blogs" isScrolled={useDarkTheme} isActive={isBlogsActive}>
               Blogs
             </NavLink>
           </nav>
@@ -137,22 +148,22 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
             : "pointer-events-none scale-95 -translate-y-2 opacity-0"
         }`}
       >
-        <Link className="block py-2 transition hover:text-black" href="/">
+        <Link className={`block py-2 transition hover:text-black ${isHomeActive ? "text-black font-bold" : ""}`} href="/" onClick={() => setMenuOpen(false)}>
           Home
         </Link>
-        <Link className="block py-2 transition hover:text-black" href="/about">
+        <Link className={`block py-2 transition hover:text-black ${isAboutActive ? "text-black font-bold" : ""}`} href="/about" onClick={() => setMenuOpen(false)}>
           About
         </Link>
-        <Link className="block py-2 transition hover:text-black" href="/services">
+        <Link className={`block py-2 transition hover:text-black ${isServicesActive ? "text-black font-bold" : ""}`} href="/services" onClick={() => setMenuOpen(false)}>
           Services
         </Link>
-        <Link className="block py-2 transition hover:text-black" href="/work">
+        <Link className={`block py-2 transition hover:text-black ${isWorkActive ? "text-black font-bold" : ""}`} href="/work" onClick={() => setMenuOpen(false)}>
           Work
         </Link>
-        <Link className="block py-2 transition hover:text-black" href="/product">
+        <Link className={`block py-2 transition hover:text-black ${isProductActive ? "text-black font-bold" : ""}`} href="/product" onClick={() => setMenuOpen(false)}>
           Product
         </Link>
-        <Link className="block py-2 transition hover:text-black" href="/blogs">
+        <Link className={`block py-2 transition hover:text-black ${isBlogsActive ? "text-black font-bold" : ""}`} href="/blogs" onClick={() => setMenuOpen(false)}>
           Blogs
         </Link>
       </div>
