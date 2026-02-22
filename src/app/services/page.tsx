@@ -171,7 +171,7 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
              </span>
            ))}
            <div className={`mt-4 transition-transform duration-500 ${hovered ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}>
-              <span className="text-white text-2xl">→</span>
+              <span className="text-white text-2xl">&rarr;</span>
            </div>
         </div>
       </div>

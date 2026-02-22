@@ -17,7 +17,7 @@ const galleryImages = [
 
 const values = [
   { title: "Innovation", desc: "We don't just follow standards. We set them." },
-  { title: "Presicion", desc: "Every pixel, every interaction, every line of code matters." },
+  { title: "Precision", desc: "Every pixel, every interaction, every line of code matters." },
   { title: "Empathy", desc: "We design for humans, not just screens." },
   { title: "Impact", desc: "Digital experiences that leave a lasting impression." },
 ];
@@ -61,12 +61,12 @@ export default function AboutPage() {
             >
                 Unconventional
             </motion.h1>
-            <motion.h1 
+            <motion.p
                 style={{ y: y2 }}
                 className="font-heading text-4xl font-bold uppercase leading-[0.9] tracking-tighter text-white md:text-7xl lg:text-[9vw] xl:text-[10rem]"
             >
                 Reality
-            </motion.h1>
+            </motion.p>
         </div>
 
         {/* Floating Abstract Element */}

@@ -261,7 +261,7 @@ export default function WorkPage() {
               <h2 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
                   "The details are not the details. <br/> They make the design."
               </h2>
-              <p className="font-mono text-sm uppercase tracking-widest opacity-60">— Charles Eames</p>
+              <p className="font-mono text-sm uppercase tracking-widest opacity-60">- Charles Eames</p>
           </div>
       </section>
 

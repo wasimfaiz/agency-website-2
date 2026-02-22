@@ -13,7 +13,7 @@ const DUMMY_BLOGS = [
     id: 1,
     title: "The Future of Automation in CRM",
     excerpt: "Discover how AI-driven workflows are transforming customer relationship management, saving hours of manual data entry while increasing conversion rates.",
-    date: "Oct 24, 2026",
+    date: "Oct 24, 2025",
     readTime: "5 min read",
     category: "Technology",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
@@ -22,7 +22,7 @@ const DUMMY_BLOGS = [
     id: 2,
     title: "Mastering Client Communication",
     excerpt: "A deep dive into the strategies that keep clients engaged and satisfied, turning one-time buyers into lifelong advocates for your brand.",
-    date: "Oct 18, 2026",
+    date: "Oct 18, 2025",
     readTime: "7 min read",
     category: "Strategy",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
@@ -31,7 +31,7 @@ const DUMMY_BLOGS = [
     id: 3,
     title: "Scaling Your Agency: The First 100 Days",
     excerpt: "What to focus on when you are just starting out. Moving from freelance hustle to a structured agency model requires a shift in mindset.",
-    date: "Oct 12, 2026",
+    date: "Oct 12, 2025",
     readTime: "8 min read",
     category: "Business",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
@@ -40,7 +40,7 @@ const DUMMY_BLOGS = [
     id: 4,
     title: "Why Minimalist Design Converts Better",
     excerpt: "Less is more. Learn how reducing cognitive load on your landing pages can significantly improve user experience and boost conversion rates.",
-    date: "Oct 05, 2026",
+    date: "Oct 05, 2025",
     readTime: "4 min read",
     category: "Design",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
@@ -154,7 +154,7 @@ export default function BlogsPage() {
                          <span className="absolute left-0 bottom-0 w-full h-[1px] bg-black origin-right scale-x-0 group-hover/link:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] delay-[50ms]" />
                        </span>
                        <span className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center transform group-hover/link:-translate-y-1 transition-transform duration-500 text-xs">
-                         ↗
+                         &rarr;
                        </span>
                     </Link>
                  </div>
