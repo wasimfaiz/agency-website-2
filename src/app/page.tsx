@@ -164,23 +164,23 @@ export default function Home() {
               isScrolled ? "text-black/70" : "text-white/80"
             }`}
           >
+            <NavLink href="/" isScrolled={isScrolled}>
+              Home
+            </NavLink>
             <NavLink href="/about" isScrolled={isScrolled}>
               About
             </NavLink>
-            <NavLink href="#services" isScrolled={isScrolled}>
+            <NavLink href="/services" isScrolled={isScrolled}>
               Services
             </NavLink>
-            <NavLink href="#work" isScrolled={isScrolled}>
+            <NavLink href="/work" isScrolled={isScrolled}>
               Work
             </NavLink>
             <NavLink href="/product" isScrolled={isScrolled}>
               Product
             </NavLink>
-            <NavLink href="#testimonials" isScrolled={isScrolled}>
-              Testimonials
-            </NavLink>
-            <NavLink href="#contact" isScrolled={isScrolled}>
-              Contact
+            <NavLink href="/blogs" isScrolled={isScrolled}>
+              Blogs
             </NavLink>
           </nav>
           <div className="flex items-center gap-3">
@@ -236,26 +236,23 @@ export default function Home() {
             : "pointer-events-none scale-95 -translate-y-2 opacity-0"
         }`}
       >
+        <a className="block py-2 transition hover:text-black" href="/">
+          Home
+        </a>
         <a className="block py-2 transition hover:text-black" href="/about">
           About
         </a>
-        <a className="block py-2 transition hover:text-black" href="#services">
+        <a className="block py-2 transition hover:text-black" href="/services">
           Services
         </a>
-        <a className="block py-2 transition hover:text-black" href="#work">
+        <a className="block py-2 transition hover:text-black" href="/work">
           Work
         </a>
         <a className="block py-2 transition hover:text-black" href="/product">
           Product
         </a>
-        <a
-          className="block py-2 transition hover:text-black"
-          href="#testimonials"
-        >
-          Testimonials
-        </a>
-        <a className="block py-2 transition hover:text-black" href="#contact">
-          Contact
+        <a className="block py-2 transition hover:text-black" href="/blogs">
+          Blogs
         </a>
       </div>
 
