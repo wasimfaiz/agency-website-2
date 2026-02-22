@@ -76,7 +76,7 @@ export default function BlogsPage() {
 
   return (
     <main className="min-h-screen bg-[#FCFCFC] selection:bg-black selection:text-white pb-20">
-      <Navbar />
+      <Navbar forceDarkAtTop={true} />
 
       {/* Header Section */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
