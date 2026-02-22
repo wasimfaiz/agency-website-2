@@ -35,6 +35,9 @@ export default function Footer() {
                 Navigate
               </p>
               <div className="mt-3 flex flex-col gap-2 text-sm text-black/75">
+                <Link className="transition hover:text-black" href="/">
+                  Home
+                </Link>
                 <Link className="transition hover:text-black" href="/about">
                   About
                 </Link>
@@ -47,8 +50,8 @@ export default function Footer() {
                 <Link className="transition hover:text-black" href="/product">
                   Product
                 </Link>
-                <Link className="transition hover:text-black" href="/#testimonials">
-                  Testimonials
+                <Link className="transition hover:text-black" href="/blogs">
+                  Blogs
                 </Link>
                 <Link className="transition hover:text-black" href="/#contact">
                   Contact
