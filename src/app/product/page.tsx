@@ -637,15 +637,57 @@ function FeaturesGrid() {
             {/* Cell 1: Automate Everything */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="group relative col-span-1 md:col-span-2 row-span-2 overflow-hidden rounded-[32px] border border-black/10 bg-gradient-to-br from-black/[0.02] to-transparent p-10 hover:border-black/20"
+              className="group relative col-span-1 md:col-span-2 row-span-2 overflow-hidden rounded-[32px] border border-black/10 bg-[#f8f9fa] p-10 hover:border-black/20"
             >
-               <div className="absolute top-0 right-0 w-96 h-96 bg-black/10 blur-[100px] opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none" />
-               <h3 className="text-4xl font-bold text-black mb-4">Automate Everything</h3>
-               <p className="text-xl text-black/50 max-w-md">Eliminate repetitive tasks with intuitive, rule-based logic that works while you sleep.</p>
+               <div className="absolute top-0 right-0 w-96 h-96 bg-black/5 blur-[100px] opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none" />
+               <div className="relative z-10">
+                  <h3 className="text-4xl font-bold text-black mb-4">Automate Everything</h3>
+                  <p className="text-xl text-black/50 max-w-md">Eliminate repetitive tasks with intuitive, rule-based logic that works while you sleep.</p>
+               </div>
                
-               <div className="absolute bottom-10 right-10 w-48 h-48 border border-black/5 rounded-full flex items-center justify-center group-hover:scale-110 transition duration-700">
-                  <div className="w-24 h-24 border border-black/10 rounded-full flex items-center justify-center">
-                     <div className="w-12 h-12 bg-black/10 rounded-full" />
+               {/* Visual */}
+               <div className="absolute -bottom-4 -right-4 w-[110%] md:w-[85%] h-[60%] bg-white rounded-tl-[32px] border border-black/10 shadow-2xl p-6 flex flex-col gap-6 transform-gpu group-hover:-translate-y-4 group-hover:-translate-x-4 transition-transform duration-700 ease-out">
+                  {/* Workflow Nodes */}
+                  <div className="flex gap-4 items-center mt-2">
+                    <div className="w-14 h-14 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-2xl shadow-sm border border-black/5">⚡</div>
+                    <div className="h-2 w-16 bg-black/5 rounded-full relative overflow-hidden">
+                       <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-black/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+                    </div>
+                    <div className="w-14 h-14 bg-white text-black rounded-2xl border border-black/10 shadow-sm flex items-center justify-center text-sm font-bold">1d</div>
+                    <div className="h-2 w-16 bg-black/5 rounded-full relative overflow-hidden">
+                       <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-black/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite_0.5s]" />
+                    </div>
+                    <div className="w-14 h-14 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center text-2xl shadow-sm border border-black/5">✉️</div>
+                  </div>
+
+                  {/* Activity Lines */}
+                  <div className="mt-4 flex flex-col gap-3">
+                    <div className="h-20 w-full bg-[#fcfcfc] rounded-xl border border-black/5 p-4 flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                         <Image src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User" width={40} height={40} className="rounded-full object-cover" />
+                         <div>
+                           <div className="text-sm font-bold text-black mb-0.5">John Doe added a new lead</div>
+                           <div className="text-[10px] text-black/50">Via Zapier Integration • 2 mins ago</div>
+                         </div>
+                      </div>
+                      <div className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-bold flex items-center gap-1.5 whitespace-nowrap">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        Active
+                      </div>
+                    </div>
+                    <div className="h-20 w-full bg-[#fcfcfc] rounded-xl border border-black/5 p-4 flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                         <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-xl text-blue-500">📄</div>
+                         <div>
+                           <div className="text-sm font-bold text-black mb-0.5">Invoice #1024 Generated</div>
+                           <div className="text-[10px] text-black/50">Sent to Acme Corp • 15 mins ago</div>
+                         </div>
+                      </div>
+                      <div className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-[10px] font-bold flex items-center gap-1.5 whitespace-nowrap">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-[spin_3s_linear_infinite]" />
+                        Processing
+                      </div>
+                    </div>
                   </div>
                </div>
             </motion.div>
@@ -653,30 +695,148 @@ function FeaturesGrid() {
             {/* Cell 2: Visual Pipeline */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-              className="group relative col-span-1 row-span-1 overflow-hidden rounded-[32px] border border-black/10 bg-gradient-to-br from-black/[0.02] to-transparent p-10 hover:border-black/20"
+              className="group relative col-span-1 row-span-1 overflow-hidden rounded-[32px] border border-black/10 bg-[#f8f9fa] p-8 flex flex-col hover:border-black/20"
             >
-               <h3 className="text-2xl font-bold text-black mb-2">Visual Pipeline Control</h3>
-               <p className="text-black/50">Drag, drop, and close deals effortlessly.</p>
+               <div className="relative z-10 mb-6">
+                  <h3 className="text-2xl font-bold text-black mb-2">Visual Pipeline</h3>
+                  <p className="text-sm text-black/50">Drag, drop, and close deals effortlessly.</p>
+               </div>
+               {/* Visual */}
+               <div className="flex-1 w-full relative">
+                  <div className="absolute inset-x-0 bottom-[-30%] h-[140%] bg-white rounded-t-xl border border-black/10 shadow-xl p-3 flex gap-2 transform-gpu group-hover:-translate-y-2 transition-transform duration-500 overflow-hidden">
+                     {/* Column 1: Leads */}
+                     <div className="flex-1 bg-gray-50 rounded-lg p-2 flex flex-col gap-2">
+                        <div className="flex justify-between items-center px-1 mb-1">
+                          <div className="text-[10px] font-bold text-black/70">New Leads</div>
+                          <div className="text-[9px] bg-black/10 px-1.5 rounded-full font-bold">3</div>
+                        </div>
+                        <div className="bg-white p-2 rounded-md shadow-sm border border-black/5 hover:border-blue-500 cursor-pointer transition-colors">
+                           <div className="flex justify-between items-start mb-2">
+                             <div className="text-[11px] font-bold text-black leading-tight">Spotify Redesign</div>
+                             <Image src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="Avatar" width={16} height={16} className="rounded-full" />
+                           </div>
+                           <div className="text-[9px] text-black/50 mb-2">Tech Startup</div>
+                           <div className="flex justify-between items-center">
+                              <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-1.5 rounded">High Priority</span>
+                              <span className="text-[10px] font-mono text-black/40">$12k</span>
+                           </div>
+                        </div>
+                        <div className="bg-white p-2 rounded-md shadow-sm border border-black/5 hover:border-blue-500 cursor-pointer transition-colors">
+                           <div className="flex justify-between items-start mb-2">
+                             <div className="text-[11px] font-bold text-black leading-tight">Nike Campaign</div>
+                             <Image src="https://i.pravatar.cc/150?u=a04258114e29026702d" alt="Avatar" width={16} height={16} className="rounded-full" />
+                           </div>
+                           <div className="text-[9px] text-black/50 mb-2">Retail Enterprise</div>
+                           <div className="flex justify-between items-center">
+                              <span className="text-[10px] font-bold text-orange-600 bg-orange-50 px-1.5 rounded">Medium</span>
+                              <span className="text-[10px] font-mono text-black/40">$45k</span>
+                           </div>
+                        </div>
+                     </div>
+                     {/* Column 2: In Progress */}
+                     <div className="flex-1 bg-gray-50 rounded-lg p-2 flex flex-col gap-2 border-dashed border-2 border-transparent hover:border-blue-300 transition-colors">
+                        <div className="flex justify-between items-center px-1 mb-1">
+                          <div className="text-[10px] font-bold text-black/70 decoration-blue-500 decoration-2 underline underline-offset-4">In Progress</div>
+                          <div className="text-[9px] bg-black/10 px-1.5 rounded-full font-bold">1</div>
+                        </div>
+                        <div className="bg-white p-2 rounded-md shadow-sm border border-black/5 hover:border-blue-500 cursor-pointer transition-colors transform rotate-1">
+                           <div className="flex justify-between items-start mb-2">
+                             <div className="text-[11px] font-bold text-black leading-tight">Apple AR App</div>
+                             <div className="flex -space-x-1">
+                                <Image src="https://i.pravatar.cc/150?u=a048581f4e29026701d" alt="Avatar" width={16} height={16} className="rounded-full border border-white" />
+                                <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center text-[7px] text-white border border-white">+2</div>
+                             </div>
+                           </div>
+                           <div className="text-[9px] text-black/50 mb-2">Internal Tooling</div>
+                           <div className="w-full bg-gray-200 rounded-full h-1 mt-1 mb-1">
+                             <div className="bg-blue-600 h-1 rounded-full" style={{ width: '45%' }}></div>
+                           </div>
+                           <div className="flex justify-between items-center mt-2">
+                              <span className="text-[10px] font-bold text-black bg-gray-100 px-1.5 rounded">Design Phase</span>
+                              <span className="text-[10px] font-mono text-black/40">$120k</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </motion.div>
 
             {/* Cell 3: Smart Reporting */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-              className="group relative col-span-1 row-span-1 overflow-hidden rounded-[32px] border border-black/10 bg-gradient-to-br from-black/[0.02] to-transparent p-10 hover:border-black/20"
+              className="group relative col-span-1 row-span-1 overflow-hidden rounded-[32px] border border-black/10 bg-[#f8f9fa] p-8 flex flex-col hover:border-black/20"
             >
-               <h3 className="text-2xl font-bold text-black mb-2">Smart Reporting</h3>
-               <p className="text-black/50">Data converted into actionable insights.</p>
+               <div className="relative z-10 mb-6">
+                  <h3 className="text-2xl font-bold text-black mb-2">Smart Reporting</h3>
+                  <p className="text-sm text-black/50">Data converted into actionable insights.</p>
+               </div>
+               {/* Visual */}
+               <div className="flex-1 w-full relative">
+                  <div className="absolute inset-x-0 bottom-[-20%] h-[130%] bg-white rounded-t-xl border border-black/10 shadow-xl p-4 flex flex-col transform-gpu group-hover:-translate-y-2 transition-transform duration-500">
+                     <div className="flex justify-between items-end mb-4">
+                        <div className="text-xl font-bold">$42K</div>
+                        <div className="text-[10px] text-green-500 font-bold">+12%</div>
+                     </div>
+                     <div className="flex-1 flex items-end gap-1.5 relative">
+                        {[30, 45, 25, 60, 40, 75, 55, 80].map((h, i) => (
+                          <div key={i} className="flex-1 bg-black/10 rounded-t-sm group-hover:bg-black/80 transition-colors duration-500 delay-[i*50]" style={{ height: `${h}%` }} />
+                        ))}
+                     </div>
+                  </div>
+               </div>
             </motion.div>
 
             {/* Cell 4: Secure Access */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-              className="group relative col-span-1 md:col-span-3 row-span-1 overflow-hidden rounded-[32px] border border-black/10 bg-gradient-to-r from-black/[0.02] to-transparent p-10 flex items-center justify-between hover:border-black/20"
+              className="group relative col-span-1 md:col-span-3 row-span-1 overflow-hidden rounded-[32px] border border-black/10 bg-[#f8f9fa] p-10 flex flex-col md:flex-row items-center justify-between hover:border-black/20"
             >
                <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-64 bg-black/5 blur-[80px] opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none" />
-               <div>
+               <div className="relative z-10 md:w-1/2 mb-8 md:mb-0">
                   <h3 className="text-3xl font-bold text-black mb-2">Secure Role-Based Access</h3>
                   <p className="text-lg text-black/50">Granular permissions to keep your data protected at all times.</p>
+               </div>
+               
+               {/* Visual */}
+               <div className="relative z-10 md:w-1/2 flex justify-end">
+                  <div className="w-[120%] md:w-[80%] bg-white rounded-2xl border border-black/10 shadow-xl p-5 flex flex-col gap-4 transform-gpu group-hover:scale-105 transition-transform duration-500 origin-right">
+                     {/* Admin User */}
+                     <div className="flex items-center justify-between pb-4 border-b border-black/5">
+                        <div className="flex items-center gap-3">
+                           <Image src="https://i.pravatar.cc/150?img=11" alt="Admin" width={40} height={40} className="rounded-full shadow-sm" />
+                           <div>
+                              <div className="text-sm font-bold text-black leading-none mb-1">Sarah Jenkins</div>
+                              <div className="text-xs text-black/50">sarah@company.com</div>
+                           </div>
+                        </div>
+                        <div className="px-3 py-1 bg-black text-white text-[10px] font-bold rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.1)]">Admin</div>
+                     </div>
+                     {/* Editor User */}
+                     <div className="flex items-center justify-between pb-4 border-b border-black/5">
+                        <div className="flex items-center gap-3">
+                           <Image src="https://i.pravatar.cc/150?img=12" alt="Editor" width={40} height={40} className="rounded-full shadow-sm" />
+                           <div>
+                              <div className="text-sm font-bold text-black leading-none mb-1">Michael Chang</div>
+                              <div className="text-xs text-black/50">michael@company.com</div>
+                           </div>
+                        </div>
+                        <div className="px-3 py-1 bg-blue-50 text-blue-600 border border-blue-100 text-[10px] font-bold rounded-full">Editor</div>
+                     </div>
+                     {/* Viewer User */}
+                     <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                           <Image src="https://i.pravatar.cc/150?img=9" alt="Viewer" width={40} height={40} className="rounded-full opacity-70" />
+                           <div>
+                              <div className="text-sm font-bold text-black leading-none mb-1 opacity-70">Emily Davis</div>
+                              <div className="text-xs text-black/40">emily@freelance.org</div>
+                           </div>
+                        </div>
+                        <div className="px-3 py-1 bg-gray-100 text-gray-500 border border-gray-200 text-[10px] font-bold rounded-full">Viewer</div>
+                     </div>
+                     <div className="mt-2 text-center">
+                        <button className="text-[10px] font-bold text-black/40 hover:text-black transition-colors w-full py-1 border border-dashed border-black/10 rounded-md bg-gray-50 hover:bg-gray-100">+ Add New Member</button>
+                     </div>
+                  </div>
                </div>
             </motion.div>
          </div>
