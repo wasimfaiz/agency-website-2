@@ -82,7 +82,7 @@ function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center mt-[-10vh] sm:mt-[-15vh]">
+      <div className="relative z-30 flex flex-col items-center justify-center px-4 text-center pb-[25vh] sm:pb-[30vh]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,138 +110,218 @@ function HeroSection() {
       <motion.div
         style={{ y }}
         initial={{ opacity: 0, scale: 0.9, rotateX: 30 }}
-        animate={{ opacity: 1, scale: 1, rotateX: 10 }}
+        animate={{ opacity: 1, scale: 1, rotateX: 5 }}
         transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute -bottom-[20vh] z-20 w-[90vw] max-w-5xl overflow-hidden rounded-t-[32px] border border-black/10 bg-white shadow-[0_-20px_80px_rgba(0,0,0,0.05)] transform-gpu"
+        className="absolute -bottom-[20vh] z-20 w-[95vw] max-w-6xl overflow-hidden rounded-t-[32px] border border-black/10 bg-[#FAF9F6] shadow-[0_-30px_100px_rgba(0,0,0,0.1)] transform-gpu ring-1 ring-black/5"
       >
         <motion.div 
-           animate={{ y: [-10, 10, -10] }}
-           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-           className="h-[50vh] w-full p-2"
+           animate={{ y: [-15, 15, -15] }}
+           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+           className="h-[60vh] w-full p-3 md:p-4"
         >
-           {/* Realistic Dashboard UI */}
-           <div className="h-12 w-full border-b border-black/5 flex items-center justify-between px-4 bg-[#fcfcfc] rounded-t-2xl">
+           {/* macOS-style Header Bar */}
+           <div className="h-14 w-full border-b border-black/5 flex items-center justify-between px-6 bg-white/60 backdrop-blur-md rounded-t-3xl shadow-sm relative z-10">
               <div className="flex items-center gap-2">
-                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"/>
-                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"/>
-                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"/>
+                 <div className="w-3.5 h-3.5 rounded-full bg-[#ff5f56] shadow-sm"/>
+                 <div className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] shadow-sm"/>
+                 <div className="w-3.5 h-3.5 rounded-full bg-[#27c93f] shadow-sm"/>
               </div>
-              <div className="flex items-center gap-3">
-                 <div className="h-5 w-48 rounded-md bg-black/5 border border-black/5 flex items-center px-2">
-                    <div className="w-2 h-2 rounded-full bg-black/20 mr-2" />
-                    <div className="h-1.5 w-16 bg-black/20 rounded-full" />
+              
+              {/* Fake Search Bar */}
+              <div className="flex-1 max-w-lg mx-6">
+                <div className="h-8 w-full rounded-full bg-black/5 border border-black/5 flex items-center px-4 transition-all hover:bg-black/10">
+                  <svg className="w-3 h-3 text-black/40 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  <div className="text-[11px] font-medium text-black/30">Search leads, contacts, or campaigns...</div>
+                </div>
+              </div>
+
+              {/* Header Profile Actions */}
+              <div className="flex items-center gap-4">
+                 <div className="relative">
+                   <svg className="w-5 h-5 text-black/60 hover:text-black cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                   <div className="absolute top-0 right-0.5 w-2 h-2 rounded-full bg-red-500 ring-2 ring-white"></div>
                  </div>
-                 <div className="h-6 w-6 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500" />
+                 <div className="flex items-center gap-2 pl-4 border-l border-black/10">
+                   <div className="text-right hidden sm:block">
+                     <div className="text-[11px] font-bold text-black leading-tight">Sarah Jenkins</div>
+                     <div className="text-[9px] font-medium text-black/50">Admin</div>
+                   </div>
+                   <div className="relative h-8 w-8 rounded-full overflow-hidden border border-black/10 shadow-sm cursor-pointer">
+                     <Image src="https://i.pravatar.cc/150?img=47" alt="Profile" fill className="object-cover" />
+                   </div>
+                 </div>
               </div>
            </div>
-           <div className="flex h-[calc(100%-3rem)] bg-[#f8f9fa] overflow-hidden rounded-b-2xl">
-              {/* Sidebar */}
-              <div className="w-48 border-r border-black/5 bg-white p-4 flex flex-col gap-3">
-                 <div className="h-6 w-24 rounded font-bold text-xs flex items-center mb-2">Setzet CRM</div>
+
+           <div className="flex h-[calc(100%-3.5rem)] bg-gradient-to-br from-white to-[#F8FAFC] overflow-hidden rounded-b-3xl relative">
+              
+              {/* Elegant Sidebar */}
+              <div className="w-56 border-r border-black/5 bg-white/80 backdrop-blur-sm p-5 flex flex-col gap-6 relative z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
+                 <div className="flex items-center gap-2 mb-2 px-1">
+                   <div className="w-6 h-6 rounded-lg bg-black flex items-center justify-center text-white font-bold text-[10px]">SZ</div>
+                   <div className="font-bold text-xs tracking-wide">SetZet CRM</div>
+                 </div>
                  
-                 <div className="flex items-center gap-2 px-2 py-1.5 bg-black/5 rounded-md">
-                   <div className="w-3 h-3 border border-black/40 rounded-sm" />
-                   <div className="text-[10px] font-semibold text-black/80">Dashboard</div>
+                 <div className="flex flex-col gap-1.5">
+                   <p className="text-[9px] font-bold text-black/30 uppercase tracking-widest px-2 mb-1">Menu</p>
+                   <div className="flex items-center gap-3 px-3 py-2.5 bg-black/5 rounded-xl border border-black/5 shadow-sm">
+                     <svg className="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+                     <div className="text-[12px] font-semibold text-black">Dashboard</div>
+                   </div>
+                   <div className="group flex items-center justify-between px-3 py-2.5 hover:bg-black/5 rounded-xl transition-colors cursor-pointer">
+                     <div className="flex items-center gap-3">
+                       <svg className="w-4 h-4 text-black/40 group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                       <div className="text-[12px] font-medium text-black/60 group-hover:text-black transition-colors">Leads</div>
+                     </div>
+                     <div className="bg-blue-100 text-blue-600 text-[9px] font-bold px-1.5 py-0.5 rounded-full">12</div>
+                   </div>
+                   <div className="group flex items-center gap-3 px-3 py-2.5 hover:bg-black/5 rounded-xl transition-colors cursor-pointer">
+                     <svg className="w-4 h-4 text-black/40 group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                     <div className="text-[12px] font-medium text-black/60 group-hover:text-black transition-colors">Campaigns</div>
+                   </div>
+                   <div className="group flex items-center gap-3 px-3 py-2.5 hover:bg-black/5 rounded-xl transition-colors cursor-pointer">
+                     <svg className="w-4 h-4 text-black/40 group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                     <div className="text-[12px] font-medium text-black/60 group-hover:text-black transition-colors">Analytics</div>
+                   </div>
                  </div>
-                 <div className="flex items-center gap-2 px-2 py-1.5 hover:bg-black/5 rounded-md transition-colors">
-                   <div className="w-3 h-3 border border-black/30 rounded-sm" />
-                   <div className="text-[10px] font-semibold text-black/50">Pipeline</div>
-                 </div>
-                 <div className="flex items-center gap-2 px-2 py-1.5 hover:bg-black/5 rounded-md transition-colors">
-                   <div className="w-3 h-3 border border-black/30 rounded-sm" />
-                   <div className="text-[10px] font-semibold text-black/50">Contacts</div>
-                 </div>
-                 <div className="flex items-center gap-2 px-2 py-1.5 hover:bg-black/5 rounded-md transition-colors">
-                   <div className="w-3 h-3 border border-black/30 rounded-sm" />
-                   <div className="text-[10px] font-semibold text-black/50">Campaigns</div>
-                 </div>
-                 <div className="flex items-center gap-2 px-2 py-1.5 hover:bg-black/5 rounded-md transition-colors">
-                   <div className="w-3 h-3 border border-black/30 rounded-sm" />
-                   <div className="text-[10px] font-semibold text-black/50">Reports</div>
+
+                 {/* Storage Used Indicator */}
+                 <div className="mt-auto bg-gradient-to-b from-white to-gray-50 border border-black/5 p-4 rounded-2xl shadow-sm">
+                    <p className="text-[10px] font-bold text-black mb-1">Storage Usage</p>
+                    <p className="text-[9px] text-black/50 mb-3">75.2 GB of 100 GB</p>
+                    <div className="h-1.5 w-full bg-black/10 rounded-full overflow-hidden">
+                       <motion.div initial={{ width: 0 }} animate={{ width: "75%" }} transition={{ duration: 1.5, delay: 1.5 }} className="h-full bg-black rounded-full" />
+                    </div>
                  </div>
               </div>
               
-              {/* Main Content */}
-              <div className="flex-1 flex flex-col gap-4 p-5 overflow-hidden">
-                 {/* Top Stats */}
-                 <div className="flex gap-4">
-                    <div className="flex-1 h-20 rounded-xl border border-black/10 bg-white shadow-sm flex flex-col justify-center px-4">
-                       <div className="text-[9px] font-semibold text-black/40 uppercase mb-1">Total Revenue</div>
-                       <div className="flex items-end justify-between">
-                         <div className="text-xl font-bold text-black">$84,590.00</div>
-                         <div className="text-[10px] font-bold text-green-500 mb-1">+12.5%</div>
-                       </div>
-                    </div>
-                    <div className="flex-1 h-20 rounded-xl border border-black/10 bg-white shadow-sm flex flex-col justify-center px-4">
-                       <div className="text-[9px] font-semibold text-black/40 uppercase mb-1">Active Deals</div>
-                       <div className="flex items-end justify-between">
-                         <div className="text-xl font-bold text-black">124</div>
-                         <div className="text-[10px] font-bold text-green-500 mb-1">+4.2%</div>
-                       </div>
-                    </div>
-                    <div className="flex-1 h-20 rounded-xl border border-black/10 bg-white shadow-sm flex flex-col justify-center px-4">
-                       <div className="text-[9px] font-semibold text-black/40 uppercase mb-1">Conversion Rate</div>
-                       <div className="flex items-end justify-between">
-                         <div className="text-xl font-bold text-black">24.8%</div>
-                         <div className="text-[10px] font-bold text-green-500 mb-1">+2.1%</div>
-                       </div>
-                    </div>
+              {/* Main Content Area */}
+              <div className="flex-1 flex flex-col p-6 overflow-hidden gap-6">
+                 
+                 {/* Top KPI Cards (Glassmorphic) */}
+                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {[
+                      { title: "Total Revenue", value: "$124,590.00", icon: "💰", trend: "+14.2%", positive: true, chartPoints: [30, 40, 35, 50, 49, 60, 70, 90, 100] },
+                      { title: "Active Projects", value: "32", icon: "🚀", trend: "+5.4%", positive: true, chartPoints: [40, 30, 50, 40, 60, 45, 75, 60, 80] },
+                      { title: "Churn Rate", value: "1.2%", icon: "📉", trend: "-0.8%", positive: true, chartPoints: [80, 75, 60, 70, 50, 45, 30, 20, 10] },
+                    ].map((kpi, index) => (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                        key={index} 
+                        className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/50 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 group hover:bg-white/70 transition-colors cursor-pointer"
+                      >
+                         <div className="flex justify-between items-start mb-6 z-10 relative">
+                            <div>
+                               <div className="text-[10px] font-bold text-black/50 uppercase tracking-widest">{kpi.title}</div>
+                               <div className="text-2xl font-bold text-black mt-1 tracking-tight">{kpi.value}</div>
+                            </div>
+                            <div className="text-xl bg-white p-2 rounded-xl shadow-sm border border-black/5">{kpi.icon}</div>
+                         </div>
+                         <div className="flex items-center justify-between z-10 relative">
+                            <div className={`text-[11px] font-bold px-2 py-1 rounded-md ${kpi.positive ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                              {kpi.trend} <span className="text-black/40 font-medium ml-1">vs last month</span>
+                            </div>
+                         </div>
+                         {/* Mini Sparkline Background */}
+                         <div className="absolute -bottom-2 left-0 right-0 h-16 opacity-20 flex items-end px-2 gap-1 pointer-events-none">
+                            {kpi.chartPoints.map((h, i) => (
+                               <motion.div key={i} initial={{ height: 0 }} animate={{ height: `${h}%` }} transition={{ duration: 1, delay: 1.5 + i * 0.05 }} className="flex-1 bg-black rounded-t-sm" />
+                            ))}
+                         </div>
+                      </motion.div>
+                    ))}
                  </div>
                  
-                 {/* Main Area */}
-                 <div className="flex flex-1 gap-4 overflow-hidden">
-                    {/* Chart Area */}
-                    <div className="flex-[2] rounded-xl border border-black/10 bg-white shadow-sm p-4 flex flex-col">
-                       <div className="flex justify-between items-center mb-4">
-                         <div className="text-[11px] font-bold text-black">Revenue Overview</div>
-                         <div className="text-[9px] px-2 py-1 rounded bg-black/5 font-semibold text-black/60">This Year</div>
+                 {/* Lower Dashboard Section */}
+                 <div className="flex-1 grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 overflow-hidden">
+                    
+                    {/* Main Chart Area */}
+                    <motion.div 
+                       initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.3 }}
+                       className="rounded-2xl border border-black/5 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 flex flex-col relative overflow-hidden"
+                    >
+                       <div className="flex justify-between items-center mb-8">
+                         <div>
+                           <h2 className="text-sm font-bold text-black">Revenue Analytics</h2>
+                           <p className="text-[11px] text-black/50 mt-1">Monthly recurring revenue (MRR) tracking</p>
+                         </div>
+                         <div className="flex bg-gray-100 p-1 rounded-lg">
+                            <button className="px-3 py-1 bg-white shadow-sm rounded-md text-[10px] font-bold text-black">Yearly</button>
+                            <button className="px-3 py-1 text-[10px] font-semibold text-black/50 hover:text-black transition">Monthly</button>
+                         </div>
                        </div>
-                       <div className="flex-1 relative border-b border-l border-black/10 flex items-end gap-2 pt-4 px-2">
-                          {/* Bars */}
-                          {[40, 60, 45, 80, 70, 90, 50, 75, 65, 85].map((height, i) => (
-                            <div key={i} className="w-full relative group h-full flex items-end">
-                               <motion.div 
-                                 initial={{ height: 0 }}
-                                 animate={{ height: `${height}%` }}
-                                 transition={{ duration: 1, delay: i * 0.05 + 1.2, ease: "easeOut" }}
-                                 className="w-full bg-black/80 rounded-t-[2px] hover:bg-black transition-colors"
-                               />
+                       
+                       {/* Beautiful Aesthetic Chart */}
+                       <div className="flex-1 relative flex items-end gap-3 px-2 pt-10">
+                          {/* Y-axis Lines */}
+                          <div className="absolute inset-0 flex flex-col justify-between pt-10 pb-6 pointer-events-none">
+                            {[1,2,3,4,5].map(i => <div key={i} className="w-full h-px bg-black-[0.03] border-t border-dashed border-black/5" />)}
+                          </div>
+                          
+                          {/* Bar Chart Data */}
+                          {[
+                            { month: 'Jan', val1: 40, val2: 25 }, { month: 'Feb', val1: 45, val2: 30 },
+                            { month: 'Mar', val1: 55, val2: 35 }, { month: 'Apr', val1: 40, val2: 50 },
+                            { month: 'May', val1: 70, val2: 45 }, { month: 'Jun', val1: 85, val2: 60 },
+                            { month: 'Jul', val1: 65, val2: 55 }, { month: 'Aug', val1: 95, val2: 70 }
+                          ].map((data, i) => (
+                            <div key={i} className="w-full relative group h-full flex items-end justify-center gap-1 z-10">
+                               <motion.div initial={{ height: 0 }} animate={{ height: `${data.val1}%` }} transition={{ duration: 1.2, delay: i * 0.05 + 1.4, type: "spring", bounce: 0.4 }} className="w-full max-w-[12px] bg-black rounded-t-full relative group-hover:bg-black/80 transition-colors">
+                                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-[9px] font-bold py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">${data.val1}k</div>
+                               </motion.div>
+                               <motion.div initial={{ height: 0 }} animate={{ height: `${data.val2}%` }} transition={{ duration: 1.2, delay: i * 0.05 + 1.6, type: "spring", bounce: 0.4 }} className="w-full max-w-[12px] bg-[#E2E8F0] rounded-t-full group-hover:bg-[#CBD5E1] transition-colors" />
+                               <div className="absolute -bottom-6 text-[10px] font-bold text-black/40">{data.month}</div>
                             </div>
                           ))}
                        </div>
-                    </div>
+                    </motion.div>
                     
-                    {/* Recent Activities */}
-                    <div className="flex-1 rounded-xl border border-black/10 bg-white shadow-sm p-4 flex flex-col">
-                       <div className="text-[11px] font-bold text-black mb-3">Recent Closed Deals</div>
-                       <div className="flex flex-col gap-3 flex-1 overflow-hidden">
+                    {/* Right Side Feed */}
+                    <motion.div 
+                       initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.4 }}
+                       className="rounded-2xl border border-black/5 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)] p-6 flex flex-col"
+                    >
+                       <div className="flex justify-between items-center mb-5">
+                          <h2 className="text-sm font-bold text-black">Recent Activity</h2>
+                          <div className="w-6 h-6 rounded-full bg-black/5 flex items-center justify-center cursor-pointer hover:bg-black/10 transition">
+                            <span className="text-[12px]">...</span>
+                          </div>
+                       </div>
+                       
+                       <div className="flex flex-col gap-0 overflow-y-auto pr-2 custom-scrollbar flex-1 relative">
+                          <div className="absolute left-[11px] top-4 bottom-4 w-px bg-black/5 z-0" />
                           {[
-                            { name: "Acme Corp", amount: "$12,400", time: "2h ago" },
-                            { name: "Global Tech", amount: "$8,500", time: "4h ago" },
-                            { name: "Stark Ind", amount: "$24,000", time: "1d ago" },
-                            { name: "Wayne Ent", amount: "$15,200", time: "2d ago" },
-                          ].map((deal, i) => (
+                            { title: "New Deal Signed", msg: "Spotify completely onboarded.", time: "10m ago", icon: "🎉", img: "4" },
+                            { title: "Invoice Paid", msg: "Invoice #4029 paid perfectly.", time: "1h ago", icon: "💳", img: "33" },
+                            { title: "Meeting Scheduled", msg: "Kickoff call with Acme team.", time: "3h ago", icon: "📅", img: "11" },
+                            { title: "Project Launched", msg: "Website pushed to production.", time: "5h ago", icon: "🚀", img: "64" },
+                            { title: "New Lead Added", msg: "From incoming website form.", time: "1d ago", icon: "✨", img: "21" },
+                          ].map((item, i) => (
                             <motion.div 
-                               initial={{ opacity: 0, x: 20 }}
-                               animate={{ opacity: 1, x: 0 }}
-                               transition={{ duration: 0.5, delay: i * 0.1 + 1.5 }}
+                               initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 + 1.6 }}
                                key={i} 
-                               className="flex items-center justify-between p-2 rounded-lg hover:bg-black/5 transition-colors border border-transparent hover:border-black/5"
+                               className="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors relative z-10 group cursor-pointer"
                             >
-                               <div className="flex items-center gap-2">
-                                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-black/10 to-black/5 flex items-center justify-center text-[8px] font-bold text-black/60">
-                                    {deal.name.charAt(0)}
-                                  </div>
-                                  <div>
-                                     <div className="text-[10px] font-bold text-black">{deal.name}</div>
-                                     <div className="text-[8px] font-semibold text-black/40">{deal.time}</div>
+                               <div className="relative">
+                                  <div className="w-6 h-6 rounded-full bg-white shadow-sm border border-black/10 flex items-center justify-center text-[10px] ring-4 ring-white relative z-10">
+                                    {item.icon}
                                   </div>
                                </div>
-                               <div className="text-[10px] font-bold text-green-600">+{deal.amount}</div>
+                               <div className="flex-1 mt-0.5">
+                                  <div className="flex justify-between items-start">
+                                     <div className="text-[11px] font-bold text-black group-hover:text-blue-600 transition-colors">{item.title}</div>
+                                     <div className="text-[9px] font-semibold text-black/40">{item.time}</div>
+                                  </div>
+                                  <div className="text-[10px] text-black/60 mt-0.5">{item.msg}</div>
+                                  <div className="flex items-center gap-1.5 mt-2">
+                                     <Image src={`https://i.pravatar.cc/150?img=${item.img}`} width={14} height={14} alt="User" className="rounded-full" />
+                                     <div className="text-[8px] font-bold text-black/40 uppercase">Assigned</div>
+                                  </div>
+                               </div>
                             </motion.div>
                           ))}
                        </div>
-                    </div>
+                    </motion.div>
                  </div>
               </div>
            </div>
@@ -387,25 +467,56 @@ const ShowcaseMockup = ({ index }: { index: number }) => {
   if (index === 0) {
     // Dashboard
     return (
-      <div className="w-full h-full flex flex-col p-4 gap-4 bg-[#f8f9fa] rounded-2xl">
-        <div className="flex gap-4">
-           <div className="h-16 flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-3 flex flex-col justify-center">
-             <div className="text-[8px] text-black/40 font-bold mb-1 tracking-wider">REVENUE</div>
-             <div className="text-sm font-bold">$12,450</div>
+      <div className="w-full h-full flex flex-col p-5 gap-5 bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] rounded-2xl shadow-inner overflow-hidden relative border border-white/50">
+        <div className="absolute inset-0 bg-noise opacity-[0.03]"></div>
+        <div className="flex gap-4 relative z-10">
+           <div className="h-20 flex-1 bg-white/80 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-4 flex flex-col justify-center">
+             <div className="flex justify-between items-center mb-1">
+               <div className="text-[9px] text-black/40 font-bold tracking-widest uppercase">Revenue</div>
+               <div className="w-5 h-5 rounded bg-green-50 text-green-600 flex items-center justify-center text-[10px]">↗</div>
+             </div>
+             <div className="text-xl font-bold tracking-tight">$12,450<span className="text-[11px] text-black/30 font-medium ml-1">.00</span></div>
            </div>
-           <div className="h-16 flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-3 flex flex-col justify-center">
-             <div className="text-[8px] text-black/40 font-bold mb-1 tracking-wider">NEW LEADS</div>
-             <div className="text-sm font-bold">48</div>
+           <div className="h-20 flex-1 bg-white/80 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-4 flex flex-col justify-center">
+             <div className="flex justify-between items-center mb-1">
+               <div className="text-[9px] text-black/40 font-bold tracking-widest uppercase">New Leads</div>
+               <div className="w-5 h-5 rounded bg-blue-50 text-blue-600 flex items-center justify-center text-[10px]">+</div>
+             </div>
+             <div className="text-xl font-bold tracking-tight">48<span className="text-[11px] text-black/30 font-medium ml-1">this week</span></div>
            </div>
-           <div className="h-16 flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-3 flex flex-col justify-center">
-             <div className="text-[8px] text-black/40 font-bold mb-1 tracking-wider">CONVERSION</div>
-             <div className="text-sm font-bold text-green-600">24.5%</div>
+           <div className="h-20 flex-1 bg-black text-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/80 p-4 flex flex-col justify-center relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full blur-xl -mr-4 -mt-4"></div>
+             <div className="flex justify-between items-center mb-1 relative z-10">
+               <div className="text-[9px] text-white/50 font-bold tracking-widest uppercase">Conversion</div>
+             </div>
+             <div className="text-xl font-bold tracking-tight relative z-10">24.5%</div>
            </div>
         </div>
-        <div className="flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-4 flex items-end gap-2 px-6">
-           {[30, 50, 40, 70, 60, 90, 80, 65, 85, 95].map((h, i) => (
-             <div key={i} className="flex-1 bg-black/90 rounded-t-sm" style={{ height: `${h}%` }} />
-           ))}
+        <div className="flex-1 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-6 flex flex-col relative z-10">
+           <div className="flex justify-between items-center mb-4">
+             <div className="text-sm font-bold text-black">Growth Analytics</div>
+             <div className="flex gap-2">
+                <div className="w-2 h-2 rounded-full bg-black"></div>
+                <div className="w-2 h-2 rounded-full bg-black/20"></div>
+             </div>
+           </div>
+           <div className="flex-1 flex items-end gap-3 px-2 pb-2">
+             {[30, 50, 40, 70, 60, 90, 80, 65, 85, 100].map((h, i) => (
+               <div key={i} className="flex-1 relative group h-full flex items-end">
+                 <div className="w-full bg-black/5 absolute inset-0 rounded-t-sm" />
+                 <motion.div 
+                   initial={{ height: 0 }}
+                   whileInView={{ height: `${h}%` }}
+                   viewport={{ once: true }}
+                   transition={{ duration: 1, delay: i * 0.05, type: "spring" }}
+                   className={`w-full rounded-t-sm z-10 ${i === 9 ? 'bg-blue-600' : 'bg-black/80 group-hover:bg-black transition-colors'}`} 
+                 />
+                 {i === 9 && (
+                   <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-bold py-1 px-2 rounded-md whitespace-nowrap shadow-lg">Target</div>
+                 )}
+               </div>
+             ))}
+           </div>
         </div>
       </div>
     );
@@ -414,24 +525,78 @@ const ShowcaseMockup = ({ index }: { index: number }) => {
   if (index === 1) {
     // Lead Pipeline (Kanban board)
     return (
-      <div className="w-full h-full flex gap-3 p-4 bg-[#f8f9fa] rounded-2xl">
-         {['Lead In', 'Contact Made', 'Proposal', 'Won'].map((stage, i) => (
-           <div key={i} className="flex-1 bg-black/[0.03] rounded-xl p-3 flex flex-col gap-3">
-             <div className="text-[10px] font-bold text-black/60 uppercase tracking-wide">{stage}</div>
-             <div className="bg-white p-3 rounded-lg shadow-sm border border-black/5">
-                <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold mb-2 ${i===3 ? 'bg-green-100 text-green-600' : 'bg-blue-100 text-blue-600'}`}>A</div>
-                <div className="h-2 w-16 bg-black/20 rounded-full mb-1.5" />
-                <div className="h-1.5 w-10 bg-black/10 rounded-full" />
-             </div>
-             {i % 2 === 0 && (
-               <div className="bg-white p-3 rounded-lg shadow-sm border border-black/5">
-                  <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold mb-2 ${i===3 ? 'bg-green-100 text-green-600' : 'bg-purple-100 text-purple-600'}`}>B</div>
-                  <div className="h-2 w-12 bg-black/20 rounded-full mb-1.5" />
-                  <div className="h-1.5 w-14 bg-black/10 rounded-full" />
-               </div>
-             )}
+      <div className="w-full h-full flex flex-col bg-[#F3F4F6] rounded-2xl p-5 border border-white/60 shadow-inner relative overflow-hidden">
+         <div className="flex justify-between items-center mb-6">
+           <div className="text-sm font-bold text-black flex items-center gap-2">
+             <svg className="w-4 h-4 text-black/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" /></svg>
+             Sales Pipeline
            </div>
-         ))}
+           <div className="flex gap-2">
+             <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-[12px] font-bold shadow-sm">+</div>
+           </div>
+         </div>
+         <div className="flex-1 flex gap-4 overflow-x-auto pb-2 custom-scrollbar">
+           {[
+             { name: 'Lead In', count: 12, color: 'bg-blue-500' },
+             { name: 'Contact Made', count: 8, color: 'bg-yellow-500' },
+             { name: 'Proposal', count: 4, color: 'bg-orange-500' },
+             { name: 'Won', count: 24, color: 'bg-green-500' }
+           ].map((stage, i) => (
+             <div key={i} className="flex-1 min-w-[200px] bg-black/[0.02] rounded-xl p-3 flex flex-col gap-3 border border-black/[0.03]">
+               <div className="flex justify-between items-center">
+                 <div className="text-[10px] font-bold text-black/70 uppercase tracking-widest flex items-center gap-1.5">
+                   <div className={`w-1.5 h-1.5 rounded-full ${stage.color}`}></div>
+                   {stage.name}
+                 </div>
+                 <div className="text-[10px] bg-black/5 px-1.5 py-0.5 rounded text-black/50 font-bold">{stage.count}</div>
+               </div>
+               
+               <motion.div 
+                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }}
+                 className="bg-white p-3 rounded-xl shadow-[0_2px_10px_rgb(0,0,0,0.02)] border border-black/5 cursor-pointer hover:shadow-md transition-shadow group"
+               >
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex items-center gap-1">
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold ${i===3 ? 'bg-green-100 text-green-600' : 'bg-blue-100 text-blue-600'}`}>
+                        {['A', 'J', 'S', 'W'][i]}
+                      </div>
+                      <div className="text-[11px] font-bold text-black ml-1 group-hover:text-blue-600 transition-colors">
+                        {['Acme Corp', 'Jenkins LLC', 'Stark Ind', 'Wayne Ent'][i]}
+                      </div>
+                    </div>
+                    <div className="text-[10px] font-bold text-black/40">${(i*12 + 5).toFixed(1)}k</div>
+                  </div>
+                  <div className="text-[9px] text-black/40 font-medium mb-3">Website redesign and SEO optimization.</div>
+                  <div className="flex gap-1 justify-end">
+                    <div className="text-[8px] px-1.5 py-0.5 rounded bg-black/5 text-black/50 font-bold">{['High', 'Med', 'High', 'Low'][i]} Priority</div>
+                  </div>
+               </motion.div>
+               
+               {i % 2 === 0 && (
+                 <motion.div 
+                   initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 + 0.1 }}
+                   className="bg-white p-3 rounded-xl shadow-[0_2px_10px_rgb(0,0,0,0.02)] border border-black/5 cursor-pointer hover:shadow-md transition-shadow group"
+                 >
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="flex items-center gap-1">
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold bg-purple-100 text-purple-600`}>
+                          {['Q', 'B', 'X', 'D'][i]}
+                        </div>
+                        <div className="text-[11px] font-bold text-black ml-1 group-hover:text-purple-600 transition-colors">
+                          {['Quantum', 'Beta PLC', 'Xavier', 'Delta'][i]}
+                        </div>
+                      </div>
+                      <div className="text-[10px] font-bold text-black/40">${(i*5 + 2).toFixed(1)}k</div>
+                    </div>
+                    <div className="text-[9px] text-black/40 font-medium mb-3">Mobile app development phase 1.</div>
+                    <div className="flex gap-1 justify-end">
+                      <div className="text-[8px] px-1.5 py-0.5 rounded bg-black/5 text-black/50 font-bold">Med Priority</div>
+                    </div>
+                 </motion.div>
+               )}
+             </div>
+           ))}
+         </div>
       </div>
     );
   }
@@ -439,35 +604,71 @@ const ShowcaseMockup = ({ index }: { index: number }) => {
   if (index === 2) {
     // Automation Builder
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center p-4 relative bg-[#f8f9fa] rounded-2xl">
-         {/* Lines */}
-         <div className="absolute top-1/2 left-1/4 right-[35%] h-[2px] bg-black/10 -translate-y-1/2 z-0" />
-         <div className="absolute top-[35%] bottom-1/2 right-[35%] w-[2px] bg-black/10 z-0" />
-         <div className="absolute top-1/2 bottom-[35%] right-[35%] w-[2px] bg-black/10 z-0" />
-         <div className="absolute top-[35%] right-[15%] left-[65%] h-[2px] bg-black/10 z-0" />
-         <div className="absolute bottom-[35%] right-[15%] left-[65%] h-[2px] bg-black/10 z-0" />
+      <div className="w-full h-full flex flex-col p-6 relative bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-2xl overflow-hidden border border-white/10 shadow-inner">
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:24px_24px] z-0" />
          
-         <div className="flex w-full items-center justify-between z-10 px-8">
-            <div className="w-24 bg-white rounded-xl shadow-md border border-black/5 p-4 flex flex-col items-center gap-2">
-               <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 text-lg">⚡</div>
-               <div className="text-[9px] font-bold text-center">New Lead</div>
-            </div>
-            
-            <div className="w-24 bg-white rounded-xl shadow-md border border-black/5 p-4 flex flex-col items-center gap-2">
-               <div className="w-8 h-8 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-500 text-lg">⏳</div>
-               <div className="text-[9px] font-bold text-center">Wait 1 Day</div>
-            </div>
-            
-            <div className="flex flex-col gap-10">
-               <div className="w-24 bg-white rounded-xl shadow-md border border-black/5 p-4 flex flex-col items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 text-lg">✉️</div>
-                  <div className="text-[9px] font-bold text-center">Send Email</div>
+         <div className="flex justify-between items-center mb-8 relative z-10">
+           <div className="text-sm font-bold text-white flex items-center gap-2">
+             <svg className="w-4 h-4 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+             Workflow Automation
+           </div>
+           <div className="px-3 py-1 bg-blue-500/20 text-blue-400 text-[10px] font-bold rounded-full border border-blue-500/30">Active</div>
+         </div>
+         
+         {/* Animated Lines SVG */}
+         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.1))' }}>
+           <motion.path 
+             d="M 120 120 L 250 120 L 250 180" 
+             fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="2" strokeDasharray="4 4" 
+             animate={{ strokeDashoffset: [0, -20] }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+           />
+           <motion.path 
+             d="M 250 200 L 250 260 L 320 260" 
+             fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="2" strokeDasharray="4 4" 
+             animate={{ strokeDashoffset: [0, -20] }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+           />
+           <motion.path 
+             d="M 250 200 L 250 260 L 180 260" 
+             fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="2" strokeDasharray="4 4" 
+             animate={{ strokeDashoffset: [0, -20] }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+           />
+         </svg>
+         
+         <div className="flex-1 w-full relative z-10 mt-6 md:mt-0 flex justify-center items-center">
+            {/* Trigger */}
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="absolute -translate-y-20 -translate-x-32 md:-translate-x-40 w-48 bg-black/60 backdrop-blur-md rounded-xl shadow-xl border border-white/10 p-4">
+               <div className="flex items-center gap-3 mb-2">
+                 <div className="w-8 h-8 rounded-lg bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400">⚡</div>
+                 <div className="text-[11px] font-bold text-white">Trigger Event</div>
                </div>
-               <div className="w-24 bg-white rounded-xl shadow-md border border-black/5 p-4 flex flex-col items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-green-500 text-[12px] font-bold">SMS</div>
-                  <div className="text-[9px] font-bold text-center">Send Text</div>
+               <div className="text-[10px] text-white/50">When a new inquiry is submitted via the primary website form.</div>
+            </motion.div>
+            
+            {/* Condition */}
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="absolute w-44 bg-black/60 backdrop-blur-md rounded-xl shadow-xl border border-white/10 p-3 ml-12">
+               <div className="flex items-center gap-3">
+                 <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold">IF</div>
+                 <div className="text-[10px] font-bold text-white leading-tight">Budget &ge; $5k<br/><span className="text-white/40 font-normal">Check condition</span></div>
                </div>
-            </div>
+            </motion.div>
+            
+            {/* True Path */}
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute translate-y-24 translate-x-32 md:translate-x-48 w-44 bg-black/60 backdrop-blur-md rounded-xl shadow-xl border border-white/10 p-3 flex flex-col items-center">
+               <div className="absolute -top-3 bg-green-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">True</div>
+               <div className="w-8 h-8 rounded-lg bg-green-500/20 border border-green-500/30 flex items-center justify-center text-green-400 mb-2">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+               </div>
+               <div className="text-[11px] font-bold text-white text-center">Assign to Sales</div>
+            </motion.div>
+            
+            {/* False Path */}
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} className="absolute translate-y-24 -translate-x-20 md:-translate-x-16 w-44 bg-black/60 backdrop-blur-md rounded-xl shadow-xl border border-white/10 p-3 flex flex-col items-center">
+               <div className="absolute -top-3 bg-red-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">False</div>
+               <div className="w-8 h-8 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-2">
+                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+               </div>
+               <div className="text-[11px] font-bold text-white text-center">Add to Newsletter</div>
+            </motion.div>
          </div>
       </div>
     );
@@ -476,51 +677,77 @@ const ShowcaseMockup = ({ index }: { index: number }) => {
   if (index === 3) {
     // Client Management
     return (
-      <div className="w-full h-full flex p-4 gap-4 bg-[#f8f9fa] rounded-2xl">
-         <div className="w-1/3 bg-white rounded-xl shadow-sm border border-black/5 p-3 flex flex-col gap-2">
-            <div className="h-8 bg-black/5 rounded-md flex border border-black/5 items-center px-3 mb-2">
-              <div className="w-3 h-3 border border-black/30 rounded-full mr-2" />
-              <div className="h-1.5 w-16 bg-black/20 rounded-full" />
+      <div className="w-full h-full flex p-5 gap-5 bg-[#FAF9F6] rounded-2xl border border-black/5 shadow-inner">
+         <div className="w-[35%] bg-white rounded-xl shadow-[0_2px_15px_rgba(0,0,0,0.03)] border border-black/5 p-4 flex flex-col">
+            <div className="relative mb-5">
+              <input readOnly className="h-9 w-full rounded-lg bg-black/5 border-none px-4 pl-9 text-[10px] text-black/50 outline-none" placeholder="Search contacts..." />
+              <svg className="absolute left-3 top-2.5 w-4 h-4 text-black/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </div>
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className={`flex items-center gap-3 p-2 rounded-lg ${i === 2 ? 'bg-black/5' : ''}`}>
-                 <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-black/10 to-black/5 flex items-center justify-center text-[10px] font-bold text-black/40">U{i}</div>
-                 <div>
-                   <div className="h-2 w-20 bg-black/30 rounded-full mb-1.5" />
-                   <div className="h-1.5 w-12 bg-black/20 rounded-full" />
-                 </div>
-              </div>
-            ))}
+            <div className="flex flex-col gap-2 overflow-y-auto custom-scrollbar flex-1 pr-1">
+              {[
+                { name: 'John Doe', comp: 'Global Tech', img: '11' },
+                { name: 'Sarah Connor', comp: 'Cyberdyne', img: '44' },
+                { name: 'Bruce Wayne', comp: 'Wayne Ent', img: '55' },
+                { name: 'Tony Stark', comp: 'Stark Ind', img: '68' },
+                { name: 'Peter Parker', comp: 'Daily Bugle', img: '12' }
+              ].map((user, i) => (
+                <div key={i} className={`flex items-center gap-3 p-2.5 rounded-xl cursor-pointer transition-colors ${i === 0 ? 'bg-blue-50 border border-blue-100 shadow-sm' : 'hover:bg-black/5 border border-transparent'}`}>
+                   <Image src={`https://i.pravatar.cc/150?img=${user.img}`} alt={user.name} width={32} height={32} className="rounded-full shadow-sm" />
+                   <div>
+                     <div className={`text-[11px] font-bold ${i === 0 ? 'text-blue-900' : 'text-black'}`}>{user.name}</div>
+                     <div className={`text-[9px] font-semibold ${i === 0 ? 'text-blue-500' : 'text-black/40'}`}>{user.comp}</div>
+                   </div>
+                </div>
+              ))}
+            </div>
          </div>
-         <div className="flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-6 flex flex-col">
-            <div className="flex items-center gap-4 mb-6 border-b border-black/5 pb-6">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-blue-100 to-purple-100 flex items-center justify-center font-bold text-xl text-blue-600">JD</div>
-              <div>
-                <div className="text-base font-bold text-black">John Doe</div>
-                <div className="text-[11px] font-bold text-black/40 uppercase tracking-wider mt-1">CEO at Global Tech</div>
+         <div className="flex-1 bg-white rounded-xl shadow-[0_2px_15px_rgba(0,0,0,0.03)] border border-black/5 p-6 flex flex-col relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-blue-50 to-purple-50 z-0" />
+            
+            <div className="flex items-center justify-between mb-8 pb-6 relative z-10 border-b border-black/5">
+              <div className="flex items-end gap-4">
+                <div className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-md ring-4 ring-white border border-black/10">
+                  <Image src="https://i.pravatar.cc/150?img=11" alt="John Doe" fill className="object-cover" />
+                </div>
+                <div className="pb-1">
+                  <div className="text-xl font-bold text-black tracking-tight leading-none mb-1">John Doe</div>
+                  <div className="text-[11px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full inline-block">CEO @ Global Tech</div>
+                </div>
               </div>
             </div>
-            <div className="flex-1 flex flex-col gap-4">
-               <div className="text-[10px] font-bold text-black/40 tracking-wider">ACTIVITY LOG</div>
-               <div className="flex gap-4">
-                 <div className="w-2 h-full rounded-full flex flex-col items-center py-2 relative">
-                   <div className="w-2 h-2 rounded-full bg-blue-500 z-10" />
-                   <div className="w-px h-16 bg-black/10 absolute top-4" />
-                 </div>
-                 <div className="flex-1 bg-black/[0.03] rounded-lg p-3 border border-black/5">
-                   <div className="text-xs font-bold mb-1">Email Sent</div>
-                   <div className="text-[10px] font-semibold text-black/50">Proposal attached. Waiting for reply.</div>
-                 </div>
-               </div>
-               <div className="flex gap-4">
-                 <div className="w-2 h-full rounded-full flex flex-col items-center py-2 relative">
-                   <div className="w-2 h-2 rounded-full bg-green-500 z-10" />
-                   <div className="w-px h-16 bg-black/10 absolute top-4" />
-                 </div>
-                 <div className="flex-1 bg-black/[0.03] rounded-lg p-3 border border-black/5">
-                   <div className="text-xs font-bold mb-1">Call Completed</div>
-                   <div className="text-[10px] font-semibold text-black/50">Discussed Q3 targets and budget.</div>
-                 </div>
+            
+            <div className="flex-1 flex flex-col">
+               <div className="text-[10px] font-bold text-black/40 tracking-widest uppercase mb-4">Activity Timeline</div>
+               <div className="flex flex-col gap-5 relative z-10">
+                  
+                  <div className="flex gap-4 group">
+                    <div className="flex flex-col items-center">
+                      <div className="w-7 h-7 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center text-xs shadow-sm ring-4 ring-white z-10 relative">✉️</div>
+                      <div className="w-px h-12 bg-black/10 -mt-2 group-hover:bg-blue-200 transition-colors" />
+                    </div>
+                    <div className="flex-1 bg-[#F8FAFC] rounded-xl p-3 border border-black/5 group-hover:border-blue-100 transition-colors shadow-sm relative top-1">
+                      <div className="flex justify-between items-center mb-1">
+                         <div className="text-[11px] font-bold text-black">Proposal Sent</div>
+                         <div className="text-[9px] text-black/40 font-semibold">Today, 2:40 PM</div>
+                      </div>
+                      <div className="text-[10px] text-black/60 font-medium">Attached PDF document for Q3 retainer scope.</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4 group">
+                    <div className="flex flex-col items-center">
+                      <div className="w-7 h-7 rounded-full bg-green-50 text-green-500 flex items-center justify-center text-xs shadow-sm ring-4 ring-white z-10 relative">📞</div>
+                      <div className="w-px h-12 bg-black/10 -mt-2 group-hover:bg-green-200 transition-colors" />
+                    </div>
+                    <div className="flex-1 bg-[#F8FAFC] rounded-xl p-3 border border-black/5 group-hover:border-green-100 transition-colors shadow-sm relative top-1">
+                      <div className="flex justify-between items-center mb-1">
+                         <div className="text-[11px] font-bold text-black">Discovery Call</div>
+                         <div className="text-[9px] text-black/40 font-semibold">Yesterday, 10:00 AM</div>
+                      </div>
+                      <div className="text-[10px] text-black/60 font-medium">Discussed main pain points regarding their scattered lead tracking.</div>
+                    </div>
+                  </div>
+                  
                </div>
             </div>
          </div>
@@ -530,39 +757,68 @@ const ShowcaseMockup = ({ index }: { index: number }) => {
 
   // Analytics Panel
   return (
-    <div className="w-full h-full p-4 flex flex-col gap-4 bg-[#f8f9fa] rounded-2xl">
-      <div className="flex gap-4 h-1/2">
-        <div className="flex-[2] bg-white rounded-xl shadow-sm border border-black/5 p-5 flex flex-col">
-           <div className="text-[10px] font-bold text-black/40 mb-4 tracking-wider">TRAFFIC SOURCES</div>
+    <div className="w-full h-full p-5 flex flex-col gap-5 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-2xl border border-white/10 shadow-inner overflow-hidden relative">
+      <div className="absolute inset-0 bg-noise opacity-[0.05]"></div>
+      <div className="absolute right-0 top-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]"></div>
+      
+      <div className="flex justify-between items-center mb-2 relative z-10 px-2">
+        <div className="text-sm font-bold text-white flex items-center gap-2">
+          <svg className="w-4 h-4 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+          Advanced Analytics
+        </div>
+        <div className="flex gap-2">
+          <div className="px-3 py-1 bg-white/10 border border-white/10 text-white/80 text-[10px] font-bold rounded-lg cursor-pointer hover:bg-white/20 transition-colors">Export CSV</div>
+        </div>
+      </div>
+
+      <div className="flex gap-5 h-[40%] relative z-10">
+        <div className="flex-[2] bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-5 flex flex-col relative overflow-hidden group">
+           <div className="text-[10px] font-bold text-white/50 mb-1 tracking-widest uppercase">Traffic Overview</div>
+           <div className="text-2xl font-bold text-white mb-4">42.8k <span className="text-[12px] text-green-400 ml-2">↑ 14.5%</span></div>
            <div className="flex-1 flex items-end gap-2 relative overflow-hidden rounded-md">
-             <svg className="absolute inset-0 w-full h-full preserve-3d overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
-               <path d="M0,80 Q25,30 50,60 T100,20 L100,100 L0,100 Z" fill="rgba(0,0,0,0.05)" />
-               <path d="M0,80 Q25,30 50,60 T100,20" fill="none" stroke="black" strokeWidth="2" />
+             <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+               <path d="M0,80 Q10,60 25,70 T50,40 T75,50 T100,10 L100,100 L0,100 Z" fill="url(#gradientChart)" />
+               <path d="M0,80 Q10,60 25,70 T50,40 T75,50 T100,10" fill="none" stroke="#60A5FA" strokeWidth="2" className="group-hover:stroke-blue-400 transition-colors" />
+               <defs>
+                 <linearGradient id="gradientChart" x1="0" y1="0" x2="0" y2="1">
+                   <stop offset="0%" stopColor="rgba(96,165,250,0.4)" />
+                   <stop offset="100%" stopColor="rgba(96,165,250,0)" />
+                 </linearGradient>
+               </defs>
              </svg>
            </div>
         </div>
-        <div className="flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center text-center">
-           <div className="text-[10px] font-bold text-black/40 mb-4 tracking-wider self-start">USER SPLIT</div>
-           <div className="relative w-28 h-28">
+        
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-5 flex flex-col items-center justify-center text-center relative group overflow-hidden">
+           <div className="text-[10px] font-bold text-white/50 mb-4 tracking-widest uppercase absolute top-5 left-5">Device Split</div>
+           <div className="relative w-28 h-28 mt-4 group-hover:scale-105 transition-transform duration-500">
              <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
-               <circle cx="50" cy="50" r="40" fill="transparent" stroke="rgba(0,0,0,0.05)" strokeWidth="16" />
-               <circle cx="50" cy="50" r="40" fill="transparent" stroke="black" strokeWidth="16" strokeDasharray="251.2" strokeDashoffset="62.8" strokeLinecap="round" />
+               <circle cx="50" cy="50" r="40" fill="transparent" stroke="rgba(255,255,255,0.05)" strokeWidth="12" />
+               <motion.circle initial={{ strokeDashoffset: 251.2 }} whileInView={{ strokeDashoffset: 62.8 }} viewport={{ once:true }} transition={{ duration: 1.5, ease: "easeOut" }} cx="50" cy="50" r="40" fill="transparent" stroke="#A78BFA" strokeWidth="12" strokeDasharray="251.2" strokeLinecap="round" />
              </svg>
              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-sm font-bold">75%</span>
-                <span className="text-[8px] font-bold text-black/40">MOBILE</span>
+                <span className="text-xl font-bold text-white tracking-tighter">75%</span>
+                <span className="text-[8px] font-bold text-white/40">MOBILE</span>
              </div>
            </div>
         </div>
       </div>
-      <div className="flex gap-4 h-1/2">
-         {[1, 2, 3].map((i) => (
-           <div key={i} className="flex-1 bg-white rounded-xl shadow-sm border border-black/5 p-4 flex flex-col justify-end relative overflow-hidden">
-             <div className="absolute top-4 left-4 text-[9px] font-bold text-black/40 tracking-wider uppercase">METRIC 0{i}</div>
-             <div className="text-2xl font-bold mb-2">{((i * 1.5 % 3) + 2).toFixed(1)}k</div>
-             <div className="h-10 w-full flex items-end gap-1 px-1">
-               {[...Array(12)].map((_, j) => (
-                 <div key={j} className="flex-1 bg-black/10 rounded-t-[2px] transition-all duration-500 hover:bg-black/30" style={{ height: `${20 + ((i + j) * 17) % 80}%` }} />
+      
+      <div className="flex gap-5 h-[40%] relative z-10">
+         {[
+           { label: 'Avg Session', value: '04:12', trend: '+12s', arr: [30, 40, 35, 60, 50, 80, 70, 90] },
+           { label: 'Bounce Rate', value: '32.4%', trend: '-2.1%', arr: [90, 80, 75, 60, 65, 50, 45, 30] },
+           { label: 'Convers', value: '8.2%', trend: '+1.4%', arr: [10, 20, 15, 30, 40, 55, 65, 80] }
+         ].map((metric, i) => (
+           <div key={i} className="flex-1 bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/10 p-5 flex flex-col relative overflow-hidden group">
+             <div className="text-[9px] font-bold text-white/50 tracking-widest uppercase relative z-10">{metric.label}</div>
+             <div className="flex items-end gap-2 mt-1 relative z-10">
+               <div className="text-2xl font-bold text-white">{metric.value}</div>
+               <div className={`text-[10px] font-bold pb-1 ${i === 1 ? 'text-green-400' : 'text-green-400'}`}>{metric.trend}</div>
+             </div>
+             <div className="h-16 w-full flex items-end gap-1 px-1 mt-auto relative z-10">
+               {metric.arr.map((h, j) => (
+                 <motion.div initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once:true }} transition={{ delay: i*0.1 + j*0.05 }} key={j} className="flex-1 bg-white/20 rounded-t-[2px] group-hover:bg-white/40 transition-colors" />
                ))}
              </div>
            </div>
