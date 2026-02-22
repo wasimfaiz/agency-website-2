@@ -80,12 +80,6 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
             <NavLink href="/blogs" isScrolled={useDarkTheme}>
               Blogs
             </NavLink>
-            <NavLink href="/#testimonials" isScrolled={useDarkTheme}>
-              Testimonials
-            </NavLink>
-            <NavLink href="/#contact" isScrolled={useDarkTheme}>
-              Contact
-            </NavLink>
           </nav>
           <div className="flex items-center gap-3">
             <Link
@@ -154,12 +148,6 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
         </Link>
         <Link className="block py-2 transition hover:text-black" href="/blogs">
           Blogs
-        </Link>
-        <Link className="block py-2 transition hover:text-black" href="/#testimonials">
-          Testimonials
-        </Link>
-        <Link className="block py-2 transition hover:text-black" href="/#contact">
-          Contact
         </Link>
       </div>
     </>
