@@ -93,8 +93,8 @@ export default function AboutPage() {
             <p className="text-2xl leading-relaxed text-white/80 md:text-3xl">
                 We blend high-end aesthetics with rock-solid engineering. Our process is a chaotic mix of art, math, psychology, and code, distilled into something pure.
             </p>
-            <div className="relative aspect-video w-full overflow-hidden rounded-2xl grayscale transition-all duration-500 hover:grayscale-0">
-                <Image src="/about_photo.png" alt="Team" fill className="object-cover" />
+            <div className="relative aspect-square md:aspect-[4/3] lg:aspect-[4/5] w-full flex-shrink-0 overflow-hidden rounded-2xl grayscale transition-all duration-500 hover:grayscale-0">
+                <Image src="/about_photo.png" alt="Team" fill className="object-cover object-top" />
             </div>
         </div>
       </section>
