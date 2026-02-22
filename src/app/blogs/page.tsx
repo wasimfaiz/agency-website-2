@@ -13,7 +13,7 @@ const DUMMY_BLOGS = [
     id: 1,
     title: "The Future of Automation in CRM",
     excerpt: "Discover how AI-driven workflows are transforming customer relationship management, saving hours of manual data entry while increasing conversion rates.",
-    date: "Oct 24, 2025",
+    date: "Feb 23, 2026",
     readTime: "5 min read",
     category: "Technology",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
@@ -113,7 +113,7 @@ export default function BlogsPage() {
               >
                  {/* Image */}
                  <div className="w-full md:w-5/12 aspect-[4/3] rounded-2xl overflow-hidden relative bg-black/5 flex-shrink-0 cursor-pointer">
-                    <Link href={`#`}>
+                    <Link href={`/blogs/${blog.id}`}>
                       <Image 
                         src={blog.image} 
                         alt={blog.title} 
@@ -135,7 +135,7 @@ export default function BlogsPage() {
                     </div>
 
                     {/* Title */}
-                    <Link href={`#`}>
+                    <Link href={`/blogs/${blog.id}`}>
                       <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-4 md:mb-6 leading-[1.15] group-hover:text-black/70 transition-colors duration-500">
                          {blog.title}
                       </h2>
@@ -147,7 +147,7 @@ export default function BlogsPage() {
                     </p>
 
                     {/* Read More Link */}
-                    <Link href={`#`} className="inline-flex items-center gap-3 text-sm font-bold text-black uppercase tracking-wider overflow-hidden group/link self-start">
+                    <Link href={`/blogs/${blog.id}`} className="inline-flex items-center gap-3 text-sm font-bold text-black uppercase tracking-wider overflow-hidden group/link self-start">
                        <span className="relative pb-1">
                          Read Article
                          <span className="absolute left-0 bottom-0 w-full h-[1px] bg-black origin-left scale-x-100 group-hover/link:scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
