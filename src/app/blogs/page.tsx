@@ -13,7 +13,7 @@ const DUMMY_BLOGS = [
     id: 1,
     title: "The Future of Automation in CRM",
     excerpt: "Discover how AI-driven workflows are transforming customer relationship management, saving hours of manual data entry while increasing conversion rates.",
-    date: "Feb 23, 2026",
+    date: "Feb 22, 2026",
     readTime: "5 min read",
     category: "Technology",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
@@ -22,7 +22,7 @@ const DUMMY_BLOGS = [
     id: 2,
     title: "Mastering Client Communication",
     excerpt: "A deep dive into the strategies that keep clients engaged and satisfied, turning one-time buyers into lifelong advocates for your brand.",
-    date: "Feb 24, 2026",
+    date: "Feb 23, 2026",
     readTime: "7 min read",
     category: "Strategy",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
@@ -31,7 +31,7 @@ const DUMMY_BLOGS = [
     id: 3,
     title: "Scaling Your Agency: The First 100 Days",
     excerpt: "What to focus on when you are just starting out. Moving from freelance hustle to a structured agency model requires a shift in mindset.",
-    date: "Oct 12, 2025",
+    date: "Feb 24, 2026",
     readTime: "8 min read",
     category: "Business",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"

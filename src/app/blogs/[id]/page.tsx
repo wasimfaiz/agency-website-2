@@ -37,7 +37,7 @@ export default function BlogPostPage(props: Props) {
               <span className="w-1 h-1 rounded-full bg-black/20" />
               <span>Technology</span>
               <span className="w-1 h-1 rounded-full bg-black/20" />
-              <span>Fab 23, 2026</span>
+              <span>Feb 22, 2026</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-black leading-[1.1] mb-8">
@@ -333,7 +333,7 @@ export default function BlogPostPage(props: Props) {
               <span className="w-1 h-1 rounded-full bg-black/20" />
               <span>Strategy</span>
               <span className="w-1 h-1 rounded-full bg-black/20" />
-              <span>Feb 24, 2026</span>
+              <span>Feb 23, 2026</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-black leading-[1.1] mb-8">
@@ -647,6 +647,373 @@ export default function BlogPostPage(props: Props) {
                     <span className="bg-black/5 px-3 py-1.5 rounded-md">how to keep clients happy</span>
                     <span className="bg-black/5 px-3 py-1.5 rounded-md">client relationship management</span>
                     <span className="bg-black/5 px-3 py-1.5 rounded-md">reduce client churn</span>
+                 </div>
+              </div>
+           </motion.div>
+        </section>
+
+        <Footer />
+      </main>
+    );
+  } else if (id === "3") {
+    return (
+      <main className="min-h-screen bg-[#FCFCFC] selection:bg-black selection:text-white pb-20">
+        <Navbar forceDarkAtTop={true} />
+
+        {/* Hero Section */}
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-black/40 mb-6">
+              <Link href="/blogs" className="hover:text-black transition-colors flex items-center gap-2">
+                <FiArrowLeft /> Back to Blogs
+              </Link>
+              <span className="w-1 h-1 rounded-full bg-black/20" />
+              <span>Business</span>
+              <span className="w-1 h-1 rounded-full bg-black/20" />
+              <span>Feb 24, 2026</span>
+            </div>
+            
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-black leading-[1.1] mb-8">
+              Scaling Your Agency: The First 100 Days — From Freelance Hustle to Structured Business
+            </h1>
+            
+            <div className="flex items-center gap-4 mb-12">
+               <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/10">
+                 <Image src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" alt="Author" fill className="object-cover" />
+               </div>
+               <div>
+                  <p className="text-sm font-bold text-black tracking-wider uppercase">Priya Sharma</p>
+                  <p className="text-[11px] font-medium text-black/40 tracking-widest uppercase">Agency Growth Lead</p>
+               </div>
+            </div>
+            
+            <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden relative bg-black/5 flex-shrink-0 mb-16 shadow-2xl">
+               <Image 
+                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Scaling Your Agency" 
+                 fill 
+                 className="object-cover"
+                 priority
+               />
+               <div className="absolute inset-0 bg-black/10" />
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Content Section */}
+        <section className="px-6 md:px-12 max-w-3xl mx-auto">
+           <motion.div 
+             initial={{ opacity: 0, y: 40 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+             className="text-black/80 font-light"
+           >
+              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">Introduction: The Moment Everything Has to Change</h2>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                There is a precise moment every successful freelancer encounters — and almost none of them are prepared for it.
+              </p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                Your client roster is full. Your referrals are reliable. Your income is consistent. By every visible metric, things are working. But instead of feeling successful, you feel trapped. Every new opportunity requires more of your time, and your time is already completely spoken for. Growth has become structurally impossible.
+              </p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed font-medium">This is the ceiling of the freelance model. And it is the starting line of the agency.</p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                The transition from freelance hustle to structured agency isn't simply a matter of hiring a few contractors or updating your LinkedIn headline. It requires a fundamental shift in how you think about your role, your business, your clients, and your time. The entrepreneurs who navigate this transition successfully do so not because they worked harder — but because they thought differently and built smarter.
+              </p>
+              <p className="text-lg md:text-xl mb-12 leading-relaxed">
+                The first 100 days set the trajectory for everything that follows. This guide will show you exactly what to focus on, what to build, and what to let go of — so you can make those days count.
+              </p>
+
+              <hr className="border-black/10 my-16" />
+
+              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">The Core Mindset Shift: From Operator to Architect</h2>
+              <p className="text-lg mb-6 leading-relaxed">
+                Before any tactical advice is useful, one foundational shift must occur — and resisting it is the most common reason agency transitions fail.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed">
+                 As a freelancer, your value was entirely personal. Clients hired <em>you</em> — your skills, your taste, your execution. Your business and your identity were essentially the same thing. That model has a hard ceiling, because it scales only as far as your personal hours allow.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed">
+                 As an agency owner, your value becomes systemic. You are no longer the primary producer of work — you are the architect of a system that produces excellent work reliably, without requiring your constant presence at every step.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed">
+                 This shift is uncomfortable for most high-performing freelancers. You built your reputation on the quality of your personal output. Delegating that output to others feels like a risk to the brand you've spent years constructing. That instinct is understandable — and it must be actively managed, because it will hold you back at every stage of growth if left unchecked.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed font-medium text-black">
+                The agency owner's job is not to do the work. It is to build the machine that does the work — and then to lead that machine strategically.
+              </p>
+              <p className="text-lg mb-12 leading-relaxed">
+                 Every decision in your first 100 days should be filtered through this lens.
+              </p>
+              
+              <hr className="border-black/10 my-16" />
+
+              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">Phase 1: Days 1–30 — Build the Foundation Before You Build the Team</h2>
+
+              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Define Your Agency's Positioning With Precision</h3>
+              <p className="text-lg mb-6 leading-relaxed">
+                The single most consequential decision you will make in the first 30 days is not who to hire or what to charge — it is deciding, with ruthless specificity, who your agency serves and what problem it solves.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                 Generalist agencies are extraordinarily difficult to scale. They compete on price, attract inconsistent clients, and struggle to build repeatable operational systems because every engagement is structurally different. Specialized agencies command premium rates, attract better-fit clients, generate stronger referrals, and build operational systems that compound in efficiency over time.
+              </p>
+              
+              <div className="bg-black/5 p-8 rounded-2xl mb-10 border border-black/10">
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-black mb-6">Your positioning statement should answer three questions without ambiguity:</h4>
+                 <ul className="space-y-4 text-lg">
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>Who is your ideal client</strong> — defined not just by industry but by company size, growth stage, annual revenue, team structure, and the specific pain points that make them ready to buy?</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>What specific outcome do you reliably deliver</strong> for that client — not a list of services, but a defined, measurable business result?</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>Why is your agency the credible, differentiated choice</strong> for delivering that outcome — your methodology, your track record, your team's unique expertise?</li>
+                 </ul>
+              </div>
+              <p className="text-lg mb-12 leading-relaxed">
+                 Spend the time to answer these questions precisely. Everything downstream — your pricing, your hiring, your sales process, your service delivery — will be built on this foundation. A weak positioning statement produces a weak agency.
+              </p>
+
+              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Formalize Your Business Infrastructure</h3>
+              <p className="text-lg mb-6 leading-relaxed">
+                Freelancers routinely operate with minimal business infrastructure — informal agreements, personal bank accounts, ad hoc invoicing. An agency requires a different standard from day one, both for legal protection and for the professional credibility that attracts quality clients and talent.
+              </p>
+              <div className="space-y-4 mb-8 pl-4 border-l-2 border-black/10 text-lg">
+                 <p><strong>A formal legal entity</strong> — LLC or S-Corp depending on your jurisdiction and tax situation. Consult a business attorney if you have not already.</p>
+                 <p><strong>A dedicated business banking account</strong> entirely separate from personal finances.</p>
+                 <p><strong>Professionally drafted contract templates</strong> covering scope of work, intellectual property ownership, payment terms, revision limits, and termination clauses.</p>
+                 <p><strong>A business insurance policy</strong> — general liability at minimum, professional liability (errors and omissions) strongly recommended for service businesses.</p>
+                 <p><strong>A clean, professional invoicing and accounting system.</strong> For small agencies, QuickBooks, FreshBooks, or Wave are all appropriate starting points.</p>
+              </div>
+              <p className="text-lg mb-12 leading-relaxed">
+                These are not administrative details. They are the structural signals that distinguish a professional agency from an informal freelance arrangement — signals that matter enormously to the clients and employees you will need to attract.
+              </p>
+
+              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Select Your Core Technology Stack</h3>
+              <p className="text-lg mb-6 leading-relaxed">
+                 Your agency's operational efficiency in the first 100 days and beyond will be determined largely by the SaaS tools you select and how disciplined you are in using them. Choose your stack deliberately — tool proliferation is as damaging as tool absence.
+              </p>
+              
+              <div className="overflow-hidden bg-white border border-black/10 rounded-2xl mb-12 shadow-xl shadow-black/5">
+                <div className="overflow-x-auto w-full">
+                  <table className="min-w-full text-left border-collapse text-sm md:text-base">
+                    <thead>
+                      <tr className="bg-black text-white">
+                        <th className="py-5 px-6 font-medium tracking-wide uppercase text-xs">Function</th>
+                        <th className="py-5 px-6 font-medium tracking-wide uppercase text-xs">Tool Example</th>
+                        <th className="py-5 px-6 font-medium tracking-wide uppercase text-xs">Why It's Essential</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-black/10 text-black/70">
+                      <tr className="hover:bg-black/5 transition-colors">
+                        <td className="py-5 px-6 font-medium text-black">Project Management</td>
+                        <td className="py-5 px-6">ClickUp, Asana</td>
+                        <td className="py-5 px-6">Centralizes client work, deadlines, and team communication</td>
+                      </tr>
+                      <tr className="hover:bg-black/5 transition-colors">
+                        <td className="py-5 px-6 font-medium text-black">CRM</td>
+                        <td className="py-5 px-6">HubSpot CRM</td>
+                        <td className="py-5 px-6">Systematically documents prospect interactions and proposals</td>
+                      </tr>
+                      <tr className="hover:bg-black/5 transition-colors">
+                        <td className="py-5 px-6 font-medium text-black">Client Portal</td>
+                        <td className="py-5 px-6">Copilot, Notion</td>
+                        <td className="py-5 px-6">Professional environment for clients to track deliverables</td>
+                      </tr>
+                      <tr className="hover:bg-black/5 transition-colors">
+                        <td className="py-5 px-6 font-medium text-black">Finance & Invoicing</td>
+                        <td className="py-5 px-6">QuickBooks, FreshBooks</td>
+                        <td className="py-5 px-6">Automates invoicing and profitability reporting by client</td>
+                      </tr>
+                      <tr className="hover:bg-black/5 transition-colors">
+                        <td className="py-5 px-6 font-medium text-black">Communication</td>
+                        <td className="py-5 px-6">Slack, Zoom</td>
+                        <td className="py-5 px-6">Internal coordination and client-facing calls</td>
+                      </tr>
+                      <tr className="hover:bg-black/5 transition-colors">
+                        <td className="py-5 px-6 font-medium text-black">Proposal Software</td>
+                        <td className="py-5 px-6">PandaDoc, Proposify</td>
+                        <td className="py-5 px-6">Converts proposals at measurably higher rates with e-signatures</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="text-lg mb-16 leading-relaxed">
+                 Integrate these tools from the start. A connected operational stack is an agency's infrastructure — it is what allows a small team to deliver with the consistency and professionalism of a much larger organization.
+              </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">Phase 2: Days 31–60 — Build Your Systems Before You Scale Your Team</h2>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Document Everything Before You Delegate Anything</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  The most expensive mistake early-stage agency owners make is hiring before their operational systems exist. When processes live only in the founder's head, every new hire requires extensive one-on-one training, produces inconsistent output, and generates client-facing errors that damage your reputation at exactly the moment you're trying to establish it.
+               </p>
+               <p className="text-lg mb-8 leading-relaxed">
+                  The second 30 days of your agency transition should be spent systematically documenting the processes that produce your core deliverables.
+               </p>
+               <div className="bg-black/5 p-8 rounded-2xl mb-12">
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-black/60 mb-6">What needs to be documented</h4>
+                 <ul className="space-y-4 text-lg">
+                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-black/40" /> <strong>Your client onboarding process</strong> — from signed contract to first deliverable, every step mapped and assigned.</li>
+                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-black/40" /> <strong>Your service delivery workflow</strong> — the repeatable sequence of actions that produces your agency's core output to a consistent standard.</li>
+                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-black/40" /> <strong>Your quality control process</strong> — how work is reviewed, by whom, against what criteria, before it reaches a client.</li>
+                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-black/40" /> <strong>Your client communication protocols</strong> — reporting templates, update cadences, escalation procedures.</li>
+                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-black/40" /> <strong>Your sales process</strong> — from initial inquiry to signed contract, every stage of the pipeline defined.</li>
+                 </ul>
+              </div>
+              <p className="text-lg mb-12 leading-relaxed">
+                 Tools like Notion or Loom (for screen-recorded process walkthroughs) are particularly effective for building an agency knowledge base that new team members can onboard from independently. When your systems are documented, delegation becomes safe. Until they are, every hire is a liability.
+              </p>
+
+              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Build Your Pricing Model for Profitability — Not Just Revenue</h3>
+              <p className="text-lg mb-6 leading-relaxed">
+                 Freelancers typically price on an hourly or per-project basis — a model that makes personal income sense but is fundamentally incompatible with agency growth. Hourly billing commoditizes your time, rewards inefficiency, and makes revenue impossible to predict or scale.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                 Agencies that scale successfully make one of two pricing transitions: <strong>retainer-based pricing</strong> or <strong>value-based pricing</strong> — ideally both.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                 <strong>Retainer pricing</strong> converts project-based clients into monthly recurring revenue. This is the single most impactful financial change you can make in the first 100 days. Predictable monthly revenue allows you to hire with confidence, invest in systems, and plan growth with real data rather than optimism.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                 <strong>Value-based pricing</strong> disconnects your fees entirely from time and anchors them to the business outcome you deliver. An agency that generates $200,000 in incremental revenue for a client has a fundamentally different pricing conversation than one charging $5,000 for a marketing campaign. Develop the ability to quantify your impact in your client's financial terms — and price accordingly.
+              </p>
+              <p className="text-lg mb-12 leading-relaxed font-medium">
+                 Review every current client engagement through this lens. Identify which relationships can be transitioned to retainer structures and begin those conversations during this phase.
+              </p>
+
+              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Make Your First Strategic Hires</h3>
+              <p className="text-lg mb-6 leading-relaxed">
+                 With your systems documented and your pricing restructured, you are now ready to hire — but strategically, not reactively.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed">
+                 Your first hire as an agency owner should not be someone who does exactly what you do. It should be someone who covers your most significant operational weakness, freeing your capacity for the activities only you can perform: business development, client relationships, and strategic direction.
+              </p>
+              <div className="space-y-4 mb-8 pl-4 border-l-2 border-black/10 text-lg">
+                 <p>If your bottleneck is <strong>execution capacity</strong> — you have more client work than you can personally deliver — hire a skilled practitioner in your core service area.</p>
+                 <p>If your bottleneck is <strong>operational management</strong> — project coordination, client communication, and administrative tasks are consuming your strategic time — hire an account manager or operations coordinator.</p>
+                 <p>If your bottleneck is <strong>new business development</strong> — your pipeline is inconsistent because you're too consumed with delivery to sell — hire a part-time business development specialist or fractional sales professional.</p>
+              </div>
+              <p className="text-lg mb-16 leading-relaxed">
+                 In the first 100 days, contractors and fractional hires are almost always more appropriate than full-time employees. They provide capacity without fixed overhead while your revenue base stabilizes.
+              </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">Phase 3: Days 61–100 — Build the Pipeline and Establish the Brand</h2>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Construct a Repeatable Client Acquisition System</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Freelancers acquire clients through reputation and referrals — a model that works until it doesn't, and provides almost no control over timing, volume, or client quality. An agency requires a more engineered approach to new business development.
+               </p>
+               <p className="text-lg mb-8 leading-relaxed">
+                  In days 61 through 100, your priority is building a client acquisition system with multiple reliable inputs.
+               </p>
+               <ul className="list-disc pl-6 space-y-4 mb-12 text-lg text-black/80">
+                 <li><strong className="text-black">Referral Program:</strong> Formalize what was previously informal. Define clear referral incentives, communicate them to your existing client base, and create a frictionless process for clients to make introductions. A structured referral program typically generates 20–40% of early-stage agency revenue.</li>
+                 <li><strong className="text-black">Content Authority:</strong> Publish authoritative content — blog posts, LinkedIn articles, case studies, and thought leadership pieces — that demonstrate your agency's expertise to your exact target client. Content compounds over time.</li>
+                 <li><strong className="text-black">Strategic Partnerships:</strong> Identify businesses that serve your ideal client but don't compete with you — accountants, business coaches, complementary agencies, software vendors — and build formal referral partnerships.</li>
+                 <li><strong className="text-black">Outbound Prospecting:</strong> Build a targeted prospect list of companies that match your ideal client profile and implement a structured, value-first outreach sequence.</li>
+               </ul>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Define Your Agency's Brand Identity and Market Presence</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  In the freelance model, your personal reputation is your brand. In the agency model, your brand must exist independently of you — it needs to be visible, credible, and compelling to clients who have never heard of you personally. Days 61 through 100 are the appropriate time to invest in the external signals of professional credibility.
+               </p>
+               <div className="space-y-4 mb-8 pl-4 border-l-2 border-black/10 text-lg">
+                  <p><strong>A professional website</strong> that leads with client outcomes — not a service list, not an about page, but evidence of results like case studies.</p>
+                  <p><strong>A consistent LinkedIn presence</strong> for both the agency and the founding team.</p>
+                  <p><strong>A defined visual identity</strong> — professional logo, consistent color palette, typography — applied consistently.</p>
+                  <p><strong>A clear, compelling articulation</strong> of your agency's positioning statement.</p>
+               </div>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Credibility signals accumulate. Every piece of content published, every case study documented, every professional presentation delivered is an investment in the brand authority that will drive inbound interest for years ahead.
+               </p>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">Establish Metrics and Review Cadences</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Agencies that scale sustainably do so on the basis of data — not instinct. Before your first 100 days conclude, establish the operational and financial dashboards that will guide every strategic decision going forward.
+               </p>
+               <ul className="list-disc pl-6 space-y-4 mb-16 text-lg text-black/80">
+                 <li><strong className="text-black">Revenue Metrics:</strong> MRR, total pipeline value, average contract value, and revenue concentration risk.</li>
+                 <li><strong className="text-black">Operational Metrics:</strong> Project profitability by client, utilization rate by team member.</li>
+                 <li><strong className="text-black">Client Health Metrics:</strong> Client retention rate, NPS scores, and active referral relationships.</li>
+                 <li><strong className="text-black">Sales Metrics:</strong> Lead volume by source, proposal conversion rate, average sales cycle length.</li>
+               </ul>
+
+              <hr className="border-black/10 my-16" />
+              
+               <div className="bg-black/5 p-10 rounded-3xl mb-16 shadow-inner border border-black/10">
+                  <h3 className="text-2xl font-light tracking-tight mb-8 text-black">The 100-Day Agency Launch Checklist</h3>
+                  <div className="space-y-6">
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Days 1–30 — Foundation</h4>
+                        <ul className="list-disc pl-5 text-black/70 space-y-1">
+                           <li>Define positioning: ideal client, core outcome, differentiated value</li>
+                           <li>Establish legal entity, banking, contracts, and insurance</li>
+                           <li>Select and configure core SaaS tech stack</li>
+                           <li>Transition current pricing toward retainer and value-based models</li>
+                        </ul>
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Days 31–60 — Systems</h4>
+                        <ul className="list-disc pl-5 text-black/70 space-y-1">
+                           <li>Document all core operational processes</li>
+                           <li>Build client onboarding and communication protocols</li>
+                           <li>Make first strategic hire or contractor engagement</li>
+                           <li>Conduct retainer conversion conversations with top current clients</li>
+                        </ul>
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Days 61–100 — Growth</h4>
+                        <ul className="list-disc pl-5 text-black/70 space-y-1">
+                           <li>Launch formal referral program with existing clients</li>
+                           <li>Publish first three authoritative content pieces</li>
+                           <li>Build strategic partnership pipeline</li>
+                           <li>Activate outbound prospecting sequence</li>
+                           <li>Establish operational and financial reporting dashboards</li>
+                           <li>Finalize agency website with case studies and positioning</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+
+              <hr className="border-black/10 my-16" />
+
+              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">Conclusion: The Agency You Build in 100 Days Is the Agency You'll Scale for Years</h2>
+              <p className="text-lg mb-6 leading-relaxed">
+                The first 100 days of your agency are not simply a startup phase — they are the moment when structural habits, operational discipline, and strategic clarity are either embedded or neglected. What gets built here, or left unbuilt, shapes everything that follows.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed">
+                The freelancers who make this transition successfully share a common characteristic: they resist the instinct to keep doing what made them successful as individuals, and instead invest their energy in building the systems, teams, and brand that will make their agency successful as a business.
+              </p>
+              
+              {/* CTA */}
+              <div className="bg-black text-white p-10 md:p-14 rounded-3xl mt-16 mb-16 text-center shadow-2xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-white/5 blur-3xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
+                <h3 className="text-3xl font-light tracking-tighter mb-4 relative z-10">Ready to build the operational foundation your agency needs to scale?</h3>
+                <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
+                  Book a demo today to see how our platform helps early-stage agencies systematize client management, automate workflows, and grow with confidence from day one.
+                </p>
+                <Link href="/contact" className="relative z-10 inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                  Book a Demo
+                </Link>
+              </div>
+
+              {/* Tags Section */}
+              <div className="pt-8 border-t border-black/10">
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-black/40 mb-4">Target Keywords</h4>
+                 <div className="flex flex-wrap gap-2 text-xs font-bold font-mono tracking-tight text-black/60">
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">scaling your agency</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">freelance to agency transition</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">agency first 100 days</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">how to start an agency</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">SaaS tools for agencies</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">agency mindset</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">agency owner tips</span>
                  </div>
               </div>
            </motion.div>
