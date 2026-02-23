@@ -40,7 +40,7 @@ const DUMMY_BLOGS = [
     id: 4,
     title: "Why Minimalist Design Converts Better",
     excerpt: "Less is more. Learn how reducing cognitive load on your landing pages can significantly improve user experience and boost conversion rates.",
-    date: "Oct 05, 2025",
+    date: "Feb 26, 2026",
     readTime: "4 min read",
     category: "Design",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"

@@ -1022,6 +1022,336 @@ export default function BlogPostPage(props: Props) {
         <Footer />
       </main>
     );
+  } else if (id === "4") {
+    return (
+      <main className="min-h-screen bg-[#FCFCFC] selection:bg-black selection:text-white pb-20">
+        <Navbar forceDarkAtTop={true} />
+
+        {/* Hero Section */}
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-black/40 mb-6">
+              <Link href="/blogs" className="hover:text-black transition-colors flex items-center gap-2">
+                <FiArrowLeft /> Back to Blogs
+              </Link>
+              <span className="w-1 h-1 rounded-full bg-black/20" />
+              <span>Design</span>
+              <span className="w-1 h-1 rounded-full bg-black/20" />
+              <span>Feb 26, 2026</span>
+            </div>
+            
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-black leading-[1.1] mb-8">
+              Why Minimalist Design Converts Better: How Reducing Cognitive Load Transforms Landing Page Performance
+            </h1>
+            
+            <div className="flex items-center gap-4 mb-12">
+               <div className="w-12 h-12 rounded-full overflow-hidden relative bg-black/10">
+                 <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" alt="Author" fill className="object-cover" />
+               </div>
+               <div>
+                  <p className="text-sm font-bold text-black tracking-wider uppercase">Aditi Sharma</p>
+                  <p className="text-[11px] font-medium text-black/40 tracking-widest uppercase">Lead UX Designer</p>
+               </div>
+            </div>
+            
+            <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden relative bg-black/5 flex-shrink-0 mb-16 shadow-2xl">
+               <Image 
+                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" 
+                 alt="Minimalist Design Converts Better" 
+                 fill 
+                 className="object-cover"
+                 priority
+               />
+               <div className="absolute inset-0 bg-black/10" />
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Content Section */}
+        <section className="px-6 md:px-12 max-w-3xl mx-auto">
+           <motion.div 
+             initial={{ opacity: 0, y: 40 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+             className="text-black/80 font-light"
+           >
+              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">Introduction: The Most Common Conversion Killer Is Already on Your Website</h2>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                You invested in the traffic. The ads are running, the SEO is working, and visitors are landing on your page. But they're not converting. They browse for a few seconds, then they leave — and you're not entirely sure why.
+              </p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                In most cases, the answer isn't your offer. It isn't your price point. It isn't even your copy.
+              </p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed font-medium">It's the design.</p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                Specifically, it's a design that asks too much of the visitor — too many choices, too much information, too many competing visual elements all demanding attention at once. The result is a phenomenon called <strong>cognitive overload</strong>, and it is quietly destroying conversion rates on thousands of websites every single day.
+              </p>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                 The solution isn't a more elaborate redesign. It's the opposite. Minimalist design — the deliberate stripping away of everything that doesn't serve the conversion — is one of the highest-leverage, most evidence-backed strategies in digital marketing. Companies that embrace it don't just improve aesthetics. They measurably improve revenue.
+              </p>
+              <p className="text-lg md:text-xl mb-12 leading-relaxed">
+                 In this guide, we'll break down exactly why minimalist design converts better, what cognitive load actually means in practice, and the specific design principles you can implement today to build landing pages that turn visitors into customers.
+              </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">What Is Cognitive Load — And Why It's Destroying Your Conversions</h2>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Cognitive load is a concept from educational psychology, introduced by researcher John Sweller in the 1980s, that describes the total amount of mental effort required to process information at any given moment. The human brain has a finite working memory — it can only hold and process a limited amount of information simultaneously before it becomes overwhelmed.
+               </p>
+               <p className="text-lg mb-8 leading-relaxed">
+                  When cognitive load exceeds that threshold, something predictable happens: the brain defaults to the path of least resistance. On a website, that path is almost always the back button.
+               </p>
+               
+               <div className="bg-black/5 p-8 rounded-2xl mb-10 border border-black/10">
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-black mb-6">In web design terms, cognitive load is created by:</h4>
+                 <ul className="space-y-4 text-lg">
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>Visual clutter</strong> — too many images, icons, colours, and design elements competing for attention simultaneously.</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>Decision overload</strong> — multiple CTAs, navigation links, and options presented without a clear priority hierarchy.</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>Information density</strong> — lengthy paragraphs, excessive feature lists, and data-heavy content presented without visual breathing room.</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> <strong>Inconsistency</strong> — fonts, colours, and layouts that vary across sections, forcing the brain to continuously reorient rather than flow naturally through the page.</li>
+                 </ul>
+              </div>
+              <p className="text-lg mb-8 leading-relaxed">
+                 Every one of these elements costs the visitor mental energy. And in an environment where a visitor's decision to stay or leave is made in under three seconds, that energy is the most precious resource on your page.
+              </p>
+              <p className="text-lg mb-12 leading-relaxed font-medium">
+                 Minimalist design is the systematic elimination of cognitive load — keeping only what moves the visitor one step closer to conversion, and ruthlessly removing everything else.
+              </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">The Data Behind Minimalist Design and Conversion Rates</h2>
+               <p className="text-lg mb-6 leading-relaxed">
+                  This isn't a design philosophy grounded in aesthetic preference. It is a conversion strategy backed by measurable evidence.
+               </p>
+               <div className="space-y-6 mb-12 pl-4 border-l-2 border-black/10 text-lg text-black/80">
+                  <p><strong>Google's research</strong> into website aesthetics found that users form opinions about a website's visual appeal in as little as <strong>50 milliseconds</strong> — and that simpler, lower visual complexity designs are consistently rated as more attractive and trustworthy. A separate study found that websites with high visual complexity have significantly higher bounce rates.</p>
+                  <p><strong>HubSpot's landing page research</strong> found that pages with <strong>a single, focused call to action convert up to 371% better</strong> than pages with multiple competing CTAs.</p>
+                  <p><strong>Unbounce's Conversion Benchmark Report</strong> consistently shows that landing pages with shorter, cleaner copy and fewer navigation options outperform their content-heavy counterparts across virtually every industry.</p>
+                  <p><strong>Microsoft's eye-tracking research</strong> confirms that users scan web pages in predictable F-shaped and Z-shaped patterns — and that visual clutter disrupts these natural reading flows, causing users to miss even the most important content on a page.</p>
+               </div>
+               <p className="text-xl mb-12 leading-relaxed font-medium text-black">
+                  The evidence is consistent and compelling: <strong>simpler pages convert better</strong> — not occasionally, not marginally, but significantly and reliably.
+               </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">7 Minimalist Design Principles That Directly Improve Conversion Rates</h2>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">1. One Page, One Goal — The Single Conversion Objective Principle</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  The most fundamental rule of high-converting minimalist design is architectural: every landing page should have exactly one conversion goal, and every element on that page should serve that goal exclusively.
+               </p>
+               <p className="text-lg mb-6 leading-relaxed">
+                  This sounds straightforward. In practice, it is the principle most frequently violated. Agency landing pages that attempt to simultaneously capture email subscribers, promote a free trial, showcase three different service packages, and invite visitors to book a discovery call are not providing options — they are creating paralysis. When visitors face multiple competing choices of equal visual weight, they frequently make no choice at all.
+               </p>
+               <p className="text-lg font-bold text-black mb-2">How to implement it:</p>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Audit every CTA on your current landing pages. If you have more than one primary action being requested, consolidate. Every secondary link — navigation menus, related blog posts, social media icons in the header — is a potential exit point that competes with your conversion goal. Consider removing or minimizing all navigation on standalone landing pages. The visitor arrived with a specific intent. Your page's only job is to fulfill that intent and convert it.
+               </p>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">2. Whitespace Is Not Wasted Space — It Is a Conversion Tool</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Whitespace — the empty, unoccupied space between design elements — is the most misunderstood and most underutilized tool in conversion-focused design. Clients frequently push back on it, perceiving empty space as wasted real estate. This instinct, while understandable, is empirically wrong.
+               </p>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Whitespace serves three critical conversion functions. It directs visual attention — early studies show increasing whitespace around text and interface elements improved comprehension by <strong>20%</strong>. It signals quality and credibility — generous use of whitespace is consistently associated with premium brands. Lastly, it reduces cognitive load directly by literally giving the brain space to process each element independently.
+               </p>
+               <p className="text-lg font-bold text-black mb-2">How to implement it:</p>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Increase the line height, paragraph spacing, and padding around your primary headline and CTA button. Add meaningful section breaks between content areas rather than stacking elements tightly. Resist the instinct to fill every available pixel — the space itself is doing essential conversion work.
+               </p>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">3. Establish a Visual Hierarchy That Guides — Not Overwhelms</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Minimalist design does not mean equal design. The most effective minimalist landing pages have a clear, deliberate visual hierarchy — a structured sequence of emphasis that guides the visitor's eye through the page in exactly the order the conversion requires.
+               </p>
+               <p className="text-lg mb-6 leading-relaxed">
+                  A professional visual hierarchy follows a predictable structure: the primary headline captures attention. Supporting subheadlines provide context. Social proof elements build credibility. The CTA button is the final, visually dominant action step. Every element on the page should have a clear rank in this hierarchy. When everything is bold, nothing is emphatic.
+               </p>
+               <p className="text-lg font-bold text-black mb-2">How to implement it:</p>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Limit your primary headline to a single, large, high-contrast typographic treatment. Use size, weight, and colour contrast to establish a clear three-tier hierarchy: primary (headline and CTA), secondary (supporting copy and key benefits), tertiary (fine print, policy links, secondary navigation).
+               </p>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">4. Limit Your Colour Palette to Eliminate Visual Noise</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Colour is one of the most potent tools in a designer's arsenal. Landing pages that employ five, six, or seven colours create visual noise that fatigues the eye and dilutes the impact of every individual element, including the CTA.
+               </p>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Minimalist, high-converting design works within a tightly constrained colour palette: typically one primary brand colour, one accent colour reserved exclusively for CTAs and high-priority actions, and neutrual background tones. When a single accent colour is used only for CTA buttons, it trains the visitor's eye to seek and respond to that colour.
+               </p>
+               <p className="text-lg font-bold text-black mb-2">How to implement it:</p>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Audit your current landing page colour usage. If your CTA button colour appears anywhere else on the page, change either the CTA or the competing uses. Apply your accent colour with discipline — it should feel slightly surprising when the visitor encounters it.
+               </p>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">5. Typography Clarity Is Conversion Currency</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Typography decisions made in the name of brand personality — decorative fonts, low-contrast text, small body copy — consistently undermine readability and conversion rates. Visitors who struggle to read your copy do not persist. They leave.
+               </p>
+               <div className="bg-black/5 p-8 rounded-2xl mb-8 border border-black/10">
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-black mb-6">The typographic standards that serve conversion:</h4>
+                 <ul className="space-y-4 text-lg">
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> Use a maximum of two font families — one for headlines, one for body copy.</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> Ensure body text is a minimum of 16px.</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> Maintain a contrast ratio of at least 4.5:1 between text and background.</li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-black/40 flex-shrink-0" /> Avoid fully justified text alignment in body copy.</li>
+                 </ul>
+              </div>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">6. Minimize Form Fields to the Absolute Necessary Minimum</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  If your conversion goal involves a form, minimizing fields is one of the highest-leverage opportunities to directly improve conversion rates. Every additional field you ask a visitor to complete introduces friction.
+               </p>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Unbounce's research found that reducing form fields from four to three increased conversions by <strong>50%</strong>. Expedia famously increased annual revenue by <strong>$12 million</strong> by removing a single unnecessary form field.
+               </p>
+               <p className="text-lg font-bold text-black mb-2">How to implement it:</p>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Ask for only what is absolutely necessary to initiate the next step. You do not need job title, company size, annual revenue, and phone number upfront if they can be collected in a demo call itself. Use single-column form layouts instead of multi-column forms to reduce cognitive load, especially on mobile devices.
+               </p>
+
+               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-black">7. Mobile-First Minimalism Is Non-Negotiable</h3>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Minimalist design and mobile-first design are not parallel strategies — they are the same strategy. The constraints of the mobile screen size — limited real estate, touch-based navigation, variable connection speeds — demand the exact same discipline that minimalist design applies universally.
+               </p>
+               <p className="text-lg mb-6 leading-relaxed">
+                  Fewer images, scripts, and decorative elements contribute to faster load times. According to Google, <strong>each one-second delay in mobile page load time reduces conversions by up to 20%</strong>.
+               </p>
+               <p className="text-lg font-bold text-black mb-2">How to implement it:</p>
+               <p className="text-lg mb-12 leading-relaxed">
+                  Design for mobile first and scale up to desktop — not the reverse. Ensure all tap targets are a minimum of 44x44 pixels. Prioritize page speed by compressing images, minimizing JavaScript, and leveraging browser caching.
+               </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">Real-World Minimalist Design Wins: What the Data Shows</h2>
+               <div className="grid grid-cols-1 gap-8 mb-16">
+                  <div className="bg-white border border-black/10 p-8 rounded-2xl shadow-sm">
+                     <h4 className="text-xl font-medium text-black mb-4">Basecamp</h4>
+                     <p className="text-lg text-black/80 leading-relaxed">
+                        Redesigned their homepage to a single-focus layout with one headline, one CTA, and minimal supporting copy. The result was a significant lift in trial signups that the company's founders have referenced publicly as one of their most impactful growth decisions.
+                     </p>
+                  </div>
+                  <div className="bg-white border border-black/10 p-8 rounded-2xl shadow-sm">
+                     <h4 className="text-xl font-medium text-black mb-4">Slack</h4>
+                     <p className="text-lg text-black/80 leading-relaxed">
+                        Slack's early landing pages were famously simple — a single value proposition, a single email capture field, and a clean visual demonstration of the product. This minimalist approach supported their extraordinary growth from zero to $1 billion in ARR in five years.
+                     </p>
+                  </div>
+                  <div className="bg-white border border-black/10 p-8 rounded-2xl shadow-sm">
+                     <h4 className="text-xl font-medium text-black mb-4">Dropbox</h4>
+                     <p className="text-lg text-black/80 leading-relaxed">
+                        Built one of the most studied minimalist landing pages in SaaS history — a single headline, a 2-minute explainer video, and one CTA. Their waitlist grew from 5,000 to 75,000 overnight after launching this page.
+                     </p>
+                  </div>
+               </div>
+               <p className="text-xl mb-12 leading-relaxed font-medium text-black text-center">
+                  The pattern is consistent: the pages that convert best aren't the most elaborate or the most information-dense. They are the ones that make the visitor's decision the easiest, fastest, and most obvious next step.
+               </p>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">How to Audit Your Current Landing Page for Cognitive Load</h2>
+               <p className="text-lg mb-8 leading-relaxed">
+                  Before implementing a redesign, conduct a structured cognitive load audit of your existing landing pages using this framework:
+               </p>
+               <ul className="list-disc pl-6 space-y-4 mb-12 text-lg text-black/80">
+                 <li><strong className="text-black">The Five-Second Test:</strong> Show your landing page to someone unfamiliar with your business for exactly five seconds, then ask them: what does this company do, who is it for, and what should I do next? If they cannot answer all three questions, your page has a cognitive load problem.</li>
+                 <li><strong className="text-black">The CTA Count:</strong> Count every clickable element on your page. Every one is a competing conversion path. Anything above five to seven total clickable elements on a focused landing page warrants scrutiny.</li>
+                 <li><strong className="text-black">The Scroll Depth Analysis:</strong> Use a tool like Hotjar or Microsoft Clarity to analyze how far visitors actually scroll. If the majority of visitors leave before reaching your primary CTA, the content above it is creating too much cognitive friction.</li>
+                 <li><strong className="text-black">The Mobile Reality Check:</strong> Open your landing page on your personal smartphone and attempt to complete the conversion action yourself. Note every moment of friction or confusion. Each one is a conversion leak.</li>
+               </ul>
+
+              <hr className="border-black/10 my-16" />
+
+               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-black">Building Your Minimalist Landing Page: A Practical Framework</h2>
+               <div className="bg-black/5 p-10 rounded-3xl mb-16 shadow-inner border border-black/10">
+                  <div className="space-y-6">
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Above the fold</h4>
+                        <p className="text-lg text-black/70 leading-relaxed">
+                           A single, benefit-focused headline (10 words or fewer). A brief subheadline. One primary CTA button in your accent colour. Optional: a single supporting visual that reinforces the headline.
+                        </p>
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Social proof section</h4>
+                        <p className="text-lg text-black/70 leading-relaxed">
+                           Three to five customer testimonials or logos of recognizable clients. Specific, quantified results where possible. No decorative elements; let the proof speak.
+                        </p>
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Benefits section</h4>
+                        <p className="text-lg text-black/70 leading-relaxed">
+                           Three to four key benefits presented as brief, scannable statements. Outcome-focused language. Each benefit illustrated with a single icon or a sentence of supporting copy.
+                        </p>
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Repeated CTA</h4>
+                        <p className="text-lg text-black/70 leading-relaxed">
+                           The same CTA from above the fold, repeated — with identical copy and design — at the natural end of the page. Avoid introducing a new action.
+                        </p>
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-black uppercase tracking-widest text-sm mb-3">Minimal footer</h4>
+                        <p className="text-lg text-black/70 leading-relaxed">
+                           Legal links, privacy policy, and contact information. Nothing that invites the visitor to leave the page before converting.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+
+              <hr className="border-black/10 my-16" />
+
+              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-black">Conclusion: Simplicity Is a Strategic Decision, Not a Design Preference</h2>
+              <p className="text-lg mb-6 leading-relaxed">
+                 The most important insight in conversion-focused design is also the most counterintuitive: your landing page's job is not to communicate everything about your business. It is to remove every obstacle between a motivated visitor and a single, clear action.
+              </p>
+              <p className="text-lg mb-6 leading-relaxed">
+                 Every element you add to a page has a cost — the cognitive effort required to process it. Every element you remove returns that cost to the visitor as attention, focus, and momentum toward your conversion goal. Minimalism, in this context, is not an aesthetic preference. It is a strategic decision to invest the visitor's limited attention in exactly one place.
+              </p>
+              <p className="text-lg mb-8 leading-relaxed font-bold text-black">
+                 The agencies and SaaS businesses that build this discipline into their design process consistently outperform their more elaborate competitors. Less isn't just more. Less is more revenue.
+              </p>
+              
+              {/* CTA */}
+              <div className="bg-black text-white p-10 md:p-14 rounded-3xl mt-16 mb-16 text-center shadow-2xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-white/5 blur-3xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
+                <h3 className="text-3xl font-light tracking-tighter mb-4 relative z-10">Ready to see how a cleaner, smarter platform can help?</h3>
+                <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
+                  Book a demo with our team and let's show you exactly what's possible for your high-converting client experiences.
+                </p>
+                <Link href="/contact" className="relative z-10 inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                  Book a Demo
+                </Link>
+              </div>
+
+              {/* Tags Section */}
+              <div className="pt-8 border-t border-black/10">
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-black/40 mb-4">Target Keywords</h4>
+                 <div className="flex flex-wrap gap-2 text-xs font-bold font-mono tracking-tight text-black/60">
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">minimalist design</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">cognitive load</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">landing page optimization</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">conversion rate optimization</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">CRO</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">UX design</span>
+                    <span className="bg-black/5 px-3 py-1.5 rounded-md">web design for conversions</span>
+                 </div>
+              </div>
+           </motion.div>
+        </section>
+
+        <Footer />
+      </main>
+    );
   }
 
   // Fallback for other blogs
