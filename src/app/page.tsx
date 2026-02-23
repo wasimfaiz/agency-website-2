@@ -6,6 +6,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import AboutSection from "../components/AboutSection";
 import Image from "next/image";
 import FeaturedProjects from "../components/FeaturedProjects";
+import FAQSection from "../components/FAQSection";
 import Footer from "../components/Footer";
 
 const industries = ["D2C", "SaaS", "AI-focused", "Technology"];
@@ -531,6 +532,9 @@ export default function Home() {
 
         {/* PROJECTS SECTION */}
         <FeaturedProjects />
+
+        {/* FAQ SECTION */}
+        <FAQSection />
 
         {/* CONTACT SECTION */}
         <section
