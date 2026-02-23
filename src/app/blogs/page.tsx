@@ -22,7 +22,7 @@ const DUMMY_BLOGS = [
     id: 2,
     title: "Mastering Client Communication",
     excerpt: "A deep dive into the strategies that keep clients engaged and satisfied, turning one-time buyers into lifelong advocates for your brand.",
-    date: "Oct 18, 2025",
+    date: "Feb 24, 2026",
     readTime: "7 min read",
     category: "Strategy",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
