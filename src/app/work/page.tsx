@@ -206,43 +206,83 @@ export default function WorkPage() {
       <Navbar forceDarkAtTop={true} />
 
       {/* --- HERO: Setting the Scene --- */}
-      <section className="min-h-[100dvh] flex flex-col items-center justify-center relative px-6 pt-40">
-          <div className="text-center space-y-10 max-w-5xl z-10 relative">
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="font-mono text-sm uppercase tracking-[0.5em] text-black/40"
+      <section className="min-h-[100dvh] flex flex-col items-center justify-center relative px-6 pt-32 pb-32">
+          {/* Background Ambient Glow */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+              <motion.div 
+                  animate={{ 
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 90, 0]
+                  }}
+                  transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+                  className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-gradient-to-tr from-purple-200/40 to-indigo-100/40 blur-[80px] rounded-full" 
+              />
+              <motion.div 
+                  animate={{ 
+                      scale: [1, 1.2, 1],
+                      rotate: [0, -90, 0]
+                  }}
+                  transition={{ duration: 25, ease: "linear", repeat: Infinity }}
+                  className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[1000px] max-h-[1000px] bg-gradient-to-bl from-orange-100/40 to-rose-100/40 blur-[100px] rounded-full" 
+              />
+              <div className="absolute inset-0 bg-[#FCFCFC]/40 backdrop-blur-[100px]" />
+          </div>
+
+          <div className="text-center space-y-8 max-w-5xl z-10 relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1, duration: 0.8 }}
+                className="inline-block px-5 py-2 rounded-full border border-black/10 bg-white/50 backdrop-blur-md mb-4 shadow-sm"
               >
-                  Our Philosophy
-              </motion.p>
+                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-black/60">
+                      Our Philosophy
+                  </p>
+              </motion.div>
               
               <motion.h1 
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[clamp(3rem,8vw,8rem)] font-heading font-bold leading-[1.1] tracking-tighter"
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="text-[clamp(3.5rem,8vw,8.5rem)] font-heading font-extrabold leading-[0.9] tracking-tighter text-black"
               >
                   We don't just build websites. <br/>
-                  <span className="text-black/30 italic font-serif">We craft legacies.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/30 to-black/70 italic font-serif font-light">We craft legacies.</span>
               </motion.h1>
               
               <motion.p
-                 initial={{ opacity: 0 }}
-                 animate={{ opacity: 1 }}
-                 transition={{ delay: 0.8 }}
-                 className="text-xl text-black/60 max-w-2xl mx-auto leading-relaxed"
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.8, duration: 0.8 }}
+                 className="text-lg md:text-2xl text-black/50 max-w-2xl mx-auto leading-relaxed font-light mt-8"
               >
                   Every project is a story waiting to be told. A narrative of problem-solving, aesthetic precision, and technical mastery.
-                  <span className="block mt-10 text-xs uppercase tracking-widest opacity-50 animate-bounce text-black">Scroll to Begin</span>
               </motion.p>
           </div>
           
-          {/* Background Ambient Glow */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-[-20%] left-[20%] w-[60vw] h-[60vw] bg-purple-900/5 blur-[150px] rounded-full" />
-              <div className="absolute bottom-[-20%] right-[20%] w-[60vw] h-[60vw] bg-blue-900/5 blur-[150px] rounded-full" />
-          </div>
+          {/* Circular Scrolling Text */}
+          <motion.div 
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ delay: 1.5, duration: 1 }}
+             className="relative mt-[5.5rem] flex items-center justify-center z-20 cursor-default"
+          >
+              <motion.div 
+                  animate={{ rotate: 360 }} 
+                  transition={{ duration: 12, ease: "linear", repeat: Infinity }}
+                  className="w-32 h-32 md:w-36 md:h-36 flex items-center justify-center"
+              >
+                  <svg viewBox="0 0 100 100" className="w-full h-full opacity-50 overflow-visible">
+                      <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
+                      <text className="text-[10.5px] font-mono uppercase tracking-[0.2em] font-bold fill-black">
+                          <textPath href="#textPath" startOffset="0%">
+                              Scroll to begin • Scroll to begin • 
+                          </textPath>
+                      </text>
+                  </svg>
+              </motion.div>
+              <div className="absolute text-black/40 text-2xl font-light">↓</div>
+          </motion.div>
       </section>
 
       {/* --- CHAPTERS: The Work --- */}
