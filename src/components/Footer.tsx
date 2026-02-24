@@ -147,9 +147,9 @@ export default function Footer() {
             <Link className="transition hover:text-black" href="/privacy">
               Privacy
             </Link>
-            <a className="transition hover:text-black" href="#">
+            <Link className="transition hover:text-black" href="/terms">
               Terms
-            </a>
+            </Link>
             <a className="transition hover:text-black" href="#top">
               Top
             </a>
