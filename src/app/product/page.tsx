@@ -406,34 +406,34 @@ function NarrativeSection() {
             
             {/* Stage 1 */}
             <motion.div style={{ opacity: p1Op, y: p1Y, scale: p1S }} className="absolute w-full flex flex-col items-center">
-               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-8 bg-black/5 backdrop-blur-md">
+               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-6 md:mb-8 bg-black/5 backdrop-blur-md">
                  <span className="text-black/40 font-mono text-sm">01</span>
                </div>
-               <h2 className="text-[clamp(3.5rem,8vw,7rem)] font-bold tracking-tighter leading-none whitespace-nowrap"><span className="text-black/30">Scattered </span><span className="text-black">data.</span></h2>
+               <h2 className="text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-[1.1] md:leading-none text-center flex flex-col md:block md:whitespace-nowrap"><span className="text-black/30">Scattered </span><span className="text-black">data.</span></h2>
             </motion.div>
 
             {/* Stage 2 */}
             <motion.div style={{ opacity: p2Op, y: p2Y, scale: p2S }} className="absolute w-full flex flex-col items-center">
-               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-8 bg-black/5 backdrop-blur-md">
+               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-6 md:mb-8 bg-black/5 backdrop-blur-md">
                  <span className="text-black/40 font-mono text-sm">02</span>
                </div>
-               <h2 className="text-[clamp(3.5rem,8vw,7rem)] font-bold tracking-tighter leading-none whitespace-nowrap"><span className="text-black/30">Missed </span><span className="text-black">follow-ups.</span></h2>
+               <h2 className="text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-[1.1] md:leading-none text-center flex flex-col md:block md:whitespace-nowrap"><span className="text-black/30">Missed </span><span className="text-black">follow-ups.</span></h2>
             </motion.div>
 
             {/* Stage 3 */}
             <motion.div style={{ opacity: p3Op, y: p3Y, scale: p3S }} className="absolute w-full flex flex-col items-center">
-               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-8 bg-black/5 backdrop-blur-md">
+               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-6 md:mb-8 bg-black/5 backdrop-blur-md">
                  <span className="text-black/40 font-mono text-sm">03</span>
                </div>
-               <h2 className="text-[clamp(3.5rem,8vw,7rem)] font-bold tracking-tighter leading-none whitespace-nowrap"><span className="text-black/30">Manual </span><span className="text-black">processes.</span></h2>
+               <h2 className="text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-[1.1] md:leading-none text-center flex flex-col md:block md:whitespace-nowrap"><span className="text-black/30">Manual </span><span className="text-black">processes.</span></h2>
             </motion.div>
 
             {/* Stage 4 */}
             <motion.div style={{ opacity: p4Op, y: p4Y, scale: p4S }} className="absolute w-full flex flex-col items-center">
-               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-8 bg-black/5 backdrop-blur-md">
+               <div className="w-16 h-16 border border-black/10 rounded-full flex items-center justify-center mb-6 md:mb-8 bg-black/5 backdrop-blur-md">
                  <span className="text-black/40 font-mono text-sm">04</span>
                </div>
-               <h2 className="text-[clamp(3.5rem,8vw,7rem)] font-bold tracking-tighter leading-none whitespace-nowrap"><span className="text-black/30">No real </span><span className="text-black">analytics.</span></h2>
+               <h2 className="text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-[1.1] md:leading-none text-center flex flex-col md:block md:whitespace-nowrap"><span className="text-black/30">No real </span><span className="text-black">analytics.</span></h2>
             </motion.div>
 
             {/* Stage 5: Solution */}
@@ -1120,7 +1120,7 @@ function TechSection() {
            Engineered for Performance.
         </h2>
         
-        <div className="relative w-full max-w-4xl h-[400px]">
+        <div className="relative w-full max-w-4xl flex flex-col items-center gap-6 md:block md:h-[400px]">
            {cards.map((card, i) => (
              <motion.div
                key={i}
@@ -1133,11 +1133,11 @@ function TechSection() {
                  repeat: Infinity,
                  ease: "easeInOut"
                }}
-               className={`absolute w-64 p-6 rounded-2xl border border-black/10 bg-black/[0.03] backdrop-blur-md shadow-2xl
-                 ${i === 0 ? "top-0 left-0" : ""}
-                 ${i === 1 ? "bottom-0 right-0" : ""}
-                 ${i === 2 ? "top-10 right-20" : ""}
-                 ${i === 3 ? "bottom-20 left-20" : ""}
+               className={`relative md:absolute w-64 p-6 rounded-2xl border border-black/10 bg-black/[0.03] backdrop-blur-md shadow-2xl
+                 ${i === 0 ? "md:top-0 md:left-0" : ""}
+                 ${i === 1 ? "md:bottom-0 md:right-0" : ""}
+                 ${i === 2 ? "md:top-10 md:right-20" : ""}
+                 ${i === 3 ? "md:bottom-20 md:left-20" : ""}
                `}
                style={{ zIndex: 10 - i }}
              >
