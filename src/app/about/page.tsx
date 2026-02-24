@@ -8,11 +8,11 @@ import Footer from "../../components/Footer";
 
 // Reusing existing assets
 const galleryImages = [
-  "/images/project1.png",
+  "/images/aesthetic-img3.png",
   "/images/aesthetic_ui_mockup.png", 
   "/images/mobile-app-development.png",
   "/images/about_photo.png",
-  "/images/ui-design.png",
+  "/images/aesthetic-img4.png",
 ];
 
 const values = [
