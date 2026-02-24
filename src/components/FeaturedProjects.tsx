@@ -149,7 +149,7 @@ function Card({ i, project, targetScale }: any) {
                         href={project.href}
                         className="hidden items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-black transition hover:text-black/60 sm:flex"
                     >
-                        View Case
+                        View Project
                         <svg
                             width="12"
                             height="12"
