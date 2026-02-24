@@ -147,7 +147,7 @@ export default function AboutPage() {
                 className="flex gap-8"
              >
                 {[...galleryImages, ...galleryImages].map((src, i) => (
-                    <div key={`${i}-${src}`} className="relative h-[40vh] w-[30vw] shrink-0 overflow-hidden rounded-lg md:h-[60vh] md:w-[25vw]">
+                    <div key={`${i}-${src}`} className="relative h-[40vh] w-[70vw] sm:w-[45vw] shrink-0 overflow-hidden rounded-lg md:h-[60vh] md:w-[25vw]">
                         <Image src={src} fill alt="Gallery" className="object-cover" />
                         <div className="absolute inset-0 bg-black/20" />
                     </div>
