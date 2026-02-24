@@ -61,10 +61,11 @@ const workStories = [
   }
 ];
 
-const concepts = [
-    { title: "Fluidity", desc: "WebGL fluid simulation for interactive backgrounds." },
-    { title: "Sonic UI", desc: "Spatial audio interface navigation experiments." },
-    { title: "Gen-Art", desc: "Generative artwork created from user mouse patterns." }
+const impactStats = [
+    { value: "250+", label: "Digital Products", desc: "Successfully engineered and launched globally." },
+    { value: "5M+", label: "Active Users", desc: "Interacting with interfaces we've crafted." },
+    { value: "10x", label: "Average ROI", desc: "Driven by conversion-focused digital strategies." },
+    { value: "12+", label: "Industry Awards", desc: "Recognized for both design and technical excellence." }
 ];
 
 // --- COMPONENTS ---
@@ -108,7 +109,7 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
 
                     <div className="flex flex-wrap gap-3 pt-6">
                         {project.tags.map((tag, idx) => (
-                            <span key={idx} className="px-4 py-2 rounded-full border border-black/10 text-xs uppercase tracking-widest text-black/40 hover:bg-black hover:text-white transition-colors cursor-default">
+                            <span key={idx} className="px-5 py-2.5 rounded-full border border-black/5 bg-black/[0.02] text-xs font-semibold uppercase tracking-[0.1em] text-black/60 hover:bg-black hover:text-white transition-colors cursor-default backdrop-blur-sm">
                                 {tag}
                             </span>
                         ))}
@@ -116,31 +117,63 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
 
                     <div className="pt-10">
                          <div className="group flex items-center gap-4 cursor-pointer">
-                             <div className="h-[1px] w-20 bg-black group-hover:w-32 transition-all duration-500" />
-                             <span className="uppercase tracking-[0.2em] text-sm text-black">Read Case Study</span>
+                             <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                 <svg className="w-5 h-5 text-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                 </svg>
+                             </div>
+                             <span className="uppercase tracking-[0.15em] text-sm text-black font-medium group-hover:translate-x-2 transition-transform duration-300">Read Case Study</span>
                          </div>
                     </div>
                 </motion.div>
 
                 {/* Image Side - Cinematic Parallax */}
-                <div className="order-1 md:order-2 relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
-                    <motion.div style={{ scale: scaleImg }} className="absolute inset-0 bg-white">
-                         {/* Placeholder Image Div */}
-                         <div 
-                           className="w-full h-full opacity-60" 
-                           style={{ 
-                             background: `radial-gradient(circle at center, ${project.color}, #FCFCFC 80%)`
-                           }} 
-                         />
+                <div className="order-1 md:order-2 relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] group">
+                    <motion.div style={{ scale: scaleImg }} className="absolute inset-0 bg-[#F5F5F7] transition-transform duration-700 group-hover:scale-105">
+                         {/* Dynamic Abstract Background */}
+                         <div className="absolute inset-0">
+                             <div className="absolute -top-40 -left-40 w-[150%] h-[150%] opacity-40 blur-3xl mix-blend-multiply transition-colors duration-1000" style={{ background: `radial-gradient(circle at 40% 40%, ${project.color}, transparent 60%)` }} />
+                             <div className="absolute bottom-0 right-0 w-[100%] h-[100%] opacity-30 blur-2xl mix-blend-multiply transition-colors duration-1000" style={{ background: `radial-gradient(circle at 80% 80%, ${project.color}, transparent 60%)` }} />
+                         </div>
+                         
+                         {/* Centered Floating Element mapping to project */}
+                         <div className="absolute inset-0 flex items-center justify-center p-10">
+                             <motion.div 
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                                className="w-full max-w-sm aspect-square bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl border border-white overflow-hidden relative flex flex-col group-hover:-translate-y-2 transition-transform duration-500"
+                             >
+                                 {/* Fake Toolbar/Header */}
+                                 <div className="h-10 border-b border-white/40 flex items-center px-5 gap-2 bg-white/50">
+                                     <div className="w-3 h-3 rounded-full bg-red-400" />
+                                     <div className="w-3 h-3 rounded-full bg-amber-400" />
+                                     <div className="w-3 h-3 rounded-full bg-green-400" />
+                                 </div>
+                                 {/* Fake Content area */}
+                                 <div className="flex-1 p-8 flex flex-col gap-6 relative justify-center">
+                                     <div className="w-3/4 h-6 rounded-lg bg-black/5" />
+                                     <div className="w-1/2 h-3 rounded-md bg-black/5" />
+                                     <div className="w-5/6 h-3 rounded-md bg-black/5" />
+                                     
+                                     <div className="mt-8 flex gap-4">
+                                         <div className="w-12 h-12 rounded-full bg-black/5" />
+                                         <div className="w-12 h-12 rounded-full bg-black/5" />
+                                     </div>
+                                 </div>
+                                 <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full blur-3xl opacity-30 transition-colors duration-1000" style={{ backgroundColor: project.color }} />
+                             </motion.div>
+                         </div>
+                         
                          {/* Grid Pattern Overlay */}
-                         <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+                         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+                         <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:30px_30px]" />
                     </motion.div>
                     
                     {/* Darken edges slightly as it enters/leaves viewport */}
                     <motion.div style={{ opacity: opacityOverlay }} className="absolute inset-0 bg-[#FCFCFC] pointer-events-none" />
                     
                     {/* Big Letter Watermark */}
-                    <div className="absolute bottom-[-10%] right-[-10%] text-[20rem] font-bold text-black/5 font-heading pointer-events-none select-none leading-none">
+                    <div className="absolute -bottom-12 -right-4 md:-right-10 text-[12rem] md:text-[18rem] font-bold text-black/[0.04] font-heading pointer-events-none select-none leading-none tracking-tighter">
                         {project.chapter}
                     </div>
                 </div>
@@ -149,50 +182,50 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
     );
 };
 
-// 2. CONCEPT LAB (Horizontal Scroll Story)
-const ConceptLab = () => {
-    const targetRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({ target: targetRef });
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
-
+// 2. IMPACT SECTION (Replaces ConceptLab)
+const ImpactSection = () => {
     return (
-        <section ref={targetRef} className="relative h-[300vh] bg-[#FCFCFC]">
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <div className="absolute top-20 left-6 z-20 md:left-20">
-                    <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-black/40 mb-2">R&D Department</h2>
-                    <h3 className="text-5xl font-heading font-bold text-black">Concept Lab</h3>
+        <section className="py-32 px-6 bg-[#FCFCFC] relative z-10">
+            <div className="container mx-auto">
+                <div className="grid md:grid-cols-2 gap-20 mb-20 items-end">
+                    <div>
+                        <span className="font-mono text-sm uppercase tracking-[0.3em] text-black/40 block mb-6">Our Impact</span>
+                        <h2 className="text-5xl md:text-7xl font-heading font-bold leading-tight text-black">
+                            Metrics that <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/40 to-black/80 italic font-serif font-light">actually matter.</span>
+                        </h2>
+                    </div>
+                    <div className="text-xl text-black/60 max-w-md pb-4 leading-relaxed font-light">
+                        We don't just deliver beautiful pixels; we deliver measurable business impact. Our work is designed to scale, convert, and dominate markets.
+                    </div>
                 </div>
 
-                <motion.div style={{ x }} className="flex gap-20 pl-[50vw] pr-20">
-                    {concepts.map((concept, i) => (
-                        <div key={i} className="w-[80vw] md:w-[60vw] h-[60vh] md:h-[70vh] shrink-0 bg-white border border-black/5 rounded-3xl relative overflow-hidden group flex flex-col justify-end p-10 md:p-20 hover:border-black/20 shadow-xl transition-colors">
-                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FCFCFC]/90" />
-                             <div className="absolute top-10 right-10 opacity-20 group-hover:opacity-100 transition-opacity">
-                                 <span className="text-xs font-mono border border-black text-black rounded-full px-3 py-1">Experiment 00{i+1}</span>
-                             </div>
-                             
-                             <div className="relative z-10 space-y-4">
-                                 <h4 className="text-4xl md:text-6xl font-heading font-bold text-black">{concept.title}</h4>
-                                 <p className="text-xl text-black/60 max-w-lg">{concept.desc}</p>
-                             </div>
-                             
-                             <div className="absolute inset-0 -z-10 opacity-10 group-hover:scale-110 transition-transform duration-[1.5s]">
-                                  {/* Abstract Visual Placeholder */}
-                                  <div className={`w-full h-full bg-gradient-to-tr from-gray-100 via-gray-50 to-white`} /> 
-                             </div>
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {impactStats.map((stat, i) => (
+                        <motion.div 
+                            key={i}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="bg-white rounded-[2rem] p-10 border border-black/5 flex flex-col justify-between h-[320px] group hover:border-black/10 hover:shadow-2xl hover:shadow-black/[0.03] transition-all duration-500 relative overflow-hidden"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            
+                            <div className="relative z-10">
+                                <h3 className="text-5xl md:text-7xl font-heading font-bold text-black group-hover:scale-105 origin-left transition-transform duration-500">{stat.value}</h3>
+                                <div className="h-px w-12 bg-black/10 my-6 group-hover:w-24 group-hover:bg-black/30 transition-all duration-500" />
+                            </div>
+                            
+                            <div className="relative z-10">
+                                <h4 className="text-xl font-bold text-black mb-2">{stat.label}</h4>
+                                <p className="text-sm text-black/50 leading-relaxed font-medium">{stat.desc}</p>
+                            </div>
+                            
+                            {/* Decorative element */}
+                            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-black/[0.02] group-hover:scale-[2.5] group-hover:bg-black/[0.04] transition-all duration-700 ease-in-out z-0" />
+                        </motion.div>
                     ))}
-                    
-                    {/* Final CTA Card in the scroll */}
-                    <div className="w-[50vw] md:w-[30vw] h-[60vh] md:h-[70vh] shrink-0 flex items-center justify-center">
-                         <div className="text-center space-y-6">
-                             <h4 className="text-4xl font-heading font-bold text-black">What's Next?</h4>
-                             <Link href="/#contact" className="inline-block border-b border-black text-black pb-1 text-xl hover:opacity-50 transition-opacity">
-                                 Let's build it together &rarr;
-                             </Link>
-                         </div>
-                    </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
@@ -305,8 +338,8 @@ export default function WorkPage() {
           </div>
       </section>
 
-      {/* --- R&D: Concept Lab Scroll --- */}
-      <ConceptLab />
+      {/* --- IMPACT SECTION --- */}
+      <ImpactSection />
 
       {/* --- FOOTER CTA --- */}
       <section className="h-[80vh] flex flex-col items-center justify-center bg-[#FCFCFC] relative border-t border-black/5">
