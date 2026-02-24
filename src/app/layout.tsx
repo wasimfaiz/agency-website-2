@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://setzet.studio"),
+  metadataBase: new URL("https://setzet.com"),
   title: {
     default: "SetZet | Web Design & Development Agency",
     template: "%s | SetZet",
@@ -74,8 +74,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "SetZet",
-    url: "https://setzet.studio",
-    email: "hello@setzet.studio",
+    url: "https://setzet.com",
+    email: "hello@setzet.com",
     telephone: "+91-9128376231",
     address: {
       "@type": "PostalAddress",
