@@ -16,7 +16,7 @@ const workStories = [
     description: "Language is the key to opportunity. Yastudy unlocks global education with a streamlined, digital-first learning platform.",
     narrative: "Navigating international admissions and language barriers is daunting. We built a unified ecosystem for Yastudy that combines immersive German language modules, IELTS prep, and automated consultancy workflows. The result? A 300% increase in successful university placements.",
     tags: ["EdTech", "E-Learning", "Platform"],
-    image: "/images/work-yastudy.jpg",
+    image: "/images/project1.png",
     color: "#fbbf24"
   },
   {
@@ -149,15 +149,29 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
                                      <div className="w-3 h-3 rounded-full bg-amber-400" />
                                      <div className="w-3 h-3 rounded-full bg-green-400" />
                                  </div>
-                                 {/* Fake Content area */}
-                                 <div className="flex-1 p-8 flex flex-col gap-6 relative justify-center">
-                                     <div className="w-3/4 h-6 rounded-lg bg-black/5" />
-                                     <div className="w-1/2 h-3 rounded-md bg-black/5" />
-                                     <div className="w-5/6 h-3 rounded-md bg-black/5" />
-                                     
-                                     <div className="mt-8 flex gap-4">
-                                         <div className="w-12 h-12 rounded-full bg-black/5" />
-                                         <div className="w-12 h-12 rounded-full bg-black/5" />
+                                 {/* Project Image Area with Fallback Fake UI */}
+                                 <div className="flex-1 w-full relative bg-white overflow-hidden">
+                                     {/* Fake UI fallback for projects without images */}
+                                     <div className="absolute inset-0 p-8 flex flex-col gap-6 justify-center bg-[#fdfdfd] z-0">
+                                         <div className="w-3/4 h-6 rounded-lg bg-black/5" />
+                                         <div className="w-1/2 h-3 rounded-md bg-black/5" />
+                                         <div className="w-5/6 h-3 rounded-md bg-black/5" />
+                                         <div className="mt-8 flex gap-4">
+                                             <div className="w-12 h-12 rounded-full bg-black/5" />
+                                             <div className="w-12 h-12 rounded-full bg-black/5" />
+                                         </div>
+                                     </div>
+                                     {/* Optional: The Actual Image */}
+                                     <div className="absolute inset-0 z-10 transition-transform duration-700 ease-out group-hover:scale-105">
+                                         <Image 
+                                             src={project.image}
+                                             alt={project.title}
+                                             fill
+                                             className="object-cover object-top hover:object-center transition-all duration-1000"
+                                             onError={(e) => {
+                                                 e.currentTarget.style.display = 'none';
+                                             }}
+                                         />
                                      </div>
                                  </div>
                                  <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full blur-3xl opacity-30 transition-colors duration-1000" style={{ backgroundColor: project.color }} />
@@ -298,7 +312,7 @@ export default function WorkPage() {
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ delay: 1.5, duration: 1 }}
-             className="relative mt-[5.5rem] flex items-center justify-center z-20 cursor-default"
+             className="relative mt-16 flex items-center justify-center z-20 cursor-default"
           >
               <motion.div 
                   animate={{ rotate: 360 }} 

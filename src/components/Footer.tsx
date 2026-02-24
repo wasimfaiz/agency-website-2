@@ -144,9 +144,9 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.24em] text-black/45">
-            <a className="transition hover:text-black" href="#">
+            <Link className="transition hover:text-black" href="/privacy">
               Privacy
-            </a>
+            </Link>
             <a className="transition hover:text-black" href="#">
               Terms
             </a>
