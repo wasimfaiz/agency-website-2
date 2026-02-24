@@ -837,36 +837,38 @@ function HorizontalShowcase() {
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-[#FCFCFC]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-16 px-[10vw]">
+        <motion.div style={{ x }} className="flex gap-8 md:gap-16 px-[4vw] md:px-[10vw]">
           {showcaseItems.map((item, index) => (
             <div 
               key={index} 
-              className="group relative flex h-[70vh] w-[80vw] max-w-[1000px] shrink-0 flex-col justify-between overflow-hidden rounded-[40px] border border-black/10 bg-white p-10 shadow-[0_0_50px_rgba(0,0,0,0.02)] transition-colors hover:border-black/20"
+              className="group relative flex h-[65vh] md:h-[70vh] w-[92vw] md:w-[80vw] max-w-[1000px] shrink-0 flex-col justify-between overflow-hidden rounded-[30px] md:rounded-[40px] border border-black/10 bg-white p-6 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.02)] transition-colors hover:border-black/20"
             >
                {/* Context Header */}
-               <div className="relative z-10 w-full max-w-sm mb-8">
-                  <h3 className="text-[clamp(2rem,4vw,3rem)] font-bold text-black tracking-tight mb-2">
+               <div className="relative z-10 w-full max-w-sm mb-6 md:mb-8">
+                  <h3 className="text-[clamp(1.75rem,4vw,3rem)] font-bold text-black tracking-tight mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-lg text-black/50">{item.desc}</p>
+                  <p className="text-base md:text-lg text-black/50">{item.desc}</p>
                </div>
 
                {/* Realistic Mockup Window */}
-               <div className="relative z-0 h-[65%] w-[90%] self-end rounded-2xl border border-black/10 bg-white shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-y-8 group-hover:-translate-x-8">
+               <div className="relative z-0 h-[65%] w-full md:w-[90%] self-end rounded-xl md:rounded-2xl border border-black/10 bg-white shadow-2xl transition-transform duration-700 ease-out md:group-hover:-translate-y-8 md:group-hover:-translate-x-8">
                   {/* MacOS Window Controls */}
-                  <div className="flex h-8 w-full items-center px-4 gap-1.5 border-b border-black/5 bg-gray-50 rounded-t-2xl">
-                     <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                     <div className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                     <div className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
+                  <div className="flex h-8 w-full items-center px-4 gap-1.5 border-b border-black/5 bg-gray-50 rounded-t-xl md:rounded-t-2xl">
+                     <div className="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#ff5f56]" />
+                     <div className="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#ffbd2e]" />
+                     <div className="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#27c93f]" />
                   </div>
                   {/* Dynamic Mockup Content */}
-                  <div className="h-[calc(100%-2rem)] w-full overflow-hidden rounded-b-2xl">
-                     <ShowcaseMockup index={index} />
+                  <div className="h-[calc(100%-2rem)] w-full overflow-x-auto overflow-y-hidden custom-scrollbar rounded-b-xl md:rounded-b-2xl">
+                     <div className="min-w-[650px] md:min-w-full h-full">
+                        <ShowcaseMockup index={index} />
+                     </div>
                   </div>
                </div>
                
                {/* Decorative Gradient Glow below mockup */}
-               <div className="absolute right-0 bottom-0 w-1/2 h-1/2 bg-black/[0.03] rounded-tl-full blur-[80px] pointer-events-none" />
+               <div className="absolute right-0 bottom-0 w-1/2 h-1/2 bg-black/[0.03] rounded-tl-full blur-[60px] md:blur-[80px] pointer-events-none" />
             </div>
           ))}
         </motion.div>
