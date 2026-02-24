@@ -118,29 +118,29 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
       variants={reveal}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative border-t border-white/10 py-12 md:py-24 transition-colors hover:bg-white/5"
+      className="group relative border-t border-black/10 py-12 md:py-24 transition-colors hover:bg-black/5"
     >
       <div className="container mx-auto px-6 grid md:grid-cols-[1fr_2fr_1fr] gap-8 items-start">
         {/* Column 1: Title */}
         <div>
-           <span className="font-mono text-xs text-white/40 mb-2 block">0{index + 1}</span>
-           <h3 className="text-4xl md:text-5xl font-heading font-medium text-white">{item.title}</h3>
+           <span className="font-mono text-xs text-black/40 mb-2 block">0{index + 1}</span>
+           <h3 className="text-4xl md:text-5xl font-heading font-medium text-black">{item.title}</h3>
         </div>
 
         {/* Column 2: Description + Detail */}
         <div className="md:pl-10 relative">
-           <h4 className="text-xl md:text-2xl text-white/50 font-light mb-6 transition-colors group-hover:text-white">
+           <h4 className="text-xl md:text-2xl text-black/50 font-light mb-6 transition-colors group-hover:text-black">
              {item.description}
            </h4>
-           <p className="text-lg text-white/70 leading-relaxed max-w-xl">
+           <p className="text-lg text-black/70 leading-relaxed max-w-xl">
              {item.detail}
            </p>
            <div className="mt-8 grid gap-8 md:grid-cols-2">
              <div>
-               <p className="mb-3 text-[11px] font-mono uppercase tracking-[0.18em] text-white/40">
+               <p className="mb-3 text-[11px] font-mono uppercase tracking-[0.18em] text-black/40">
                  Outcome Highlights
                </p>
-               <ul className="space-y-2 text-sm text-white/65">
+               <ul className="space-y-2 text-sm text-black/65">
                  {item.outcomes.map((outcome, i) => (
                    <li key={i} className="leading-relaxed">
                      {outcome}
@@ -149,10 +149,10 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
                </ul>
              </div>
              <div>
-               <p className="mb-3 text-[11px] font-mono uppercase tracking-[0.18em] text-white/40">
+               <p className="mb-3 text-[11px] font-mono uppercase tracking-[0.18em] text-black/40">
                  Key Deliverables
                </p>
-               <ul className="space-y-2 text-sm text-white/65">
+               <ul className="space-y-2 text-sm text-black/65">
                  {item.deliverables.map((deliverable, i) => (
                    <li key={i} className="leading-relaxed">
                      {deliverable}
@@ -166,12 +166,12 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
         {/* Column 3: Tags */}
         <div className="flex flex-col items-start gap-3 md:items-end">
            {item.meta.map((tag: string, i: number) => (
-             <span key={i} className="text-xs font-mono uppercase tracking-widest text-white/30 border border-white/10 px-3 py-1 rounded-full">
+             <span key={i} className="text-xs font-mono uppercase tracking-widest text-black/30 border border-black/10 px-3 py-1 rounded-full">
                {tag}
              </span>
            ))}
            <div className={`mt-4 transition-transform duration-500 ${hovered ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}>
-              <span className="text-white text-2xl">&rarr;</span>
+              <span className="text-black text-2xl">&rarr;</span>
            </div>
         </div>
       </div>
@@ -186,14 +186,14 @@ const ProcessStep = ({ number, title, text, index }: { number: string, title: st
                initial={{ opacity: 0, y: 50 }}
                whileInView={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.5 }}
-               className="relative bg-[#111] border border-white/10 p-10 rounded-3xl shadow-2xl overflow-hidden group"
+               className="relative bg-white border border-black/10 p-10 rounded-3xl shadow-2xl overflow-hidden group"
             >
                 {/* Decorative Gradient Blob */}
-                <div className="absolute -right-20 -top-20 w-60 h-60 bg-white/5 rounded-full blur-[80px] group-hover:bg-white/10 transition-colors duration-500" />
+                <div className="absolute -right-20 -top-20 w-60 h-60 bg-black/5 rounded-full blur-[80px] group-hover:bg-black/10 transition-colors duration-500" />
                 
-                <span className="font-mono text-xs text-white/40 mb-4 block tracking-widest">{number}</span>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{title}</h3>
-                <p className="text-lg text-white/60 leading-relaxed">{text}</p>
+                <span className="font-mono text-xs text-black/40 mb-4 block tracking-widest">{number}</span>
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6">{title}</h3>
+                <p className="text-lg text-black/60 leading-relaxed">{text}</p>
             </motion.div>
         </div>
     );
@@ -205,8 +205,8 @@ export default function ServicesPage() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <div ref={containerRef} className="bg-[#080808] text-[#e1e1e1] selection:bg-white/20 font-sans min-h-screen">
-      <Navbar />
+    <div ref={containerRef} className="bg-[#FCFCFC] text-[#1e1e1e] selection:bg-black/20 font-sans min-h-screen">
+      <Navbar forceDarkAtTop={true} />
       
 
 
@@ -217,10 +217,10 @@ export default function ServicesPage() {
                initial={{ opacity: 0, y: 50 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-               className="text-[clamp(3.5rem,8vw,9.5rem)] font-heading font-medium leading-[0.95] tracking-tighter mb-10"
+               className="text-[clamp(3.5rem,8vw,9.5rem)] font-heading font-medium leading-[0.95] tracking-tighter mb-10 text-black"
              >
                 Digital Systems <br/> 
-                <span className="text-white/30">For The Future.</span>
+                <span className="text-black/30">For The Future.</span>
              </motion.h1>
 
              <motion.div 
@@ -229,32 +229,32 @@ export default function ServicesPage() {
                 transition={{ delay: 0.5, duration: 1 }}
                 className="max-w-xl md:ml-auto md:mr-20"
              >
-                 <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed">
+                 <p className="text-xl md:text-2xl text-black/60 font-light leading-relaxed">
                     We bridge the gap between aesthetic and function. A full-service studio engineering brands that command attention.
                  </p>
              </motion.div>
          </div>
-      </section>
+       </section>
 
       {/* 2. SERVICES LIST - Clean Grid Layout */}
       <section className="py-20">
          {services.map((service, index) => (
             <ServiceItem key={index} item={service} index={index} />
          ))}
-         <div className="border-t border-white/10" />
+         <div className="border-t border-black/10" />
       </section>
 
       {/* 3. APPROACH / PROCESS */}
-      <section className="py-32 px-6 bg-[#0c0c0c]">
+      <section className="py-32 px-6 bg-[#FCFCFC]">
          <div className="container mx-auto grid md:grid-cols-2 gap-20">
-             <div className="sticky top-32 h-fit bg-[#0c0c0c] z-10">
-                 <h2 className="text-5xl md:text-7xl font-heading font-medium mb-8">
+             <div className="sticky top-32 h-fit bg-[#FCFCFC] z-10">
+                 <h2 className="text-5xl md:text-7xl font-heading font-medium mb-8 text-black">
                     How We <br/> Work
                  </h2>
-                 <p className="text-lg text-white/50 max-w-sm">
+                 <p className="text-lg text-black/50 max-w-sm">
                     Refined over years of shipping products. A linear process for non-linear impact.
                  </p>
-                 <Link href="/#contact" className="mt-10 inline-block text-white border-b border-white pb-1 hover:opacity-50 transition-opacity">
+                 <Link href="/#contact" className="mt-10 inline-block text-black border-b border-black pb-1 hover:opacity-50 transition-opacity">
                     Start a Conversation
                  </Link>
              </div>
