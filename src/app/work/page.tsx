@@ -26,7 +26,7 @@ const workStories = [
     description: "Healthy snacking shouldn't be boring. Zenfora turns foxnuts (makhana) into a lifestyle brand for the modern, health-conscious consumer.",
     narrative: "From protein powders to gourmet chocolates, Zenfora's product line is diverse. We crafted a vibrant, appetite-inducing digital storefront that highlights the nutritional power of foxnuts. With a seamless D2C checkout and subscription model, we turned casual snackers into loyal subscribers.",
     tags: ["FMCG", "E-Commerce", "Brand Strategy"],
-    image: "/images/work-zenfora.jpg",
+    image: "/images/aesthetic-img4.png",
     color: "#f97316"
   },
   {
@@ -36,7 +36,7 @@ const workStories = [
     description: "Luxury real estate isn't bought; it's experienced. We crafted a digital environment that rivals the physical spaces it sells.",
     narrative: "Static images were not enough. We implemented cinematic 3D walkthroughs and ambient soundscapes to transport potential buyers into the property before they ever stepped foot inside. This emotional connection drove conversion rates up by 40%.",
     tags: ["Immersive Web", "3D Motion", "Brand"],
-    image: "/images/work-nova.jpg",
+    image: "/images/aesthetic-img3.png",
     color: "#c084fc"
   },
   {
@@ -46,7 +46,7 @@ const workStories = [
     description: "Money moves fast. Your banking app should too. We stripped away the noise to focus on speed, security, and simplicity.",
     narrative: "Complexity is the enemy of trust. For Oria, we redesigned the entire banking flow from first principles, reducing user actions by 60%. Every interaction is micro-animated to provide instant, reassuring feedback. Banking has never felt this fluid.",
     tags: ["Fintech", "App Design", "System Architecture"],
-    image: "/images/work-oria.jpg",
+    image: "/images/mobile-app-development.png",
     color: "#2dd4bf"
   },
   {
@@ -56,7 +56,7 @@ const workStories = [
     description: "The creator economy was broken. We helped fix it with decentralized protocols giving power back to the artist.",
     narrative: "We built a platform where the interface is as transparent as the blockchain beneath it. Smart contracts handle the complexity, while the user enjoys a seamless, captivating streaming experience. This is Web3, humanized.",
     tags: ["Web3", "Blockchain", "Community"],
-    image: "/images/work-nebula.jpg",
+    image: "/images/aesthetic_ui_mockup.png",
     color: "#8b5cf6"
   }
 ];
