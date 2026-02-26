@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="grid gap-8 border-b border-black/10 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="text-[10px] uppercase tracking-[0.32em] text-black/45">
-              SetZet Studio
+              Setzet
             </p>
             <h3 className="mt-4 text-[clamp(2rem,6vw,4.6rem)] font-semibold leading-[0.9] tracking-tight">
               A DIGITAL
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
         <div className="grid gap-4 border-t border-black/5 px-6 py-5 sm:px-8 md:grid-cols-[1fr_auto_auto] md:items-center">
           <p className="text-[10px] uppercase tracking-[0.24em] text-black/45">
-            (c) 2026 SetZet Studio
+            (c) 2026 Setzet
           </p>
 
           <div className="flex items-center gap-2">

@@ -46,7 +46,7 @@ const workStories = [
     description: "Money moves fast. Your banking app should too. We stripped away the noise to focus on speed, security, and simplicity.",
     narrative: "Complexity is the enemy of trust. For Oria, we redesigned the entire banking flow from first principles, reducing user actions by 60%. Every interaction is micro-animated to provide instant, reassuring feedback. Banking has never felt this fluid.",
     tags: ["Fintech", "App Design", "System Architecture"],
-    image: "/images/mobile-app-development.png",
+    image: "/mobile-app-development.png",
     color: "#2dd4bf"
   },
   {

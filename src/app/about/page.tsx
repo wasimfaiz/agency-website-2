@@ -10,7 +10,7 @@ import Footer from "../../components/Footer";
 const galleryImages = [
   "/images/aesthetic-img3.png",
   "/images/aesthetic_ui_mockup.png", 
-  "/images/mobile-app-development.png",
+  "/mobile-app-development.png",
   "/images/aesthetic-img2.png",
   "/images/aesthetic-img4.png",
 ];
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 We blend high-end UI/UX design with rock-solid custom web development. Our process is a precise mix of brand psychology, strategic marketing, and modern frontend coding, distilled into powerful digital products.
             </p>
             <div className="relative aspect-square md:aspect-[4/3] lg:aspect-[4/5] w-full flex-shrink-0 overflow-hidden rounded-2xl grayscale transition-all duration-500 hover:grayscale-0">
-                <Image src="/images/about_photo.png" alt="SetZet Creative Agency Team" fill className="object-cover object-top" />
+                <Image src="/about_photo.png" alt="SetZet Creative Agency Team" fill className="object-cover object-top" />
             </div>
         </div>
       </section>

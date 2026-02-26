@@ -22,7 +22,7 @@ export default function TermsPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-bold text-black font-heading tracking-normal">2. Intellectual Property</h2>
             <p>
-              The site and its original content, features, and functionality are owned by SetZet Studio and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+              The site and its original content, features, and functionality are owned by Setzet and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>
           </section>
 
@@ -36,7 +36,7 @@ export default function TermsPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-bold text-black font-heading tracking-normal">4. Limitation of Liability</h2>
             <p>
-              In no event shall SetZet Studio, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for damages, direct or consequential, resulting from your use of the site, and you agree to defend, indemnify and hold us harmless from any claims, losses, liability costs and expenses.
+              In no event shall Setzet, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for damages, direct or consequential, resulting from your use of the site, and you agree to defend, indemnify and hold us harmless from any claims, losses, liability costs and expenses.
             </p>
           </section>
 
