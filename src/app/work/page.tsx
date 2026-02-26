@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -78,18 +78,16 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
         offset: ["start end", "end start"]
     });
 
-    const scrollY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
-    
-    const yText = useTransform(scrollY, [0, 1], [50, -50]);
-    const scaleImg = useTransform(scrollY, [0, 0.5, 1], [1.1, 1, 1.1]);
-    const opacityOverlay = useTransform(scrollY, [0.2, 0.5, 0.8], [0.6, 0, 0.6]);
+    const yText = useTransform(scrollYProgress, [0, 1], [50, -50]);
+    const scaleImg = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.1]);
+    const opacityOverlay = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.6, 0, 0.6]);
 
     return (
         <section ref={containerRef} className="min-h-screen py-20 flex items-center relative z-10">
             <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
                 
                 {/* Text Side - Sticky-ish Feel thanks to Parallax */}
-                <motion.div style={{ y: yText }} className="space-y-10 order-2 md:order-1 relative z-20">
+                <motion.div style={{ y: yText }} className="space-y-10 order-2 md:order-1 relative z-20 will-change-transform">
                     <span className="font-mono text-sm uppercase tracking-[0.3em] text-black/40 block">
                         Chapter {project.chapter}
                     </span>
@@ -129,7 +127,7 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
 
                 {/* Image Side - Cinematic Parallax */}
                 <div className="order-1 md:order-2 relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] group">
-                    <motion.div style={{ scale: scaleImg }} className="absolute inset-0 bg-[#F5F5F7] transition-transform duration-700 group-hover:scale-105">
+                    <motion.div style={{ scale: scaleImg }} className="absolute inset-0 bg-[#F5F5F7] transition-transform duration-700 group-hover:scale-105 will-change-transform">
                          {/* Dynamic Abstract Background */}
                          <div className="absolute inset-0">
                              <div className="absolute -top-40 -left-40 w-[150%] h-[150%] opacity-40 blur-3xl mix-blend-multiply transition-colors duration-1000" style={{ background: `radial-gradient(circle at 40% 40%, ${project.color}, transparent 60%)` }} />

@@ -11,7 +11,7 @@ const galleryImages = [
   "/images/aesthetic-img3.png",
   "/images/aesthetic_ui_mockup.png", 
   "/images/mobile-app-development.png",
-  "/images/about_photo.png",
+  "/images/aesthetic-img2.png",
   "/images/aesthetic-img4.png",
 ];
 

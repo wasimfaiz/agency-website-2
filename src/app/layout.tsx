@@ -86,9 +86,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${openSans.variable} ${montserrat.variable} ${playfair.variable} antialiased font-sans overflow-x-hidden`}
+        suppressHydrationWarning
       >
         <script
           type="application/ld+json"
