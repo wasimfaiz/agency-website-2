@@ -260,7 +260,7 @@ export default function WorkPage() {
                       rotate: [0, 90, 0]
                   }}
                   transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-                  className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-gradient-to-tr from-purple-200/40 to-indigo-100/40 blur-[80px] rounded-full" 
+                  className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-gradient-to-tr from-purple-200/40 to-indigo-100/40 blur-[80px] rounded-full will-change-transform" 
               />
               <motion.div 
                   animate={{ 
@@ -268,9 +268,9 @@ export default function WorkPage() {
                       rotate: [0, -90, 0]
                   }}
                   transition={{ duration: 25, ease: "linear", repeat: Infinity }}
-                  className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[1000px] max-h-[1000px] bg-gradient-to-bl from-orange-100/40 to-rose-100/40 blur-[100px] rounded-full" 
+                  className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[1000px] max-h-[1000px] bg-gradient-to-bl from-orange-100/40 to-rose-100/40 blur-[100px] rounded-full will-change-transform" 
               />
-              <div className="absolute inset-0 bg-[#FCFCFC]/40 backdrop-blur-[100px]" />
+              <div className="absolute inset-0 bg-[#FCFCFC]/60" />
           </div>
 
           <div className="text-center space-y-8 max-w-5xl z-10 relative">
@@ -289,7 +289,7 @@ export default function WorkPage() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="text-[clamp(3.5rem,8vw,8.5rem)] font-heading font-extrabold leading-[0.9] tracking-tighter text-black"
+                className="text-[clamp(3.5rem,8vw,8.5rem)] font-heading font-extrabold leading-[0.9] tracking-tighter text-black will-change-transform"
               >
                   We don't just build websites. <br/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/30 to-black/70 italic font-serif font-light">We craft legacies.</span>

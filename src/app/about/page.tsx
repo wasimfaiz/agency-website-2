@@ -57,13 +57,13 @@ export default function AboutPage() {
         <div className="relative z-10 flex flex-col items-center text-center">
             <motion.h1 
                 style={{ y: y1 }}
-                className="font-heading text-4xl font-bold uppercase leading-[0.9] tracking-tighter md:text-7xl lg:text-[9vw] xl:text-[10rem] text-transparent bg-clip-text bg-gradient-to-b from-black to-black/60"
+                className="font-heading text-4xl font-bold uppercase leading-[0.9] tracking-tighter md:text-7xl lg:text-[9vw] xl:text-[10rem] text-transparent bg-clip-text bg-gradient-to-b from-black to-black/60 will-change-transform"
             >
                 Unconventional
             </motion.h1>
             <motion.p
                 style={{ y: y2 }}
-                className="font-heading text-4xl font-bold uppercase leading-[0.9] tracking-tighter text-black md:text-7xl lg:text-[9vw] xl:text-[10rem]"
+                className="font-heading text-4xl font-bold uppercase leading-[0.9] tracking-tighter text-black md:text-7xl lg:text-[9vw] xl:text-[10rem] will-change-transform"
             >
                 Reality
             </motion.p>
