@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    /* 
+      This is a custom SVG favicon for Setzet. 
+      It automatically supports Dark Mode!
+    */
+    .bg { fill: #000000; }
+    .text { fill: #ffffff; }
+    
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #ffffff; }
+      .text { fill: #000000; }
+    }
+  </style>
+  <rect width="100" height="100" rx="22" class="bg" />
+  <text x="50" y="70" font-family="system-ui, -apple-system, Arial, sans-serif" font-weight="900" font-size="60" letter-spacing="-3" class="text" text-anchor="middle">SZ</text>
+</svg>
