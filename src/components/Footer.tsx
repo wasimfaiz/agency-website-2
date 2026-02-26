@@ -88,7 +88,9 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <a
               aria-label="Instagram"
-              href="#"
+              href="https://www.instagram.com/setzet.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/15 text-black/70 transition hover:border-black/35 hover:text-black"
             >
               <svg
@@ -109,7 +111,9 @@ export default function Footer() {
             </a>
             <a
               aria-label="LinkedIn"
-              href="#"
+              href="https://www.linkedin.com/company/setzet/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/15 text-black/70 transition hover:border-black/35 hover:text-black"
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -118,7 +122,9 @@ export default function Footer() {
             </a>
             <a
               aria-label="X"
-              href="#"
+              href="https://x.com/setzetin"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/15 text-black/70 transition hover:border-black/35 hover:text-black"
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
