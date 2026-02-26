@@ -88,13 +88,13 @@ export default function AboutPage() {
         </div>
         <div className="flex w-full flex-col gap-20 md:w-1/2 md:pt-40">
             <p className="text-2xl leading-relaxed text-black/80 md:text-3xl">
-                SetZet was born from a simple belief: <span className="text-black font-bold">The internet is noisy.</span> As a leading creative digital agency, we know that to stand out, you don't need to shout. You need to resonate.
+                Setzet was born from a simple belief: <span className="text-black font-bold">The internet is noisy.</span> As a leading creative digital agency, we know that to stand out, you don't need to shout. You need to resonate.
             </p>
             <p className="text-2xl leading-relaxed text-black/80 md:text-3xl">
                 We blend high-end UI/UX design with rock-solid custom web development. Our process is a precise mix of brand psychology, strategic marketing, and modern frontend coding, distilled into powerful digital products.
             </p>
             <div className="relative aspect-square md:aspect-[4/3] lg:aspect-[4/5] w-full flex-shrink-0 overflow-hidden rounded-2xl grayscale transition-all duration-500 hover:grayscale-0">
-                <Image src="/about_photo.png" alt="SetZet Creative Agency Team" fill className="object-cover object-top" />
+                <Image src="/about_photo.png" alt="Setzet Creative Agency Team" fill className="object-cover object-top" />
             </div>
         </div>
       </section>

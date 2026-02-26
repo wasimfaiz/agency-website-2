@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Product",
   description:
-    "Discover SetZet product capabilities, including CRM-focused interfaces and scalable architecture for business growth.",
+    "Discover Setzet product capabilities, including CRM-focused interfaces and scalable architecture for business growth.",
   alternates: {
     canonical: "/product",
   },
   openGraph: {
-    title: "Product | SetZet",
+    title: "Product | Setzet",
     description:
-      "See how SetZet designs and develops product experiences built for performance.",
+      "See how Setzet designs and develops product experiences built for performance.",
     url: "/product",
   },
 };

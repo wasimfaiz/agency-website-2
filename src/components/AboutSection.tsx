@@ -74,7 +74,7 @@ export default function AboutSection() {
                         <div className="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-105">
                             <Image
                                 src="/about_photo.png"
-                                alt="SetZet team"
+                                alt="Setzet team"
                                 fill
                                 className="object-cover object-top opacity-100"
                             />
@@ -91,7 +91,7 @@ export default function AboutSection() {
                             <div>
                                 <p className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-white/70">
                                     <span className="h-px w-8 bg-white/40"></span>
-                                    About SetZet
+                                    About Setzet
                                 </p>
                                 <h2 className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl drop-shadow-sm">
                                     Building Digital Products <br />

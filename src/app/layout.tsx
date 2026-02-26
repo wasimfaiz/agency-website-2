@@ -21,11 +21,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://setzet.com"),
   title: {
-    default: "SetZet | Web Design & Development Agency",
-    template: "%s | SetZet",
+    default: "Setzet | Web Design & Development Agency",
+    template: "%s | Setzet",
   },
   description:
-    "SetZet is a strategy-led web design and development agency helping brands launch high-converting, SEO-ready digital experiences.",
+    "Setzet is a strategy-led web design and development agency helping brands launch high-converting, SEO-ready digital experiences.",
   keywords: [
     "web development agency",
     "web design agency",
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "SetZet | Web Design & Development Agency",
+    title: "Setzet | Web Design & Development Agency",
     description:
       "Strategy, design, and development for modern brands that need high-performance websites and digital products.",
     url: "/",
-    siteName: "SetZet",
+    siteName: "Setzet",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SetZet | Web Design & Development Agency",
+    title: "Setzet | Web Design & Development Agency",
     description:
       "A strategy-led digital agency building high-converting websites and digital platforms.",
   },
@@ -73,7 +73,7 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SetZet",
+    name: "Setzet",
     url: "https://setzet.com",
     email: "hello@setzet.com",
     telephone: "+91-9128376231",

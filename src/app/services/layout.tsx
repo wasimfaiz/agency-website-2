@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore SetZet services including strategy, UI/UX, web design, web development, and technical SEO.",
+    "Explore Setzet services including strategy, UI/UX, web design, web development, and technical SEO.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Services | SetZet",
+    title: "Services | Setzet",
     description:
       "From strategy to engineering, discover end-to-end digital services built for growth.",
     url: "/services",

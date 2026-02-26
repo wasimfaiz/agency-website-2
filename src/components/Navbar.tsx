@@ -69,7 +69,7 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
           <Link href="/" className={`font-bold transition-colors duration-300 ${useDarkTheme ? "text-black" : "text-white"}`}>
-            SetZet
+            Setzet
           </Link>
           <nav
             className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${

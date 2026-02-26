@@ -159,7 +159,7 @@ function HeroSection() {
               <div className="w-56 border-r border-black/5 bg-white/80 backdrop-blur-sm p-5 flex flex-col gap-6 relative z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
                  <div className="flex items-center gap-2 mb-2 px-1">
                    <div className="w-6 h-6 rounded-lg bg-black flex items-center justify-center text-white font-bold text-[10px]">SZ</div>
-                   <div className="font-bold text-xs tracking-wide">SetZet CRM</div>
+                   <div className="font-bold text-xs tracking-wide">Setzet CRM</div>
                  </div>
                  
                  <div className="flex flex-col gap-1.5">

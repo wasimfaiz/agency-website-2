@@ -157,7 +157,7 @@ export default function Home() {
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
           <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>
-            SetZet
+            Setzet
           </span>
           <nav
             className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${
