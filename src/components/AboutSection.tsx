@@ -16,28 +16,28 @@ const chapters = [
         id: "01",
         title: "Strategic Website Planning & Brand Positioning",
         description: "We start with in-depth research to understand your business model, target audience, and growth objectives. Our web development strategy ensures your website has a clear positioning, strong messaging, and a foundation built for long-term success.",
-        icon: <BsStars className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        icon: <BsStars className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
         image: "/ui-design.png",
     },
     {
         id: "02",
         title: "Conversion-Focused UI/UX & Website Design",
         description: "Our team designs modern, user-centric interfaces with strong visual hierarchy and seamless user experience. Every design decision is focused on building trust, improving engagement, and increasing conversions.",
-        icon: <BsLayers className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        icon: <BsLayers className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
         image: "/web-design.png",
     },
     {
         id: "03",
         title: "High-Performance & Scalable Web Development",
         description: "We develop fast, secure, and SEO-optimized websites and SaaS platforms using modern technologies. Our websites are built for performance, scalability, and easy updates — ensuring sustainable business growth.",
-        icon: <BsLightningCharge className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        icon: <BsLightningCharge className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
         image: "/web-development.jpg",
     },
     {
         id: "04",
         title: "Continuous Optimization & Growth Scaling",
         description: "After launch, we measure performance, analyze user behavior, and continuously optimize your website. Through performance tuning, SEO improvements, and feature upgrades, we help your digital product evolve as your business grows.",
-        icon: <BsGraphUpArrow className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-white transition-colors duration-500" />,
+        icon: <BsGraphUpArrow className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
         image: "/crm.png",
     },
 ];
@@ -122,36 +122,22 @@ export default function AboutSection() {
                             className="group relative h-[70vh] w-[85vw] shrink-0 sm:w-[400px]"
                             data-animate="about"
                         >
-                            {/* Inner Container for Content & Image (Clipped) */}
-                            <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[40px] border border-black/5 bg-white p-8 shadow-sm transition-all duration-500 hover:border-black/20 sm:p-10">
+                            {/* Inner Container for Content (Clipped) */}
+                            <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[40px] border border-black/5 bg-white p-8 shadow-sm transition-all duration-500 hover:border-black/20 hover:shadow-md sm:p-10">
                                 
-                                {/* Background Image with Zoom Effect */}
-                                <div className="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-110">
-                                    <Image
-                                        src={chapter.image}
-                                        alt={chapter.title}
-                                        fill
-                                        className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                                    />
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                </div>
-
-                                {/* Glassmorphism Overlay on Hover */}
-                                <div className="absolute inset-0 z-10 bg-white/10 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:opacity-100" />
-
                                 <div className="relative z-20">
                                     {chapter.icon}
                                     <p className="text-xs uppercase tracking-[0.3em] text-black/40 group-hover:text-black/60 transition-colors duration-500">
                                         Chapter {chapter.id}
                                     </p>
-                                    <h3 className="mt-4 text-3xl font-semibold leading-tight group-hover:text-white transition-colors duration-500">
+                                    <h3 className="mt-4 text-3xl font-semibold leading-tight text-black transition-colors duration-500">
                                         {chapter.title}
                                     </h3>
                                 </div>
 
                                 <div className="relative z-20">
-                                    <div className="mb-8 h-px w-full bg-black/10 group-hover:bg-white/20 transition-colors duration-500" />
-                                    <p className="text-base leading-7 text-black/70 group-hover:text-white/80 transition-colors duration-500">
+                                    <div className="mb-8 h-px w-full bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
+                                    <p className="text-base leading-7 text-black/70 group-hover:text-black transition-colors duration-500">
                                         {chapter.description}
                                     </p>
                                 </div>

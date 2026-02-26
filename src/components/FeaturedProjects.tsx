@@ -15,13 +15,13 @@ const projects = [
             "Designed an intuitive, comprehensive educational platform that streamlines learning and dramatically boosts student engagement.",
     },
     {
-        title: "Pulseboard SaaS",
-        category: "Product Experience",
+        title: "Uncle Makhana",
+        category: "Brand Experience",
         year: "2025",
-        image: "/ui-design.png",
+        image: "/images/aesthetic-img2.png",
         href: "#",
         summary:
-            "Designed a dashboard system that reduced onboarding friction and turned complex workflows into clear moments.",
+            "Designed a vibrant and appetizing digital experience that perfectly captures the playful essence of the Uncle Makhana brand.",
     },
     {
         title: "Atlas Launch Site",

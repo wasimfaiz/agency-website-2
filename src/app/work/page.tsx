@@ -41,13 +41,13 @@ const workStories = [
   },
   {
     chapter: "04",
-    title: "Oria Finance",
-    tagline: "Banking Without Friction",
-    description: "Money moves fast. Your banking app should too. We stripped away the noise to focus on speed, security, and simplicity.",
-    narrative: "Complexity is the enemy of trust. For Oria, we redesigned the entire banking flow from first principles, reducing user actions by 60%. Every interaction is micro-animated to provide instant, reassuring feedback. Banking has never felt this fluid.",
-    tags: ["Fintech", "App Design", "System Architecture"],
-    image: "/mobile-app-development.png",
-    color: "#2dd4bf"
+    title: "Uncle Makhana",
+    tagline: "Crunchy, Healthy, Irresistible",
+    description: "Snacking doesn't have to be a guilty pleasure. Uncle Makhana brings traditional, nutrient-packed foxnuts to the modern consumer with a punch of incredible flavors.",
+    narrative: "We designed a vibrant and appetizing digital experience that perfectly captures the playful essence of the Uncle Makhana brand. From dynamic packaging layouts to a seamless e-commerce journey, we built a storefront that turns every craving into an effortless purchase.",
+    tags: ["D2C", "E-Commerce", "Branding"],
+    image: "/images/aesthetic-img2.png",
+    color: "#f43f5e"
   },
   {
     chapter: "05",
@@ -70,7 +70,7 @@ const impactStats = [
 
 // --- COMPONENTS ---
 
-// 1. STORY ITEM (Parallax & Sticky)
+// 1. STORY ITEM (Modern Expansive Aesthetic)
 const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -78,116 +78,94 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
         offset: ["start end", "end start"]
     });
 
-    const yText = useTransform(scrollYProgress, [0, 1], [50, -50]);
-    const scaleImg = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.1]);
-    const opacityOverlay = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.6, 0, 0.6]);
+    const isEven = i % 2 === 0;
+
+    // Subtler parallax for the larger image
+    const scaleImg = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
+    
+    // Content card floats smoothly
+    const yContent = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
     return (
-        <section ref={containerRef} className="min-h-screen py-20 flex items-center relative z-10">
-            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+        <section ref={containerRef} className="py-24 relative z-10 overflow-hidden">
+            <div className="container mx-auto px-6 lg:px-12 relative flex items-center justify-center min-h-[80vh]">
                 
-                {/* Text Side - Sticky-ish Feel thanks to Parallax */}
-                <motion.div style={{ y: yText }} className="space-y-10 order-2 md:order-1 relative z-20 will-change-transform">
-                    <span className="font-mono text-sm uppercase tracking-[0.3em] text-black/40 block">
-                        Chapter {project.chapter}
-                    </span>
-                    
-                    <h2 className="text-6xl md:text-8xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-b from-black to-black/40 leading-tight">
-                        {project.title}
-                    </h2>
-                    
-                    <h3 className="text-2xl md:text-3xl text-black font-light italic border-l-2 border-black/20 pl-6">
-                        "{project.tagline}"
-                    </h3>
-                    
-                    <div className="space-y-6 text-lg text-black/70 leading-loose max-w-md">
-                        <p>{project.description}</p>
-                        <p className="text-black/50 text-base">{project.narrative}</p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-3 pt-6">
-                        {project.tags.map((tag, idx) => (
-                            <span key={idx} className="px-5 py-2.5 rounded-full border border-black/5 bg-black/[0.02] text-xs font-semibold uppercase tracking-[0.1em] text-black/60 hover:bg-black hover:text-white transition-colors cursor-default backdrop-blur-sm">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-
-                    <div className="pt-10">
-                         <div className="group flex items-center gap-4 cursor-pointer">
-                             <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
-                                 <svg className="w-5 h-5 text-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                 </svg>
-                             </div>
-                             <span className="uppercase tracking-[0.15em] text-sm text-black font-medium group-hover:translate-x-2 transition-transform duration-300">Read Case Study</span>
-                         </div>
-                    </div>
-                </motion.div>
-
-                {/* Image Side - Cinematic Parallax */}
-                <div className="order-1 md:order-2 relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] group">
-                    <motion.div style={{ scale: scaleImg }} className="absolute inset-0 bg-[#F5F5F7] transition-transform duration-700 group-hover:scale-105 will-change-transform">
-                         {/* Dynamic Abstract Background */}
-                         <div className="absolute inset-0">
-                             <div className="absolute -top-40 -left-40 w-[150%] h-[150%] opacity-40 blur-3xl mix-blend-multiply transition-colors duration-1000" style={{ background: `radial-gradient(circle at 40% 40%, ${project.color}, transparent 60%)` }} />
-                             <div className="absolute bottom-0 right-0 w-[100%] h-[100%] opacity-30 blur-2xl mix-blend-multiply transition-colors duration-1000" style={{ background: `radial-gradient(circle at 80% 80%, ${project.color}, transparent 60%)` }} />
-                         </div>
-                         
-                         {/* Centered Floating Element mapping to project */}
-                         <div className="absolute inset-0 flex items-center justify-center p-10">
-                             <motion.div 
-                                animate={{ y: [0, -15, 0] }}
-                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                className="w-full max-w-sm aspect-square bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl border border-white overflow-hidden relative flex flex-col group-hover:-translate-y-2 transition-transform duration-500"
-                             >
-                                 {/* Fake Toolbar/Header */}
-                                 <div className="h-10 border-b border-white/40 flex items-center px-5 gap-2 bg-white/50">
-                                     <div className="w-3 h-3 rounded-full bg-red-400" />
-                                     <div className="w-3 h-3 rounded-full bg-amber-400" />
-                                     <div className="w-3 h-3 rounded-full bg-green-400" />
-                                 </div>
-                                 {/* Project Image Area with Fallback Fake UI */}
-                                 <div className="flex-1 w-full relative bg-white overflow-hidden">
-                                     {/* Fake UI fallback for projects without images */}
-                                     <div className="absolute inset-0 p-8 flex flex-col gap-6 justify-center bg-[#fdfdfd] z-0">
-                                         <div className="w-3/4 h-6 rounded-lg bg-black/5" />
-                                         <div className="w-1/2 h-3 rounded-md bg-black/5" />
-                                         <div className="w-5/6 h-3 rounded-md bg-black/5" />
-                                         <div className="mt-8 flex gap-4">
-                                             <div className="w-12 h-12 rounded-full bg-black/5" />
-                                             <div className="w-12 h-12 rounded-full bg-black/5" />
-                                         </div>
-                                     </div>
-                                     {/* Optional: The Actual Image */}
-                                     <div className="absolute inset-0 z-10 transition-transform duration-700 ease-out group-hover:scale-105">
-                                         <Image 
-                                             src={project.image}
-                                             alt={project.title}
-                                             fill
-                                             className="object-cover object-top hover:object-center transition-all duration-1000"
-                                             onError={(e) => {
-                                                 e.currentTarget.style.display = 'none';
-                                             }}
-                                         />
-                                     </div>
-                                 </div>
-                                 <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full blur-3xl opacity-30 transition-colors duration-1000" style={{ backgroundColor: project.color }} />
-                             </motion.div>
-                         </div>
-                         
-                         {/* Grid Pattern Overlay */}
-                         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-                         <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:30px_30px]" />
-                    </motion.div>
-                    
-                    {/* Darken edges slightly as it enters/leaves viewport */}
-                    <motion.div style={{ opacity: opacityOverlay }} className="absolute inset-0 bg-[#FCFCFC] pointer-events-none" />
-                    
-                    {/* Big Letter Watermark */}
-                    <div className="absolute -bottom-12 -right-4 md:-right-10 text-[12rem] md:text-[18rem] font-bold text-black/[0.04] font-heading pointer-events-none select-none leading-none tracking-tighter">
+                {/* Massive Typography Behind Everything */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 hidden lg:block opacity-[0.02]">
+                    <span className="text-[25vw] font-bold tracking-tighter leading-none select-none whitespace-nowrap">
                         {project.chapter}
+                    </span>
+                </div>
+
+                {/* Main Content Layout - Overlapping Grid */}
+                <div className={`w-full flex flex-col md:flex-row items-center relative z-10 gap-8 md:gap-0 ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
+                    
+                    {/* Expansive Image Card */}
+                    <div className={`w-full md:w-[70%] lg:w-[65%] relative z-10 ${isEven ? 'md:mr-[-15%]' : 'md:ml-[-15%] md:order-2'}`}>
+                        <div className="w-full aspect-[4/3] md:aspect-[16/10] bg-[#111116] rounded-[32px] overflow-hidden relative group shadow-2xl p-2 md:p-4 border border-black/5">
+                            
+                            {/* Inner framing */}
+                            <div className="w-full h-full rounded-[24px] overflow-hidden relative">
+                                <motion.div style={{ scale: scaleImg }} className="absolute inset-0 will-change-transform">
+                                    <Image 
+                                         src={project.image}
+                                         alt={project.title}
+                                         fill
+                                         className="object-cover object-center filter contrast-[1.05] group-hover:scale-105 transition-transform duration-[2s] ease-[0.16,1,0.3,1]"
+                                         onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                     />
+                                     {/* Dark overlay that fades on hover */}
+                                     <div className="absolute inset-0 bg-black/20 transition-opacity duration-1000 group-hover:opacity-0" />
+                                </motion.div>
+                            </div>
+
+                            {/* Floating Action Button inside image */}
+                            <div className={`absolute bottom-8 z-20 ${isEven ? 'right-8' : 'left-8'}`}>
+                                <button className="w-14 h-14 rounded-full bg-white text-black shadow-xl flex items-center justify-center hover:scale-110 hover:bg-black hover:text-white transition-all duration-300">
+                                    <svg className="w-5 h-5 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                     </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+
+                    {/* Content Card */}
+                    <motion.div 
+                        style={{ y: yContent }}
+                        className={`w-full md:w-[45%] lg:w-[40%] relative z-20 ${isEven ? 'md:order-2' : 'md:order-1'}`}
+                    >
+                        <div className="bg-white/95 backdrop-blur-xl p-10 lg:p-14 rounded-[32px] shadow-[0_30px_60px_rgba(0,0,0,0.06)] border border-black/5">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-[1px] w-8 bg-black/20" />
+                                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-black/80">
+                                    Selected Work // {project.chapter}
+                                </span>
+                            </div>
+
+                            <h2 className="text-4xl lg:text-5xl font-sans font-bold tracking-tight text-black leading-[1.1] mb-3">
+                                {project.title}
+                            </h2>
+                            
+                            <p className="text-lg font-light text-black/50 mb-8 italic">
+                                {project.tagline}
+                            </p>
+
+                            <div className="space-y-6 text-black/60 leading-relaxed font-light text-[15px] mb-10">
+                                <p>{project.description}</p>
+                                <p className="opacity-80 hidden md:block">{project.narrative}</p>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2 pt-6 border-t border-black/5">
+                                {project.tags.map((tag, idx) => (
+                                    <span key={idx} className="font-sans text-[11px] font-semibold text-black/60 px-4 py-1.5 bg-[#f3f4f6] rounded-md">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+
                 </div>
             </div>
         </section>
