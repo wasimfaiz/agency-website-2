@@ -63,7 +63,7 @@ export default function AboutSection() {
                 {/* Animated Horizontal Container */}
                 <motion.div
                     style={{ x }}
-                    className="flex gap-10 pl-4 sm:pl-16 lg:pl-24"
+                    className="flex gap-10 pl-4 sm:pl-16 lg:pl-24 will-change-transform"
                 >
                     {/* INTRO CARD - Fixed width */}
                     <div
