@@ -24,13 +24,13 @@ const projects = [
             "Designed a vibrant and appetizing digital experience that perfectly captures the playful essence of the Uncle Makhana brand.",
     },
     {
-        title: "Atlas Launch Site",
-        category: "Web Development",
-        year: "2024",
-        image: "/web-development.jpg",
+        title: "Pure Makhana",
+        category: "Brand Website",
+        year: "2026",
+        image: "/images/pure-makhana.png",
         href: "#",
         summary:
-            "Built a fast, motion-led marketing site with CMS flexibility and production-grade performance from day one.",
+            "A premium, luxury, and ultra-clean website for a high-end makhana brand, designed to communicate purity and modern elegance.",
     },
     {
         title: "Orbit Mobile Suite",

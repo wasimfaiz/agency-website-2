@@ -31,13 +31,13 @@ const workStories = [
   },
   {
     chapter: "03",
-    title: "Nova Estate",
-    tagline: "Architecture You Can Feel",
-    description: "Luxury real estate isn't bought; it's experienced. We crafted a digital environment that rivals the physical spaces it sells.",
-    narrative: "Static images were not enough. We implemented cinematic 3D walkthroughs and ambient soundscapes to transport potential buyers into the property before they ever stepped foot inside. This emotional connection drove conversion rates up by 40%.",
-    tags: ["Immersive Web", "3D Motion", "Brand"],
-    image: "/images/aesthetic-img3.png",
-    color: "#c084fc"
+    title: "Pure Makhana",
+    tagline: "The Zenith of Purity",
+    description: "A premium, luxury, and ultra-clean website for a high-end makhana brand, designed to communicate purity and modern elegance.",
+    narrative: "We designed a spacious layout with ample white space, elegant typography, and subtle micro-animations to elevate the brand. The soft, neutral color palette with gold accents communicates a high-class, luxury wellness experience compared to typical local snack brands.",
+    tags: ["Brand Website", "Luxury", "UI/UX"],
+    image: "/images/pure-makhana.png",
+    color: "#d4af37"
   },
   {
     chapter: "04",
