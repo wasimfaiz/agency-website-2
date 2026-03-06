@@ -21,7 +21,7 @@ function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm text-sm font-semibold text-[#0A2540]/70 mb-8 border border-[#0A2540]/5"
         >
           <span className="w-2 h-2 rounded-full bg-[#007BFF] animate-pulse" />
-          Setzet CRM 2.0 is now available
+          Setzet Enterprise Suite is now available
         </motion.div>
 
         <motion.h1
@@ -30,9 +30,9 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-[clamp(3rem,7vw,6.5rem)] font-extrabold leading-[1.05] tracking-tighter text-[#0A2540]"
         >
-          The CRM built for <br />
+          Run your entire business from <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540] drop-shadow-sm">
-            unstoppable growth.
+            one powerful platform.
           </span>
         </motion.h1>
 
@@ -42,7 +42,7 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto mt-6 max-w-2xl text-lg text-[#0A2540]/70 md:text-xl font-medium leading-relaxed"
         >
-          Stop losing leads to messy spreadsheets. Automate your workflows, close deals faster, and scale your business with a platform that actually works for you.
+          Stop juggling messy spreadsheets and paying for a dozen different tools. Manage your HR, sales, inventory, and operations from a single, easy-to-use dashboard.
         </motion.p>
 
         <motion.div
@@ -143,8 +143,8 @@ function FeatureListSection() {
       imageAlign: "right",
     },
     {
-      title: "Automate your busywork.",
-      desc: "Stop doing things manually. Set up rules that automatically send follow-up emails, assign tasks to your team, and update lead statuses when certain actions are taken. Let the CRM work for you.",
+      title: "Automate your operational busywork.",
+      desc: "Stop doing things manually. Set up rules that automatically send HR updates, invoice school fees, or update CRM lead statuses when actions are taken. Let the software work for you.",
       metrics: "Save 15+ hours a week",
       imageAlign: "left",
     },
@@ -294,7 +294,7 @@ function BottomCta() {
              Convert higher. <br/> Grow faster.
           </h2>
           <p className="text-xl text-[#0A2540]/70 font-medium mb-12 max-w-2xl mx-auto">
-             Join thousands of modern teams scaling their revenue predictably with Setzet CRM.
+             Join thousands of modern teams scaling their business predictably with the Setzet Enterprise Suite.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
              <Link href="#contact" className="px-10 py-5 bg-[#007BFF] text-white rounded-full font-bold text-lg hover:scale-105 hover:bg-[#0056b3] transition-all shadow-[0_8px_20px_rgba(0,123,255,0.3)]">
@@ -309,12 +309,48 @@ function BottomCta() {
   );
 }
 
+function ProductSuiteSection() {
+  const products = [
+    { name: "Setzet HRMS", desc: "Automate payroll, track attendance, and simplify talent management.", icon: "👥", badge: "Most Popular" },
+    { name: "School Management", desc: "Digital classrooms, fee tracking, and seamless parent-teacher portals.", icon: "🏫" },
+    { name: "Sales & CRM", desc: "Visual pipelines, automated follow-ups, and bank-grade data security.", icon: "📈", badge: "Updated" },
+    { name: "Inventory Pro", desc: "Real-time stock tracking, purchase orders, and multi-warehouse sync.", icon: "📦" }
+  ];
+
+  return (
+    <section className="py-32 bg-white relative z-10 border-b border-[#0A2540]/5">
+       <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+             <h2 className="text-3xl md:text-5xl font-extrabold text-[#0A2540] mb-4 tracking-tight">Our Enterprise Suite</h2>
+             <p className="text-lg text-[#0A2540]/60 max-w-2xl mx-auto font-medium">Purpose-built software systems designed to run your entire organization from a single pane of glass.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+             {products.map((p, i) => (
+                <div key={i} className="bg-[#F4F6F8] rounded-2xl p-6 border border-[#0A2540]/5 hover:border-[#007BFF]/30 hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)] hover:-translate-y-1 transition-all group flex flex-col">
+                   <div className="flex justify-between items-start mb-6">
+                      <div className="text-4xl bg-white w-14 h-14 flex items-center justify-center rounded-xl shadow-sm border border-[#0A2540]/5 group-hover:scale-110 transition-transform">{p.icon}</div>
+                      {p.badge && <span className="text-[10px] font-bold uppercase tracking-wider bg-[#007BFF]/10 text-[#007BFF] px-2 py-1 rounded-md">{p.badge}</span>}
+                   </div>
+                   <h3 className="text-xl font-bold text-[#0A2540] mb-3">{p.name}</h3>
+                   <p className="text-[#0A2540]/70 text-sm font-medium leading-relaxed flex-1">{p.desc}</p>
+                   <Link href="#contact" className="inline-flex items-center gap-2 mt-6 text-[#007BFF] font-bold text-sm hover:underline">
+                      Explore {p.name} →
+                   </Link>
+                </div>
+             ))}
+          </div>
+       </div>
+    </section>
+  );
+}
+
 export default function ProductShowcase() {
   return (
     <main className="bg-[#FCFCFC] min-h-screen text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans">
       <Navbar forceDarkAtTop />
       <HeroSection />
       <SocialProof />
+      <ProductSuiteSection />
       <FeatureListSection />
       <BentoFeatures />
       <BottomCta />
