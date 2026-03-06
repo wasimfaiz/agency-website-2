@@ -25,7 +25,7 @@ const NavLink = ({
     <a
       href={href}
       className={`group relative overflow-hidden inline-block h-[1.2em] font-semibold transition-colors duration-300 ${
-        isScrolled ? "text-black/70" : "text-white/80"
+        isScrolled ? "text-[#0A2540]/70 hover:text-[#007BFF]" : "text-white/80 hover:text-white"
       }`}
     >
       <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
@@ -33,7 +33,7 @@ const NavLink = ({
       </span>
       <span
         className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 ${
-          isScrolled ? "text-black font-bold" : "text-white font-bold"
+          isScrolled ? "text-[#007BFF] font-bold" : "text-white font-bold"
         }`}
       >
         {children}
@@ -147,23 +147,21 @@ export default function Home() {
   }, []);
 
   return (
-    <main id="top" className="noise-bg min-h-screen bg-white text-black">
+    <main id="top" className="noise-bg min-h-screen bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540]">
       {/* NAVIGATION BAR */}
       <header
         className={`fixed top-0 z-30 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
           isScrolled
-            ? "bg-white/90 text-black/60 shadow-sm backdrop-blur py-3"
+            ? "bg-[#F4F6F8]/90 text-[#0A2540]/60 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
             : "bg-transparent text-white py-6"
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
-          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>
+          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#0A2540]" : "text-white"}`}>
             Setzet
           </span>
           <nav
-            className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${
-              isScrolled ? "text-black/70" : "text-white/80"
-            }`}
+            className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex`}
           >
             <NavLink href="/" isScrolled={isScrolled}>
               Home
@@ -186,10 +184,10 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-3">
             <a
-              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-semibold transition-all duration-300 md:inline-flex ${
+              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 md:inline-flex ${
                 isScrolled
-                  ? "border-black/20 text-black hover:bg-black hover:text-white"
-                  : "border-white/30 text-white hover:bg-white hover:text-black"
+                  ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
+                  : "border-white/30 text-white hover:bg-white hover:text-[#0A2540]"
               }`}
               href="#contact"
             >
@@ -198,7 +196,7 @@ export default function Home() {
             <button
               className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
                 isScrolled
-                  ? "border-black/20 text-black hover:border-black"
+                  ? "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
                   : "border-white/30 text-white hover:border-white"
               }`}
               aria-expanded={menuOpen}
@@ -210,17 +208,17 @@ export default function Home() {
                 <span
                   className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  } ${isScrolled ? "bg-black" : "bg-white"}`}
+                  } ${isScrolled ? "bg-[#0A2540]" : "bg-white"}`}
                 />
                 <span
                   className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
                     menuOpen ? "opacity-0" : "opacity-100"
-                  } ${isScrolled ? "bg-black" : "bg-white"}`}
+                  } ${isScrolled ? "bg-[#0A2540]" : "bg-white"}`}
                 />
                 <span
                   className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  } ${isScrolled ? "bg-black" : "bg-white"}`}
+                  } ${isScrolled ? "bg-[#0A2540]" : "bg-white"}`}
                 />
               </span>
             </button>
@@ -231,28 +229,28 @@ export default function Home() {
       {/* MOBILE MENU PANEL (SLIDE FROM CORNER) */}
       <div
         id="mobile-menu"
-        className={`fixed right-4 top-16 z-40 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-black/10 bg-white p-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-black/70 shadow-lg transition-all duration-300 md:hidden ${
+        className={`fixed right-4 top-16 z-40 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-[#0A2540]/10 bg-white p-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A2540]/70 shadow-lg transition-all duration-300 md:hidden ${
           menuOpen
             ? "scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 -translate-y-2 opacity-0"
         }`}
       >
-        <a className="block py-2 transition hover:text-black" href="/">
+        <a className="block py-2 transition hover:text-[#007BFF]" href="/">
           Home
         </a>
-        <a className="block py-2 transition hover:text-black" href="/about">
+        <a className="block py-2 transition hover:text-[#007BFF]" href="/about">
           About
         </a>
-        <a className="block py-2 transition hover:text-black" href="/services">
+        <a className="block py-2 transition hover:text-[#007BFF]" href="/services">
           Services
         </a>
-        <a className="block py-2 transition hover:text-black" href="/work">
+        <a className="block py-2 transition hover:text-[#007BFF]" href="/work">
           Work
         </a>
-        <a className="block py-2 transition hover:text-black" href="/product">
+        <a className="block py-2 transition hover:text-[#007BFF]" href="/product">
           Product
         </a>
-        <a className="block py-2 transition hover:text-black" href="/blogs">
+        <a className="block py-2 transition hover:text-[#007BFF]" href="/blogs">
           Blogs
         </a>
       </div>
@@ -331,13 +329,13 @@ export default function Home() {
                   initial="hidden"
                   animate="visible"
                   variants={fadeInUp}
-                  className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium"
+                  className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-bold"
                 >
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className="rounded-full bg-white px-8 py-4 text-black font-medium shadow-lg hover:shadow-xl hover:bg-white/90 transition-all duration-300"
+                    className="rounded-full bg-[#007BFF] px-8 py-4 text-white font-bold shadow-[0_8px_30px_rgba(0,123,255,0.3)] hover:bg-[#0056b3] hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)] transition-all duration-300"
                   >
                     Start a Project
                   </motion.button>
@@ -358,13 +356,13 @@ export default function Home() {
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div>
               <p
-                className="text-xs uppercase tracking-[0.35em] text-black/60"
+                className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF] bg-[#007BFF]/10 inline-block px-3 py-1 rounded-md"
                 data-animate="services"
               >
                 Services
               </p>
               <h2
-                className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl"
+                className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl text-[#0A2540]"
                 data-animate="services"
               >
                 Web Design, Development &
@@ -373,7 +371,7 @@ export default function Home() {
               </h2>
             </div>
             <p
-              className="max-w-xl text-base leading-7 text-black/70 sm:text-lg"
+              className="max-w-xl text-base leading-7 text-[#0A2540]/70 sm:text-lg font-medium border-l-4 border-[#007BFF] pl-4"
               data-animate="services"
             >
               We provide end-to-end web design, web development, and digital
@@ -383,147 +381,92 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-10 divide-y divide-black/10 border-y border-black/10">
+          <div className="mt-10 divide-y divide-[#0A2540]/10 border-y border-[#0A2540]/10">
             <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center"
+              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
               data-animate="services"
             >
-              <div className="pointer-events-none absolute right-6 top-1/2 hidden w-56 -translate-y-1/2 opacity-0 transition duration-300 group-hover:opacity-100 lg:block">
-                <div className="relative aspect-[4/3] w-full rounded-2xl border border-black/10 bg-white p-2">
-                  <Image
-                    src="/ui-design.png"
-                    alt="UI UX visual"
-                    fill
-                    sizes="224px"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                 01
               </p>
-              <h3 className="text-2xl font-semibold">UI/UX</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
+              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">UI/UX</h3>
+              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
                 <p>
                   User research, wireframes, and UI/UX design focused on improving usability, increasing engagement, and boosting website conversion rates.
                 </p>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
                   Research - Flows - Prototypes
                 </p>
               </div>
             </div>
 
             <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center"
+              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
               data-animate="services"
             >
-              <div className="pointer-events-none absolute right-6 top-1/2 hidden w-56 -translate-y-1/2 opacity-0 transition duration-300 group-hover:opacity-100 lg:block">
-                <div className="relative aspect-[4/3] w-full rounded-2xl border border-black/10 bg-white p-2">
-                  <Image
-                    src="/web-design.png"
-                    alt="Web design visual"
-                    fill
-                    sizes="224px"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                 02
               </p>
-              <h3 className="text-2xl font-semibold">Web Design</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
+              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">Web Design</h3>
+              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
                 <p>
                   Custom website design with modern layouts, responsive UI, typography systems, and brand-focused visual identity that builds trust and authority.
                 </p>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
                   Art Direction - UI - Motion
                 </p>
               </div>
             </div>
 
             <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center"
+              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
               data-animate="services"
             >
-              <div className="pointer-events-none absolute right-6 top-1/2 hidden w-56 -translate-y-1/2 opacity-0 transition duration-300 group-hover:opacity-100 lg:block">
-                <div className="relative aspect-[4/3] w-full rounded-2xl border border-black/10 bg-white p-2">
-                  <Image
-                    src="/web-development.jpg"
-                    alt="Web development visual"
-                    fill
-                    sizes="224px"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                 03
               </p>
-              <h3 className="text-2xl font-semibold">Web Development</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
+              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">Web Development</h3>
+              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
                 <p>
                   Custom web development using modern frameworks like Next.js, with SEO optimization, clean code architecture, CMS integration, and performance-first builds.
                 </p>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
                   Next.js - SEO - CMS
                 </p>
               </div>
             </div>
 
             <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center"
+              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
               data-animate="services"
             >
-              <div className="pointer-events-none absolute right-6 top-1/2 hidden w-56 -translate-y-1/2 opacity-0 transition duration-300 group-hover:opacity-100 lg:block">
-                <div className="relative aspect-[4/3] w-full rounded-2xl border border-black/10 bg-white p-2">
-                  <Image
-                    src="/mobile-app-development.png"
-                    alt="App development visual"
-                    fill
-                    sizes="224px"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                 04
               </p>
-              <h3 className="text-2xl font-semibold">App Development</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
+              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">App Development</h3>
+              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
                 <p>
                   Cross-platform mobile app development for iOS and Android, built for speed, scalability, and seamless user experience.
                 </p>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
                   iOS - Android - QA
                 </p>
               </div>
             </div>
 
             <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center"
+              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
               data-animate="services"
             >
-              <div className="pointer-events-none absolute right-6 top-1/2 hidden w-56 -translate-y-1/2 opacity-0 transition duration-300 group-hover:opacity-100 lg:block">
-                <div className="relative aspect-[4/3] w-full rounded-2xl border border-black/10 bg-white p-2">
-                  <Image
-                    src="/crm.png"
-                    alt="CRM ERP visual"
-                    fill
-                    sizes="224px"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                 05
               </p>
-              <h3 className="text-2xl font-semibold">CRM/ERP</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-black/70">
+              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">CRM/ERP</h3>
+              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
                 <p>
                   Custom CRM and ERP development solutions that automate workflows, centralize data, integrate systems, and improve operational efficiency.
                 </p>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
                   Dashboards - Automation - Integrations
                 </p>
               </div>
@@ -547,54 +490,54 @@ export default function Home() {
         >
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <div
-              className="relative overflow-hidden rounded-[30px] border border-black/10 bg-white/85 p-7 sm:p-9"
+              className="relative overflow-hidden rounded-[30px] border border-[#0A2540]/10 bg-white p-7 sm:p-9 shadow-sm"
               data-animate="contact"
             >
-              <div className="pointer-events-none absolute -right-8 -top-10 h-36 w-36 rounded-full border border-black/10" />
-              <p className="text-xs uppercase tracking-[0.35em] text-black/60">
+              <div className="pointer-events-none absolute -right-8 -top-10 h-36 w-36 rounded-full bg-[#007BFF]/5 blur-[40px]" />
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
                 Contact Us
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl text-[#0A2540]">
                 Ready to Design and Build Something That Performs?
               </h2>
-              <p className="mt-6 max-w-md text-base leading-7 text-black/70">
+              <p className="mt-6 max-w-md text-base leading-7 text-[#0A2540]/70 font-medium">
                 Tell us about your goals and timeline. We partner with ambitious teams to design, develop, and launch scalable digital products that drive measurable growth.
               </p>
 
-              <div className="mt-10 space-y-4 text-sm">
-                <p className="border-t border-black/10 pt-4 text-black/75">
+              <div className="mt-10 space-y-4 text-sm font-medium">
+                <p className="border-t border-[#0A2540]/10 pt-4 text-[#0A2540]">
                   hello@setzet.studio
                 </p>
-                <p className="border-t border-black/10 pt-4 text-black/75">
+                <p className="border-t border-[#0A2540]/10 pt-4 text-[#0A2540]">
                   +91-9128376231
                 </p>
-                <p className="border-t border-black/10 pt-4 text-black/75">
+                <p className="border-t border-[#0A2540]/10 pt-4 text-[#0A2540]">
                   Noida, India.
                 </p>
               </div>
             </div>
 
             <form
-              className="relative overflow-hidden rounded-[30px] border border-black/10 bg-white/80 p-6 sm:p-8"
+              className="relative overflow-hidden rounded-[30px] border border-[#0A2540]/10 bg-white p-6 sm:p-8 shadow-sm"
               data-animate="contact"
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="flex flex-col gap-2">
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-black/55">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
                     Name
                   </span>
                   <input
-                    className="h-12 rounded-xl border border-black/15 bg-white px-4 text-sm text-black outline-none transition focus:border-black/35"
+                    className="h-12 rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
                     placeholder="Your full name"
                     type="text"
                   />
                 </label>
                 <label className="flex flex-col gap-2">
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-black/55">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
                     Email
                   </span>
                   <input
-                    className="h-12 rounded-xl border border-black/15 bg-white px-4 text-sm text-black outline-none transition focus:border-black/35"
+                    className="h-12 rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
                     placeholder="you@company.com"
                     type="email"
                   />
@@ -602,32 +545,32 @@ export default function Home() {
               </div>
 
               <label className="mt-4 flex flex-col gap-2">
-                <span className="text-[11px] uppercase tracking-[0.25em] text-black/55">
+                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
                   Project Type
                 </span>
                 <input
-                  className="h-12 rounded-xl border border-black/15 bg-white px-4 text-sm text-black outline-none transition focus:border-black/35"
+                  className="h-12 rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
                   placeholder="Brand site, app, redesign..."
                   type="text"
                 />
               </label>
 
               <label className="mt-4 flex flex-col gap-2">
-                <span className="text-[11px] uppercase tracking-[0.25em] text-black/55">
+                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
                   Project Brief
                 </span>
                 <textarea
-                  className="min-h-[150px] rounded-xl border border-black/15 bg-white px-4 py-3 text-sm text-black outline-none transition focus:border-black/35"
+                  className="min-h-[150px] rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 py-3 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
                   placeholder="Tell us about your goals, timeline, and expectations."
                 />
               </label>
 
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 pt-5">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-black/50">
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#0A2540]/10 pt-5">
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A2540]/50">
                   Response within 24 hours
                 </p>
                 <button
-                  className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-black/85"
+                  className="rounded-full bg-[#007BFF] px-8 py-3 text-sm font-bold text-white transition-all shadow-[0_8px_30px_rgba(0,123,255,0.3)] hover:bg-[#0056b3] hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)] transform hover:-translate-y-0.5"
                   type="submit"
                 >
                   Send Inquiry

@@ -75,8 +75,11 @@ export default function BlogsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FCFCFC] selection:bg-black selection:text-white pb-20">
+    <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20 font-sans relative">
       <Navbar forceDarkAtTop={true} />
+
+      {/* Decorative Background Blob */}
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vh] bg-[#007BFF]/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       {/* Header Section */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
@@ -85,15 +88,15 @@ export default function BlogsPage() {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-black/40 mb-6">Our Journal</p>
-          <h1 className="text-[clamp(3rem,6vw,5rem)] font-light leading-[1.1] tracking-tighter text-black w-full md:w-[80%]">
-             Insights, stories, and <span className="font-medium text-black/40 italic">strategies</span> from our team.
+          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#007BFF] mb-6 inline-block bg-[#007BFF]/10 px-3 py-1 rounded-md">Our Journal</p>
+          <h1 className="text-[clamp(3rem,6vw,5rem)] font-extrabold leading-[1.1] tracking-tighter text-[#0A2540] w-full md:w-[80%] font-heading">
+             Insights, stories, and <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540]">strategies</span> from our team.
           </h1>
         </motion.div>
       </section>
 
       {/* Featured / Separator */}
-      <div className="w-full h-px bg-black/10 max-w-7xl mx-auto mb-20" />
+      <div className="w-full h-px bg-[#0A2540]/10 max-w-7xl mx-auto mb-20" />
 
       {/* Blog List Section */}
       <section className="px-6 md:px-12 pb-20 max-w-7xl mx-auto">
@@ -112,48 +115,47 @@ export default function BlogsPage() {
                  className="group relative flex flex-col md:flex-row gap-8 md:gap-16 items-start"
               >
                  {/* Image */}
-                 <div className="w-full md:w-5/12 aspect-[4/3] rounded-2xl overflow-hidden relative bg-black/5 flex-shrink-0 cursor-pointer">
+                 <div className="w-full md:w-5/12 aspect-[4/3] rounded-3xl overflow-hidden relative bg-[#0A2540]/5 flex-shrink-0 cursor-pointer shadow-lg border border-[#0A2540]/5 group-hover:shadow-2xl group-hover:border-[#007BFF]/30 transition-all duration-500">
                     <Link href={`/blogs/${blog.id}`}>
                       <Image 
                         src={blog.image} 
                         alt={blog.title} 
                         fill 
-                        className="object-cover transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" 
+                        className="object-cover transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 filter contrast-[1.05]" 
                         sizes="(max-width: 768px) 100vw, 40vw"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-700 pointer-events-none" />
+                      <div className="absolute inset-0 bg-[#0A2540]/0 group-hover:bg-[#007BFF]/10 transition-colors duration-700 pointer-events-none mix-blend-overlay" />
                     </Link>
                  </div>
 
                  {/* Content */}
                  <div className="flex flex-col justify-center h-full pt-2 md:pt-6 lg:pt-10 w-full md:w-7/12 relative">
                     {/* Meta */}
-                    <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-black/40 mb-4 md:mb-6">
+                    <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/50 mb-4 md:mb-6 group-hover:text-[#007BFF] transition-colors">
                        <span>{blog.category}</span>
-                       <span className="w-1 h-1 rounded-full bg-black/20" />
+                       <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
                        <span>{blog.date}</span>
                     </div>
 
                     {/* Title */}
                     <Link href={`/blogs/${blog.id}`}>
-                      <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-black mb-4 md:mb-6 leading-[1.15] group-hover:text-black/70 transition-colors duration-500">
+                      <h2 className="text-3xl md:text-5xl font-heading font-extrabold tracking-tight text-[#0A2540] mb-4 md:mb-6 leading-[1.15] group-hover:text-[#007BFF] transition-colors duration-500">
                          {blog.title}
                       </h2>
                     </Link>
 
                     {/* Excerpt */}
-                    <p className="text-base md:text-lg text-black/60 leading-relaxed max-w-xl mb-8 md:mb-10">
+                    <p className="text-base md:text-lg text-[#0A2540]/70 leading-relaxed max-w-xl mb-8 md:mb-10 font-medium">
                        {blog.excerpt}
                     </p>
 
                     {/* Read More Link */}
-                    <Link href={`/blogs/${blog.id}`} className="inline-flex items-center gap-3 text-sm font-bold text-black uppercase tracking-wider overflow-hidden group/link self-start">
+                    <Link href={`/blogs/${blog.id}`} className="inline-flex items-center gap-3 text-sm font-bold text-[#0A2540] hover:text-[#007BFF] uppercase tracking-wider overflow-hidden group/link self-start transition-colors">
                        <span className="relative pb-1">
                          Read Article
-                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-black origin-left scale-x-100 group-hover/link:scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-                         <span className="absolute left-0 bottom-0 w-full h-[1px] bg-black origin-right scale-x-0 group-hover/link:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] delay-[50ms]" />
+                         <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#0A2540] origin-left scale-x-100 group-hover/link:bg-[#007BFF] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                        </span>
-                       <span className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center transform group-hover/link:-translate-y-1 transition-transform duration-500 text-xs">
+                       <span className="w-8 h-8 rounded-full bg-[#007BFF]/10 text-[#007BFF] flex items-center justify-center transform group-hover/link:-translate-y-1 transition-transform duration-500 text-sm font-bold">
                          &rarr;
                        </span>
                     </Link>

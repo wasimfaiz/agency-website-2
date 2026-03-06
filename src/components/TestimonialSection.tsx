@@ -29,13 +29,13 @@ export default function TestimonialSection() {
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between mb-16">
         <div>
           <p
-            className="text-xs uppercase tracking-[0.35em] text-black/60"
+            className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]"
             data-animate="testimonial"
           >
             Testimonials
           </p>
           <h2
-            className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl text-black"
+            className="mt-4 text-3xl font-extrabold leading-tight tracking-tight font-heading sm:text-4xl text-[#0A2540]"
             data-animate="testimonial"
           >
             What Our Clients
@@ -44,7 +44,7 @@ export default function TestimonialSection() {
           </h2>
         </div>
         <p
-          className="max-w-xl text-base leading-7 text-black/70 sm:text-lg"
+          className="max-w-xl text-base leading-7 font-medium text-[#0A2540]/80 sm:text-lg"
           data-animate="testimonial"
         >
           We pride ourselves on delivering exceptional results. Don't just take
@@ -57,27 +57,27 @@ export default function TestimonialSection() {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-black/10 bg-black/5 p-8 transition-colors hover:bg-black/10"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#0A2540]/10 bg-white p-8 transition-all hover:border-[#0A2540]/20 hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)]"
             data-animate="testimonial"
             data-animate-delay={index * 150}
           >
             <div className="mb-8">
               {/* Quote marks */}
               <svg
-                className="mb-6 h-8 w-8 text-black/20 transition-colors group-hover:text-black/40"
+                className="mb-6 h-8 w-8 text-[#007BFF]/20 transition-colors group-hover:text-[#007BFF]/40"
                 fill="currentColor"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
               >
                 <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
               </svg>
-              <p className="text-lg leading-relaxed text-black/80">
+              <p className="text-lg leading-relaxed font-medium text-[#0A2540]">
                 "{testimonial.quote}"
               </p>
             </div>
             <div>
-              <p className="font-semibold text-black">{testimonial.author}</p>
-              <p className="text-sm text-black/60">{testimonial.role}</p>
+              <p className="font-bold text-[#0A2540]">{testimonial.author}</p>
+              <p className="text-sm font-semibold text-[#007BFF] mt-1">{testimonial.role}</p>
             </div>
           </div>
         ))}

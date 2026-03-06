@@ -16,28 +16,28 @@ const chapters = [
         id: "01",
         title: "Strategic Website Planning & Brand Positioning",
         description: "We start with in-depth research to understand your business model, target audience, and growth objectives. Our web development strategy ensures your website has a clear positioning, strong messaging, and a foundation built for long-term success.",
-        icon: <BsStars className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
+        icon: <BsStars className="text-2xl mb-4 text-[#007BFF] relative z-20 group-hover:text-[#007BFF] transition-colors duration-500" />,
         image: "/ui-design.png",
     },
     {
         id: "02",
         title: "Conversion-Focused UI/UX & Website Design",
         description: "Our team designs modern, user-centric interfaces with strong visual hierarchy and seamless user experience. Every design decision is focused on building trust, improving engagement, and increasing conversions.",
-        icon: <BsLayers className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
+        icon: <BsLayers className="text-2xl mb-4 text-[#007BFF] relative z-20 group-hover:text-[#007BFF] transition-colors duration-500" />,
         image: "/web-design.png",
     },
     {
         id: "03",
         title: "High-Performance & Scalable Web Development",
         description: "We develop fast, secure, and SEO-optimized websites and SaaS platforms using modern technologies. Our websites are built for performance, scalability, and easy updates — ensuring sustainable business growth.",
-        icon: <BsLightningCharge className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
+        icon: <BsLightningCharge className="text-2xl mb-4 text-[#007BFF] relative z-20 group-hover:text-[#007BFF] transition-colors duration-500" />,
         image: "/web-development.jpg",
     },
     {
         id: "04",
         title: "Continuous Optimization & Growth Scaling",
         description: "After launch, we measure performance, analyze user behavior, and continuously optimize your website. Through performance tuning, SEO improvements, and feature upgrades, we help your digital product evolve as your business grows.",
-        icon: <BsGraphUpArrow className="text-2xl mb-4 text-black/60 relative z-20 group-hover:text-black transition-colors duration-500" />,
+        icon: <BsGraphUpArrow className="text-2xl mb-4 text-[#007BFF] relative z-20 group-hover:text-[#007BFF] transition-colors duration-500" />,
         image: "/crm.png",
     },
 ];
@@ -56,7 +56,7 @@ export default function AboutSection() {
         <section
             ref={targetRef}
             id="about"
-            className="relative h-[300vh] bg-white text-black"
+            className="relative h-[300vh] bg-[#F4F6F8] text-[#0A2540]"
         >
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
 
@@ -67,7 +67,7 @@ export default function AboutSection() {
                 >
                     {/* INTRO CARD - Fixed width */}
                     <div
-                        className="group relative h-[70vh] w-[85vw] shrink-0 overflow-hidden rounded-[40px] border border-black/5 bg-[#0a0a0a] p-8 sm:w-[600px] sm:p-12 md:w-[800px] lg:w-[900px]"
+                        className="group relative h-[70vh] w-[85vw] shrink-0 overflow-hidden rounded-[40px] border border-[#0A2540]/10 bg-[#0A2540] p-8 sm:w-[600px] sm:p-12 md:w-[800px] lg:w-[900px] shadow-lg"
                         data-animate="about"
                     >
                         {/* Background Image */}
@@ -123,28 +123,28 @@ export default function AboutSection() {
                             data-animate="about"
                         >
                             {/* Inner Container for Content (Clipped) */}
-                            <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[40px] border border-black/5 bg-white p-8 shadow-sm transition-all duration-500 hover:border-black/20 hover:shadow-md sm:p-10">
+                            <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[40px] border border-[#0A2540]/10 bg-white p-8 shadow-sm transition-all duration-500 hover:border-[#007BFF]/30 hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)] sm:p-10">
                                 
                                 <div className="relative z-20">
                                     {chapter.icon}
-                                    <p className="text-xs uppercase tracking-[0.3em] text-black/40 group-hover:text-black/60 transition-colors duration-500">
+                                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF] transition-colors duration-500">
                                         Chapter {chapter.id}
                                     </p>
-                                    <h3 className="mt-4 text-3xl font-semibold leading-tight text-black transition-colors duration-500">
+                                    <h3 className="mt-4 text-3xl font-extrabold leading-tight text-[#0A2540] transition-colors duration-500 group-hover:text-[#007BFF]">
                                         {chapter.title}
                                     </h3>
                                 </div>
 
                                 <div className="relative z-20">
-                                    <div className="mb-8 h-px w-full bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
-                                    <p className="text-base leading-7 text-black/70 group-hover:text-black transition-colors duration-500">
+                                    <div className="mb-8 h-px w-full bg-[#0A2540]/10 group-hover:bg-[#007BFF]/20 transition-colors duration-500" />
+                                    <p className="text-base leading-7 text-[#0A2540]/70 font-medium transition-colors duration-500">
                                         {chapter.description}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Large ID Number (Floating Outside) */}
-                            <span className="absolute -right-8 -top-10 z-30 font-heading text-[10rem] font-bold leading-none text-black/[0.05] select-none transition-colors duration-500 group-hover:text-white/10 sm:text-[12rem]">
+                            <span className="absolute -right-8 -top-10 z-30 font-heading text-[10rem] font-bold leading-none text-[#0A2540]/[0.03] select-none transition-colors duration-500 group-hover:text-[#007BFF]/10 sm:text-[12rem]">
                                 {chapter.id}
                             </span>
                         </div>
@@ -152,20 +152,21 @@ export default function AboutSection() {
 
                     {/* END CARD / CTA */}
                     <div
-                        className="flex h-[70vh] w-[85vw] shrink-0 flex-col items-start justify-center rounded-[40px] bg-black p-8 text-white sm:w-[400px] sm:p-12"
+                        className="flex h-[70vh] w-[85vw] shrink-0 flex-col items-start justify-center rounded-[40px] bg-[#0A2540] p-8 text-white sm:w-[400px] sm:p-12 relative overflow-hidden"
                         data-animate="about"
                     >
-                        <h3 className="text-3xl font-semibold leading-tight">
+                        <div className="absolute inset-0 bg-[#007BFF]/10 blur-[80px] rounded-full top-[-50%] right-[-50%] pointer-events-none" />
+                        <h3 className="text-4xl font-extrabold leading-tight font-heading relative z-10">
                             Ready to write <br /> your chapter?
                         </h3>
-                        <p className="mt-4 text-white/60">
+                        <p className="mt-4 text-white/70 font-medium relative z-10">
                             Let&apos;s build something that matters.
                         </p>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                            className="group mt-10 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-lg transition-shadow hover:shadow-xl"
+                            className="group relative z-10 mt-10 inline-flex items-center gap-3 rounded-full bg-[#007BFF] px-8 py-4 text-sm font-bold text-white shadow-[0_8px_30px_rgba(0,123,255,0.3)] transition-all hover:bg-[#0056b3]"
                         >
                             Start a Project
                             <BsArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />

@@ -47,19 +47,19 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="mx-auto w-full max-w-4xl px-4 py-20 border-t border-black/5 sm:px-8 sm:py-28 lg:px-10">
+    <section className="mx-auto w-full max-w-4xl px-4 py-20 border-t border-[#0A2540]/10 sm:px-8 sm:py-28 lg:px-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <div className="text-center mb-16">
-        <p className="text-xs uppercase tracking-[0.35em] text-black/60 mb-4" data-animate="faq">
+        <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF] mb-4" data-animate="faq">
           Common Questions
         </p>
-        <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl text-black" data-animate="faq">
+        <h2 className="text-3xl font-extrabold font-heading leading-tight tracking-tight sm:text-4xl text-[#0A2540]" data-animate="faq">
           SEO &amp; Web Development FAQs
         </h2>
-        <p className="mt-6 max-w-2xl mx-auto text-base leading-7 text-black/70" data-animate="faq">
+        <p className="mt-6 max-w-2xl mx-auto text-base font-medium leading-7 text-[#0A2540]/80" data-animate="faq">
           Everything you need to know about our web design process, SaaS digital product services, and how we build platforms optimized to rank on Google.
         </p>
       </div>
@@ -68,18 +68,18 @@ export default function FAQSection() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border-b border-black/10 pb-4 overflow-hidden"
+            className="border-b border-[#0A2540]/10 pb-4 overflow-hidden"
           >
             <button
               onClick={() => toggleFAQ(index)}
               className="flex w-full items-center justify-between text-left py-4 focus:outline-none group"
             >
-              <h3 className="text-lg font-medium text-black group-hover:text-black/70 transition-colors pr-8">
+              <h3 className="text-lg font-bold text-[#0A2540] group-hover:text-[#007BFF] transition-colors pr-8">
                 {faq.question}
               </h3>
-              <span className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black/5 text-black transition-transform duration-300">
-                <span className={`absolute h-[2px] w-3 bg-black transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`} />
-                <span className={`absolute h-3 w-[2px] bg-black transition-transform duration-300 ${openIndex === index ? "rotate-90 opacity-0" : ""}`} />
+              <span className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#007BFF]/10 text-[#007BFF] transition-transform duration-300">
+                <span className={`absolute h-[2px] w-3 bg-[#007BFF] transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`} />
+                <span className={`absolute h-3 w-[2px] bg-[#007BFF] transition-transform duration-300 ${openIndex === index ? "rotate-90 opacity-0" : ""}`} />
               </span>
             </button>
             <AnimatePresence initial={false}>
@@ -90,7 +90,7 @@ export default function FAQSection() {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <p className="pb-6 text-black/70 leading-relaxed pr-8 md:pr-12">
+                  <p className="pb-6 text-[#0A2540]/80 font-medium leading-relaxed pr-8 md:pr-12">
                     {faq.answer}
                   </p>
                 </motion.div>

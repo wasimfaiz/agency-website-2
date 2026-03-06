@@ -19,7 +19,7 @@ const NavLink = ({
     <Link
       href={href}
       className={`group relative overflow-hidden inline-block h-[1.2em] font-semibold transition-colors duration-300 ${
-        isScrolled ? "text-black/70" : "text-white/80"
+        isScrolled ? "text-[#0A2540]/70 hover:text-[#007BFF]" : "text-white/80 hover:text-white"
       }`}
     >
       <span className={`block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isActive ? '-translate-y-full' : 'group-hover:-translate-y-full'}`}>
@@ -27,7 +27,7 @@ const NavLink = ({
       </span>
       <span
         className={`absolute left-0 top-0 block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isActive ? 'translate-y-0' : 'translate-y-full group-hover:translate-y-0'} ${
-          isScrolled ? "text-black font-bold" : "text-white font-bold"
+          isScrolled ? "text-[#007BFF] font-bold" : "text-white font-bold"
         }`}
       >
         {children}
@@ -63,17 +63,17 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
       <header
         className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
           useDarkTheme
-            ? "bg-white/90 text-black/60 shadow-sm backdrop-blur py-3"
+            ? "bg-[#F4F6F8]/90 text-[#0A2540]/60 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
             : "bg-transparent text-white py-6"
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
-          <Link href="/" className={`font-bold transition-colors duration-300 ${useDarkTheme ? "text-black" : "text-white"}`}>
+          <Link href="/" className={`font-bold transition-colors duration-300 ${useDarkTheme ? "text-[#0A2540]" : "text-white"}`}>
             Setzet
           </Link>
           <nav
             className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${
-              useDarkTheme ? "text-black/70" : "text-white/80"
+              useDarkTheme ? "text-[#0A2540]/70" : "text-white/80"
             }`}
           >
             <NavLink href="/" isScrolled={useDarkTheme} isActive={isHomeActive}>
@@ -97,10 +97,10 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
           </nav>
           <div className="flex items-center gap-3">
             <Link
-              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-semibold transition-all duration-300 md:inline-flex ${
+              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 md:inline-flex ${
                 useDarkTheme
-                  ? "border-black/20 text-black hover:bg-black hover:text-white"
-                  : "border-white/30 text-white hover:bg-white hover:text-black"
+                  ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
+                  : "border-white/30 text-white hover:bg-white hover:text-[#0A2540]"
               }`}
               href="/#contact"
             >
@@ -109,7 +109,7 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
             <button
               className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
                 useDarkTheme
-                  ? "border-black/20 text-black hover:border-black"
+                  ? "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
                   : "border-white/30 text-white hover:border-white"
               }`}
               aria-expanded={menuOpen}
@@ -121,17 +121,17 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
                 <span
                   className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  } ${useDarkTheme ? "bg-black" : "bg-white"}`}
+                  } ${useDarkTheme ? "bg-[#0A2540]" : "bg-white"}`}
                 />
                 <span
                   className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
                     menuOpen ? "opacity-0" : "opacity-100"
-                  } ${useDarkTheme ? "bg-black" : "bg-white"}`}
+                  } ${useDarkTheme ? "bg-[#0A2540]" : "bg-white"}`}
                 />
                 <span
                   className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  } ${useDarkTheme ? "bg-black" : "bg-white"}`}
+                  } ${useDarkTheme ? "bg-[#0A2540]" : "bg-white"}`}
                 />
               </span>
             </button>
@@ -142,28 +142,28 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
       {/* MOBILE MENU PANEL */}
       <div
         id="mobile-menu"
-        className={`fixed right-4 top-16 z-50 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-black/10 bg-white p-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-black/70 shadow-lg transition-all duration-300 md:hidden ${
+        className={`fixed right-4 top-16 z-50 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-[#0A2540]/10 bg-white p-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A2540]/70 shadow-lg transition-all duration-300 md:hidden ${
           menuOpen
             ? "scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 -translate-y-2 opacity-0"
         }`}
       >
-        <Link className={`block py-2 transition hover:text-black ${isHomeActive ? "text-black font-bold" : ""}`} href="/" onClick={() => setMenuOpen(false)}>
+        <Link className={`block py-2 transition hover:text-[#007BFF] ${isHomeActive ? "text-[#007BFF] font-bold" : ""}`} href="/" onClick={() => setMenuOpen(false)}>
           Home
         </Link>
-        <Link className={`block py-2 transition hover:text-black ${isAboutActive ? "text-black font-bold" : ""}`} href="/about" onClick={() => setMenuOpen(false)}>
+        <Link className={`block py-2 transition hover:text-[#007BFF] ${isAboutActive ? "text-[#007BFF] font-bold" : ""}`} href="/about" onClick={() => setMenuOpen(false)}>
           About
         </Link>
-        <Link className={`block py-2 transition hover:text-black ${isServicesActive ? "text-black font-bold" : ""}`} href="/services" onClick={() => setMenuOpen(false)}>
+        <Link className={`block py-2 transition hover:text-[#007BFF] ${isServicesActive ? "text-[#007BFF] font-bold" : ""}`} href="/services" onClick={() => setMenuOpen(false)}>
           Services
         </Link>
-        <Link className={`block py-2 transition hover:text-black ${isWorkActive ? "text-black font-bold" : ""}`} href="/work" onClick={() => setMenuOpen(false)}>
+        <Link className={`block py-2 transition hover:text-[#007BFF] ${isWorkActive ? "text-[#007BFF] font-bold" : ""}`} href="/work" onClick={() => setMenuOpen(false)}>
           Work
         </Link>
-        <Link className={`block py-2 transition hover:text-black ${isProductActive ? "text-black font-bold" : ""}`} href="/product" onClick={() => setMenuOpen(false)}>
+        <Link className={`block py-2 transition hover:text-[#007BFF] ${isProductActive ? "text-[#007BFF] font-bold" : ""}`} href="/product" onClick={() => setMenuOpen(false)}>
           Product
         </Link>
-        <Link className={`block py-2 transition hover:text-black ${isBlogsActive ? "text-black font-bold" : ""}`} href="/blogs" onClick={() => setMenuOpen(false)}>
+        <Link className={`block py-2 transition hover:text-[#007BFF] ${isBlogsActive ? "text-[#007BFF] font-bold" : ""}`} href="/blogs" onClick={() => setMenuOpen(false)}>
           Blogs
         </Link>
       </div>

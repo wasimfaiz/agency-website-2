@@ -115,13 +115,13 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
                                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
                                      />
                                      {/* Dark overlay that fades on hover */}
-                                     <div className="absolute inset-0 bg-black/20 transition-opacity duration-1000 group-hover:opacity-0" />
+                                     <div className="absolute inset-0 bg-[#0A2540]/20 transition-opacity duration-1000 group-hover:opacity-0" />
                                 </motion.div>
                             </div>
 
                             {/* Floating Action Button inside image */}
                             <div className={`absolute bottom-8 z-20 ${isEven ? 'right-8' : 'left-8'}`}>
-                                <button className="w-14 h-14 rounded-full bg-white text-black shadow-xl flex items-center justify-center hover:scale-110 hover:bg-black hover:text-white transition-all duration-300">
+                                <button className="w-14 h-14 rounded-full bg-white text-[#0A2540] shadow-xl flex items-center justify-center hover:scale-110 hover:bg-[#007BFF] hover:text-white transition-all duration-300">
                                     <svg className="w-5 h-5 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                      </svg>
@@ -135,30 +135,30 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
                         style={{ y: yContent }}
                         className={`w-full md:w-[45%] lg:w-[40%] relative z-20 ${isEven ? 'md:order-2' : 'md:order-1'}`}
                     >
-                        <div className="bg-white/95 backdrop-blur-xl p-10 lg:p-14 rounded-[32px] shadow-[0_30px_60px_rgba(0,0,0,0.06)] border border-black/5">
+                        <div className="bg-[#F4F6F8]/95 backdrop-blur-xl p-10 lg:p-14 rounded-[32px] shadow-[0_30px_60px_rgba(10,37,64,0.06)] border border-[#0A2540]/5 group-hover:border-[#007BFF]/30 transition-colors">
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-[1px] w-8 bg-black/20" />
-                                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-black/80">
+                                <div className="h-[1px] w-8 bg-[#007BFF]/50" />
+                                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                                     Selected Work // {project.chapter}
                                 </span>
                             </div>
 
-                            <h2 className="text-4xl lg:text-5xl font-sans font-bold tracking-tight text-black leading-[1.1] mb-3">
+                            <h2 className="text-4xl lg:text-5xl font-sans font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-3">
                                 {project.title}
                             </h2>
                             
-                            <p className="text-lg font-light text-black/50 mb-8 italic">
+                            <p className="text-lg font-medium text-[#0A2540]/50 mb-8 italic">
                                 {project.tagline}
                             </p>
 
-                            <div className="space-y-6 text-black/60 leading-relaxed font-light text-[15px] mb-10">
+                            <div className="space-y-6 text-[#0A2540]/70 leading-relaxed font-medium text-[15px] mb-10">
                                 <p>{project.description}</p>
                                 <p className="opacity-80 hidden md:block">{project.narrative}</p>
                             </div>
 
-                            <div className="flex flex-wrap gap-2 pt-6 border-t border-black/5">
+                            <div className="flex flex-wrap gap-2 pt-6 border-t border-[#0A2540]/10">
                                 {project.tags.map((tag, idx) => (
-                                    <span key={idx} className="font-sans text-[11px] font-semibold text-black/60 px-4 py-1.5 bg-[#f3f4f6] rounded-md">
+                                    <span key={idx} className="font-sans text-[11px] font-bold text-[#0A2540] px-4 py-1.5 bg-white border border-[#0A2540]/10 shadow-sm rounded-md">
                                         {tag}
                                     </span>
                                 ))}
@@ -175,16 +175,16 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
 // 2. IMPACT SECTION (Replaces ConceptLab)
 const ImpactSection = () => {
     return (
-        <section className="py-32 px-6 bg-[#FCFCFC] relative z-10">
+        <section className="py-32 px-6 bg-[#F4F6F8] relative z-10 border-t border-[#0A2540]/5">
             <div className="container mx-auto">
                 <div className="grid md:grid-cols-2 gap-20 mb-20 items-end">
                     <div>
-                        <span className="font-mono text-sm uppercase tracking-[0.3em] text-black/40 block mb-6">Our Impact</span>
-                        <h2 className="text-5xl md:text-7xl font-heading font-bold leading-tight text-black">
-                            Metrics that <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/40 to-black/80 italic font-serif font-light">actually matter.</span>
+                        <span className="font-mono text-sm font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 block mb-6">Our Impact</span>
+                        <h2 className="text-5xl md:text-7xl font-heading font-extrabold leading-tight text-[#0A2540]">
+                            Metrics that <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540] italic font-serif font-light">actually matter.</span>
                         </h2>
                     </div>
-                    <div className="text-xl text-black/60 max-w-md pb-4 leading-relaxed font-light">
+                    <div className="text-xl text-[#0A2540]/60 max-w-md pb-4 leading-relaxed font-medium">
                         We don't just deliver beautiful pixels; we deliver measurable business impact. Our work is designed to scale, convert, and dominate markets.
                     </div>
                 </div>
@@ -197,22 +197,22 @@ const ImpactSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                            className="bg-white rounded-[2rem] p-10 border border-black/5 flex flex-col justify-between h-[320px] group hover:border-black/10 hover:shadow-2xl hover:shadow-black/[0.03] transition-all duration-500 relative overflow-hidden"
+                            className="bg-white rounded-[2rem] p-10 border border-[#0A2540]/5 flex flex-col justify-between h-[320px] group hover:border-[#007BFF]/30 hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)] transition-all duration-500 relative overflow-hidden"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#007BFF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             
                             <div className="relative z-10">
-                                <h3 className="text-5xl md:text-7xl font-heading font-bold text-black group-hover:scale-105 origin-left transition-transform duration-500">{stat.value}</h3>
-                                <div className="h-px w-12 bg-black/10 my-6 group-hover:w-24 group-hover:bg-black/30 transition-all duration-500" />
+                                <h3 className="text-5xl md:text-7xl font-heading font-extrabold text-[#007BFF] group-hover:scale-105 origin-left transition-transform duration-500">{stat.value}</h3>
+                                <div className="h-px w-12 bg-[#0A2540]/10 my-6 group-hover:w-24 group-hover:bg-[#007BFF]/50 transition-all duration-500" />
                             </div>
                             
                             <div className="relative z-10">
-                                <h4 className="text-xl font-bold text-black mb-2">{stat.label}</h4>
-                                <p className="text-sm text-black/50 leading-relaxed font-medium">{stat.desc}</p>
+                                <h4 className="text-xl font-bold text-[#0A2540] mb-2">{stat.label}</h4>
+                                <p className="text-sm text-[#0A2540]/60 leading-relaxed font-medium">{stat.desc}</p>
                             </div>
                             
                             {/* Decorative element */}
-                            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-black/[0.02] group-hover:scale-[2.5] group-hover:bg-black/[0.04] transition-all duration-700 ease-in-out z-0" />
+                            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#007BFF]/5 group-hover:scale-[2.5] group-hover:bg-[#0A2540]/5 transition-all duration-700 ease-in-out z-0" />
                         </motion.div>
                     ))}
                 </div>
@@ -225,7 +225,7 @@ export default function WorkPage() {
   const containerRef = useRef(null);
 
   return (
-    <div ref={containerRef} className="bg-[#FCFCFC] text-black selection:bg-black/20 font-sans min-h-screen relative overflow-clip">
+    <div ref={containerRef} className="bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen relative overflow-clip">
       <Navbar forceDarkAtTop={true} />
 
       {/* --- HERO: Setting the Scene --- */}
@@ -238,7 +238,7 @@ export default function WorkPage() {
                       rotate: [0, 90, 0]
                   }}
                   transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-                  className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-gradient-to-tr from-purple-200/40 to-indigo-100/40 blur-[80px] rounded-full will-change-transform" 
+                  className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#007BFF]/10 blur-[100px] rounded-full will-change-transform" 
               />
               <motion.div 
                   animate={{ 
@@ -246,9 +246,9 @@ export default function WorkPage() {
                       rotate: [0, -90, 0]
                   }}
                   transition={{ duration: 25, ease: "linear", repeat: Infinity }}
-                  className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[1000px] max-h-[1000px] bg-gradient-to-bl from-orange-100/40 to-rose-100/40 blur-[100px] rounded-full will-change-transform" 
+                  className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[1000px] max-h-[1000px] bg-[#007BFF]/5 blur-[120px] rounded-full will-change-transform" 
               />
-              <div className="absolute inset-0 bg-[#FCFCFC]/60" />
+              <div className="absolute inset-0 bg-[#F4F6F8]/60" />
           </div>
 
           <div className="text-center space-y-8 max-w-5xl z-10 relative">
@@ -256,9 +256,9 @@ export default function WorkPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1, duration: 0.8 }}
-                className="inline-block px-5 py-2 rounded-full border border-black/10 bg-white/50 backdrop-blur-md mb-4 shadow-sm"
+                className="inline-block px-5 py-2 rounded-full border border-[#0A2540]/10 bg-white/50 backdrop-blur-md mb-4 shadow-sm"
               >
-                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-black/60">
+                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF]">
                       Our Philosophy
                   </p>
               </motion.div>
@@ -267,17 +267,17 @@ export default function WorkPage() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="text-[clamp(3.5rem,8vw,8.5rem)] font-heading font-extrabold leading-[0.9] tracking-tighter text-black will-change-transform"
+                className="text-[clamp(3.5rem,8vw,8.5rem)] font-heading font-extrabold leading-[0.9] tracking-tighter text-[#0A2540] will-change-transform"
               >
                   We don't just build websites. <br/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/30 to-black/70 italic font-serif font-light">We craft legacies.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540] italic font-serif font-light">We craft legacies.</span>
               </motion.h1>
               
               <motion.p
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ delay: 0.8, duration: 0.8 }}
-                 className="text-lg md:text-2xl text-black/50 max-w-2xl mx-auto leading-relaxed font-light mt-8"
+                 className="text-lg md:text-2xl text-[#0A2540]/70 max-w-2xl mx-auto leading-relaxed font-medium mt-8"
               >
                   Every project is a story waiting to be told. A narrative of problem-solving, aesthetic precision, and technical mastery.
               </motion.p>
@@ -295,23 +295,23 @@ export default function WorkPage() {
                   transition={{ duration: 12, ease: "linear", repeat: Infinity }}
                   className="w-32 h-32 md:w-36 md:h-36 flex items-center justify-center"
               >
-                  <svg viewBox="0 0 100 100" className="w-full h-full opacity-50 overflow-visible">
+                  <svg viewBox="0 0 100 100" className="w-full h-full opacity-60 overflow-visible">
                       <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
-                      <text className="text-[10.5px] font-mono uppercase tracking-[0.2em] font-bold fill-black">
+                      <text className="text-[10.5px] font-mono uppercase tracking-[0.2em] font-bold fill-[#007BFF]">
                           <textPath href="#textPath" startOffset="0%">
                               Scroll to begin • Scroll to begin • 
                           </textPath>
                       </text>
                   </svg>
               </motion.div>
-              <div className="absolute text-black/40 text-2xl font-light">↓</div>
+              <div className="absolute text-[#007BFF]/60 text-2xl font-light">↓</div>
           </motion.div>
       </section>
 
       {/* --- CHAPTERS: The Work --- */}
       <div className="relative">
           {/* Connecting Line */}
-          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[1px] bg-black/5 -translate-x-1/2 z-0 hidden md:block" />
+          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[1px] bg-[#0A2540]/10 -translate-x-1/2 z-0 hidden md:block" />
           
           {workStories.map((story, i) => (
               <StoryItem key={i} project={story} i={i} />
@@ -319,12 +319,12 @@ export default function WorkPage() {
       </div>
 
       {/* --- INTERLUDE: Text Section --- */}
-      <section className="py-40 px-6 bg-[#f3f4f6] text-black text-center">
+      <section className="py-40 px-6 bg-white border-y border-[#0A2540]/10 text-center">
           <div className="container mx-auto max-w-4xl space-y-10">
-              <h2 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
+              <h2 className="text-4xl md:text-6xl font-heading font-extrabold leading-tight text-[#0A2540]">
                   "The details are not the details. <br/> They make the design."
               </h2>
-              <p className="font-mono text-sm uppercase tracking-widest opacity-60">- Charles Eames</p>
+              <p className="font-mono text-sm font-bold flex justify-center uppercase tracking-widest text-[#007BFF]">- Charles Eames</p>
           </div>
       </section>
 
@@ -332,17 +332,17 @@ export default function WorkPage() {
       <ImpactSection />
 
       {/* --- FOOTER CTA --- */}
-      <section className="h-[80vh] flex flex-col items-center justify-center bg-[#FCFCFC] relative border-t border-black/5">
+      <section className="h-[80vh] flex flex-col items-center justify-center bg-white relative border-t border-[#0A2540]/5 overflow-hidden">
           <div className="text-center z-10 space-y-8">
-              <h2 className="text-[clamp(3rem,8vw,7rem)] font-heading font-bold leading-none text-black">
+              <h2 className="text-[clamp(3rem,8vw,7rem)] font-heading font-extrabold leading-none text-[#0A2540]">
                   Your Story <br/> Starts Here.
               </h2>
-              <Link href="/#contact" className="inline-block bg-black text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform">
+              <Link href="/#contact" className="inline-block bg-[#007BFF] text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 hover:bg-[#0056b3] transition-all shadow-[0_8px_30px_rgba(0,123,255,0.3)]">
                   Begin The Journey
               </Link>
           </div>
            {/* Grid Pattern Overlay */}
-           <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+           <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0A2540_1px,transparent_1px),linear-gradient(to_bottom,#0A2540_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </section>
 
       <Footer />
