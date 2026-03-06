@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Product",
+  title: "Product & CRM Solutions | Setzet",
   description:
-    "Discover Setzet product capabilities, including CRM-focused interfaces and scalable architecture for business growth.",
+    "Discover Setzet's advanced product capabilities and custom CRM interfaces. We build scalable, high-performance architecture for startups, SaaS, and B2B brands to drive automated business growth.",
+  keywords: "web development, custom CRM, scalable architecture, SaaS design, B2B software, automated workflows, Setzet product, UI/UX, enterprise software",
   alternates: {
-    canonical: "/product",
+    canonical: "https://setzet.com/product",
   },
   openGraph: {
-    title: "Product | Setzet",
+    title: "Product & CRM Solutions | Setzet",
     description:
-      "See how Setzet designs and develops product experiences built for performance.",
-    url: "/product",
+      "See how Setzet designs and develops interactive product experiences and powerful custom CRMs built for scale and performance.",
+    url: "https://setzet.com/product",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

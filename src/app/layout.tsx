@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Montserrat, Open_Sans, Playfair_Display } from "next/font/google";
+import { Montserrat, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -88,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${openSans.variable} ${montserrat.variable} ${playfair.variable} antialiased font-sans overflow-x-hidden`}
+        className={`${inter.variable} ${montserrat.variable} ${playfair.variable} antialiased font-sans overflow-x-hidden`}
         suppressHydrationWarning
       >
         <script
