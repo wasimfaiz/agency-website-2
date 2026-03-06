@@ -257,7 +257,7 @@ export default function Home() {
 
       <div className="relative z-10 min-h-screen">
         {/* HERO SECTION */}
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative h-[75vh] w-full overflow-hidden sm:h-screen">
           <div className="absolute inset-0 h-full w-full">
             {/* Video Background */}
             <div className="absolute inset-0 z-0 bg-[#F4F6F8]">
@@ -283,18 +283,29 @@ export default function Home() {
                   initial="hidden"
                   animate="visible"
                   variants={fadeInUp}
-                  className="text-center text-[clamp(2.5rem,7vw,6.3rem)] font-heading font-extrabold leading-[1.08] tracking-tight"
+                  className="text-center font-heading font-extrabold tracking-tight"
                 >
-                  <span className="block">Web Development Agency</span>
-                  <span className="block mt-4">
+                  {/* Mobile layout: compact 2-line heading */}
+                  <span className="block text-[clamp(1.9rem,8vw,3rem)] leading-[1.1] sm:hidden">
+                    Web Development Agency —{" "}
                     Building{" "}
-                    <span className="mx-2 inline-block rounded-xl bg-[#007BFF]/12 px-4 py-1">
-                      <span className="relative z-10 font-serif italic text-[#007BFF]">
-                        High-Converting
+                    <em className="not-italic font-serif italic text-[#007BFF]">
+                      High-Converting
+                    </em>{" "}
+                    Websites.
+                  </span>
+
+                  {/* Desktop layout: large 3-line heading */}
+                  <span className="hidden sm:block text-[clamp(2.8rem,7vw,6.3rem)] leading-[1.08]">
+                    <span className="block">Web Development Agency</span>
+                    <span className="block mt-3">
+                      Building{" "}
+                      <span className="inline-block rounded-xl bg-[#007BFF]/10 px-4 py-1 mx-1">
+                        <span className="font-serif italic text-[#007BFF]">High-Converting</span>
                       </span>
                     </span>
+                    <span className="block">Websites.</span>
                   </span>
-                  <span className="block">Websites.</span>
                 </motion.h1>
 
                 <motion.div
