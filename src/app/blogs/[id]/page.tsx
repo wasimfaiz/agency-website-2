@@ -30,17 +30,17 @@ export default function BlogPostPage(props: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-6">
-              <Link href="/blogs" className="hover:text-[#0A2540] transition-colors flex items-center gap-2">
+            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
               </Link>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Technology</span>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 22, 2026</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
               The Future of Automation in CRM: How AI-Driven Workflows Are Transforming Customer Relationship Management
             </h1>
             
@@ -73,9 +73,9 @@ export default function BlogPostPage(props: Props) {
              initial={{ opacity: 0, y: 40 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-light"
+             className="text-[#0A2540]/80 font-medium"
            >
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Introduction: Why CRM Automation Is No Longer Optional</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Why CRM Automation Is No Longer Optional</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 Customer Relationship Management has always been about one thing: building meaningful relationships at scale. But for years, "at scale" came with a painful price — hours of manual data entry, inconsistent follow-ups, and sales reps spending more time updating records than actually selling.
               </p>
@@ -89,7 +89,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">What Is CRM Automation? (And Why It Matters in 2025)</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">What Is CRM Automation? (And Why It Matters in 2025)</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 <strong>CRM automation</strong> refers to using software, AI, and machine learning to automatically handle repetitive CRM tasks — logging calls, sending follow-up emails, updating contact records, scoring leads, and more — without manual input.
               </p>
@@ -119,9 +119,9 @@ export default function BlogPostPage(props: Props) {
                 </ul>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">5 Ways AI-Driven CRM Automation Is Transforming Sales & Customer Management</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">5 Ways AI-Driven CRM Automation Is Transforming Sales & Customer Management</h2>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">1. Automated Data Entry and Contact Enrichment</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">1. Automated Data Entry and Contact Enrichment</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Manual data entry is one of the biggest productivity killers in sales. AI-powered CRM tools like Salesforce Einstein, HubSpot AI, and Zoho Zia now automatically:
               </p>
@@ -136,7 +136,7 @@ export default function BlogPostPage(props: Props) {
                  </p>
               </div>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">2. Intelligent Lead Scoring and Prioritization</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">2. Intelligent Lead Scoring and Prioritization</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Not all leads are created equal — and AI finally makes it possible to know which ones are worth your time before you pick up the phone.
               </p>
@@ -147,7 +147,7 @@ export default function BlogPostPage(props: Props) {
                 This is one of the most high-impact applications of CRM workflow automation, directly driving revenue growth.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">3. Automated Follow-Up Sequences and Drip Campaigns</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">3. Automated Follow-Up Sequences and Drip Campaigns</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Timing is everything in sales. Studies show that leads contacted within 5 minutes of expressing interest are <strong>9x more likely to convert</strong>. Manual follow-up at that speed is impossible — automation makes it effortless.
               </p>
@@ -155,7 +155,7 @@ export default function BlogPostPage(props: Props) {
                 Modern CRM platforms trigger personalized email sequences, SMS messages, and even chatbot conversations based on prospect behavior. If a lead opens a pricing page three times in one day, your CRM can automatically send a targeted follow-up — no human intervention required.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">4. AI-Powered Sales Forecasting</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">4. AI-Powered Sales Forecasting</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 One of the most powerful — and underused — features of AI-driven CRM is predictive sales forecasting. Instead of relying on gut instinct or manual pipeline reviews, AI analyzes historical deal data, seasonality, rep performance, and market signals to generate accurate revenue projections.
               </p>
@@ -163,7 +163,7 @@ export default function BlogPostPage(props: Props) {
                 This helps sales leaders make smarter staffing, budgeting, and strategy decisions — turning CRM data into a genuine competitive advantage.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">5. Customer Churn Prediction and Retention Automation</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">5. Customer Churn Prediction and Retention Automation</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Acquiring a new customer costs 5x more than retaining an existing one. AI-powered CRM systems continuously monitor customer health scores — tracking product usage, support ticket frequency, NPS responses, and engagement trends — and alert your team (or trigger automated outreach) before a customer churns.
               </p>
@@ -173,7 +173,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">The Best CRM Automation Tools in 2025</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">The Best CRM Automation Tools in 2025</h2>
               <p className="text-lg mb-8 leading-relaxed">
                 If you're evaluating platforms, here are the top CRM automation solutions dominating the market:
               </p>
@@ -220,7 +220,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">How CRM Automation Directly Increases Conversion Rates</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">How CRM Automation Directly Increases Conversion Rates</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 The ROI case for CRM automation isn't theoretical — it's measurable. Here's how automation moves the needle on conversions:
               </p>
@@ -233,7 +233,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Common Mistakes to Avoid with CRM Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Common Mistakes to Avoid with CRM Automation</h2>
               <p className="text-lg mb-8 leading-relaxed">
                 Automation is powerful — but poorly configured, it can hurt more than help. Watch out for these pitfalls:
               </p>
@@ -260,7 +260,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
               
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">What's Next: The Future of AI in CRM</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">What's Next: The Future of AI in CRM</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 We're only in the early innings of AI's impact on customer relationship management. Here's what's on the horizon:
               </p>
@@ -273,7 +273,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Conclusion: Start Automating Before Your Competitors Do</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Conclusion: Start Automating Before Your Competitors Do</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 The future of CRM is intelligent, automated, and deeply personalized. AI-driven workflows are no longer a luxury for enterprise companies — they're an accessible, affordable competitive necessity for businesses of every size.
               </p>
@@ -285,7 +285,7 @@ export default function BlogPostPage(props: Props) {
               <div className="bg-[#0A2540] text-white p-10 md:p-14 rounded-3xl mt-16 mb-16 text-center shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-white/5 blur-3xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
-                <h3 className="text-3xl font-light tracking-tighter mb-4 relative z-10">Ready to transform your CRM strategy?</h3>
+                <h3 className="text-3xl font-heading font-extrabold tracking-tight mb-4 relative z-10">Ready to transform your CRM strategy?</h3>
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Contact us today to learn how we can help you implement AI-driven automation that actually delivers results.
                 </p>
@@ -326,17 +326,17 @@ export default function BlogPostPage(props: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-6">
-              <Link href="/blogs" className="hover:text-[#0A2540] transition-colors flex items-center gap-2">
+            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
               </Link>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Strategy</span>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 23, 2026</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
               Mastering Client Communication: The SaaS Playbook for Small Business Owners Who Want Clients for Life
             </h1>
             
@@ -369,9 +369,9 @@ export default function BlogPostPage(props: Props) {
              initial={{ opacity: 0, y: 40 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-light"
+             className="text-[#0A2540]/80 font-medium"
            >
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Introduction: Your Clients Are One Bad Experience Away From Leaving</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Your Clients Are One Bad Experience Away From Leaving</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 For small business owners, every client relationship carries disproportionate weight. Lose one client at an enterprise company and it barely registers on a quarterly report. Lose one client as a small business — especially a high-value, long-term one — and you feel it immediately in your revenue, your team's morale, and your growth trajectory.
               </p>
@@ -385,7 +385,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">The Small Business Communication Gap: Why Good Work Alone Isn't Enough</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">The Small Business Communication Gap: Why Good Work Alone Isn't Enough</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 Small business owners are exceptionally good at delivering results. Where they consistently fall short is communicating those results — and maintaining meaningful connection between deliverables.
               </p>
@@ -398,9 +398,9 @@ export default function BlogPostPage(props: Props) {
               
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">7 Client Communication Strategies Built for Small Business Owners</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">7 Client Communication Strategies Built for Small Business Owners</h2>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">1. Architect a Formal Onboarding Communication Sequence</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">1. Architect a Formal Onboarding Communication Sequence</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 First impressions in a client relationship aren't made during the sales process — they're made in the first 30 days after the contract is signed. This is where clients decide, often subconsciously, whether they've made the right decision.
               </p>
@@ -437,7 +437,7 @@ export default function BlogPostPage(props: Props) {
                 This upfront investment in structure pays dividends for the entire duration of the relationship. Clients who feel oriented and informed in the early stages churn at dramatically lower rates.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">2. Select Communication Channels Strategically — Not Randomly</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">2. Select Communication Channels Strategically — Not Randomly</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 One of the most common and costly communication mistakes small business owners make is allowing channel chaos — important updates buried in Slack threads, contracts sent via text, sensitive conversations happening in comment sections.
               </p>
@@ -455,7 +455,7 @@ export default function BlogPostPage(props: Props) {
                 Define this framework explicitly with every client during onboarding. When both parties know where different conversations belong, communication becomes dramatically more efficient and professional.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">3. Build a Proactive Check-In Cadence That Delivers Value</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">3. Build a Proactive Check-In Cadence That Delivers Value</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 The businesses that lose clients to silence are the ones that only communicate when there's a transaction, a problem, or a renewal conversation. This conditions clients to expect friction whenever you reach out.
               </p>
@@ -472,7 +472,7 @@ export default function BlogPostPage(props: Props) {
                 SaaS tools like HubSpot CRM or Zoho make scheduling and automating these touchpoints straightforward, even for a lean team.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">4. Communicate Transparently When Problems Arise</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">4. Communicate Transparently When Problems Arise</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 No business operates without occasional failures — missed deadlines, subpar deliverables, platform outages, or scope misalignments. How you communicate in those moments defines the long-term trajectory of the client relationship more than any success ever will.
               </p>
@@ -493,7 +493,7 @@ export default function BlogPostPage(props: Props) {
                 This level of transparency, executed professionally, frequently transforms a moment of failure into one of the strongest proof points of your reliability. Clients who experience this kind of accountability become your most vocal advocates.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">5. Leverage SaaS Tools to Personalize Communication at Scale</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">5. Leverage SaaS Tools to Personalize Communication at Scale</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Personalization is the most powerful differentiator in client communication — and historically, it's been the hardest to scale. Small business owners don't have enterprise-level account management teams. They have themselves and a lean staff.
               </p>
@@ -507,7 +507,7 @@ export default function BlogPostPage(props: Props) {
                 The result is client communication that feels deeply individual — even when it's systematically delivered across dozens of relationships simultaneously.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">6. Implement a Structured Feedback System — Then Close the Loop Visibly</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">6. Implement a Structured Feedback System — Then Close the Loop Visibly</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Small business owners routinely ask clients for feedback. Fewer have a systematic process for collecting it, analyzing it, and — most critically — demonstrating to clients that it influenced real decisions.
               </p>
@@ -522,7 +522,7 @@ export default function BlogPostPage(props: Props) {
                 Clients who see their feedback acted upon develop a sense of co-ownership in your business. That emotional investment is extraordinarily difficult to displace with a competitor's pricing pitch.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">7. Systematically Cultivate Client Advocacy</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">7. Systematically Cultivate Client Advocacy</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 A satisfied client is a retained client. An advocate is a growth channel. The difference between the two is intentionality. Client advocacy doesn't emerge spontaneously from good work — it's cultivated through deliberate relationship investment and strategic communication.
               </p>
@@ -535,7 +535,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">The SaaS Stack Every Small Business Owner Needs</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">The SaaS Stack Every Small Business Owner Needs</h2>
               <p className="text-lg mb-8 leading-relaxed">
                 Implementing these strategies at a professional level doesn't require a large team — it requires the right tools. Here is a curated technology stack designed specifically for small business owners:
               </p>
@@ -596,7 +596,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Measuring the ROI of Your Strategy</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Measuring the ROI of Your Strategy</h2>
                <div className="space-y-6 mb-16 text-lg text-[#0A2540]/80">
                   <p><strong className="text-[#0A2540]">Client Retention Rate</strong> measures the percentage of clients who continue working with you. For small businesses, a retention rate above 85% indicates strong communication health. Below 70% signals a systemic gap that needs immediate attention.</p>
                   <p><strong className="text-[#0A2540]">Net Promoter Score (NPS)</strong> tracks how likely clients are to recommend your business. A score above 50 is considered excellent. Monitor this quarterly.</p>
@@ -606,7 +606,7 @@ export default function BlogPostPage(props: Props) {
 
                <hr className="border-[#0A2540]/10 my-16" />
                
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Your 30-Day Client Communication Improvement Plan</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Your 30-Day Client Communication Improvement Plan</h2>
                <div className="space-y-6 mb-16 pl-4 border-l-2 border-[#0A2540]/10">
                   <p className="text-lg leading-relaxed"><strong className="text-[#0A2540] block mb-1">Days 1–7: Audit current touchpoints.</strong> Document how often each client hears from you, through which channels, and what triggers that communication. Identify your three most significant gaps.</p>
                   <p className="text-lg leading-relaxed"><strong className="text-[#0A2540] block mb-1">Days 8–14: Configure your CRM.</strong> Import all existing client data, document key relationship notes, and set up basic automation for follow-up reminders and check-in scheduling.</p>
@@ -616,7 +616,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Conclusion: Communication Is Infrastructure, Not a Soft Skill</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Conclusion: Communication Is Infrastructure, Not a Soft Skill</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 For small business owners operating in a competitive SaaS and technology landscape, the quality of your client communication is as foundational as the quality of your product. It is the mechanism through which your expertise becomes visible, your reliability becomes credible, and your relationships become durable.
               </p>
@@ -628,7 +628,7 @@ export default function BlogPostPage(props: Props) {
               <div className="bg-[#0A2540] text-white p-10 md:p-14 rounded-3xl mt-16 mb-16 text-center shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-white/5 blur-3xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
-                <h3 className="text-3xl font-light tracking-tighter mb-4 relative z-10">Ready to build a system that drives real retention?</h3>
+                <h3 className="text-3xl font-heading font-extrabold tracking-tight mb-4 relative z-10">Ready to build a system that drives real retention?</h3>
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Contact our team today to see how our platform helps small business owners master every client relationship.
                 </p>
@@ -667,17 +667,17 @@ export default function BlogPostPage(props: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-6">
-              <Link href="/blogs" className="hover:text-[#0A2540] transition-colors flex items-center gap-2">
+            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
               </Link>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Business</span>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 24, 2026</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
               Scaling Your Agency: The First 100 Days — From Freelance Hustle to Structured Business
             </h1>
             
@@ -710,9 +710,9 @@ export default function BlogPostPage(props: Props) {
              initial={{ opacity: 0, y: 40 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-light"
+             className="text-[#0A2540]/80 font-medium"
            >
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Introduction: The Moment Everything Has to Change</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Moment Everything Has to Change</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 There is a precise moment every successful freelancer encounters — and almost none of them are prepared for it.
               </p>
@@ -729,7 +729,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">The Core Mindset Shift: From Operator to Architect</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">The Core Mindset Shift: From Operator to Architect</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 Before any tactical advice is useful, one foundational shift must occur — and resisting it is the most common reason agency transitions fail.
               </p>
@@ -751,9 +751,9 @@ export default function BlogPostPage(props: Props) {
               
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">Phase 1: Days 1–30 — Build the Foundation Before You Build the Team</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">Phase 1: Days 1–30 — Build the Foundation Before You Build the Team</h2>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Define Your Agency's Positioning With Precision</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Define Your Agency's Positioning With Precision</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 The single most consequential decision you will make in the first 30 days is not who to hire or what to charge — it is deciding, with ruthless specificity, who your agency serves and what problem it solves.
               </p>
@@ -773,7 +773,7 @@ export default function BlogPostPage(props: Props) {
                  Spend the time to answer these questions precisely. Everything downstream — your pricing, your hiring, your sales process, your service delivery — will be built on this foundation. A weak positioning statement produces a weak agency.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Formalize Your Business Infrastructure</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Formalize Your Business Infrastructure</h3>
               <p className="text-lg mb-6 leading-relaxed">
                 Freelancers routinely operate with minimal business infrastructure — informal agreements, personal bank accounts, ad hoc invoicing. An agency requires a different standard from day one, both for legal protection and for the professional credibility that attracts quality clients and talent.
               </p>
@@ -788,7 +788,7 @@ export default function BlogPostPage(props: Props) {
                 These are not administrative details. They are the structural signals that distinguish a professional agency from an informal freelance arrangement — signals that matter enormously to the clients and employees you will need to attract.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Select Your Core Technology Stack</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Select Your Core Technology Stack</h3>
               <p className="text-lg mb-6 leading-relaxed">
                  Your agency's operational efficiency in the first 100 days and beyond will be determined largely by the SaaS tools you select and how disciplined you are in using them. Choose your stack deliberately — tool proliferation is as damaging as tool absence.
               </p>
@@ -844,9 +844,9 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">Phase 2: Days 31–60 — Build Your Systems Before You Scale Your Team</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">Phase 2: Days 31–60 — Build Your Systems Before You Scale Your Team</h2>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Document Everything Before You Delegate Anything</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Document Everything Before You Delegate Anything</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   The most expensive mistake early-stage agency owners make is hiring before their operational systems exist. When processes live only in the founder's head, every new hire requires extensive one-on-one training, produces inconsistent output, and generates client-facing errors that damage your reputation at exactly the moment you're trying to establish it.
                </p>
@@ -867,7 +867,7 @@ export default function BlogPostPage(props: Props) {
                  Tools like Notion or Loom (for screen-recorded process walkthroughs) are particularly effective for building an agency knowledge base that new team members can onboard from independently. When your systems are documented, delegation becomes safe. Until they are, every hire is a liability.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Build Your Pricing Model for Profitability — Not Just Revenue</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Build Your Pricing Model for Profitability — Not Just Revenue</h3>
               <p className="text-lg mb-6 leading-relaxed">
                  Freelancers typically price on an hourly or per-project basis — a model that makes personal income sense but is fundamentally incompatible with agency growth. Hourly billing commoditizes your time, rewards inefficiency, and makes revenue impossible to predict or scale.
               </p>
@@ -884,7 +884,7 @@ export default function BlogPostPage(props: Props) {
                  Review every current client engagement through this lens. Identify which relationships can be transitioned to retainer structures and begin those conversations during this phase.
               </p>
 
-              <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Make Your First Strategic Hires</h3>
+              <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Make Your First Strategic Hires</h3>
               <p className="text-lg mb-6 leading-relaxed">
                  With your systems documented and your pricing restructured, you are now ready to hire — but strategically, not reactively.
               </p>
@@ -902,9 +902,9 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">Phase 3: Days 61–100 — Build the Pipeline and Establish the Brand</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">Phase 3: Days 61–100 — Build the Pipeline and Establish the Brand</h2>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Construct a Repeatable Client Acquisition System</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Construct a Repeatable Client Acquisition System</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Freelancers acquire clients through reputation and referrals — a model that works until it doesn't, and provides almost no control over timing, volume, or client quality. An agency requires a more engineered approach to new business development.
                </p>
@@ -918,7 +918,7 @@ export default function BlogPostPage(props: Props) {
                  <li><strong className="text-[#0A2540]">Outbound Prospecting:</strong> Build a targeted prospect list of companies that match your ideal client profile and implement a structured, value-first outreach sequence.</li>
                </ul>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Define Your Agency's Brand Identity and Market Presence</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Define Your Agency's Brand Identity and Market Presence</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   In the freelance model, your personal reputation is your brand. In the agency model, your brand must exist independently of you — it needs to be visible, credible, and compelling to clients who have never heard of you personally. Days 61 through 100 are the appropriate time to invest in the external signals of professional credibility.
                </p>
@@ -932,7 +932,7 @@ export default function BlogPostPage(props: Props) {
                   Credibility signals accumulate. Every piece of content published, every case study documented, every professional presentation delivered is an investment in the brand authority that will drive inbound interest for years ahead.
                </p>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">Establish Metrics and Review Cadences</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">Establish Metrics and Review Cadences</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Agencies that scale sustainably do so on the basis of data — not instinct. Before your first 100 days conclude, establish the operational and financial dashboards that will guide every strategic decision going forward.
                </p>
@@ -946,7 +946,7 @@ export default function BlogPostPage(props: Props) {
               <hr className="border-[#0A2540]/10 my-16" />
               
                <div className="bg-[#0A2540]/5 p-10 rounded-3xl mb-16 shadow-inner border border-[#0A2540]/10">
-                  <h3 className="text-2xl font-light tracking-tight mb-8 text-[#0A2540]">The 100-Day Agency Launch Checklist</h3>
+                  <h3 className="text-2xl font-heading font-extrabold tracking-tight mb-8 text-[#0A2540]">The 100-Day Agency Launch Checklist</h3>
                   <div className="space-y-6">
                      <div>
                         <h4 className="font-bold text-[#0A2540] uppercase tracking-widest text-sm mb-3">Days 1–30 — Foundation</h4>
@@ -982,7 +982,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Conclusion: The Agency You Build in 100 Days Is the Agency You'll Scale for Years</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Conclusion: The Agency You Build in 100 Days Is the Agency You'll Scale for Years</h2>
               <p className="text-lg mb-6 leading-relaxed">
                 The first 100 days of your agency are not simply a startup phase — they are the moment when structural habits, operational discipline, and strategic clarity are either embedded or neglected. What gets built here, or left unbuilt, shapes everything that follows.
               </p>
@@ -994,7 +994,7 @@ export default function BlogPostPage(props: Props) {
               <div className="bg-[#0A2540] text-white p-10 md:p-14 rounded-3xl mt-16 mb-16 text-center shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-white/5 blur-3xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
-                <h3 className="text-3xl font-light tracking-tighter mb-4 relative z-10">Ready to build the operational foundation your agency needs to scale?</h3>
+                <h3 className="text-3xl font-heading font-extrabold tracking-tight mb-4 relative z-10">Ready to build the operational foundation your agency needs to scale?</h3>
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Book a demo today to see how our platform helps early-stage agencies systematize client management, automate workflows, and grow with confidence from day one.
                 </p>
@@ -1034,17 +1034,17 @@ export default function BlogPostPage(props: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-6">
-              <Link href="/blogs" className="hover:text-[#0A2540] transition-colors flex items-center gap-2">
+            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
               </Link>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Design</span>
-              <span className="w-1 h-1 rounded-full bg-[#0A2540]/20" />
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 26, 2026</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-light tracking-tighter text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
               Why Minimalist Design Converts Better: How Reducing Cognitive Load Transforms Landing Page Performance
             </h1>
             
@@ -1077,9 +1077,9 @@ export default function BlogPostPage(props: Props) {
              initial={{ opacity: 0, y: 40 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-light"
+             className="text-[#0A2540]/80 font-medium"
            >
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Introduction: The Most Common Conversion Killer Is Already on Your Website</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Most Common Conversion Killer Is Already on Your Website</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 You invested in the traffic. The ads are running, the SEO is working, and visitors are landing on your page. But they're not converting. They browse for a few seconds, then they leave — and you're not entirely sure why.
               </p>
@@ -1099,7 +1099,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">What Is Cognitive Load — And Why It's Destroying Your Conversions</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">What Is Cognitive Load — And Why It's Destroying Your Conversions</h2>
                <p className="text-lg mb-6 leading-relaxed">
                   Cognitive load is a concept from educational psychology, introduced by researcher John Sweller in the 1980s, that describes the total amount of mental effort required to process information at any given moment. The human brain has a finite working memory — it can only hold and process a limited amount of information simultaneously before it becomes overwhelmed.
                </p>
@@ -1125,7 +1125,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">The Data Behind Minimalist Design and Conversion Rates</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">The Data Behind Minimalist Design and Conversion Rates</h2>
                <p className="text-lg mb-6 leading-relaxed">
                   This isn't a design philosophy grounded in aesthetic preference. It is a conversion strategy backed by measurable evidence.
                </p>
@@ -1141,9 +1141,9 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">7 Minimalist Design Principles That Directly Improve Conversion Rates</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">7 Minimalist Design Principles That Directly Improve Conversion Rates</h2>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">1. One Page, One Goal — The Single Conversion Objective Principle</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">1. One Page, One Goal — The Single Conversion Objective Principle</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   The most fundamental rule of high-converting minimalist design is architectural: every landing page should have exactly one conversion goal, and every element on that page should serve that goal exclusively.
                </p>
@@ -1155,7 +1155,7 @@ export default function BlogPostPage(props: Props) {
                   Audit every CTA on your current landing pages. If you have more than one primary action being requested, consolidate. Every secondary link — navigation menus, related blog posts, social media icons in the header — is a potential exit point that competes with your conversion goal. Consider removing or minimizing all navigation on standalone landing pages. The visitor arrived with a specific intent. Your page's only job is to fulfill that intent and convert it.
                </p>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">2. Whitespace Is Not Wasted Space — It Is a Conversion Tool</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">2. Whitespace Is Not Wasted Space — It Is a Conversion Tool</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Whitespace — the empty, unoccupied space between design elements — is the most misunderstood and most underutilized tool in conversion-focused design. Clients frequently push back on it, perceiving empty space as wasted real estate. This instinct, while understandable, is empirically wrong.
                </p>
@@ -1167,7 +1167,7 @@ export default function BlogPostPage(props: Props) {
                   Increase the line height, paragraph spacing, and padding around your primary headline and CTA button. Add meaningful section breaks between content areas rather than stacking elements tightly. Resist the instinct to fill every available pixel — the space itself is doing essential conversion work.
                </p>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">3. Establish a Visual Hierarchy That Guides — Not Overwhelms</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">3. Establish a Visual Hierarchy That Guides — Not Overwhelms</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Minimalist design does not mean equal design. The most effective minimalist landing pages have a clear, deliberate visual hierarchy — a structured sequence of emphasis that guides the visitor's eye through the page in exactly the order the conversion requires.
                </p>
@@ -1179,7 +1179,7 @@ export default function BlogPostPage(props: Props) {
                   Limit your primary headline to a single, large, high-contrast typographic treatment. Use size, weight, and colour contrast to establish a clear three-tier hierarchy: primary (headline and CTA), secondary (supporting copy and key benefits), tertiary (fine print, policy links, secondary navigation).
                </p>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">4. Limit Your Colour Palette to Eliminate Visual Noise</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">4. Limit Your Colour Palette to Eliminate Visual Noise</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Colour is one of the most potent tools in a designer's arsenal. Landing pages that employ five, six, or seven colours create visual noise that fatigues the eye and dilutes the impact of every individual element, including the CTA.
                </p>
@@ -1191,7 +1191,7 @@ export default function BlogPostPage(props: Props) {
                   Audit your current landing page colour usage. If your CTA button colour appears anywhere else on the page, change either the CTA or the competing uses. Apply your accent colour with discipline — it should feel slightly surprising when the visitor encounters it.
                </p>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">5. Typography Clarity Is Conversion Currency</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">5. Typography Clarity Is Conversion Currency</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Typography decisions made in the name of brand personality — decorative fonts, low-contrast text, small body copy — consistently undermine readability and conversion rates. Visitors who struggle to read your copy do not persist. They leave.
                </p>
@@ -1205,7 +1205,7 @@ export default function BlogPostPage(props: Props) {
                  </ul>
               </div>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">6. Minimize Form Fields to the Absolute Necessary Minimum</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">6. Minimize Form Fields to the Absolute Necessary Minimum</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   If your conversion goal involves a form, minimizing fields is one of the highest-leverage opportunities to directly improve conversion rates. Every additional field you ask a visitor to complete introduces friction.
                </p>
@@ -1217,7 +1217,7 @@ export default function BlogPostPage(props: Props) {
                   Ask for only what is absolutely necessary to initiate the next step. You do not need job title, company size, annual revenue, and phone number upfront if they can be collected in a demo call itself. Use single-column form layouts instead of multi-column forms to reduce cognitive load, especially on mobile devices.
                </p>
 
-               <h3 className="text-2xl font-light tracking-tight mt-10 mb-4 text-[#0A2540]">7. Mobile-First Minimalism Is Non-Negotiable</h3>
+               <h3 className="text-2xl font-heading font-extrabold tracking-tight mt-10 mb-4 text-[#0A2540]">7. Mobile-First Minimalism Is Non-Negotiable</h3>
                <p className="text-lg mb-6 leading-relaxed">
                   Minimalist design and mobile-first design are not parallel strategies — they are the same strategy. The constraints of the mobile screen size — limited real estate, touch-based navigation, variable connection speeds — demand the exact same discipline that minimalist design applies universally.
                </p>
@@ -1231,7 +1231,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">Real-World Minimalist Design Wins: What the Data Shows</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">Real-World Minimalist Design Wins: What the Data Shows</h2>
                <div className="grid grid-cols-1 gap-8 mb-16">
                   <div className="bg-white border border-[#0A2540]/10 p-8 rounded-2xl shadow-sm">
                      <h4 className="text-xl font-medium text-[#0A2540] mb-4">Basecamp</h4>
@@ -1258,7 +1258,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">How to Audit Your Current Landing Page for Cognitive Load</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">How to Audit Your Current Landing Page for Cognitive Load</h2>
                <p className="text-lg mb-8 leading-relaxed">
                   Before implementing a redesign, conduct a structured cognitive load audit of your existing landing pages using this framework:
                </p>
@@ -1271,7 +1271,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-               <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-10 text-[#0A2540]">Building Your Minimalist Landing Page: A Practical Framework</h2>
+               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-10 text-[#0A2540]">Building Your Minimalist Landing Page: A Practical Framework</h2>
                <div className="bg-[#0A2540]/5 p-10 rounded-3xl mb-16 shadow-inner border border-[#0A2540]/10">
                   <div className="space-y-6">
                      <div>
@@ -1309,7 +1309,7 @@ export default function BlogPostPage(props: Props) {
 
               <hr className="border-[#0A2540]/10 my-16" />
 
-              <h2 className="text-3xl md:text-4xl font-light tracking-tighter mt-12 mb-6 text-[#0A2540]">Conclusion: Simplicity Is a Strategic Decision, Not a Design Preference</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Conclusion: Simplicity Is a Strategic Decision, Not a Design Preference</h2>
               <p className="text-lg mb-6 leading-relaxed">
                  The most important insight in conversion-focused design is also the most counterintuitive: your landing page's job is not to communicate everything about your business. It is to remove every obstacle between a motivated visitor and a single, clear action.
               </p>
@@ -1324,7 +1324,7 @@ export default function BlogPostPage(props: Props) {
               <div className="bg-[#0A2540] text-white p-10 md:p-14 rounded-3xl mt-16 mb-16 text-center shadow-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square bg-white/5 blur-3xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
-                <h3 className="text-3xl font-light tracking-tighter mb-4 relative z-10">Ready to see how a cleaner, smarter platform can help?</h3>
+                <h3 className="text-3xl font-heading font-extrabold tracking-tight mb-4 relative z-10">Ready to see how a cleaner, smarter platform can help?</h3>
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Book a demo with our team and let's show you exactly what's possible for your high-converting client experiences.
                 </p>
@@ -1359,7 +1359,7 @@ export default function BlogPostPage(props: Props) {
     <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
       <Navbar forceDarkAtTop={true} />
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[60vh] text-center">
-        <h1 className="text-5xl font-light tracking-tighter mb-6 text-[#0A2540] mt-16 mt-10">Blog Not Found</h1>
+        <h1 className="text-5xl font-heading font-extrabold tracking-tight mb-6 text-[#0A2540] mt-16 mt-10">Blog Not Found</h1>
         <p className="text-lg text-[#0A2540]/60 mb-10 max-w-md mx-auto">The blog post you're looking for doesn't exist yet or has been moved.</p>
         <Link href="/blogs" className="text-xs font-bold uppercase tracking-widest border border-[#0A2540]/10 px-8 py-4 rounded-full hover:bg-[#0A2540]/5 transition-colors inline-block mb-32">
           Return to Blogs
@@ -1369,3 +1369,5 @@ export default function BlogPostPage(props: Props) {
     </main>
   );
 }
+
+

@@ -25,7 +25,7 @@ const NavLink = ({
     <a
       href={href}
       className={`group relative overflow-hidden inline-block h-[1.2em] font-semibold transition-colors duration-300 ${
-        isScrolled ? "text-[#0A2540]/70 hover:text-[#007BFF]" : "text-white/80 hover:text-white"
+        isScrolled ? "text-[#0A2540]/70 hover:text-[#007BFF]" : "text-[#0A2540]/70 hover:text-[#007BFF]"
       }`}
     >
       <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
@@ -33,7 +33,7 @@ const NavLink = ({
       </span>
       <span
         className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 ${
-          isScrolled ? "text-[#007BFF] font-bold" : "text-white font-bold"
+          isScrolled ? "text-[#007BFF] font-bold" : "text-[#007BFF] font-bold"
         }`}
       >
         {children}
@@ -153,11 +153,11 @@ export default function Home() {
         className={`fixed top-0 z-30 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
           isScrolled
             ? "bg-[#F4F6F8]/90 text-[#0A2540]/60 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
-            : "bg-transparent text-white py-6"
+            : "bg-[#F4F6F8]/80 text-[#0A2540]/70 shadow-[0_4px_20px_rgba(10,37,64,0.04)] backdrop-blur-md py-5"
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
-          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#0A2540]" : "text-white"}`}>
+          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#0A2540]" : "text-[#0A2540]"}`}>
             Setzet
           </span>
           <nav
@@ -187,7 +187,7 @@ export default function Home() {
               className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 md:inline-flex ${
                 isScrolled
                   ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
-                  : "border-white/30 text-white hover:bg-white hover:text-[#0A2540]"
+                  : "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
               }`}
               href="#contact"
             >
@@ -197,7 +197,7 @@ export default function Home() {
               className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
                 isScrolled
                   ? "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
-                  : "border-white/30 text-white hover:border-white"
+                  : "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
               }`}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
@@ -208,17 +208,17 @@ export default function Home() {
                 <span
                   className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  } ${isScrolled ? "bg-[#0A2540]" : "bg-white"}`}
+                  } bg-[#0A2540]`}
                 />
                 <span
                   className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
                     menuOpen ? "opacity-0" : "opacity-100"
-                  } ${isScrolled ? "bg-[#0A2540]" : "bg-white"}`}
+                  } bg-[#0A2540]`}
                 />
                 <span
                   className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
                     menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  } ${isScrolled ? "bg-[#0A2540]" : "bg-white"}`}
+                  } bg-[#0A2540]`}
                 />
               </span>
             </button>
@@ -260,9 +260,9 @@ export default function Home() {
         <section className="relative h-screen w-full overflow-hidden">
           <div className="absolute inset-0 h-full w-full">
             {/* Video Background */}
-            <div className="absolute inset-0 z-0 bg-black">
+            <div className="absolute inset-0 z-0 bg-[#F4F6F8]">
               <video
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover opacity-20 saturate-75"
                 autoPlay
                 muted
                 loop
@@ -272,41 +272,27 @@ export default function Home() {
                 <source src="/videos/hero/hero1.mp4?v=20260218" type="video/mp4" />
               </video>
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/85" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,123,255,0.10),transparent_50%),linear-gradient(to_bottom,rgba(244,246,248,0.75),rgba(244,246,248,0.95))]" />
             </div>
 
             {/* HERO CONTENT */}
-            <div className="relative z-10 mx-auto flex h-full w-full max-w-[90%] flex-col items-center justify-center text-white">
+            <div className="relative z-10 mx-auto flex h-full w-full max-w-[90%] flex-col items-center justify-center text-[#0A2540]">
               <div className="w-full text-center">
                 <motion.h1
                   custom={0}
                   initial="hidden"
                   animate="visible"
                   variants={fadeInUp}
-                  className="text-center text-[clamp(2.5rem,7vw,6.5rem)] font-extrabold leading-[1.1] tracking-tight drop-shadow-md"
+                  className="text-center text-[clamp(2.5rem,7vw,6.3rem)] font-heading font-extrabold leading-[1.08] tracking-tight"
                 >
                   <span className="block">Web Development Agency</span>
                   <span className="block mt-4">
                     Building{" "}
-                    <span className="relative inline-block px-4 mx-2">
-                       <svg
-                        className="absolute left-0 top-0 -z-10 h-[130%] w-[120%] -translate-x-[10%] -translate-y-[15%] text-red-600 opacity-90"
-                        viewBox="0 0 355 135"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                         <path 
-                           d="M15 65C15 65 35 25 105 20C175 15 295 15 325 55C355 95 315 115 195 120C75 125 35 115 15 85C-5 55 55 35 95 30" 
-                           stroke="currentColor" 
-                           strokeWidth="8" 
-                           strokeLinecap="round" 
-                           strokeLinejoin="round"
-                         />
-                      </svg>
-                      <span className="relative z-10 font-serif italic text-white">
+                    <span className="mx-2 inline-block rounded-xl bg-[#007BFF]/12 px-4 py-1">
+                      <span className="relative z-10 font-serif italic text-[#007BFF]">
                         High-Converting
                       </span>
-                    </span>{" "}
+                    </span>
                   </span>
                   <span className="block">Websites.</span>
                 </motion.h1>
@@ -316,7 +302,7 @@ export default function Home() {
                   initial="hidden"
                   animate="visible"
                   variants={fadeInUp}
-                  className="mx-auto mt-6 max-w-xl text-center text-base leading-7 text-white/80 sm:text-lg"
+                  className="mx-auto mt-6 max-w-xl text-center text-base leading-7 text-[#0A2540]/75 sm:text-lg font-medium"
                 >
                   <p>
                     A strategy-driven agency building scalable websites and
@@ -331,14 +317,21 @@ export default function Home() {
                   variants={fadeInUp}
                   className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-bold"
                 >
-                  <motion.button
+                  <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     className="rounded-full bg-[#007BFF] px-8 py-4 text-white font-bold shadow-[0_8px_30px_rgba(0,123,255,0.3)] hover:bg-[#0056b3] hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)] transition-all duration-300"
+                    href="#contact"
                   >
                     Start a Project
-                  </motion.button>
+                  </motion.a>
+                  <a
+                    href="/work"
+                    className="inline-flex items-center rounded-full border border-[#0A2540]/15 bg-white/80 px-8 py-4 font-bold text-[#0A2540] transition hover:border-[#007BFF]/30 hover:text-[#007BFF]"
+                  >
+                    See Work
+                  </a>
                 </motion.div>
               </div>
             </div>
