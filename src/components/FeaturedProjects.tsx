@@ -33,13 +33,13 @@ const projects = [
             "A premium, luxury, and ultra-clean website for a high-end makhana brand, designed to communicate purity and modern elegance.",
     },
     {
-        title: "Orbit Mobile Suite",
-        category: "App Product Design",
-        year: "2024",
-        image: "/mobile-app-development.png",
+        title: "Zenfora Food",
+        category: "E-Commerce / Brand Strategy",
+        year: "2026",
+        image: "/images/zenfora-food.png",
         href: "#",
         summary:
-            "Designed and shipped a modular mobile experience with clearer navigation and significantly faster task completion.",
+            "Crafted a vibrant, appetite-inducing digital storefront that highlights the nutritional power of foxnuts with a seamless D2C checkout experience.",
     },
 ];
 

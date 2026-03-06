@@ -26,7 +26,7 @@ const workStories = [
     description: "Healthy snacking shouldn't be boring. Zenfora turns foxnuts (makhana) into a lifestyle brand for the modern, health-conscious consumer.",
     narrative: "From protein powders to gourmet chocolates, Zenfora's product line is diverse. We crafted a vibrant, appetite-inducing digital storefront that highlights the nutritional power of foxnuts. With a seamless D2C checkout and subscription model, we turned casual snackers into loyal subscribers.",
     tags: ["FMCG", "E-Commerce", "Brand Strategy"],
-    image: "/images/aesthetic-img4.png",
+    image: "/images/zenfora-food.png",
     color: "#f97316"
   },
   {
