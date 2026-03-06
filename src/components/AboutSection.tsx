@@ -31,14 +31,7 @@ const chapters = [
     },
 ];
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 32 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
-    }),
-};
+
 
 export default function AboutSection() {
     return (
@@ -83,7 +76,7 @@ export default function AboutSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="group relative min-h-[420px] overflow-hidden rounded-[32px] bg-[#0A2540] shadow-xl md:min-h-[500px]"
+                    className="group relative h-[420px] w-full overflow-hidden rounded-[32px] bg-[#0A2540] shadow-xl md:h-[520px]"
                 >
                     <Image
                         src="/about_photo.png"
@@ -113,11 +106,10 @@ export default function AboutSection() {
                     {chapters.map((chapter, i) => (
                         <motion.div
                             key={chapter.id}
-                            custom={i}
-                            initial="hidden"
-                            whileInView="visible"
+                            initial={{ opacity: 0, y: 32 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-60px" }}
-                            variants={fadeUp}
+                            transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
                             className="group relative overflow-hidden rounded-[28px] border border-[#0A2540]/10 bg-white p-7 shadow-sm transition-all duration-300 hover:border-[#007BFF]/30 hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)]"
                         >
                             {chapter.icon}

@@ -369,8 +369,6 @@ export default function Home() {
                 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl text-[#0A2540]"
                 data-animate="services"
               >
-                Web Design, Development &
-                <br />
                 Digital Product Services
               </h2>
             </div>
