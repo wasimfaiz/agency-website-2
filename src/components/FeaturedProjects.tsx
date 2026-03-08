@@ -1,8 +1,7 @@
 "use client";
 
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const projects = [
     {
@@ -69,57 +68,50 @@ export default function FeaturedProjects() {
 
             <div className="w-full">
                 {projects.map((project, index) => {
-                    // Calculate the target scale based on how many cards are in the stack
-                    const targetScale = 1 - (projects.length - index) * 0.05;
                     return (
                         <Card
                             key={index}
                             i={index}
                             project={project}
-                            targetScale={targetScale}
                         />
                     );
                 })}
-                {/* Dummy spacer to allow scrolling past the last card if needed? No, sticky works in flow. */}
             </div>
         </section>
     );
 }
 
-function Card({ i, project, targetScale }: any) {
-    const container = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ["start end", "start start"],
-    });
+function Card({ i, project }: any) {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-    const imageScale = useTransform(scrollYProgress, [0, 1], [1.3, 1]);
-    const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
+    // One-shot reveal: fires once when card first enters viewport
+    useEffect(() => {
+        const el = cardRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
 
-    // To make it sticky and stack:
-    // Top needs to be offset slightly if we want a visible stack, or 0 for full cover.
-    // User said "second one come top of the first", implying full cover.
     return (
-        <div
-            ref={container}
-            className="sticky top-0 flex h-screen items-center justify-center overflow-hidden"
-            style={{ top: i * 0 }} // Stacking at exactly top:0
-        >
-            <motion.div
-                className="relative flex h-[70vh] w-full max-w-6xl origin-top flex-col justify-between overflow-hidden rounded-3xl border border-[#0A2540]/10 bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] sm:h-[80vh] sm:p-12 transition-all"
+        <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
+            <div
+                ref={cardRef}
+                className="relative flex h-[70vh] w-full max-w-6xl origin-top flex-col justify-between overflow-hidden rounded-3xl border border-[#0A2540]/10 bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] sm:h-[80vh] sm:p-12 transform-gpu will-change-transform"
                 style={{
-                    // Add a subtle scale effect as it comes up?
-                    // Actually, for a pure "stack", the card itself usually doesn't scale DOWN. The *previous* one might.
-                    // But sticky CSS makes the *current* one stay. The *next* one covers.
-                    // If we want the one *behind* to scale down, we need to know when the *next* one is arriving.
-                    // That is hard with just 'useScroll(target: self)'.
-                    // Simpler "cool effect": Just animate content entry?
-                    // User asked for "cool effect... smooth and perfect".
-                    // Let's do a Parallax on the Image.
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? "translate3d(0, 0px, 0)" : "translate3d(0, 40px, 0)",
+                    transition: "opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)",
                 }}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
             >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <h3 className="text-3xl font-extrabold font-heading leading-[0.9] tracking-tight sm:text-4xl text-[#0A2540] text-center sm:text-left">
@@ -130,24 +122,24 @@ function Card({ i, project, targetScale }: any) {
                     </p>
                 </div>
 
-                <div className="relative mt-8 h-full w-full overflow-hidden rounded-xl bg-[#F4F6F8]">
-                    <motion.div className="h-full w-full" style={{ scale: imageScale }}>
+                <div className="relative mt-8 h-full w-full overflow-hidden rounded-xl bg-[#F4F6F8] group">
+                    <div className="h-full w-full transform-gpu transition-transform duration-1000 ease-out group-hover:scale-105">
                         <Image
                             fill
                             src={project.image}
                             alt={project.title}
                             className="object-cover"
                         />
-                    </motion.div>
+                    </div>
                 </div>
 
-                <div className="mt-8 flex items-center justify-between">
+                <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <p className="max-w-md text-sm leading-relaxed font-medium text-[#0A2540]/80">
                         {project.summary}
                     </p>
                     <a
                         href={project.href}
-                        className="hidden items-center gap-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[#0A2540] transition hover:text-[#007BFF] sm:flex"
+                        className="inline-flex items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-[0.24em] text-[#0A2540] transition hover:text-[#007BFF]"
                     >
                         View Project
                         <svg
@@ -167,7 +159,7 @@ function Card({ i, project, targetScale }: any) {
                         </svg>
                     </a>
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 }
