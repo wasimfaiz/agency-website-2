@@ -167,7 +167,75 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. FOOTER */}
+      {/* 5. PRICING & PRODUCTS - Monetisation Section */}
+      <section className="relative mx-auto max-w-7xl px-6 pb-40">
+        <div className="relative rounded-[40px] border border-[#0A2540]/10 bg-white px-8 py-20 shadow-[0_8px_30px_rgba(10,37,64,0.04)] md:px-16 overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-0 right-0 h-[500px] w-[500px] bg-[#007BFF]/5 rounded-full blur-[100px] pointer-events-none" />
+            
+            <div className="relative z-10 text-center mb-16">
+                <h2 className="font-heading text-sm font-bold uppercase tracking-[0.4em] text-[#007BFF] mb-4">Start Scaling</h2>
+                <h3 className="text-4xl md:text-5xl font-extrabold text-[#0A2540] tracking-tight mb-6 font-heading">
+                    Ready to launch your product?
+                </h3>
+                <p className="max-w-xl mx-auto text-[#0A2540]/60 font-medium text-lg">
+                    Clear scoping, transparent pricing, and world-class execution. Choose the tier that fits your growth stage.
+                </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 relative z-10 items-stretch">
+                {/* Tier 1 */}
+                <div className="rounded-3xl border border-[#0A2540]/10 p-8 hover:border-[#007BFF]/30 hover:shadow-lg transition-all bg-[#F4F6F8]/50 flex flex-col">
+                    <h4 className="text-2xl font-extrabold text-[#0A2540] mb-2 font-heading">Design Sprint</h4>
+                    <p className="text-[#0A2540]/60 text-sm font-medium mb-6">Perfect for startups needing a visual direction.</p>
+                    <div className="text-4xl font-extrabold text-[#0A2540] mb-8 font-heading">$4,999<span className="text-lg text-[#0A2540]/40 font-medium font-sans">/project</span></div>
+                    
+                    <ul className="mb-8 space-y-4 flex-1">
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> UX/UI Design</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Brand Identity</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Interactive Wireframes</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> 2 Revisions</li>
+                    </ul>
+                    <button className="w-full py-4 rounded-xl border border-[#0A2540]/20 font-bold text-[#0A2540] hover:bg-[#0A2540] hover:text-white transition-all duration-300">Get Started</button>
+                </div>
+
+                {/* Tier 2 (Highlighted) */}
+                <div className="rounded-3xl border-2 border-[#007BFF] p-8 shadow-[0_12px_40px_rgba(0,123,255,0.15)] bg-white flex flex-col relative transform md:-translate-y-4">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#007BFF] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">Primary Focus</div>
+                    <h4 className="text-2xl font-extrabold text-[#0A2540] mb-2 font-heading">Full Build</h4>
+                    <p className="text-[#0A2540]/60 text-sm font-medium mb-6">End-to-end design and custom development.</p>
+                    <div className="text-4xl font-extrabold text-[#0A2540] mb-8 font-heading">$9,999<span className="text-lg text-[#0A2540]/40 font-medium font-sans">/project</span></div>
+                    
+                    <ul className="mb-8 space-y-4 flex-1">
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Everything in Design</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Next.js/React Development</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> CMS Integration</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Performance SEO Setup</li>
+                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Custom Animations</li>
+                    </ul>
+                    <button className="w-full py-4 rounded-xl bg-[#007BFF] font-bold text-white hover:bg-[#0056b3] shadow-[0_4px_14px_rgba(0,123,255,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">Start Project</button>
+                </div>
+
+                {/* Tier 3 (Sell Template/Product) */}
+                <div className="rounded-3xl border border-[#0A2540]/10 p-8 hover:border-[#007BFF]/30 hover:shadow-lg transition-all bg-[#0A2540] flex flex-col text-white">
+                    <h4 className="text-2xl font-extrabold mb-2 font-heading">Buy This Product</h4>
+                    <p className="text-white/60 text-sm font-medium mb-6">Get the exact source code & design of this site.</p>
+                    <div className="text-4xl font-extrabold mb-8 font-heading">$149<span className="text-lg text-white/40 font-medium font-sans">/license</span></div>
+                    
+                    <ul className="mb-8 space-y-4 flex-1">
+                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Full Next.js Source Code</li>
+                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Framer Motion Setup</li>
+                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Fully Responsive Layout</li>
+                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Lifetime Updates</li>
+                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Commercial License</li>
+                    </ul>
+                    <button className="w-full py-4 rounded-xl border border-white/20 font-bold bg-white text-[#0A2540] hover:bg-gray-100 transition-all duration-300">Purchase Now</button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* 6. FOOTER */}
       <Footer />
     </div>
   );

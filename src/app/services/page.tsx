@@ -28,70 +28,70 @@ const stagger = {
 const services = [
   {
     title: "Strategy",
-    description: "The Blueprint",
-    detail: "We don't start with design. We start with truth. Market analysis, user psychology, and brand positioning that defines your digital existence.",
-    meta: ["Brand Strategy", "User Research", "Content Architecture"],
+    description: "The Blueprint for Growth",
+    detail: "We don't guess. We analyze your market, competitors, and user psychology to build a precise digital roadmap designed solely to maximize your ROI.",
+    meta: ["Market Positioning", "Conversion Audits", "Funnel Strategy"],
     outcomes: [
-      "Sharper positioning and message clarity across channels",
-      "Higher-quality inbound leads from aligned audiences",
-      "Faster decision-making with a clear digital roadmap",
+      "Sharper positioning that makes price irrelevant",
+      "Higher-quality inbound leads that close faster",
+      "A clear, data-driven path to dominating your niche",
     ],
     deliverables: [
-      "Brand and market audit",
-      "Audience and competitor analysis",
-      "Positioning statement and messaging pillars",
-      "Content and page architecture plan",
+      "Competitive gap analysis",
+      "User psychology & buyer journey mapping",
+      "Conversion funnel blueprint",
+      "Messaging frameworks that sell",
     ],
   },
   {
     title: "Design",
-    description: "The Interface",
-    detail: "Visuals that communicate before text is read. We craft systems that are intuitive, accessible, and impossibly sharp.",
-    meta: ["UI/UX Design", "Design Systems", "Art Direction"],
+    description: "The Psychology of Trust",
+    detail: "Visuals that command immediate authority. We craft premium, trust-building UI/UX systems strategically designed to eliminate hesitation and drive the click.",
+    meta: ["Conversion-Optimized UI", "Premium Branding", "Psychological UX"],
     outcomes: [
-      "Improved conversion flow and reduced user friction",
-      "Stronger perceived brand value and trust",
-      "Consistent experience across all key screens",
+      "Reduced bounce rates and user friction",
+      "Instant brand authority and perceived value",
+      "Seamless journeys from landing to checkout/lead",
     ],
     deliverables: [
-      "Wireframes and interaction flows",
-      "High-fidelity UI design",
-      "Design system foundations",
-      "Responsive layout specifications",
+      "High-converting wireframes & flows",
+      "Premium, luxury UI design",
+      "Scalable design systems",
+      "Persuasive visual hierarchies",
     ],
   },
   {
     title: "Development",
-    description: "The Engine",
-    detail: "Code that feels weightless. Scalable architectures, headless CMS integrations, and performance-first engineering.",
-    meta: ["Full Stack", "WebGL / 3D", "Technical SEO"],
+    description: "The Revenue Engine",
+    detail: "Speed kills conversions. We engineer lightning-fast, highly scalable architectures that handle massive traffic spikes without breaking a sweat.",
+    meta: ["Next.js & React", "Headless Commerce", "Technical SEO"],
     outcomes: [
-      "Faster load times and stronger Core Web Vitals",
-      "Reliable, scalable platform for growth",
-      "Higher discoverability through technical SEO readiness",
+      "Zero-latency load times to save lost sales",
+      "A bulletproof foundation ready to scale",
+      "Higher discoverability through native technical SEO",
     ],
     deliverables: [
-      "Production-ready frontend and backend setup",
-      "CMS and content workflows",
-      "Performance optimization pass",
-      "QA and cross-device testing",
+      "Production-ready Next.js builds",
+      "Headless CMS for marketing speed",
+      "Vercel / Core Web Vitals optimization",
+      "Secure, scalable backend integrations",
     ],
   },
   {
     title: "Motion",
-    description: "The Soul",
-    detail: "Movement that guides, informs, and delights. From micro-interactions to full-screen cinematic storytelling.",
-    meta: ["Interaction Design", "Lottie / Rive", "GSAP Animation"],
+    description: "The Hook",
+    detail: "Static sites are dead. We inject purposeful WebGL and micro-animations that physically hook user attention and force them to keep scrolling down your funnel.",
+    meta: ["GSAP / Framer Motion", "WebGL Elements", "Scroll Psychology"],
     outcomes: [
-      "Better engagement and session depth",
-      "Clearer user guidance through interaction cues",
-      "A more memorable and premium brand experience",
+      "Massive increases in average session duration",
+      "Subconscious guidance toward your primary CTA",
+      "A 'wow' factor that competitors can't replicate",
     ],
     deliverables: [
-      "Motion direction and interaction principles",
-      "Micro-interactions for key touchpoints",
-      "Scroll and transition choreography",
-      "Animation performance tuning",
+      "Cinematic scroll choreography",
+      "Premium micro-interactions",
+      "Interactive 3D / WebGL moments",
+      "Performance-tuned animations",
     ],
   }
 ];
@@ -210,33 +210,71 @@ export default function ServicesPage() {
       
 
 
-      {/* 1. HERO SECTION - Minimal & Clean */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 overflow-hidden">
-         <div className="absolute inset-0 z-0">
-             <div className="absolute top-1/4 right-1/4 w-[60vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[120px]" />
+      {/* 1. HERO SECTION - Conversion & Sales Focused */}
+      <section className="relative min-h-[95vh] flex flex-col justify-center px-6 pt-32 pb-20 overflow-hidden">
+         <div className="absolute inset-0 z-0 bg-[#F4F6F8]">
+             {/* Dynamic background elements */}
+             <div className="absolute -top-20 right-0 w-[60vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[140px]" />
+             <div className="absolute bottom-10 -left-20 w-[50vw] h-[50vh] bg-[#0A2540]/5 rounded-full blur-[100px]" />
          </div>
 
          <div className="container mx-auto relative z-10">
-             <motion.h1 
-               initial={{ opacity: 0, y: 50 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-               className="text-[clamp(3.5rem,8vw,9.5rem)] font-heading font-extrabold leading-[0.95] tracking-tighter mb-10 text-[#0A2540]"
-             >
-                Digital Systems <br/> 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540]">For The Future.</span>
-             </motion.h1>
+             <div className="max-w-5xl">
+                 <motion.div
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.6, ease: "easeOut" }}
+                   className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#0A2540]/10 bg-white px-5 py-2.5 shadow-sm"
+                 >
+                   <span className="relative flex h-2.5 w-2.5">
+                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#007BFF] opacity-75"></span>
+                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#007BFF]"></span>
+                   </span>
+                   <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A2540]">Revenue-Driven Web Design</span>
+                 </motion.div>
 
-             <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="max-w-xl md:ml-auto md:mr-20"
-             >
-                 <p className="text-xl md:text-2xl text-[#0A2540]/70 font-medium leading-relaxed border-l-4 border-[#007BFF] pl-6">
-                    We bridge the gap between aesthetic and function. A full-service enterprise studio engineering brands that command attention.
-                 </p>
-             </motion.div>
+                 <motion.h1 
+                   initial={{ opacity: 0, y: 30 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                   className="text-[clamp(3rem,6.5vw,7.5rem)] font-heading font-extrabold leading-[0.95] tracking-tight mb-10 text-[#0A2540]"
+                 >
+                    A beautiful website is useless if <br className="hidden lg:block" />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0E1521] via-[#0A2540] to-[#007BFF] pr-4 italic">nobody buys.</span>
+                 </motion.h1>
+             </div>
+
+             <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 lg:gap-24 mt-16 md:mt-24 items-end">
+                 <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                 >
+                     <p className="text-xl md:text-2xl text-[#0A2540]/70 font-medium leading-relaxed border-l-4 border-[#007BFF] pl-6 lg:pl-8 py-2">
+                        We don't build generic digital brochures. We engineer high-converting digital assets that build authority, capture attention, and turn cold traffic into paying customers. Stop losing leads to slow, unoptimized websites.
+                     </p>
+                 </motion.div>
+                 
+                 <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                 >
+                    <div className="flex flex-col gap-6 p-8 lg:p-10 rounded-3xl bg-white border border-[#0A2540]/10 shadow-[0_8px_40px_rgba(10,37,64,0.06)] backdrop-blur-md relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#007BFF]/5 rounded-bl-[100px] pointer-events-none" />
+                        <div>
+                            <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A2540]/40 mb-2">The Objective</div>
+                            <div className="text-4xl lg:text-5xl font-extrabold text-[#007BFF] font-heading mb-1">Conversion First.</div>
+                        </div>
+                        <div className="h-px w-full bg-[#0A2540]/10 my-2" />
+                        <div>
+                            <p className="text-base text-[#0A2540]/80 font-medium leading-relaxed">
+                              Our systems are strategically structured to guide users aggressively toward your primary CTA—without ever sacrificing premium luxury aesthetics.
+                            </p>
+                        </div>
+                    </div>
+                 </motion.div>
+             </div>
          </div>
        </section>
 
@@ -253,23 +291,23 @@ export default function ServicesPage() {
          <div className="container mx-auto grid md:grid-cols-2 gap-20">
              <div className="sticky top-32 h-fit z-10">
                  <h2 className="text-5xl md:text-7xl font-heading font-extrabold mb-8 text-[#0A2540]">
-                    How We <br/> Work
+                    The Growth <br/> Sequence
                  </h2>
                  <p className="text-lg text-[#0A2540]/60 max-w-sm font-medium">
-                    Refined over years of shipping products. A linear process for non-linear impact.
+                    We don't just build and disappear. This is a battle-tested system designed entirely around scaling your revenue.
                  </p>
                  <Link href="/#contact" className="mt-10 inline-flex items-center gap-2 text-[#007BFF] font-bold pb-1 hover:underline group">
-                    Start a Conversation <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    Book a Strategy Call <span className="group-hover:translate-x-1 transition-transform">→</span>
                  </Link>
              </div>
              
              <div>
                  {[
-                    { num: "01", title: "Discovery & Audit", text: "We strip away the noise. We analyze your current state, your competitors, and your goals to find the path of least resistance." },
-                    { num: "02", title: "Architecture", text: "Structure precedes design. We map out user flows, content hierarchies, and technical requirements." },
-                    { num: "03", title: "Visual System", text: "We create a design language unique to you. Typography, color, and motion that speaks your brand's truth." },
-                    { num: "04", title: "Production", text: "Development sprints. Pixel-perfect implementation. Testing across devices. We build for the real world." },
-                    { num: "05", title: "Launch & Scale", text: "Deployment is just a milestone. We optimize, iterate, and help you grow." }
+                    { num: "01", title: "Conversion Audit", text: "We strip away the fluff. We analyze exactly where your current site is bleeding money and dropping leads." },
+                    { num: "02", title: "Funnel Architecture", text: "Structure dictates sales. We map out the exact psychological journey needed to turn a cold click into a closed deal." },
+                    { num: "03", title: "Premium Visuals", text: "We wrap our logic in an impossibly sharp, high-authority UI that makes your competitors look painfully outdated." },
+                    { num: "04", title: "Performance Build", text: "Development sprints focused on zero-latency. Because every second of loading time costs you conversions." },
+                    { num: "05", title: "Launch & Scale", text: "We push live, monitor the analytics, and optimize the funnel to ensure your ROI compounds over time." }
                  ].map((step, i) => (
                      <ProcessStep key={i} index={i} number={step.num} title={step.title} text={step.text} />
                  ))}
@@ -281,7 +319,7 @@ export default function ServicesPage() {
       <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 bg-white text-[#0A2540] relative overflow-hidden border-t border-[#0A2540]/5">
           <div className="relative z-10 max-w-4xl">
               <h2 className="text-[clamp(3rem,8vw,8rem)] font-heading font-extrabold leading-none tracking-tighter mb-10">
-                 Let's Build It.
+                 Scale Your Revenue.
               </h2>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                  <Link 

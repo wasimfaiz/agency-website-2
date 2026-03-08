@@ -13,7 +13,7 @@ function HeroSection() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-30 flex flex-col items-center justify-center px-4 text-center w-full max-w-5xl mx-auto">
+      <div className="relative z-30 flex flex-col items-center justify-center px-4 text-center w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -28,11 +28,11 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(3rem,7vw,6.5rem)] font-extrabold leading-[1.05] tracking-tighter text-[#0A2540]"
+          className="text-[clamp(2.5rem,4.5vw,5.5rem)] font-extrabold leading-[1.05] tracking-tighter text-[#0A2540] w-full"
         >
-          Run your entire business from <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540] drop-shadow-sm">
-            one powerful platform.
+          Run your entire business <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#0A2540] drop-shadow-sm py-2 -my-2 pr-2">
+            from one powerful platform.
           </span>
         </motion.h1>
 
