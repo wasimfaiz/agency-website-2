@@ -119,10 +119,10 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-3xl lg:max-w-none mx-auto">
             {[
-              { name: "Wasim Faiz", role: "Team Lead", image: "/about_photo.png" },
-              { name: "Sagar Singh", role: "Head of Engineering", image: "/images/aesthetic-img2.png" },
-              { name: "R.K Singh", role: "Creative Director", image: "/images/aesthetic-img4.png" },
-              { name: "Sakshi Singh", role: "VP of Growth", image: "/images/aesthetic-img3.png" }
+              { name: "Wasim Faiz", role: "Team Lead", image: "/images/wasim-faiz.png" },
+              { name: "Sagar Singh", role: "Head of Engineering", image: "/images/sagar-singh.jpg" },
+              { name: "R.K Singh", role: "Creative Director", image: "/images/r.k-singh.jpeg" },
+              { name: "Sakshi Singh", role: "VP of Growth", image: "/images/sakshi-singh.jpg" }
             ].map((member, i) => (
               <motion.div 
                 key={i}
