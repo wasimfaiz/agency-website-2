@@ -29,7 +29,7 @@ export default function AboutPage() {
       <Navbar forceDarkAtTop={true} />
 
       {/* 1. HERO SECTION (Reference-inspired layout) */}
-      <section className="relative pt-32 lg:pt-48 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="relative z-10 w-full text-center lg:text-left pt-6 lg:pt-0">
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-extrabold font-heading text-[#0A2540] tracking-tight leading-[1.15] lg:leading-[1.05] mb-6 lg:mb-8 mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
@@ -74,6 +74,68 @@ export default function AboutPage() {
                 <Image src="/images/aesthetic-img3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" />
              </div>
           </motion.div>
+        </div>
+      </section>
+      {/* TRUSTED BY — BRAND LOGOS STRIP */}
+      <section className="py-12 md:py-16 px-6 border-y border-[#0A2540]/5 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-[10px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#0A2540]/40 mb-8 md:mb-10"
+          >
+            Trusted by forward-thinking brands
+          </motion.p>
+
+          {/* Scrolling marquee row */}
+          <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+            <ul className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 animate-[marquee_28s_linear_infinite]">
+              {[
+                { name: "PureMakhana", tag: "D2C Brand" },
+                { name: "Yastudy", tag: "Education" },
+                { name: "Zenfora", tag: "FMGC" },
+                { name: "Narayana Agri Solution", tag: "Agriculture" },
+                { name: "UrbanNest", tag: "Real Estate" },
+                { name: "ZenFlow", tag: "Wellness App" },
+                { name: "StackPilot", tag: "DevTools" },
+                { name: "UncleMakhana", tag: "B2B Brand" },
+                
+              ].map((brand, i) => (
+                <li key={i} className="flex flex-col items-center gap-1 shrink-0 group">
+                  <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
+                    {brand.name}
+                  </span>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-[#007BFF]/0 group-hover:text-[#007BFF]/60 transition-colors duration-300">
+                    {brand.tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {/* Duplicate for seamless loop */}
+            <ul className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 animate-[marquee_28s_linear_infinite] ml-12 md:ml-16 lg:ml-20" aria-hidden>
+              {[
+                { name: "PureMakhana", tag: "D2C Brand" },
+                { name: "NovaTech", tag: "SaaS" },
+                { name: "UrbanNest", tag: "Real Estate" },
+                { name: "ZenFlow", tag: "Wellness App" },
+                { name: "StackPilot", tag: "DevTools" },
+                { name: "LumiAI", tag: "AI Platform" },
+                { name: "ClearPath", tag: "Fintech" },
+                { name: "BoltStore", tag: "E-Commerce" },
+              ].map((brand, i) => (
+                <li key={i} className="flex flex-col items-center gap-1 shrink-0 group">
+                  <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
+                    {brand.name}
+                  </span>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-[#007BFF]/0 group-hover:text-[#007BFF]/60 transition-colors duration-300">
+                    {brand.tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
