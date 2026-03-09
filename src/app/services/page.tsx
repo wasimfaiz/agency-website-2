@@ -181,19 +181,20 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
 
 const ProcessStep = ({ number, title, text, index }: { number: string, title: string, text: string, index: number }) => {
     return (
-        <div className="sticky mb-10 min-h-[40vh] flex flex-col justify-start pt-10" style={{ top: `calc(350px + ${index * 20}px)` }}>
+        <div className="static md:sticky mb-10 md:mb-0 md:min-h-[40vh] flex flex-col justify-start w-full z-10" style={{ top: `calc(130px + ${index * 24}px)` }}>
             <motion.div 
-               initial={{ opacity: 0, y: 50 }}
+               initial={{ opacity: 0, y: 30 }}
                whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, margin: "-10%" }}
                transition={{ duration: 0.5 }}
-               className="relative bg-[#F4F6F8] border border-[#0A2540]/10 hover:border-[#007BFF]/30 p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group"
+               className="relative bg-white border border-[#0A2540]/10 hover:border-[#007BFF]/30 p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgba(10,37,64,0.06)] hover:shadow-[0_20px_40px_rgba(10,37,64,0.12)] transition-all duration-500 overflow-hidden group w-full origin-top"
             >
                 {/* Decorative Gradient Blob */}
-                <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#007BFF]/5 rounded-full blur-[80px] group-hover:bg-[#007BFF]/20 transition-colors duration-500" />
+                <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#007BFF]/5 rounded-full blur-[80px] group-hover:bg-[#007BFF]/15 transition-colors duration-500 pointer-events-none" />
                 
-                <span className="font-mono text-xs font-bold text-[#007BFF] mb-4 inline-block bg-[#007BFF]/10 px-2 py-1 rounded tracking-widest">{number}</span>
-                <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-[#0A2540] mb-6">{title}</h3>
-                <p className="text-lg text-[#0A2540]/70 font-medium leading-relaxed relative z-10">{text}</p>
+                <span className="font-mono text-xs font-bold text-[#007BFF] mb-4 inline-block bg-[#007BFF]/10 px-3 py-1.5 rounded-md tracking-widest">{number}</span>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-heading font-extrabold text-[#0A2540] mb-4 md:mb-6">{title}</h3>
+                <p className="text-base md:text-lg text-[#0A2540]/70 font-medium leading-relaxed relative z-10">{text}</p>
             </motion.div>
         </div>
     );
@@ -287,21 +288,18 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. APPROACH / PROCESS */}
-      <section className="py-32 px-6 bg-[#F4F6F8]">
-         <div className="container mx-auto grid md:grid-cols-2 gap-20">
-             <div className="sticky top-32 h-fit z-10">
-                 <h2 className="text-5xl md:text-7xl font-heading font-extrabold mb-8 text-[#0A2540]">
-                    The Growth <br/> Sequence
+      <section className="py-20 md:py-32 px-6 bg-[#F4F6F8]">
+         <div className="container mx-auto grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
+             <div className="static md:sticky md:top-32 h-fit z-10">
+                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold mb-6 md:mb-8 text-[#0A2540] tracking-tight">
+                    The Growth <br className="hidden lg:block"/> Sequence
                  </h2>
-                 <p className="text-lg text-[#0A2540]/60 max-w-sm font-medium">
+                 <p className="text-base md:text-lg text-[#0A2540]/60 max-w-sm font-medium">
                     We don't just build and disappear. This is a battle-tested system designed entirely around scaling your revenue.
                  </p>
-                 <Link href="/#contact" className="mt-10 inline-flex items-center gap-2 text-[#007BFF] font-bold pb-1 hover:underline group">
-                    Book a Strategy Call <span className="group-hover:translate-x-1 transition-transform">→</span>
-                 </Link>
              </div>
              
-             <div>
+             <div className="relative w-full">
                  {[
                     { num: "01", title: "Conversion Audit", text: "We strip away the fluff. We analyze exactly where your current site is bleeding money and dropping leads." },
                     { num: "02", title: "Funnel Architecture", text: "Structure dictates sales. We map out the exact psychological journey needed to turn a cold click into a closed deal." },
