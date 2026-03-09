@@ -1,254 +1,190 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-// Reusing existing assets
-const galleryImages = [
-  "/images/aesthetic-img3.png",
-  "/images/aesthetic_ui_mockup.png", 
-  "/mobile-app-development.png",
-  "/images/aesthetic-img2.png",
-  "/images/aesthetic-img4.png",
-];
+// Animation Variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const } }
+};
 
-const values = [
-  { title: "Innovation", desc: "We pioneer modern web design and development. We don't just follow industry standards—we set them." },
-  { title: "Precision", desc: "From UI/UX design to custom web development, every pixel and line of code is meticulously crafted." },
-  { title: "Empathy", desc: "We create user-centric digital experiences that connect with audiences on a profound, human level." },
-  { title: "Impact", desc: "Delivering high-performance digital products that drive growth and leave a lasting impression." },
-];
-
-const processSteps = [
-  { step: "01", title: "Discovery", desc: "Comprehensive brand analysis and UX research. We uncover your core objectives before writing a single line of code." },
-  { step: "02", title: "Strategy", desc: "Data-driven digital strategy. We chart a calculated roadmap to ensure your brand dominates its online niche." },
-  { step: "03", title: "Creation", desc: "The forge of custom web development. Where award-winning frontend design meets robust backend engineering." },
-  { step: "04", title: "Launch", desc: "Seamless deployment and SEO optimization. We ensure your digital debut is flawless, fast, and built to scale." },
-];
-
-const stats = [
-  { label: "Years of Excellence", value: "4+" },
-  { label: "Projects Delivered", value: "50+" },
-  { label: "Industry Awards", value: "12" },
-  { label: "Client Satisfaction", value: "100%" },
-];
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
 
 export default function AboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Parallax for Hero
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-
   return (
-    <div ref={containerRef} className="bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540]">
+    <div className="noise-bg bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen">
+      <title>About | SetZet Digital Agency</title>
+      <meta name="description" content="A premium web development agency building the next generation of high-performance digital experiences." />
+
       <Navbar forceDarkAtTop={true} />
-      
-      {/* 1. HERO - Parallax & Depth */}
-      <section className="relative flex h-screen items-center justify-center overflow-hidden px-6">
-        <div className="absolute inset-0 z-0">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[100px]" />
-        </div>
-        
-        <div className="relative z-10 flex flex-col items-center text-center">
-            <motion.h1 
-                style={{ y: y1 }}
-                className="font-heading text-4xl font-extrabold uppercase leading-[0.9] tracking-tighter md:text-7xl lg:text-[9vw] xl:text-[10rem] text-transparent bg-clip-text bg-gradient-to-b from-[#007BFF] to-[#0A2540] will-change-transform drop-shadow-sm"
-            >
-                Unconventional
+
+      {/* 1. HERO SECTION (Reference-inspired layout) */}
+      <section className="relative pt-32 lg:pt-48 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="relative z-10 w-full text-center lg:text-left pt-6 lg:pt-0">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-extrabold font-heading text-[#0A2540] tracking-tight leading-[1.15] lg:leading-[1.05] mb-6 lg:mb-8 mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
+              About Setzet <br className="hidden lg:block" /> with Engineering <br className="hidden lg:block" /> & Aesthetics
             </motion.h1>
-            <motion.p
-                style={{ y: y2 }}
-                className="font-heading text-4xl font-extrabold uppercase leading-[0.9] tracking-tighter text-[#0A2540] md:text-7xl lg:text-[9vw] xl:text-[10rem] will-change-transform"
-            >
-                Reality
+            <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-10">
+              Wherever you are should not be a factor in what you do. Brilliant engineering and flawless design combined will change the way the digital world works.
             </motion.p>
-        </div>
+            <motion.div variants={fadeUp}>
+              <Link href="/#contact" className="inline-flex h-12 md:h-14 items-center justify-center rounded-full bg-[#007BFF] px-8 text-sm md:text-base font-bold text-white transition-all shadow-[0_8px_30px_rgba(0,123,255,0.3)] hover:bg-[#0056b3] hover:-translate-y-1">
+                Start a Project
+              </Link>
+            </motion.div>
+          </motion.div>
 
-        {/* Floating Abstract Element */}
-        <motion.div 
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute right-[10%] top-[20%] h-64 w-64 rounded-full border border-[#0A2540]/10 opacity-30 blur-xl md:h-96 md:w-96"
-        />
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative h-[320px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full max-w-[320px] sm:max-w-md md:max-w-xl lg:max-w-none mx-auto lg:mx-0 mt-6 lg:mt-0">
+             {/* Connecting SVG lines and dots */}
+             <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+                {/* Lines mimicking the network/collage aesthetic */}
+                <line x1="25%" y1="20%" x2="75%" y2="40%" stroke="#0A2540" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="4 4" />
+                <line x1="75%" y1="40%" x2="45%" y2="80%" stroke="#0A2540" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="4 4" />
+                <line x1="25%" y1="20%" x2="45%" y2="80%" stroke="#0A2540" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="4 4" />
+                <line x1="5%" y1="50%" x2="25%" y2="20%" stroke="#007BFF" strokeWidth="1" strokeOpacity="0.5" />
+                
+                {/* Dots at intersection points */}
+                <circle cx="25%" cy="20%" r="4" fill="#0A2540" fillOpacity="0.8" />
+                <circle cx="75%" cy="40%" r="4" fill="#0A2540" fillOpacity="0.8" />
+                <circle cx="45%" cy="80%" r="4" fill="#0A2540" fillOpacity="0.8" />
+                <circle cx="5%" cy="50%" r="4" fill="#007BFF" />
+             </svg>
+
+             {/* Image 1: Top Left */}
+             <div className="absolute top-[5%] lg:top-[10%] left-[5%] w-[45%] lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-xl z-20">
+                <Image src="/about_photo.png" fill alt="Engineering" className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+             </div>
+             {/* Image 2: Middle Right */}
+             <div className="absolute top-[25%] lg:top-[25%] right-[0%] lg:right-[5%] w-[45%] aspect-square rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-[0_20px_40px_rgba(10,37,64,0.1)] z-30">
+                <Image src="/images/aesthetic-img2.png" fill alt="Aesthetics" className="object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
+             </div>
+             {/* Image 3: Bottom Left, overlapping slightly */}
+             <div className="absolute bottom-[5%] lg:bottom-[5%] left-[15%] lg:left-[25%] w-[35%] aspect-[3/4] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-lg z-10">
+                <Image src="/images/aesthetic-img3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" />
+             </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* 2. THE VISION - Sticky Scroll Split */}
-      <section className="relative mx-auto flex max-w-7xl flex-col gap-20 px-6 py-20 md:flex-row md:py-40">
-        <div className="w-full md:w-1/2">
-            <div className="sticky top-32">
-                <h2 className="mb-8 font-heading text-4xl font-extrabold md:text-6xl text-[#0A2540]">We don't just build websites.</h2>
-                <p className="text-xl text-[#0A2540]/60 font-medium">We engineer premium digital experiences.</p>
-                <div className="mt-12 h-px w-24 bg-[#0A2540]/20" />
+      {/* 2. MISSION & VALUE BOX SECTION (Reference block) */}
+      <section className="px-4 lg:px-6 pb-24">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={staggerContainer}
+            className="bg-[#ffffff] rounded-[2rem] p-6 md:p-12 lg:p-20 border border-[#0A2540]/5 shadow-[0_8px_40px_rgba(10,37,64,0.03)]"
+          >
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+               <motion.div variants={fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[4/3] rounded-[1.5rem] overflow-hidden shadow-sm border border-[#0A2540]/5 w-full order-2 lg:order-1 mt-6 lg:mt-0">
+                  <Image src="/images/aesthetic-img4.png" fill alt="Our Mission" className="object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/10 to-transparent pointer-events-none" />
+               </motion.div>
+               
+               <motion.div variants={staggerContainer} className="order-1 lg:order-2 text-center lg:text-left">
+                  <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Mission</motion.h3>
+                  <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-[1.1rem] font-medium leading-[1.7] mb-10 lg:mb-16">
+                     At Setzet, we provide tailored digital engineering and aesthetic perfection to boost operational efficiency, drive innovation, and support immense scale. We help individuals and ambitious businesses optimize their digital presence for lasting authority.
+                  </motion.p>
+                  
+                  <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Value</motion.h3>
+                  <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-[1.1rem] font-medium leading-[1.7]">
+                     Setzet sets the global standard in high-performance digital products, empowering global organizations through uncompromising design and flawless execution strategies. Join us to elevate your brand to the next paradigm.
+                  </motion.p>
+               </motion.div>
             </div>
-        </div>
-        <div className="flex w-full flex-col gap-20 md:w-1/2 md:pt-40">
-            <p className="text-2xl leading-relaxed text-[#0A2540]/80 md:text-3xl font-medium">
-                Setzet was born from a simple belief: <span className="text-[#007BFF] font-extrabold">The internet is noisy.</span> As a leading enterprise digital agency, we know that to stand out, you don't need to shout. You need to resonate.
-            </p>
-            <p className="text-2xl leading-relaxed text-[#0A2540]/80 md:text-3xl font-medium">
-                We blend high-end UI/UX design with rock-solid custom web development. Our process is a precise mix of brand psychology, strategic marketing, and modern frontend coding, distilled into powerful digital products.
-            </p>
-            <div className="relative aspect-square md:aspect-[4/3] lg:aspect-[4/5] w-full flex-shrink-0 overflow-hidden rounded-3xl border border-[#0A2540]/10 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-[#007BFF]/30 group">
-                <Image src="/about_photo.png" alt="Setzet Digital Agency Team" fill className="object-cover object-top grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
-            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* 2.5. THE PROCESS - Interactive List */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-32">
-        <h2 className="mb-20 font-heading text-sm uppercase tracking-[0.5em] text-[#0A2540]/40 font-bold">The Blueprint</h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step, i) => (
-                <div key={i} className="group relative border-l-2 border-[#0A2540]/10 p-6 transition-all hover:bg-white hover:border-[#007BFF] hover:shadow-sm hover:-translate-y-1 rounded-r-2xl">
-                    <span className="block font-mono text-xs font-bold text-[#007BFF] mb-4 bg-[#007BFF]/10 inline-block px-2 py-1 rounded-md">{step.step}</span>
-                    <h3 className="mb-4 text-2xl font-extrabold uppercase text-[#0A2540]">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-[#0A2540]/70 font-medium">
-                        {step.desc}
-                    </p>
+      {/* 3. ROSTER / CORE TEAM (Reference Grid Concept) */}
+      <section className="px-4 lg:px-6 pb-24 lg:pb-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={fadeUp}
+            className="mb-12 md:mb-16 text-center space-y-4"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-[#0A2540] tracking-tight">Meet the Architects.</h2>
+            <p className="text-[#0A2540]/60 font-medium text-lg max-w-xl mx-auto">The brilliant minds driving our digital excellence forward.</p>
+          </motion.div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-3xl lg:max-w-none mx-auto">
+            {[
+              { name: "Wasim Faiz", role: "Team Lead", image: "/about_photo.png" },
+              { name: "Sagar Singh", role: "Head of Engineering", image: "/images/aesthetic-img2.png" },
+              { name: "R.K Singh", role: "Creative Director", image: "/images/aesthetic-img4.png" },
+              { name: "Sakshi Singh", role: "VP of Growth", image: "/images/aesthetic-img3.png" }
+            ].map((member, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="group flex flex-col bg-white rounded-2xl border border-[#0A2540]/10 p-3 pb-6 shadow-[0_4px_20px_rgba(10,37,64,0.03)] hover:shadow-[0_20px_40px_rgba(10,37,64,0.08)] hover:-translate-y-2 transition-all duration-300 cursor-default"
+              >
+                <div className="relative aspect-[4/5] rounded-[14px] overflow-hidden mb-5 bg-[#e2e6eb] border border-[#0A2540]/5">
+                   <Image src={member.image} fill alt={member.name} className="object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
                 </div>
+                <div className="text-center px-1">
+                   <h4 className="font-heading font-extrabold text-lg lg:text-xl text-[#0A2540] tracking-tight truncate">{member.name}</h4>
+                   <p className="text-xs lg:text-sm font-bold text-[#0A2540]/40 mt-1 uppercase tracking-widest">{member.role}</p>
+                </div>
+              </motion.div>
             ))}
+          </div>
         </div>
       </section>
 
-      {/* 2.6. IMPACT BY NUMBERS */}
-      <section className="border-y border-[#0A2540]/10 bg-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,123,255,0.05)_0%,transparent_70%)] pointer-events-none" />
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-12 px-6 md:grid-cols-4 relative z-10">
-            {stats.map((stat, i) => (
-                <div key={i} className="text-center">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1, duration: 0.8 }}
-                        className="font-heading text-4xl font-extrabold md:text-6xl text-[#007BFF]"
-                    >
-                        {stat.value}
-                    </motion.div>
-                    <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-[#0A2540]/60">{stat.label}</p>
-                </div>
+      {/* 4. SUCCESS BANNER & STATS (Reference Bottom) */}
+      <section className="px-6 py-24 lg:py-32 bg-white border-y border-[#0A2540]/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <motion.h2 
+               initial={{ opacity: 0, y: 40 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, margin: "-10%" }}
+               transition={{ duration: 0.8 }}
+               className="text-3xl sm:text-4xl md:text-6xl lg:text-[5.5rem] font-extrabold font-heading tracking-tight text-[#0A2540] leading-[1.1] md:leading-[1.05]"
+            >
+               Our success depends on <br className="hidden lg:block"/> <span className="text-[#007BFF]">your success.</span>
+            </motion.h2>
+          </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 text-center divide-x-0 lg:divide-x divide-[#0A2540]/10 mb-10 md:mb-20 max-w-5xl mx-auto">
+            {[
+              { val: "$150M+", label: "Client Revenue" },
+              { val: "0ms", label: "Latency Tolerated" },
+              { val: "24+", label: "Industry Awards" },
+              { val: "99%", label: "Satisfaction" }
+            ].map((stat, i) => (
+              <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  className="flex flex-col items-center justify-center p-4"
+              >
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold font-heading text-[#007BFF] tracking-tighter mb-2 md:mb-4">{stat.val}</div>
+                <div className="text-[#0A2540]/50 text-[10px] md:text-sm font-bold font-mono tracking-[0.1em] md:tracking-[0.2em] uppercase">{stat.label}</div>
+              </motion.div>
             ))}
+          </div>
         </div>
       </section>
 
-      {/* 3. INFINITE SCROLL STRIP - Visual Impact */}
-      <section className="py-20 overflow-hidden bg-[#0A2540]">
-        <div className="mb-12 px-6 text-center">
-             <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/50">Our Aesthetic</span>
-        </div>
-        <div className="flex w-full -rotate-2 scale-110 overflow-hidden opacity-90">
-             <motion.div 
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-                className="flex gap-8"
-             >
-                {[...galleryImages, ...galleryImages].map((src, i) => (
-                    <div key={`${i}-${src}`} className="relative h-[40vh] w-[70vw] sm:w-[45vw] shrink-0 overflow-hidden rounded-2xl md:h-[60vh] md:w-[25vw] border border-white/10 shadow-xl">
-                        <Image src={src} fill alt="Gallery" className="object-cover" />
-                        <div className="absolute inset-0 bg-[#007BFF]/20 mix-blend-overlay" />
-                    </div>
-                ))}
-             </motion.div>
-        </div>
-      </section>
-
-      {/* 4. VALUES - Hover Accordion Interaction */}
-      <section className="mx-auto max-w-7xl px-6 py-40">
-        <h2 className="mb-20 font-heading text-sm font-bold uppercase tracking-[0.5em] text-[#0A2540]/40">Our Core DNA</h2>
-        <div className="flex flex-col border-t border-[#0A2540]/10">
-            {values.map((val, i) => (
-                <ValueItem key={i} title={val.title} desc={val.desc} index={i} />
-            ))}
-        </div>
-      </section>
-
-      {/* 5. PRICING & PRODUCTS - Monetisation Section */}
-      <section className="relative mx-auto max-w-7xl px-6 pb-40">
-        <div className="relative rounded-[40px] border border-[#0A2540]/10 bg-white px-8 py-20 shadow-[0_8px_30px_rgba(10,37,64,0.04)] md:px-16 overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute top-0 right-0 h-[500px] w-[500px] bg-[#007BFF]/5 rounded-full blur-[100px] pointer-events-none" />
-            
-            <div className="relative z-10 text-center mb-16">
-                <h2 className="font-heading text-sm font-bold uppercase tracking-[0.4em] text-[#007BFF] mb-4">Start Scaling</h2>
-                <h3 className="text-4xl md:text-5xl font-extrabold text-[#0A2540] tracking-tight mb-6 font-heading">
-                    Ready to launch your product?
-                </h3>
-                <p className="max-w-xl mx-auto text-[#0A2540]/60 font-medium text-lg">
-                    Clear scoping, transparent pricing, and world-class execution. Choose the tier that fits your growth stage.
-                </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 relative z-10 items-stretch">
-                {/* Tier 1 */}
-                <div className="rounded-3xl border border-[#0A2540]/10 p-8 hover:border-[#007BFF]/30 hover:shadow-lg transition-all bg-[#F4F6F8]/50 flex flex-col">
-                    <h4 className="text-2xl font-extrabold text-[#0A2540] mb-2 font-heading">Design Sprint</h4>
-                    <p className="text-[#0A2540]/60 text-sm font-medium mb-6">Perfect for startups needing a visual direction.</p>
-                    <div className="text-4xl font-extrabold text-[#0A2540] mb-8 font-heading">$4,999<span className="text-lg text-[#0A2540]/40 font-medium font-sans">/project</span></div>
-                    
-                    <ul className="mb-8 space-y-4 flex-1">
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> UX/UI Design</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Brand Identity</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Interactive Wireframes</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> 2 Revisions</li>
-                    </ul>
-                    <button className="w-full py-4 rounded-xl border border-[#0A2540]/20 font-bold text-[#0A2540] hover:bg-[#0A2540] hover:text-white transition-all duration-300">Get Started</button>
-                </div>
-
-                {/* Tier 2 (Highlighted) */}
-                <div className="rounded-3xl border-2 border-[#007BFF] p-8 shadow-[0_12px_40px_rgba(0,123,255,0.15)] bg-white flex flex-col relative transform md:-translate-y-4">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#007BFF] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">Primary Focus</div>
-                    <h4 className="text-2xl font-extrabold text-[#0A2540] mb-2 font-heading">Full Build</h4>
-                    <p className="text-[#0A2540]/60 text-sm font-medium mb-6">End-to-end design and custom development.</p>
-                    <div className="text-4xl font-extrabold text-[#0A2540] mb-8 font-heading">$9,999<span className="text-lg text-[#0A2540]/40 font-medium font-sans">/project</span></div>
-                    
-                    <ul className="mb-8 space-y-4 flex-1">
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Everything in Design</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Next.js/React Development</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> CMS Integration</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Performance SEO Setup</li>
-                        <li className="flex items-center text-sm font-medium text-[#0A2540]/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Custom Animations</li>
-                    </ul>
-                    <button className="w-full py-4 rounded-xl bg-[#007BFF] font-bold text-white hover:bg-[#0056b3] shadow-[0_4px_14px_rgba(0,123,255,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">Start Project</button>
-                </div>
-
-                {/* Tier 3 (Sell Template/Product) */}
-                <div className="rounded-3xl border border-[#0A2540]/10 p-8 hover:border-[#007BFF]/30 hover:shadow-lg transition-all bg-[#0A2540] flex flex-col text-white">
-                    <h4 className="text-2xl font-extrabold mb-2 font-heading">Buy This Product</h4>
-                    <p className="text-white/60 text-sm font-medium mb-6">Get the exact source code & design of this site.</p>
-                    <div className="text-4xl font-extrabold mb-8 font-heading">$149<span className="text-lg text-white/40 font-medium font-sans">/license</span></div>
-                    
-                    <ul className="mb-8 space-y-4 flex-1">
-                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Full Next.js Source Code</li>
-                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Framer Motion Setup</li>
-                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Fully Responsive Layout</li>
-                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Lifetime Updates</li>
-                        <li className="flex items-center text-sm font-medium text-white/80"><span className="text-[#007BFF] mr-3 text-lg">✔</span> Commercial License</li>
-                    </ul>
-                    <button className="w-full py-4 rounded-xl border border-white/20 font-bold bg-white text-[#0A2540] hover:bg-gray-100 transition-all duration-300">Purchase Now</button>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      {/* 6. FOOTER */}
+      {/* FOOTER */}
       <Footer />
     </div>
   );
-}
-
-function ValueItem({ title, desc, index }: { title: string, desc: string, index: number }) {
-    return (
-        <div className="group relative flex cursor-pointer flex-col justify-between border-b border-[#0A2540]/10 py-12 transition-all hover:bg-white hover:shadow-sm md:flex-row md:items-center md:px-10 rounded-xl hover:-translate-y-1 my-1">
-            <span className="mb-4 font-mono text-xs font-bold text-[#007BFF] md:mb-0 bg-[#007BFF]/10 px-2 py-1 rounded">0{index + 1}</span>
-            <h3 className="text-4xl font-extrabold uppercase transition-all group-hover:pl-4 md:text-6xl text-[#0A2540] group-hover:text-[#007BFF]">{title}</h3>
-            <p className="mt-4 max-w-md text-[#0A2540]/60 transition-colors group-hover:text-[#0A2540] md:mt-0 md:text-right font-medium">
-                {desc}
-            </p>
-        </div>
-    );
 }

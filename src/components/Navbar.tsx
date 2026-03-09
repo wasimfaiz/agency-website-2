@@ -72,7 +72,7 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
             Setzet
           </Link>
           <nav
-            className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex ${
+            className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 lg:flex ${
               useDarkTheme ? "text-[#0A2540]/70" : "text-white/80"
             }`}
           >
@@ -97,7 +97,7 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
           </nav>
           <div className="flex items-center gap-3">
             <Link
-              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 md:inline-flex ${
+              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 lg:inline-flex ${
                 useDarkTheme
                   ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
                   : "border-white/30 text-white hover:bg-white hover:text-[#0A2540]"
@@ -107,7 +107,7 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
               Start a Project
             </Link>
             <button
-              className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
+              className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition lg:hidden ${
                 useDarkTheme
                   ? "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
                   : "border-white/30 text-white hover:border-white"
@@ -142,7 +142,7 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
       {/* MOBILE MENU PANEL */}
       <div
         id="mobile-menu"
-        className={`fixed right-4 top-16 z-50 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-[#0A2540]/10 bg-white p-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A2540]/70 shadow-lg transition-all duration-300 md:hidden ${
+        className={`fixed right-4 top-16 z-50 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-[#0A2540]/10 bg-white p-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A2540]/70 shadow-lg transition-all duration-300 lg:hidden ${
           menuOpen
             ? "scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 -translate-y-2 opacity-0"
