@@ -192,45 +192,113 @@ function FeatureListSection() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#007BFF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {idx === 0 && (
-                     <div className="flex flex-col gap-4 relative z-10 py-6">
-                        <motion.div whileHover={{ scale: 1.02 }} className="h-12 w-full bg-[#F4F6F8] rounded-xl flex items-center px-4 justify-between border border-[#0A2540]/5 transition-transform">
-                           <div className="w-1/3 h-3 bg-[#0A2540]/10 rounded-full" />
-                           <div className="px-3 py-1 bg-[#10b981]/10 text-[#10b981] text-[10px] font-bold rounded-md">Won</div>
+                     <div className="flex flex-col gap-3 relative z-10 py-6">
+                        <motion.div whileHover={{ scale: 1.02 }} className="p-3 bg-white rounded-xl flex items-center justify-between border border-[#0A2540]/10 shadow-[0_4px_12px_rgba(10,37,64,0.05)] transition-transform cursor-pointer">
+                           <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-full bg-[#10b981]/10 flex items-center justify-center text-[#10b981] font-bold text-xs border border-[#10b981]/20">AC</div>
+                              <div>
+                                 <div className="text-sm font-bold text-[#0A2540]">Enterprise License</div>
+                                 <div className="text-xs text-[#0A2540]/50 font-medium">$45,000 • TechCorp</div>
+                              </div>
+                           </div>
+                           <div className="px-3 py-1 bg-[#10b981]/10 text-[#10b981] text-[10px] font-bold rounded-md border border-[#10b981]/20">Won 🎉</div>
                         </motion.div>
-                        <motion.div whileHover={{ scale: 1.02 }} className="h-12 w-[90%] bg-[#F4F6F8] rounded-xl flex items-center px-4 justify-between border border-[#0A2540]/5 translate-x-4 transition-transform">
-                           <div className="w-1/2 h-3 bg-[#0A2540]/10 rounded-full" />
-                           <div className="px-3 py-1 bg-[#007BFF]/10 text-[#007BFF] text-[10px] font-bold rounded-md">Proposal</div>
+
+                        <motion.div whileHover={{ scale: 1.02 }} className="p-3 w-[95%] bg-white rounded-xl flex items-center justify-between border border-[#0A2540]/10 shadow-[0_4px_12px_rgba(10,37,64,0.05)] translate-x-3 transition-transform cursor-pointer">
+                           <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] font-bold text-xs border border-[#007BFF]/20">GN</div>
+                              <div>
+                                 <div className="text-sm font-bold text-[#0A2540]">Platform Upgrade</div>
+                                 <div className="text-xs text-[#0A2540]/50 font-medium">$12,500 • GlobalNet</div>
+                              </div>
+                           </div>
+                           <div className="px-3 py-1 bg-[#007BFF]/10 text-[#007BFF] text-[10px] font-bold rounded-md border border-[#007BFF]/20">Proposal</div>
                         </motion.div>
-                        <motion.div whileHover={{ scale: 1.02 }} className="h-12 w-[95%] bg-[#F4F6F8] rounded-xl flex items-center px-4 justify-between border border-[#0A2540]/5 transition-transform">
-                           <div className="w-2/5 h-3 bg-[#0A2540]/10 rounded-full" />
-                           <div className="px-3 py-1 bg-[#f59e0b]/10 text-[#f59e0b] text-[10px] font-bold rounded-md">Discovery</div>
+
+                        <motion.div whileHover={{ scale: 1.02 }} className="p-3 w-[88%] bg-white rounded-xl flex items-center justify-between border border-[#0A2540]/10 shadow-[0_4px_12px_rgba(10,37,64,0.05)] transition-transform cursor-pointer opacity-70 hover:opacity-100">
+                           <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center text-[#f59e0b] font-bold text-xs border border-[#f59e0b]/20">ST</div>
+                              <div>
+                                 <div className="text-sm font-bold text-[#0A2540]">Cloud Migration</div>
+                                 <div className="text-xs text-[#0A2540]/50 font-medium">$28,000 • Studio X</div>
+                              </div>
+                           </div>
+                           <div className="px-3 py-1 bg-[#f59e0b]/10 text-[#f59e0b] text-[10px] font-bold rounded-md border border-[#f59e0b]/20">Discovery</div>
                         </motion.div>
                      </div>
                   )}
 
                   {idx === 1 && (
-                     <div className="flex items-center justify-center gap-4 relative z-10 py-12">
-                        <div className="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] text-2xl"><FiZap /></div>
-                        <div className="w-10 h-0.5 bg-[#0A2540]/10" />
-                        <div className="w-16 h-16 rounded-2xl bg-[#F4F6F8] flex items-center justify-center text-[#0A2540] border border-[#0A2540]/10 p-3 group-hover:scale-110 transition-transform duration-300">
-                           <div className="w-full h-full border-2 border-dashed border-[#0A2540]/20 rounded-lg flex items-center justify-center text-[#0A2540]/40"><FiPlus className="w-6 h-6" /></div>
+                     <div className="flex flex-col gap-0 relative z-10 py-4 items-center">
+                        <div className="w-[85%] bg-white p-4 rounded-xl border border-[#0A2540]/10 shadow-[0_8px_20px_rgba(10,37,64,0.06)] flex items-center gap-4 relative z-10 hover:border-[#f59e0b]/30 transition-colors">
+                           <div className="w-12 h-12 rounded-full bg-[#f59e0b]/10 flex items-center justify-center text-[#f59e0b] text-xl border border-[#f59e0b]/20"><FiUsers /></div>
+                           <div>
+                              <div className="text-sm font-bold text-[#0A2540]">New Lead Captured</div>
+                              <div className="text-xs text-[#0A2540]/60 font-medium">Triggered via Website Form</div>
+                           </div>
                         </div>
-                        <div className="w-10 h-0.5 bg-[#0A2540]/10" />
-                        <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center text-[#10b981] text-2xl"><FiCheck /></div>
+                        <div className="h-6 w-[2px] bg-gradient-to-b from-[#0A2540]/10 to-[#007BFF]" />
+                        <div className="w-8 h-8 rounded-full bg-[#007BFF] flex items-center justify-center text-white shadow-lg relative z-20 -my-4 border-[3px] border-white ring-2 ring-[#007BFF]/20"><FiZap className="w-3.5 h-3.5" /></div>
+                        <div className="h-6 w-[2px] bg-gradient-to-t from-[#0A2540]/10 to-[#007BFF]" />
+                        <div className="w-[95%] grid grid-cols-2 gap-3 relative z-10">
+                            <div className="bg-white p-4 rounded-xl border border-[#0A2540]/10 shadow-[0_8px_20px_rgba(10,37,64,0.06)] flex flex-col items-center gap-3 text-center transition-transform hover:-translate-y-1 hover:border-[#007BFF]/30">
+                               <div className="w-10 h-10 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] border border-[#007BFF]/20"><FiShield /></div>
+                               <div>
+                                  <div className="text-xs font-bold text-[#0A2540]">Add to CRM</div>
+                                  <div className="text-[10px] text-[#0A2540]/50 font-medium mt-0.5">Assigned to Sales</div>
+                               </div>
+                            </div>
+                            <div className="bg-white p-4 rounded-xl border border-[#0A2540]/10 shadow-[0_8px_20px_rgba(10,37,64,0.06)] flex flex-col items-center gap-3 text-center transition-transform hover:-translate-y-1 hover:border-[#10b981]/30">
+                               <div className="w-10 h-10 rounded-full bg-[#10b981]/10 flex items-center justify-center text-[#10b981] border border-[#10b981]/20"><FiCheck /></div>
+                               <div>
+                                  <div className="text-xs font-bold text-[#0A2540]">Notify Slack</div>
+                                  <div className="text-[10px] text-[#0A2540]/50 font-medium mt-0.5">#sales-alerts</div>
+                               </div>
+                            </div>
+                        </div>
                      </div>
                   )}
 
                   {idx === 2 && (
-                     <div className="flex items-end gap-3 h-56 relative z-10 px-4 pt-10">
-                        {[40, 70, 45, 90, 65, 100].map((h, i) => (
-                           <motion.div 
-                              initial={{ height: 0 }}
-                              whileInView={{ height: `${h}%` }}
-                              transition={{ duration: 0.8, delay: i * 0.1 }}
-                              key={i} 
-                              className="flex-1 bg-[#0A2540]/10 rounded-t-md hover:bg-[#007BFF] transition-colors"
-                           />
-                        ))}
+                     <div className="flex flex-col h-full relative z-10 py-4 px-2">
+                        <div className="flex justify-between items-start mb-8 bg-[#F4F6F8] p-4 rounded-2xl border border-[#0A2540]/5 shadow-sm">
+                           <div>
+                              <div className="text-xs font-bold text-[#0A2540]/50 uppercase tracking-widest mb-1">MRR Growth</div>
+                              <div className="text-3xl font-extrabold text-[#0A2540] tracking-tight">$84,592</div>
+                           </div>
+                           <div className="px-2.5 py-1.5 bg-[#10b981]/10 text-[#10b981] font-bold text-xs rounded-md border border-[#10b981]/20 flex items-center gap-1.5 shadow-sm">
+                              <FiTrendingUp className="w-3.5 h-3.5" /> +24% YTD
+                           </div>
+                        </div>
+                        <div className="flex items-end gap-2 h-44 relative mt-auto pl-2 pr-2 pb-6">
+                           <div className="absolute inset-x-2 bottom-6 border-b border-dashed border-[#0A2540]/10" />
+                           <div className="absolute inset-x-2 bottom-[calc(50%+12px)] border-b border-dashed border-[#0A2540]/10" />
+                           <div className="absolute inset-x-2 top-0 border-b border-dashed border-[#0A2540]/10" />
+
+                           {[
+                              { h: 30, label: "Jul", val: "32k" },
+                              { h: 42, label: "Aug", val: "38k" },
+                              { h: 55, label: "Sep", val: "44k" },
+                              { h: 68, label: "Oct", val: "50k" },
+                              { h: 80, label: "Nov", val: "65k" },
+                              { h: 100, label: "Dec", val: "84k" }
+                           ].map((item, i) => (
+                              <div key={i} className="flex-1 flex flex-col items-center gap-2 z-10 relative h-full justify-end">
+                                 <motion.div 
+                                    initial={{ height: 0 }}
+                                    whileInView={{ height: `${item.h}%` }}
+                                    transition={{ duration: 0.8, delay: i * 0.1 }}
+                                    className="w-full bg-gradient-to-t from-[#0A2540]/5 to-[#0A2540]/20 border border-[#0A2540]/5 border-b-0 rounded-t-xl hover:from-[#007BFF]/80 hover:to-[#007BFF] hover:border-[#007BFF] transition-all relative group cursor-pointer"
+                                 >
+                                    <div className="opacity-0 group-hover:opacity-100 absolute -top-10 left-1/2 -translate-x-1/2 bg-[#0A2540] text-white text-[11px] font-bold py-1.5 px-2.5 rounded-lg shadow-xl drop-shadow-md transition-all pointer-events-none transform scale-95 group-hover:scale-100 z-50">
+                                       ${item.val}
+                                       <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0A2540] rotate-45 z-[-1]" />
+                                    </div>
+                                 </motion.div>
+                                 <span className="text-[10px] font-bold text-[#0A2540]/40 uppercase absolute -bottom-6">{item.label}</span>
+                              </div>
+                           ))}
+                        </div>
                      </div>
                   )}
                </div>
