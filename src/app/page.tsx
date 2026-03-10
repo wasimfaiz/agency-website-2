@@ -482,97 +482,61 @@ export default function Home() {
         {/* TESTIMONIAL SECTION */}
         <TestimonialSection />
 
-        {/* FAQ SECTION */}
-        <FAQSection />
-
         {/* CONTACT SECTION */}
         <section
           id="contact"
-          className="mx-auto w-full max-w-6xl px-4 pb-20 pt-6 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28"
+          className="mx-auto w-full max-w-5xl px-4 pb-12 pt-8 sm:px-8 sm:pb-16 lg:px-10 lg:pb-20"
         >
-          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <div
-              className="relative overflow-hidden rounded-[30px] border border-[#0A2540]/10 bg-white p-7 sm:p-9 shadow-sm"
-              data-animate="contact"
-            >
-              <div className="pointer-events-none absolute -right-8 -top-10 h-36 w-36 rounded-full bg-[#007BFF]/5 blur-[40px]" />
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
+          <div className="mx-auto rounded-[24px] border border-[#0A2540]/10 bg-white p-6 sm:p-10 shadow-sm flex flex-col lg:flex-row gap-10 items-center justify-between" data-animate="contact">
+            {/* TEXT SIDE */}
+            <div className="lg:w-[45%] text-center lg:text-left">
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#007BFF]">
                 Contact Us
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl text-[#0A2540]">
+              <h2 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl text-[#0A2540]">
                 Ready to Design and Build Something That Performs?
               </h2>
-              <p className="mt-6 max-w-md text-base leading-7 text-[#0A2540]/70 font-medium">
+              <p className="mt-4 text-sm leading-relaxed text-[#0A2540]/70 font-medium max-w-md mx-auto lg:mx-0">
                 Tell us about your goals and timeline. We partner with ambitious teams to design, develop, and launch scalable digital products that drive measurable growth.
               </p>
-
-              <div className="mt-10 space-y-4 text-sm font-medium">
-                <p className="border-t border-[#0A2540]/10 pt-4 text-[#0A2540]">
-                  hello@setzet.studio
-                </p>
-                <p className="border-t border-[#0A2540]/10 pt-4 text-[#0A2540]">
-                  +91-9128376231
-                </p>
-                <p className="border-t border-[#0A2540]/10 pt-4 text-[#0A2540]">
-                  Noida, India.
-                </p>
-              </div>
             </div>
 
-            <form
-              className="relative overflow-hidden rounded-[30px] border border-[#0A2540]/10 bg-white p-6 sm:p-8 shadow-sm"
-              data-animate="contact"
-            >
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="flex flex-col gap-2">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
-                    Name
-                  </span>
-                  <input
-                    className="h-12 rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
-                    placeholder="Your full name"
-                    type="text"
-                  />
-                </label>
-                <label className="flex flex-col gap-2">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
-                    Email
-                  </span>
-                  <input
-                    className="h-12 rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
-                    placeholder="you@company.com"
-                    type="email"
-                  />
-                </label>
+            {/* FORM SIDE */}
+            <form className="lg:w-[55%] w-full flex flex-col gap-3">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <input
+                  className="h-11 rounded-xl border border-[#0A2540]/10 bg-[#F4F6F8] px-4 text-xs font-medium text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
+                  placeholder="Your full name"
+                  type="text"
+                  required
+                />
+                <input
+                  className="h-11 rounded-xl border border-[#0A2540]/10 bg-[#F4F6F8] px-4 text-xs font-medium text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
+                  placeholder="you@company.com"
+                  type="email"
+                  required
+                />
               </div>
 
-              <label className="mt-4 flex flex-col gap-2">
-                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
-                  Project Type
-                </span>
-                <input
-                  className="h-12 rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
-                  placeholder="Brand site, app, redesign..."
-                  type="text"
-                />
-              </label>
+              <input
+                className="h-11 rounded-xl border border-[#0A2540]/10 bg-[#F4F6F8] px-4 text-xs font-medium text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
+                placeholder="Project Type (Brand site, app, redesign...)"
+                type="text"
+                required
+              />
 
-              <label className="mt-4 flex flex-col gap-2">
-                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/50">
-                  Project Brief
-                </span>
-                <textarea
-                  className="min-h-[150px] rounded-xl border border-[#0A2540]/15 bg-[#F4F6F8] px-4 py-3 text-sm text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20"
-                  placeholder="Tell us about your goals, timeline, and expectations."
-                />
-              </label>
+              <textarea
+                className="min-h-[80px] rounded-xl border border-[#0A2540]/10 bg-[#F4F6F8] px-4 py-3 text-xs font-medium text-[#0A2540] outline-none transition focus:border-[#007BFF] focus:bg-white focus:ring-2 focus:ring-[#007BFF]/20 resize-none"
+                placeholder="Tell us about your goals, timeline, and expectations."
+                required
+              />
 
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#0A2540]/10 pt-5">
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A2540]/50">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#0A2540]/50 text-center sm:text-left">
                   Response within 24 hours
                 </p>
                 <button
-                  className="rounded-full bg-[#007BFF] px-8 py-3 text-sm font-bold text-white transition-all shadow-[0_8px_30px_rgba(0,123,255,0.3)] hover:bg-[#0056b3] hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)] transform hover:-translate-y-0.5"
+                  className="w-full sm:w-auto rounded-full bg-[#007BFF] px-8 py-3 text-xs font-bold text-white transition-all shadow-[0_8px_30px_rgba(0,123,255,0.3)] hover:bg-[#0056b3] hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)] transform hover:-translate-y-0.5"
                   type="submit"
                 >
                   Send Inquiry
@@ -581,6 +545,9 @@ export default function Home() {
             </form>
           </div>
         </section>
+
+        {/* FAQ SECTION */}
+        <FAQSection />
 
         {/* FOOTER */}
         <Footer />
