@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import { FiArrowUpRight, FiArrowDown } from "react-icons/fi";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -122,9 +123,7 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
                             {/* Floating Action Button inside image */}
                             <div className={`absolute bottom-8 z-20 ${isEven ? 'right-8' : 'left-8'}`}>
                                 <button className="w-14 h-14 rounded-full bg-white text-[#0A2540] shadow-xl flex items-center justify-center hover:scale-110 hover:bg-[#007BFF] hover:text-white transition-all duration-300">
-                                    <svg className="w-5 h-5 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                     </svg>
+                                    <FiArrowUpRight className="w-6 h-6" />
                                 </button>
                             </div>
                         </div>
@@ -304,7 +303,9 @@ export default function WorkPage() {
                       </text>
                   </svg>
               </motion.div>
-              <div className="absolute text-[#007BFF]/60 text-2xl font-light">↓</div>
+              <div className="absolute flex items-center justify-center">
+                  <FiArrowDown className="text-[#007BFF]/60 w-6 h-6" />
+              </div>
           </motion.div>
       </section>
 

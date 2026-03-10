@@ -3,6 +3,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { 
+  FiTrendingUp, 
+  FiZap, 
+  FiPlus, 
+  FiCheck, 
+  FiShield, 
+  FiUsers, 
+  FiBookOpen, 
+  FiBarChart2, 
+  FiPackage, 
+  FiArrowRight 
+} from "react-icons/fi";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
@@ -85,12 +97,12 @@ function HeroSection() {
                  <div className="bg-[#F4F6F8] p-6 rounded-2xl border border-[#0A2540]/5 shadow-sm hover:border-[#007BFF]/20 transition-colors">
                    <div className="text-xs text-[#0A2540]/50 font-bold uppercase tracking-widest mb-2">Total Revenue</div>
                    <div className="text-3xl font-extrabold text-[#0A2540] tracking-tight">$124,590</div>
-                   <div className="text-xs font-bold text-[#0A2540] bg-white border border-[#0A2540]/10 inline-block px-2 py-1 rounded-md mt-3">↑ 14.2% vs last month</div>
+                   <div className="text-xs font-bold text-[#0A2540] bg-white border border-[#0A2540]/10 inline-flex items-center gap-1 px-2 py-1 rounded-md mt-3"><FiTrendingUp /> 14.2% vs last month</div>
                  </div>
                  <div className="bg-[#F4F6F8] p-6 rounded-2xl border border-[#0A2540]/5 shadow-sm hover:border-[#007BFF]/20 transition-colors">
                    <div className="text-xs text-[#0A2540]/50 font-bold uppercase tracking-widest mb-2">Active Projects</div>
                    <div className="text-3xl font-extrabold text-[#0A2540] tracking-tight">32</div>
-                   <div className="text-xs font-bold text-[#0A2540] bg-white border border-[#0A2540]/10 inline-block px-2 py-1 rounded-md mt-3">↑ 5.4% vs last month</div>
+                   <div className="text-xs font-bold text-[#0A2540] bg-white border border-[#0A2540]/10 inline-flex items-center gap-1 px-2 py-1 rounded-md mt-3"><FiTrendingUp /> 5.4% vs last month</div>
                  </div>
                  <div className="bg-white p-6 rounded-2xl border border-[#0A2540]/5 shadow-md border-t-4 border-t-[#007BFF]">
                    <div className="text-xs text-[#0A2540]/50 font-bold uppercase tracking-widest mb-2">New Leads</div>
@@ -198,13 +210,13 @@ function FeatureListSection() {
 
                   {idx === 1 && (
                      <div className="flex items-center justify-center gap-4 relative z-10 py-12">
-                        <div className="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] text-2xl">⚡</div>
+                        <div className="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] text-2xl"><FiZap /></div>
                         <div className="w-10 h-0.5 bg-[#0A2540]/10" />
                         <div className="w-16 h-16 rounded-2xl bg-[#F4F6F8] flex items-center justify-center text-[#0A2540] border border-[#0A2540]/10 p-3 group-hover:scale-110 transition-transform duration-300">
-                           <div className="w-full h-full border-2 border-dashed border-[#0A2540]/20 rounded-lg flex items-center justify-center text-[#0A2540]/40">+</div>
+                           <div className="w-full h-full border-2 border-dashed border-[#0A2540]/20 rounded-lg flex items-center justify-center text-[#0A2540]/40"><FiPlus className="w-6 h-6" /></div>
                         </div>
                         <div className="w-10 h-0.5 bg-[#0A2540]/10" />
-                        <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center text-[#10b981] text-2xl">✓</div>
+                        <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center text-[#10b981] text-2xl"><FiCheck /></div>
                      </div>
                   )}
 
@@ -256,7 +268,7 @@ function BentoFeatures() {
                      <div className="text-2xl font-bold text-[#0A2540] mb-3">Bank-Grade Security</div>
                      <p className="text-[#0A2540]/60 font-medium leading-relaxed">Your data is fully encrypted at rest and in transit.</p>
                   </div>
-                  <div className="text-5xl mt-6 md:mt-0 opacity-80">🔒</div>
+                  <div className="text-5xl mt-6 md:mt-0 opacity-80 text-[#0A2540]"><FiShield /></div>
                </div>
 
                <div className="col-span-1 bg-[#0A2540] text-white rounded-[2rem] p-10 shadow-[0_8px_30px_rgba(10,37,64,0.12)] flex flex-col justify-between overflow-hidden relative group">
@@ -265,7 +277,7 @@ function BentoFeatures() {
                      <div className="text-2xl font-bold text-white mb-3">Blazing Fast</div>
                      <p className="text-white/70 font-medium leading-relaxed">Built on modern architecture. Experience sub-50ms load times globally.</p>
                   </div>
-                  <div className="text-5xl mt-6 md:mt-0 relative z-10">⚡</div>
+                  <div className="text-5xl mt-6 md:mt-0 relative z-10 text-white"><FiZap /></div>
                </div>
 
                <div className="col-span-1 md:col-span-2 bg-[#F4F6F8] rounded-[2rem] p-10 border border-[#0A2540]/5 shadow-sm hover:border-[#007BFF]/20 transition-colors">
@@ -311,10 +323,10 @@ function BottomCta() {
 
 function ProductSuiteSection() {
   const products = [
-    { name: "Setzet HRMS", desc: "Automate payroll, track attendance, and simplify talent management.", icon: "👥", badge: "Most Popular" },
-    { name: "School Management", desc: "Digital classrooms, fee tracking, and seamless parent-teacher portals.", icon: "🏫" },
-    { name: "Sales & CRM", desc: "Visual pipelines, automated follow-ups, and bank-grade data security.", icon: "📈", badge: "Updated" },
-    { name: "Inventory Pro", desc: "Real-time stock tracking, purchase orders, and multi-warehouse sync.", icon: "📦" }
+    { name: "Setzet HRMS", desc: "Automate payroll, track attendance, and simplify talent management.", icon: <FiUsers />, badge: "Most Popular" },
+    { name: "School Management", desc: "Digital classrooms, fee tracking, and seamless parent-teacher portals.", icon: <FiBookOpen /> },
+    { name: "Sales & CRM", desc: "Visual pipelines, automated follow-ups, and bank-grade data security.", icon: <FiBarChart2 />, badge: "Updated" },
+    { name: "Inventory Pro", desc: "Real-time stock tracking, purchase orders, and multi-warehouse sync.", icon: <FiPackage /> }
   ];
 
   return (
@@ -328,13 +340,13 @@ function ProductSuiteSection() {
              {products.map((p, i) => (
                 <div key={i} className="bg-[#F4F6F8] rounded-2xl p-6 border border-[#0A2540]/5 hover:border-[#007BFF]/30 hover:shadow-[0_8px_30px_rgba(10,37,64,0.08)] hover:-translate-y-1 transition-all group flex flex-col">
                    <div className="flex justify-between items-start mb-6">
-                      <div className="text-4xl bg-white w-14 h-14 flex items-center justify-center rounded-xl shadow-sm border border-[#0A2540]/5 group-hover:scale-110 transition-transform">{p.icon}</div>
+                      <div className="text-2xl text-[#0A2540] bg-white w-14 h-14 flex items-center justify-center rounded-xl shadow-sm border border-[#0A2540]/5 group-hover:scale-110 group-hover:text-[#007BFF] transition-all">{p.icon}</div>
                       {p.badge && <span className="text-[10px] font-bold uppercase tracking-wider bg-[#007BFF]/10 text-[#007BFF] px-2 py-1 rounded-md">{p.badge}</span>}
                    </div>
                    <h3 className="text-xl font-bold text-[#0A2540] mb-3">{p.name}</h3>
                    <p className="text-[#0A2540]/70 text-sm font-medium leading-relaxed flex-1">{p.desc}</p>
-                   <Link href="#contact" className="inline-flex items-center gap-2 mt-6 text-[#007BFF] font-bold text-sm hover:underline">
-                      Explore {p.name} →
+                   <Link href="#contact" className="inline-flex items-center gap-2 mt-6 text-[#007BFF] font-bold text-sm hover:underline group-hover:gap-3 transition-all">
+                      Explore {p.name} <FiArrowRight />
                    </Link>
                 </div>
              ))}
