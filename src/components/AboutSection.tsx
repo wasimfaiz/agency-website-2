@@ -7,25 +7,25 @@ import { BsArrowRight, BsStars, BsLayers, BsLightningCharge, BsGraphUpArrow } fr
 const chapters = [
     {
         id: "01",
-        title: "Strategic Website Planning & Brand Positioning",
+        title: "Strategic Planning",
         description: "We start with research into your business, audience, and growth goals. This gives your website sharp positioning, clear messaging, and a strong foundation for long-term results.",
         icon: <BsStars className="mb-4 text-2xl text-[#007BFF]" />,
     },
     {
         id: "02",
-        title: "Conversion-Focused UI/UX & Website Design",
+        title: "UI/UX Design",
         description: "We design user-centric interfaces with clear hierarchy and seamless flows. Each design decision is made to build trust, improve engagement, and increase conversions.",
         icon: <BsLayers className="mb-4 text-2xl text-[#007BFF]" />,
     },
     {
         id: "03",
-        title: "High-Performance & Scalable Web Development",
+        title: "Web Development",
         description: "We build fast, secure, and SEO-ready websites and SaaS platforms on modern stacks. Everything is engineered for performance, scale, and easy iteration.",
         icon: <BsLightningCharge className="mb-4 text-2xl text-[#007BFF]" />,
     },
     {
         id: "04",
-        title: "Continuous Optimization & Growth Scaling",
+        title: "Growth Scaling",
         description: "After launch, we monitor behavior and performance, then optimize continuously. Through tuning, SEO improvements, and feature updates, your product keeps improving as you grow.",
         icon: <BsGraphUpArrow className="mb-4 text-2xl text-[#007BFF]" />,
     },
