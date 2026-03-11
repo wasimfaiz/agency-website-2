@@ -22,18 +22,24 @@ const staggerContainer = {
 
 export default function AboutPage() {
   return (
-    <div className="noise-bg bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen overflow-x-hidden">
+    <div className="bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen overflow-x-hidden">
       <title>About | SetZet Digital Agency</title>
       <meta name="description" content="A premium web development agency building the next generation of high-performance digital experiences." />
 
       <Navbar forceDarkAtTop={true} />
 
       {/* 1. HERO SECTION (Reference-inspired layout) */}
-      <section className="relative pt-24 lg:pt-32 pb-8 lg:pb-12 px-6 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="relative z-10 w-full text-center lg:text-left pt-6 lg:pt-0 lg:-mt-20">
+      <section className="relative pt-24 lg:pt-32 pb-8 lg:pb-12 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+         <div className="absolute inset-0 z-0 pointer-events-none">
+             {/* Dynamic background elements from Services page */}
+             <div className="absolute -top-20 right-0 w-[60vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[140px]" />
+             <div className="absolute bottom-10 -left-20 w-[50vw] h-[50vh] bg-[#0A2540]/5 rounded-full blur-[100px]" />
+         </div>
+
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center relative z-10">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="w-full text-center lg:text-left pt-6 lg:pt-0 lg:-mt-20">
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-extrabold font-heading text-[#0A2540] tracking-tight leading-[1.15] lg:leading-[1.05] mb-6 lg:mb-8 mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
-              About Setzet <br className="hidden lg:block" /> with Engineering <br className="hidden lg:block" /> & Aesthetics
+              About Setzet <br className="hidden lg:block" /> with Engineering <br className="hidden lg:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0E1521] via-[#0A2540] to-[#007BFF] pr-4 italic">& Aesthetics</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-10">
               Wherever you are should not be a factor in what you do. Brilliant engineering and flawless design combined will change the way the digital world works.
