@@ -2,52 +2,58 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { 
+  FiMonitor, FiSmartphone, FiCode, FiPenTool, FiServer, FiShoppingCart,
+  FiBriefcase, FiCheckCircle, FiLink, FiUsers, FiCpu,
+  FiSearch, FiTarget, FiShare2, FiFileText, FiMousePointer, FiRepeat,
+  FiCloud, FiZap, FiEye, FiMaximize, FiTool
+} from "react-icons/fi";
 
 const categories = [
   {
     id: "development",
     title: "Development",
     services: [
-      { name: "Web Development", description: "Scalable, high-performance websites and web apps." },
-      { name: "Mobile App Development", description: "Native and cross-platform mobile experiences." },
-      { name: "Custom Software Development", description: "Tailored solutions for complex business needs." },
-      { name: "UI/UX Development", description: "Pixel-perfect, accessible, and interactive interfaces." },
-      { name: "API Development", description: "Robust and secure backend API architectures." },
-      { name: "E-commerce Development", description: "High-converting online stores and platforms." },
+      { name: "Web Development", description: "Scalable, high-performance websites and web apps.", icon: FiMonitor },
+      { name: "Mobile App Development", description: "Native and cross-platform mobile experiences.", icon: FiSmartphone },
+      { name: "Custom Software Development", description: "Tailored solutions for complex business needs.", icon: FiCode },
+      { name: "UI/UX Development", description: "Pixel-perfect, accessible, and interactive interfaces.", icon: FiPenTool },
+      { name: "API Development", description: "Robust and secure backend API architectures.", icon: FiServer },
+      { name: "E-commerce Development", description: "High-converting online stores and platforms.", icon: FiShoppingCart },
     ],
   },
   {
     id: "erp",
     title: "ERP Solutions",
     services: [
-      { name: "Custom ERP Development", description: "Tailored enterprise resource planning systems." },
-      { name: "ERP Implementation", description: "Seamless deployment of enterprise scalable solutions." },
-      { name: "ERP Integration", description: "Connecting your ERP with existing third-party tools." },
-      { name: "ERP Consulting", description: "Strategic guidance for enterprise digital transformation." },
-      { name: "Business Process Automation", description: "Streamlining operations to boost efficiency." },
+      { name: "Custom ERP Development", description: "Tailored enterprise resource planning systems.", icon: FiBriefcase },
+      { name: "ERP Implementation", description: "Seamless deployment of enterprise scalable solutions.", icon: FiCheckCircle },
+      { name: "ERP Integration", description: "Connecting your ERP with existing third-party tools.", icon: FiLink },
+      { name: "ERP Consulting", description: "Strategic guidance for enterprise digital transformation.", icon: FiUsers },
+      { name: "Business Process Automation", description: "Streamlining operations to boost efficiency.", icon: FiCpu },
     ],
   },
   {
     id: "marketing",
     title: "Digital Marketing",
     services: [
-      { name: "SEO Optimization", description: "Data-driven strategies to improve organic rankings." },
-      { name: "Performance Marketing", description: "High-ROI advertising campaigns across channels." },
-      { name: "Social Media Marketing", description: "Engaging content to build brand awareness." },
-      { name: "Content Marketing", description: "Compelling storytelling that drives action." },
-      { name: "Conversion Rate Optimization", description: "Maximizing the percentage of users who convert." },
-      { name: "Marketing Automation", description: "Automated workflows to scale your marketing efforts." },
+      { name: "SEO Optimization", description: "Data-driven strategies to improve organic rankings.", icon: FiSearch },
+      { name: "Performance Marketing", description: "High-ROI advertising campaigns across channels.", icon: FiTarget },
+      { name: "Social Media Marketing", description: "Engaging content to build brand awareness.", icon: FiShare2 },
+      { name: "Content Marketing", description: "Compelling storytelling that drives action.", icon: FiFileText },
+      { name: "Conversion Rate Optimization", description: "Maximizing the percentage of users who convert.", icon: FiMousePointer },
+      { name: "Marketing Automation", description: "Automated workflows to scale your marketing efforts.", icon: FiRepeat },
     ],
   },
   {
     id: "saas",
     title: "SaaS",
     services: [
-      { name: "SaaS Product Development", description: "Building scalable, multi-tenant software-as-a-service." },
-      { name: "SaaS MVP Development", description: "Rapid prototyping to validate your product idea." },
-      { name: "SaaS UI/UX Design", description: "Intuitive and engaging user interfaces for web platforms." },
-      { name: "SaaS Product Scaling", description: "Enhancing architecture to support growing user bases." },
-      { name: "SaaS Maintenance", description: "Ongoing support, proactive monitoring, and updates." },
+      { name: "SaaS Product Development", description: "Building scalable, multi-tenant software-as-a-service.", icon: FiCloud },
+      { name: "SaaS MVP Development", description: "Rapid prototyping to validate your product idea.", icon: FiZap },
+      { name: "SaaS UI/UX Design", description: "Intuitive and engaging user interfaces for web platforms.", icon: FiEye },
+      { name: "SaaS Product Scaling", description: "Enhancing architecture to support growing user bases.", icon: FiMaximize },
+      { name: "SaaS Maintenance", description: "Ongoing support, proactive monitoring, and updates.", icon: FiTool },
     ],
   },
 ];
@@ -98,7 +104,7 @@ export default function ServicesSection() {
               onClick={() => setActiveTab(index)}
               className={`relative px-6 py-4 text-sm sm:text-base font-bold transition-all duration-300 rounded-xl border flex-1 sm:flex-none text-center sm:text-left min-w-[140px] ${
                 isActive
-                  ? "border-[#007BFF] bg-white text-[#007BFF] shadow-[0_8px_30px_rgba(0,123,255,0.1)]"
+                  ? "border-[#007BFF] bg-[#007BFF] text-white shadow-[0_8px_25px_rgba(0,123,255,0.35)] -translate-y-0.5"
                   : "border-[#0A2540]/10 bg-transparent text-[#0A2540]/60 hover:bg-white hover:border-[#0A2540]/20 hover:text-[#0A2540]"
               }`}
             >
@@ -130,6 +136,9 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#007BFF]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                 
                 <div className="relative z-10 block">
+                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F4F6F8] text-[#0A2540]/60 transition-all duration-400 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_8px_20px_rgba(0,123,255,0.35)] group-hover:-translate-y-1">
+                    <service.icon className="h-6 w-6" />
+                  </div>
                   <h3 className="text-xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors duration-300">
                     {service.name}
                   </h3>
