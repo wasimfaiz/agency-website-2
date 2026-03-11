@@ -63,15 +63,15 @@ export default function AboutPage() {
 
              {/* Image 1: Top Left */}
              <div className="absolute top-[5%] lg:top-[10%] left-[5%] w-[45%] lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-xl z-20">
-                <Image src="/about_photo.png" fill alt="Engineering" className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/company-image1.png" fill alt="Engineering" className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700" />
              </div>
              {/* Image 2: Middle Right */}
              <div className="absolute top-[25%] lg:top-[25%] right-[0%] lg:right-[5%] w-[45%] aspect-square rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-[0_20px_40px_rgba(10,37,64,0.1)] z-30">
-                <Image src="/images/aesthetic-img2.png" fill alt="Aesthetics" className="object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
+                <Image src="/images/company-image4.png" fill alt="Aesthetics" className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
              </div>
              {/* Image 3: Bottom Left, overlapping slightly */}
              <div className="absolute bottom-[5%] lg:bottom-[5%] left-[15%] lg:left-[25%] w-[35%] aspect-[3/4] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-lg z-10">
-                <Image src="/images/aesthetic-img3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" />
+                <Image src="/images/company-image3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" />
              </div>
           </motion.div>
         </div>
@@ -148,7 +148,7 @@ export default function AboutPage() {
           >
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
                <motion.div variants={fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[4/3] rounded-[1.5rem] overflow-hidden shadow-sm border border-[#0A2540]/5 w-full order-2 lg:order-1 mt-6 lg:mt-0">
-                  <Image src="/images/aesthetic-img4.png" fill alt="Our Mission" className="object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]" />
+                  <Image src="/images/company-image2.png" fill alt="Our Mission" className="object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/10 to-transparent pointer-events-none" />
                </motion.div>
                
