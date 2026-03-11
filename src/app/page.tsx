@@ -6,6 +6,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import AboutSection from "../components/AboutSection";
 import Image from "next/image";
 import FeaturedProjects from "../components/FeaturedProjects";
+import ServicesSection from "../components/ServicesSection";
 import TestimonialSection from "../components/TestimonialSection";
 import FAQSection from "../components/FAQSection";
 import Footer from "../components/Footer";
@@ -353,128 +354,7 @@ export default function Home() {
         <AboutSection />
 
         {/* SERVICES SECTION */}
-        <section
-          id="services"
-          className="mx-auto w-full max-w-6xl px-4 pb-24 pt-8 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32"
-        >
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p
-                className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF] bg-[#007BFF]/10 inline-block px-3 py-1 rounded-md"
-                data-animate="services"
-              >
-                Services
-              </p>
-              <h2
-                className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl text-[#0A2540]"
-                data-animate="services"
-              >
-                Digital Product Services
-              </h2>
-            </div>
-            <p
-              className="max-w-xl text-base leading-7 text-[#0A2540]/70 sm:text-lg font-medium border-l-4 border-[#007BFF] pl-4"
-              data-animate="services"
-            >
-              We provide end-to-end web design, web development, and digital
-              product development services for startups, SaaS, B2B, and modern
-              brands worldwide. Strategy, design, and engineering work together
-              to deliver scalable, high-performance digital experiences.
-            </p>
-          </div>
-
-          <div className="mt-10 divide-y divide-[#0A2540]/10 border-y border-[#0A2540]/10">
-            <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
-              data-animate="services"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
-                01
-              </p>
-              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">UI/UX</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
-                <p>
-                  User research, wireframes, and UI/UX design focused on improving usability, increasing engagement, and boosting website conversion rates.
-                </p>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
-                  Research - Flows - Prototypes
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
-              data-animate="services"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
-                02
-              </p>
-              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">Web Design</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
-                <p>
-                  Custom website design with modern layouts, responsive UI, typography systems, and brand-focused visual identity that builds trust and authority.
-                </p>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
-                  Art Direction - UI - Motion
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
-              data-animate="services"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
-                03
-              </p>
-              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">Web Development</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
-                <p>
-                  Custom web development using modern frameworks like Next.js, with SEO optimization, clean code architecture, CMS integration, and performance-first builds.
-                </p>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
-                  Next.js - SEO - CMS
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
-              data-animate="services"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
-                04
-              </p>
-              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">App Development</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
-                <p>
-                  Cross-platform mobile app development for iOS and Android, built for speed, scalability, and seamless user experience.
-                </p>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
-                  iOS - Android - QA
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="group relative grid gap-6 py-8 md:grid-cols-[0.2fr_0.4fr_1fr] md:items-center hover:bg-white transition-all duration-300 rounded-xl px-4"
-              data-animate="services"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#007BFF]">
-                05
-              </p>
-              <h3 className="text-2xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors">CRM/ERP</h3>
-              <div className="flex flex-col gap-3 text-base leading-7 text-[#0A2540]/70 font-medium">
-                <p>
-                  Custom CRM and ERP development solutions that automate workflows, centralize data, integrate systems, and improve operational efficiency.
-                </p>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 group-hover:text-[#007BFF]/70">
-                  Dashboards - Automation - Integrations
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServicesSection />
 
         {/* PROJECTS SECTION */}
         <FeaturedProjects />
