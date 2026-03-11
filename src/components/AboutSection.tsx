@@ -50,10 +50,10 @@ export default function AboutSection() {
                     className="group relative h-[420px] w-full overflow-hidden rounded-[32px] bg-[#0A2540] shadow-xl md:h-[520px]"
                 >
                     <Image
-                        src="/about_photo.png"
+                        src="/images/company-image1.png"
                         alt="Setzet team"
                         fill
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width: 1200px) 100vw, 1200px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/80 via-[#0A2540]/30 to-transparent" />

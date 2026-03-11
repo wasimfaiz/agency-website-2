@@ -63,7 +63,7 @@ export default function AboutPage() {
 
              {/* Image 1: Top Left */}
              <div className="absolute top-[5%] lg:top-[10%] left-[5%] w-[45%] lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-xl z-20">
-                <Image src="/about_photo.png" fill alt="Engineering" className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/about_photo.png" fill alt="Engineering" className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" />
              </div>
              {/* Image 2: Middle Right */}
              <div className="absolute top-[25%] lg:top-[25%] right-[0%] lg:right-[5%] w-[45%] aspect-square rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-[0_20px_40px_rgba(10,37,64,0.1)] z-30">
