@@ -111,16 +111,103 @@ function HeroSection() {
                  </div>
                </div>
                
-               <div className="bg-[#F4F6F8] p-6 md:p-8 rounded-2xl border border-[#0A2540]/5 h-72 flex items-end gap-2 relative">
-                  <div className="absolute top-6 left-6 flex flex-col">
-                     <span className="text-lg font-bold text-[#0A2540]">Revenue Growth</span>
-                     <span className="text-xs text-[#0A2540]/50 font-medium">Monthly recurring revenue (MRR)</span>
+               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {/* Left Side: Revenue Chart */}
+                  <div className="lg:col-span-2 bg-[#F4F6F8] p-6 md:p-8 rounded-2xl border border-[#0A2540]/5 h-72 flex flex-col relative overflow-hidden">
+                     {/* Header */}
+                     <div className="flex justify-between items-start mb-2 relative z-10">
+                        <div className="flex flex-col">
+                           <span className="text-lg font-bold text-[#0A2540]">Revenue Growth</span>
+                           <span className="text-xs text-[#0A2540]/50 font-medium mt-0.5">Monthly recurring revenue (MRR)</span>
+                        </div>
+                        <div className="flex flex-col items-end">
+                           <span className="text-2xl font-extrabold text-[#0A2540]">$124,590</span>
+                           <span className="text-[10px] font-bold text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded-sm mt-1 border border-[#10b981]/20">+14.2%</span>
+                        </div>
+                     </div>
+
+                     {/* Chart Area */}
+                     <div className="flex-1 flex items-end gap-2 md:gap-4 relative z-10 w-full mt-4 h-full">
+                        {/* Background Grid Lines */}
+                        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none pb-6 z-0">
+                           <div className="w-full border-t border-dashed border-[#0A2540]/10 h-0" />
+                           <div className="w-full border-t border-dashed border-[#0A2540]/10 h-0" />
+                           <div className="w-full border-t border-dashed border-[#0A2540]/10 h-0" />
+                           <div className="w-full border-t border-dashed border-[#0A2540]/10 h-0" />
+                        </div>
+
+                        {[
+                           { h: 25, label: "Jan", val: "25" },
+                           { h: 30, label: "Feb", val: "30" },
+                           { h: 28, label: "Mar", val: "28" },
+                           { h: 40, label: "Apr", val: "40" },
+                           { h: 45, label: "May", val: "45" },
+                           { h: 42, label: "Jun", val: "42" },
+                           { h: 55, label: "Jul", val: "55" },
+                           { h: 65, label: "Aug", val: "65" },
+                           { h: 60, label: "Sep", val: "60" },
+                           { h: 75, label: "Oct", val: "75" },
+                           { h: 90, label: "Nov", val: "90" },
+                           { h: 100, label: "Dec", val: "124", active: true }
+                        ].map((item, i) => (
+                          <div key={i} className="flex-1 flex flex-col justify-end items-center h-full relative group pb-6">
+                              <motion.div 
+                                 initial={{ height: 0 }}
+                                 animate={{ height: `${item.h}%` }}
+                                 transition={{ duration: 1, delay: 0.5 + i * 0.1, ease: "easeOut" }}
+                                 className={`w-full rounded-t-lg transition-all relative border-t border-white/20 z-10 ${
+                                    item.active 
+                                    ? "bg-gradient-to-t from-[#007BFF]/80 to-[#007BFF] shadow-[0_0_15px_rgba(0,123,255,0.3)]" 
+                                    : "bg-gradient-to-t from-[#007BFF]/30 to-[#007BFF]/50 hover:from-[#007BFF]/50 hover:to-[#007BFF]/70 cursor-pointer"
+                                 }`} 
+                              >
+                                  {/* Value Label */}
+                                  <div className={`absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] md:text-[11px] font-bold z-20 whitespace-nowrap transition-colors ${item.active ? "text-[#007BFF]" : "text-[#0A2540]/70"}`}>
+                                     ${item.val}k
+                                  </div>
+                              </motion.div>
+                              {/* Label */}
+                              <span className={`absolute bottom-0 text-[9px] md:text-[10px] font-bold uppercase tracking-wider ${item.active ? "text-[#007BFF]" : "text-[#0A2540]/40"}`}>
+                                 {item.label}
+                              </span>
+                          </div>
+                        ))}
+                     </div>
                   </div>
-                  {[30, 45, 40, 60, 55, 75, 70, 95].map((h, i) => (
-                    <div key={i} className="flex-1 bg-[#0A2540]/10 rounded-t-md hover:bg-[#007BFF] transition-colors relative group" style={{ height: `${h}%` }}>
-                        <div className="opacity-0 group-hover:opacity-100 absolute -top-10 left-1/2 -translate-x-1/2 bg-[#0A2540] text-white text-xs py-1.5 px-2.5 rounded shadow-lg transition-opacity font-bold whitespace-nowrap">${h}k</div>
-                    </div>
-                  ))}
+
+                  {/* Right Side: Trust & Activity Panel */}
+                  <div className="bg-[#F4F6F8] p-6 rounded-2xl border border-[#0A2540]/5 h-72 flex flex-col relative overflow-hidden">
+                     <div className="flex flex-col mb-4">
+                        <span className="text-sm font-bold text-[#0A2540]">Recent Enterprise Signups</span>
+                        <span className="text-xs text-[#0A2540]/50 font-medium flex items-center gap-1 mt-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"></span> 12 waiting in pipeline
+                        </span>
+                     </div>
+                     
+                     <div className="flex flex-col gap-3 overflow-y-auto pr-1 custom-scrollbar">
+                        {[
+                           { name: "Narayana Agri Solution", time: "2 hours ago", color: "from-[#007BFF] to-[#0A2540]" },
+                           { name: "Uncle Makhana", time: "5 hours ago", color: "from-[#f59e0b] to-[#ea580c]" },
+                           { name: "Zenfora Food", time: "1 day ago", color: "from-[#10b981] to-[#059669]" },
+                           { name: "Pure Makhana", time: "2 days ago", color: "from-[#8b5cf6] to-[#6d28d9]" },
+                        ].map((client, i) => (
+                           <div key={i} className="flex items-center justify-between p-3 bg-white rounded-xl border border-[#0A2540]/5 shadow-sm hover:border-[#007BFF]/20 transition-all cursor-default">
+                              <div className="flex items-center gap-3">
+                                 <div className={`w-8 h-8 rounded-full bg-gradient-to-tr ${client.color} flex items-center justify-center text-white text-[10px] font-bold shadow-inner`}>
+                                    {client.name.substring(0, 2).toUpperCase()}
+                                 </div>
+                                 <div className="flex flex-col">
+                                    <span className="text-xs font-bold text-[#0A2540] truncate max-w-[120px]">{client.name}</span>
+                                    <span className="text-[10px] font-medium text-[#0A2540]/40">{client.time}</span>
+                                 </div>
+                              </div>
+                              <div className="w-6 h-6 rounded-full bg-[#10b981]/10 flex items-center justify-center text-[#10b981]">
+                                 <FiCheck className="w-3 h-3 stroke-[3]" />
+                              </div>
+                           </div>
+                        ))}
+                     </div>
+                  </div>
                </div>
             </div>
         </div>

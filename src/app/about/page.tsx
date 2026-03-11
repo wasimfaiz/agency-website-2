@@ -22,16 +22,16 @@ const staggerContainer = {
 
 export default function AboutPage() {
   return (
-    <div className="noise-bg bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen">
+    <div className="noise-bg bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen overflow-x-hidden">
       <title>About | SetZet Digital Agency</title>
       <meta name="description" content="A premium web development agency building the next generation of high-performance digital experiences." />
 
       <Navbar forceDarkAtTop={true} />
 
       {/* 1. HERO SECTION (Reference-inspired layout) */}
-      <section className="relative pt-24 lg:pt-32 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-8 lg:pb-12 px-6 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="relative z-10 w-full text-center lg:text-left pt-6 lg:pt-0">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="relative z-10 w-full text-center lg:text-left pt-6 lg:pt-0 lg:-mt-20">
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-extrabold font-heading text-[#0A2540] tracking-tight leading-[1.15] lg:leading-[1.05] mb-6 lg:mb-8 mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
               About Setzet <br className="hidden lg:block" /> with Engineering <br className="hidden lg:block" /> & Aesthetics
             </motion.h1>
@@ -45,7 +45,7 @@ export default function AboutPage() {
             </motion.div>
           </motion.div>
 
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative h-[320px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full max-w-[320px] sm:max-w-md md:max-w-xl lg:max-w-none mx-auto lg:mx-0 mt-6 lg:mt-0">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[580px] w-full max-w-[320px] sm:max-w-md md:max-w-xl lg:max-w-none mx-auto lg:mx-0 mt-6 lg:mt-0">
              {/* Connecting SVG lines and dots */}
              <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
                 {/* Lines mimicking the network/collage aesthetic */}
@@ -62,15 +62,15 @@ export default function AboutPage() {
              </svg>
 
              {/* Image 1: Top Left */}
-             <div className="absolute top-[5%] lg:top-[10%] left-[5%] w-[45%] lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-xl z-20">
+             <div className="absolute top-[-5%] lg:top-[0%] left-[0%] lg:left-[5%] w-[50%] lg:w-[50%] aspect-[4/3] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-xl z-20">
                 <Image src="/images/company-image1.png" fill alt="Engineering" className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700" />
              </div>
              {/* Image 2: Middle Right */}
-             <div className="absolute top-[25%] lg:top-[25%] right-[0%] lg:right-[5%] w-[45%] aspect-square rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-[0_20px_40px_rgba(10,37,64,0.1)] z-30">
+             <div className="absolute top-[20%] lg:top-[20%] right-[-5%] lg:right-[-10%] w-[45%] lg:w-[50%] aspect-square rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-[0_20px_40px_rgba(10,37,64,0.1)] z-30">
                 <Image src="/images/company-image4.png" fill alt="Aesthetics" className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
              </div>
              {/* Image 3: Bottom Left, overlapping slightly */}
-             <div className="absolute bottom-[5%] lg:bottom-[5%] left-[15%] lg:left-[25%] w-[35%] aspect-[3/4] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-lg z-10">
+             <div className="absolute top-[45%] lg:top-[42%] left-[10%] lg:left-[15%] w-[40%] lg:w-[40%] aspect-[3/4] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-lg z-10">
                 <Image src="/images/company-image3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" />
              </div>
           </motion.div>
@@ -93,15 +93,11 @@ export default function AboutPage() {
           <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
             <ul className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 animate-[marquee_28s_linear_infinite]">
               {[
-                { name: "PureMakhana", tag: "D2C Brand" },
-                { name: "Yastudy", tag: "Education" },
-                { name: "Zenfora", tag: "FMGC" },
                 { name: "Narayana Agri Solution", tag: "Agriculture" },
-                { name: "UrbanNest", tag: "Real Estate" },
-                { name: "ZenFlow", tag: "Wellness App" },
-                { name: "StackPilot", tag: "DevTools" },
-                { name: "UncleMakhana", tag: "B2B Brand" },
-                
+                { name: "Uncle Makhana", tag: "B2B Brand" },
+                { name: "Yastudy", tag: "Education" },
+                { name: "Zenfora Food", tag: "FMGC" },
+                { name: "Pure Makhana", tag: "D2C Brand" },
               ].map((brand, i) => (
                 <li key={i} className="flex flex-col items-center gap-1 shrink-0 group">
                   <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
@@ -116,14 +112,11 @@ export default function AboutPage() {
             {/* Duplicate for seamless loop */}
             <ul className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 animate-[marquee_28s_linear_infinite] ml-12 md:ml-16 lg:ml-20" aria-hidden>
               {[
-                { name: "PureMakhana", tag: "D2C Brand" },
-                { name: "NovaTech", tag: "SaaS" },
-                { name: "UrbanNest", tag: "Real Estate" },
-                { name: "ZenFlow", tag: "Wellness App" },
-                { name: "StackPilot", tag: "DevTools" },
-                { name: "LumiAI", tag: "AI Platform" },
-                { name: "ClearPath", tag: "Fintech" },
-                { name: "BoltStore", tag: "E-Commerce" },
+                { name: "Narayana Agri Solution", tag: "Agriculture" },
+                { name: "Uncle Makhana", tag: "B2B Brand" },
+                { name: "Yastudy", tag: "Education" },
+                { name: "Zenfora Food", tag: "FMGC" },
+                { name: "Pure Makhana", tag: "D2C Brand" },
               ].map((brand, i) => (
                 <li key={i} className="flex flex-col items-center gap-1 shrink-0 group">
                   <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
@@ -182,9 +175,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-3xl lg:max-w-none mx-auto">
             {[
               { name: "Wasim Faiz", role: "Team Lead", image: "/images/wasim-faiz.png" },
-              { name: "Sagar Singh", role: "Head of Engineering", image: "/images/sagar-singh.jpg" },
+              { name: "Sagar Singh", role: "Head of Marketing", image: "/images/sagar-singh.jpg" },
               { name: "R.K Singh", role: "Creative Director", image: "/images/r.k-singh.jpeg" },
-              { name: "Sakshi Singh", role: "VP of Growth", image: "/images/sakshi-singh.jpg" }
+              { name: "Ropa Roy", role: "VP of Growth", image: "/images/ropa-roy.jpg" }
             ].map((member, i) => (
               <motion.div 
                 key={i}
