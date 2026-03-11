@@ -136,7 +136,7 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#007BFF]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                 
                 <div className="relative z-10 block">
-                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F4F6F8] text-[#0A2540]/60 transition-all duration-400 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_8px_20px_rgba(0,123,255,0.35)] group-hover:-translate-y-1">
+                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF] transition-all duration-400 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_8px_20px_rgba(0,123,255,0.35)] group-hover:-translate-y-1">
                     <service.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors duration-300">
