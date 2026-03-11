@@ -23,6 +23,10 @@ const staggerContainer = {
 export default function AboutPage() {
   return (
     <div className="bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen overflow-x-hidden">
+      <style dangerouslySetInnerHTML={{__html: `
+        ::-webkit-scrollbar { display: none !important; }
+        html, body { -ms-overflow-style: none !important; scrollbar-width: none !important; }
+      `}} />
       <title>About | SetZet Digital Agency</title>
       <meta name="description" content="A premium web development agency building the next generation of high-performance digital experiences." />
 
