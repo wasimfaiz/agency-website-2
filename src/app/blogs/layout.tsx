@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blogs",
+  title: "Web Design & Development Blog — Insights by Setzet",
   description:
     "Read Setzet insights on web design, development, SEO, automation, and digital growth strategy.",
   alternates: {

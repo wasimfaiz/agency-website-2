@@ -1,12 +1,12 @@
-"use client";
-
-import React, { use } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
+import { BlogHeroFade, BlogContentFade } from "../../../components/BlogFadeIn";
+import ReadingProgressBar from "../../../components/ReadingProgressBar";
+import BlogPostFooter from "../../../components/BlogPostFooter";
 
 interface Props {
   params: Promise<{
@@ -14,22 +14,19 @@ interface Props {
   }>;
 }
 
-export default function BlogPostPage(props: Props) {
-  const params = use(props.params);
+export default async function BlogPostPage(props: Props) {
+  const params = await props.params;
   const id = params.id;
 
   if (id === "1") {
     return (
       <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
+        <ReadingProgressBar />
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+          <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
@@ -38,6 +35,8 @@ export default function BlogPostPage(props: Props) {
               <span>Technology</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 22, 2026</span>
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span>5 min read</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
@@ -46,7 +45,7 @@ export default function BlogPostPage(props: Props) {
             
             <div className="flex items-center gap-4 mb-12">
                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#0A2540]/10">
-                 <Image src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="Author" fill className="object-cover" />
+                 <Image src="/images/sagar-singh.jpg" alt="Sagar Singh" fill className="object-cover" />
                </div>
                <div>
                   <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Sagar Singh</p>
@@ -64,17 +63,12 @@ export default function BlogPostPage(props: Props) {
                />
                <div className="absolute inset-0 bg-[#0A2540]/10" />
             </div>
-          </motion.div>
+          </BlogHeroFade>
         </section>
 
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <motion.div 
-             initial={{ opacity: 0, y: 40 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-medium"
-           >
+           <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Why CRM Automation Is No Longer Optional</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 Customer Relationship Management has always been about one thing: building meaningful relationships at scale. But for years, "at scale" came with a painful price — hours of manual data entry, inconsistent follow-ups, and sales reps spending more time updating records than actually selling.
@@ -289,14 +283,14 @@ export default function BlogPostPage(props: Props) {
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Contact us today to learn how we can help you implement AI-driven automation that actually delivers results.
                 </p>
-                <Link href="/contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link href="/#contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Get in Touch
                 </Link>
               </div>
 
               {/* Tags Section */}
               <div className="pt-8 border-t border-[#0A2540]/10">
-                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Target Keywords</h4>
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Topics</h4>
                  <div className="flex flex-wrap gap-2 text-xs font-bold font-mono tracking-tight text-[#0A2540]/60">
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">CRM automation</span>
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">AI-driven CRM</span>
@@ -308,7 +302,8 @@ export default function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">increase conversion rates with CRM</span>
                  </div>
               </div>
-           </motion.div>
+           </BlogContentFade>
+            <BlogPostFooter postId="1" />
         </section>
 
         <Footer />
@@ -320,12 +315,8 @@ export default function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+          <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
@@ -334,6 +325,8 @@ export default function BlogPostPage(props: Props) {
               <span>Strategy</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 23, 2026</span>
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span>7 min read</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
@@ -360,17 +353,12 @@ export default function BlogPostPage(props: Props) {
                />
                <div className="absolute inset-0 bg-[#0A2540]/10" />
             </div>
-          </motion.div>
+          </BlogHeroFade>
         </section>
 
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <motion.div 
-             initial={{ opacity: 0, y: 40 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-medium"
-           >
+           <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Your Clients Are One Bad Experience Away From Leaving</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 For small business owners, every client relationship carries disproportionate weight. Lose one client at an enterprise company and it barely registers on a quarterly report. Lose one client as a small business — especially a high-value, long-term one — and you feel it immediately in your revenue, your team's morale, and your growth trajectory.
@@ -632,14 +620,14 @@ export default function BlogPostPage(props: Props) {
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Contact our team today to see how our platform helps small business owners master every client relationship.
                 </p>
-                <Link href="/contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link href="/#contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Get in Touch
                 </Link>
               </div>
 
               {/* Tags Section */}
               <div className="pt-8 border-t border-[#0A2540]/10">
-                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Target Keywords</h4>
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Topics</h4>
                  <div className="flex flex-wrap gap-2 text-xs font-bold font-mono tracking-tight text-[#0A2540]/60">
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">client communication strategies</span>
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">small business client retention</span>
@@ -649,7 +637,8 @@ export default function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">reduce client churn</span>
                  </div>
               </div>
-           </motion.div>
+           </BlogContentFade>
+            <BlogPostFooter postId="2" />
         </section>
 
         <Footer />
@@ -661,12 +650,8 @@ export default function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+          <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
@@ -675,6 +660,8 @@ export default function BlogPostPage(props: Props) {
               <span>Business</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 24, 2026</span>
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span>8 min read</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
@@ -701,17 +688,12 @@ export default function BlogPostPage(props: Props) {
                />
                <div className="absolute inset-0 bg-[#0A2540]/10" />
             </div>
-          </motion.div>
+          </BlogHeroFade>
         </section>
 
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <motion.div 
-             initial={{ opacity: 0, y: 40 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-medium"
-           >
+           <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Moment Everything Has to Change</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 There is a precise moment every successful freelancer encounters — and almost none of them are prepared for it.
@@ -998,14 +980,14 @@ export default function BlogPostPage(props: Props) {
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Book a demo today to see how our platform helps early-stage agencies systematize client management, automate workflows, and grow with confidence from day one.
                 </p>
-                <Link href="/contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link href="/#contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Book a Demo
                 </Link>
               </div>
 
               {/* Tags Section */}
               <div className="pt-8 border-t border-[#0A2540]/10">
-                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Target Keywords</h4>
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Topics</h4>
                  <div className="flex flex-wrap gap-2 text-xs font-bold font-mono tracking-tight text-[#0A2540]/60">
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">scaling your agency</span>
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">freelance to agency transition</span>
@@ -1016,7 +998,8 @@ export default function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">agency owner tips</span>
                  </div>
               </div>
-           </motion.div>
+           </BlogContentFade>
+            <BlogPostFooter postId="3" />
         </section>
 
         <Footer />
@@ -1028,12 +1011,8 @@ export default function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+          <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
                 <FiArrowLeft /> Back to Blogs
@@ -1042,6 +1021,8 @@ export default function BlogPostPage(props: Props) {
               <span>Design</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
               <span>Feb 26, 2026</span>
+              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span>4 min read</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
@@ -1068,17 +1049,12 @@ export default function BlogPostPage(props: Props) {
                />
                <div className="absolute inset-0 bg-[#0A2540]/10" />
             </div>
-          </motion.div>
+          </BlogHeroFade>
         </section>
 
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <motion.div 
-             initial={{ opacity: 0, y: 40 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-             className="text-[#0A2540]/80 font-medium"
-           >
+           <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Most Common Conversion Killer Is Already on Your Website</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 You invested in the traffic. The ads are running, the SEO is working, and visitors are landing on your page. But they're not converting. They browse for a few seconds, then they leave — and you're not entirely sure why.
@@ -1328,14 +1304,14 @@ export default function BlogPostPage(props: Props) {
                 <p className="text-lg mb-8 text-white/70 max-w-xl mx-auto relative z-10">
                   Book a demo with our team and let's show you exactly what's possible for your high-converting client experiences.
                 </p>
-                <Link href="/contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link href="/#contact" className="relative z-10 inline-flex items-center gap-2 bg-[#007BFF] text-white px-8 py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#0A2540] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Book a Demo
                 </Link>
               </div>
 
               {/* Tags Section */}
               <div className="pt-8 border-t border-[#0A2540]/10">
-                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Target Keywords</h4>
+                 <h4 className="text-[11px] font-bold tracking-widest uppercase text-[#0A2540]/40 mb-4">Topics</h4>
                  <div className="flex flex-wrap gap-2 text-xs font-bold font-mono tracking-tight text-[#0A2540]/60">
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">minimalist design</span>
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">cognitive load</span>
@@ -1346,7 +1322,8 @@ export default function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">web design for conversions</span>
                  </div>
               </div>
-           </motion.div>
+           </BlogContentFade>
+            <BlogPostFooter postId="4" />
         </section>
 
         <Footer />
