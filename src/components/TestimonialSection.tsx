@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const testimonials = [
@@ -8,18 +9,21 @@ const testimonials = [
       "Setzet completely transformed our online presence. Our conversion rate increased by 40% in the first month. The best agency we've worked with.",
     author: "Aastha Sharma",
     role: "Brand Manager, Yastudy",
+    image: "/images/ropa-roy.jpg",
   },
   {
     quote:
       "The team at Setzet understood our complex SaaS product and distilled it into a beautiful, high-converting digital experience.",
     author: "Rajdeep Singh",
     role: "Founder, Zenfora Food",
+    image: "/images/r.k-singh.jpeg",
   },
   {
     quote:
       "Fast, responsive, and incredibly talented. They delivered our web application ahead of schedule and the code quality is exceptional.",
     author: "Sagar ",
     role: "Digital Marketing Head, Uncle Makhana",
+    image: "/images/sagar-singh.jpg",
   },
 ];
 
@@ -75,9 +79,22 @@ export default function TestimonialSection() {
                 "{testimonial.quote}"
               </p>
             </div>
-            <div>
-              <p className="font-bold text-[#0A2540]">{testimonial.author}</p>
-              <p className="text-sm font-semibold text-[#007BFF] mt-1">{testimonial.role}</p>
+            <div className="flex items-center gap-4">
+              <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[#0A2540]/10 bg-[#F4F6F8]">
+                <Image
+                  fill
+                  src={testimonial.image}
+                  alt={`${testimonial.author} portrait`}
+                  className="object-cover"
+                  sizes="48px"
+                />
+              </div>
+              <div>
+                <p className="font-bold text-[#0A2540]">{testimonial.author}</p>
+                <p className="mt-1 text-sm font-semibold text-[#007BFF]">
+                  {testimonial.role}
+                </p>
+              </div>
             </div>
           </div>
         ))}

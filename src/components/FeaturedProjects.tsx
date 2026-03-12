@@ -52,16 +52,16 @@ export default function FeaturedProjects() {
                 <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
                     <div>
                         <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                            SELECTED CASE STUDIES
+                            PROJECT SHOWCASE
                         </p>
                         <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight font-heading sm:text-4xl text-[#0A2540]">
-                            Experimental Digital Builds
+                            Project Showcases
                             <br />
                             with Strategic Intent.
                         </h2>
                     </div>
                     <p className="max-w-md text-sm leading-7 font-medium text-[#0A2540]/80 sm:text-base">
-                        A curated selection of web design, SaaS platforms, B2B systems, and custom development projects — where every case study is driven by business goals, scalable architecture, and refined user experience.
+                        A curated selection of web design, SaaS platforms, B2B systems, and custom development projects — built for business goals, scalable architecture, and refined user experience.
                     </p>
                 </div>
             </div>
