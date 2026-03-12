@@ -76,7 +76,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Setzet",
     url: "https://setzet.com",
-    email: "hello@setzet.com",
+    email: "info@setzet.com",
     telephone: "+91-9128376231",
     address: {
       "@type": "PostalAddress",

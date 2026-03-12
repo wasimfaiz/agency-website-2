@@ -326,12 +326,12 @@ export default function ServicesPage() {
                  >
                     Start Project
                  </Link>
-                 <Link 
-                    href="mailto:hello@setzet.studio"
+                  <Link 
+                    href="mailto:info@setzet.com"
                     className="px-10 py-4 border border-[#0A2540]/20 rounded-full font-bold uppercase tracking-widest hover:bg-[#F4F6F8] hover:border-[#007BFF]/30 transition-colors"
-                 >
-                    hello@setzet.studio
-                 </Link>
+                  >
+                    info@setzet.com
+                  </Link>
               </div>
           </div>
           

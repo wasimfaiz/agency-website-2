@@ -65,13 +65,13 @@ export default function Footer() {
               <div className="mt-3 flex flex-col gap-2 text-sm text-[#0A2540]/80 font-medium">
                 <a
                   className="transition hover:text-[#007BFF]"
-                  href="mailto:hello@setzet.studio"
+                  href="mailto:info@setzet.com"
                 >
-                  hello@setzet.studio
+                  info@setzet.com
                 </a>
                 <a
                   className="transition hover:text-[#007BFF]"
-                  href="tel:+14155550128"
+                  href="tel:+919128376231"
                 >
                   +91-9128376231
                 </a>

@@ -43,7 +43,7 @@ export default function PrivacyPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-extrabold text-[#0A2540] font-heading tracking-normal">5. Contact Us</h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@setztupd.com" className="border-b border-[#0A2540] text-[#007BFF] hover:opacity-60 transition-opacity">hello@setztupd.com</a>.
+              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@setzet.com" className="border-b border-[#0A2540] text-[#007BFF] hover:opacity-60 transition-opacity">info@setzet.com</a>.
             </p>
           </section>
 
