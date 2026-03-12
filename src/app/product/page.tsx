@@ -216,23 +216,6 @@ function HeroSection() {
   );
 }
 
-function SocialProof() {
-  return (
-    <section className="py-12 border-b border-[#0A2540]/5 bg-white relative z-10">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <p className="text-xs font-bold text-[#0A2540]/40 mb-8 uppercase tracking-[0.2em]">Trusted by innovative teams worldwide</p>
-        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-30 grayscale pointer-events-none select-none text-[#0A2540]">
-           <span className="text-2xl font-bold font-serif">Acme Corp</span>
-           <span className="text-2xl font-black tracking-tighter">STARTUP.IO</span>
-           <span className="text-2xl font-bold italic">GlobalTech</span>
-           <span className="text-2xl font-black tracking-tight">NEXUS</span>
-           <span className="text-2xl font-bold font-mono">OrbitSystem</span>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function FeatureListSection() {
   const content = [
     {
@@ -507,6 +490,59 @@ function ProductSuiteSection() {
              ))}
           </div>
        </div>
+    </section>
+  );
+}
+
+function SocialProof() {
+  return (
+    <section className="py-12 border-b border-[#0A2540]/5 bg-white overflow-hidden relative z-10">
+      <div className="max-w-6xl mx-auto px-6">
+        <p className="text-center text-[10px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#0A2540]/40 mb-8 md:mb-10">
+          Trusted by forward-thinking brands
+        </p>
+        <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          <ul className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 animate-[marquee_28s_linear_infinite]">
+            {[
+              { name: "Narayana Agri", tag: "Agriculture" },
+              { name: "Uncle Makhana", tag: "B2B Brand" },
+              { name: "Yastudy", tag: "Education" },
+              { name: "Zenfora", tag: "FMCG" },
+              { name: "Pure Makhana", tag: "D2C Brand" },
+            ].map((brand) => (
+              <li key={brand.name} className="flex flex-col items-center gap-1 shrink-0 group">
+                <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
+                  {brand.name}
+                </span>
+                <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-[#007BFF]/0 group-hover:text-[#007BFF]/60 transition-colors duration-300">
+                  {brand.tag}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <ul
+            className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 animate-[marquee_28s_linear_infinite] ml-12 md:ml-16 lg:ml-20"
+            aria-hidden
+          >
+            {[
+              { name: "Narayana Agri", tag: "Agriculture" },
+              { name: "Uncle Makhana", tag: "B2B Brand" },
+              { name: "Yastudy", tag: "Education" },
+              { name: "Zenfora", tag: "FMCG" },
+              { name: "Pure Makhana", tag: "D2C Brand" },
+            ].map((brand) => (
+              <li key={brand.name} className="flex flex-col items-center gap-1 shrink-0 group">
+                <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
+                  {brand.name}
+                </span>
+                <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-[#007BFF]/0 group-hover:text-[#007BFF]/60 transition-colors duration-300">
+                  {brand.tag}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   );
 }
