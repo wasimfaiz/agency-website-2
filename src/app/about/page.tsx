@@ -27,7 +27,7 @@ export default function AboutPage() {
         ::-webkit-scrollbar { display: none !important; }
         html, body { -ms-overflow-style: none !important; scrollbar-width: none !important; }
       `}} />
-      <title>About | SetZet Digital Agency</title>
+      <title>About | Setzet Digital Agency</title>
       <meta name="description" content="A premium web development agency building the next generation of high-performance digital experiences." />
 
       <Navbar forceDarkAtTop={true} />
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center relative z-10">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="w-full text-center lg:text-left pt-6 lg:pt-0 lg:-mt-20">
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-extrabold font-heading text-[#0A2540] tracking-tight leading-[1.15] lg:leading-[1.05] mb-6 lg:mb-8 mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
-              About Setzet <br className="hidden lg:block" /> with Engineering <br className="hidden lg:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0E1521] via-[#0A2540] to-[#007BFF] pr-4 italic">& Aesthetics</span>
+              Where Engineering <br className="hidden lg:block" /> Meets <br className="hidden lg:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0E1521] via-[#0A2540] to-[#007BFF] pr-4 italic">Aesthetics</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-10">
               Wherever you are should not be a factor in what you do. Brilliant engineering and flawless design combined will change the way the digital world works.
@@ -158,12 +158,12 @@ export default function AboutPage() {
                <motion.div variants={staggerContainer} className="order-1 lg:order-2 text-center lg:text-left">
                   <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Mission</motion.h3>
                   <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-[1.1rem] font-medium leading-[1.7] mb-10 lg:mb-16">
-                     At Setzet, we provide tailored digital engineering and aesthetic perfection to boost operational efficiency, drive innovation, and support immense scale. We help individuals and ambitious businesses optimize their digital presence for lasting authority.
+                     We translate ambitious goals into measurable digital outcomes. Every build starts with a conversion map, a content hierarchy, and a performance budget — so the site doesn’t just look refined, it loads fast, ranks cleanly, and turns interest into qualified leads.
                   </motion.p>
                   
-                  <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Value</motion.h3>
+                  <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Values</motion.h3>
                   <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-[1.1rem] font-medium leading-[1.7]">
-                     Setzet sets the global standard in high-performance digital products, empowering global organizations through uncompromising design and flawless execution strategies. Join us to elevate your brand to the next paradigm.
+                     Clarity over complexity. Speed without shortcuts. We prototype in real content, design systems that scale, and ship with analytics baked in — so teams can iterate with confidence instead of guessing.
                   </motion.p>
                </motion.div>
             </div>
@@ -227,10 +227,10 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 text-center divide-x-0 lg:divide-x divide-[#0A2540]/10 mb-10 md:mb-20 max-w-5xl mx-auto">
             {[
-              { val: "$150M+", label: "Client Revenue" },
-              { val: "0ms", label: "Latency Tolerated" },
-              { val: "24+", label: "Industry Awards" },
-              { val: "99%", label: "Satisfaction" }
+              { val: "30+", label: "Projects Delivered" },
+              { val: "5+", label: "Years Building" },
+              { val: "8+", label: "Industries Served" },
+              { val: "24h", label: "Avg. Response Time" }
             ].map((stat, i) => (
               <motion.div 
                   key={i}
