@@ -124,7 +124,7 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
         {/* Column 1: Title */}
         <div>
            <span className="font-mono text-xs font-bold text-[#007BFF] mb-4 bg-[#007BFF]/10 inline-block px-2 py-1 rounded-md tracking-wider">0{index + 1}</span>
-           <h3 className="text-4xl md:text-5xl font-heading font-extrabold text-[#0A2540] transition-colors group-hover:text-[#007BFF]">{item.title}</h3>
+           <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-[#0A2540] transition-colors group-hover:text-[#007BFF]">{item.title}</h2>
         </div>
 
         {/* Column 2: Description + Detail */}
@@ -207,6 +207,11 @@ export default function ServicesPage() {
 
   return (
     <div ref={containerRef} className="bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen">
+      <title>Web Development & SaaS Services | Setzet Agency</title>
+      <meta
+        name="description"
+        content="Setzet is a web development and digital marketing agency delivering SaaS platforms, ERP solutions, and high-performance websites with conversion-focused strategy."
+      />
       <Navbar forceDarkAtTop={true} />
       
 

@@ -27,8 +27,11 @@ export default function AboutPage() {
         ::-webkit-scrollbar { display: none !important; }
         html, body { -ms-overflow-style: none !important; scrollbar-width: none !important; }
       `}} />
-      <title>About | Setzet Digital Agency</title>
-      <meta name="description" content="A premium web development agency building the next generation of high-performance digital experiences." />
+      <title>About Setzet | Strategy-Led Web Design & Development Agency</title>
+      <meta
+        name="description"
+        content="Learn how Setzet combines conversion-focused strategy, high-performance engineering, and refined design to build scalable websites for modern brands."
+      />
 
       <Navbar forceDarkAtTop={true} />
 

@@ -25,7 +25,7 @@ const workStories = [
     title: "Zenfora Foods",
     tagline: "The Superfood Revolution",
     description: "Healthy snacking shouldn't be boring. Zenfora turns foxnuts (makhana) into a lifestyle brand for the modern, health-conscious consumer.",
-    narrative: "From protein powders to gourmet chocolates, Zenfora's product line is diverse. We crafted a vibrant, appetite-inducing digital storefront that highlights the nutritional power of foxnuts. With a seamless D2C checkout and subscription model, we turned casual snackers into loyal subscribers.",
+    narrative: "From protein powders to gourmet chocolates, Zenfora's product line is diverse. We crafted a vibrant, appetite-inducing digital storefront that highlights the nutritional power of foxnuts. With a seamless D2C checkout and subscription model, we turned casual snackers into loyal subscribers — and helped drive 3x organic traffic in 90 days.",
     tags: ["FMCG", "E-Commerce", "Brand Strategy"],
     image: "/images/zenfora-food.png",
     color: "#f97316"
@@ -35,7 +35,7 @@ const workStories = [
     title: "Pure Makhana",
     tagline: "The Zenith of Purity",
     description: "A premium, luxury, and ultra-clean website for a high-end makhana brand, designed to communicate purity and modern elegance.",
-    narrative: "We designed a spacious layout with ample white space, elegant typography, and subtle micro-animations to elevate the brand. The soft, neutral color palette with gold accents communicates a high-class, luxury wellness experience compared to typical local snack brands.",
+    narrative: "We designed a spacious layout with ample white space, elegant typography, and subtle micro-animations to elevate the brand. The soft, neutral color palette with gold accents communicates a high-class, luxury wellness experience compared to typical local snack brands, delivering a +18–25% conversion lift.",
     tags: ["Brand Website", "Luxury", "UI/UX"],
     image: "/images/pure-makhana.png",
     color: "#d4af37"
@@ -45,7 +45,7 @@ const workStories = [
     title: "Uncle Makhana",
     tagline: "Crunchy, Healthy, Irresistible",
     description: "Snacking doesn't have to be a guilty pleasure. Uncle Makhana brings traditional, nutrient-packed foxnuts to the modern consumer with a punch of incredible flavors.",
-    narrative: "We designed a vibrant and appetizing digital experience that perfectly captures the playful essence of the Uncle Makhana brand. From dynamic packaging layouts to a seamless e-commerce journey, we built a storefront that turns every craving into an effortless purchase.",
+    narrative: "We designed a vibrant and appetizing digital experience that perfectly captures the playful essence of the Uncle Makhana brand. From dynamic packaging layouts to a seamless e-commerce journey, we built a storefront that turns every craving into an effortless purchase — launched in 6 weeks.",
     tags: ["D2C", "E-Commerce", "Branding"],
     image: "/images/aesthetic-img2.png",
     color: "#f43f5e"
@@ -63,10 +63,10 @@ const workStories = [
 ];
 
 const impactStats = [
-    { value: "250+", label: "Digital Products", desc: "Successfully engineered and launched globally." },
-    { value: "5M+", label: "Active Users", desc: "Interacting with interfaces we've crafted." },
-    { value: "10x", label: "Average ROI", desc: "Driven by conversion-focused digital strategies." },
-    { value: "12+", label: "Industry Awards", desc: "Recognized for both design and technical excellence." }
+    { value: "30+", label: "Projects Delivered", desc: "Websites and digital products shipped end-to-end." },
+    { value: "5+", label: "Years Building", desc: "Hands-on experience across modern stacks." },
+    { value: "8+", label: "Industries Served", desc: "From SaaS to D2C and B2B." },
+    { value: "24h", label: "Avg. Response Time", desc: "Fast, reliable communication from day one." }
 ];
 
 // --- COMPONENTS ---
