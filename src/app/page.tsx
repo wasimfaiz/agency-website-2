@@ -7,6 +7,7 @@ import AboutSection from "../components/AboutSection";
 import Image from "next/image";
 import FeaturedProjects from "../components/FeaturedProjects";
 import ServicesSection from "../components/ServicesSection";
+import ProcessSection from "../components/ProcessSection";
 import TestimonialSection from "../components/TestimonialSection";
 import FAQSection from "../components/FAQSection";
 import Footer from "../components/Footer";
@@ -356,11 +357,14 @@ export default function Home() {
         {/* PROJECTS SECTION */}
         <FeaturedProjects />
 
-        {/* ABOUT SECTION */}
-        <AboutSection />
+        {/* PROCESS SECTION */}
+        <ProcessSection />
 
         {/* TESTIMONIAL SECTION */}
         <TestimonialSection />
+
+        {/* ABOUT SECTION */}
+        <AboutSection />
 
         {/* CONTACT SECTION */}
         <section
