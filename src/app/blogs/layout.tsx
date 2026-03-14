@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Design & Development Blog — Insights by Setzet",
+  title: "Web Design & Development Blog — Setzet Agency",
   description:
-    "Read Setzet insights on web design, development, SEO, automation, and digital growth strategy.",
+    "Explore the Setzet Agency blog for expert insights on web design, development, SEO, and automation. Level up your digital strategy with our articles on design systems, technical SEO, and modern web engineering.",
   alternates: {
     canonical: "/blogs",
   },
   openGraph: {
-    title: "Blogs | Setzet",
+    title: "Web Design & Development Blog — Setzet Agency",
     description:
-      "Practical insights on design systems, technical SEO, and modern web engineering.",
+      "Explore the Setzet Agency blog for expert insights on web design, development, SEO, and automation. Level up your digital strategy with our articles on design systems, technical SEO, and modern web engineering.",
     url: "/blogs",
   },
 };
