@@ -350,14 +350,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT SECTION */}
-        <AboutSection />
-
         {/* SERVICES SECTION */}
         <ServicesSection />
 
         {/* PROJECTS SECTION */}
         <FeaturedProjects />
+
+        {/* ABOUT SECTION */}
+        <AboutSection />
 
         {/* TESTIMONIAL SECTION */}
         <TestimonialSection />
