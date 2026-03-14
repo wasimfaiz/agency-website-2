@@ -14,46 +14,46 @@ const categories = [
     id: "development",
     title: "Development",
     services: [
-      { name: "Web Development", description: "Scalable, high-performance websites and web apps.", icon: FiMonitor },
-      { name: "Mobile App Development", description: "Native and cross-platform mobile experiences.", icon: FiSmartphone },
-      { name: "Custom Software Development", description: "Tailored solutions for complex business needs.", icon: FiCode },
-      { name: "UI/UX Development", description: "Pixel-perfect, accessible, and interactive interfaces.", icon: FiPenTool },
-      { name: "API Development", description: "Robust and secure backend API architectures.", icon: FiServer },
-      { name: "E-commerce Development", description: "High-converting online stores and platforms.", icon: FiShoppingCart },
+      { name: "Web Development", description: "Executive-grade websites engineered for speed, trust, and conversion.", icon: FiMonitor },
+      { name: "Mobile App Development", description: "Premium iOS and Android experiences built for retention.", icon: FiSmartphone },
+      { name: "Custom Software Development", description: "Bespoke platforms that streamline operations and elevate teams.", icon: FiCode },
+      { name: "UI/UX Development", description: "Refined interfaces that feel effortless and unmistakably premium.", icon: FiPenTool },
+      { name: "API Development", description: "Secure, scalable APIs that keep complex systems in sync.", icon: FiServer },
+      { name: "E-commerce Development", description: "Luxury-grade storefronts optimized for trust and higher AOV.", icon: FiShoppingCart },
     ],
   },
   {
     id: "erp",
     title: "ERP Solutions",
     services: [
-      { name: "Custom ERP Development", description: "Tailored enterprise resource planning systems.", icon: FiBriefcase },
-      { name: "ERP Implementation", description: "Seamless deployment of enterprise scalable solutions.", icon: FiCheckCircle },
-      { name: "ERP Integration", description: "Connecting your ERP with existing third-party tools.", icon: FiLink },
-      { name: "ERP Consulting", description: "Strategic guidance for enterprise digital transformation.", icon: FiUsers },
-      { name: "Business Process Automation", description: "Streamlining operations to boost efficiency.", icon: FiCpu },
+      { name: "Custom ERP", description: "White-glove ERP tailored to your exact workflows and approvals.", icon: FiBriefcase },
+      { name: "ERP Rollout", description: "Precision rollout with migration, training, and adoption support.", icon: FiCheckCircle },
+      { name: "ERP Integrations", description: "Real-time links across CRM, finance, and inventory stacks.", icon: FiLink },
+      { name: "ERP Strategy", description: "Strategic guidance to modernize operations without disruption.", icon: FiUsers },
+      { name: "Workflow Automation", description: "Automate critical workflows to reduce errors and cycle time.", icon: FiCpu },
     ],
   },
   {
     id: "marketing",
     title: "Digital Marketing",
     services: [
-      { name: "SEO Optimization", description: "Data-driven strategies to improve organic rankings.", icon: FiSearch },
-      { name: "Performance Marketing", description: "High-ROI advertising campaigns across channels.", icon: FiTarget },
-      { name: "Social Media Marketing", description: "Engaging content to build brand awareness.", icon: FiShare2 },
-      { name: "Content Marketing", description: "Compelling storytelling that drives action.", icon: FiFileText },
-      { name: "Conversion Rate Optimization", description: "Maximizing the percentage of users who convert.", icon: FiMousePointer },
-      { name: "Marketing Automation", description: "Automated workflows to scale your marketing efforts.", icon: FiRepeat },
+      { name: "SEO Growth", description: "Own high-intent search terms that drive premium leads.", icon: FiSearch },
+      { name: "Paid Media", description: "Investment-grade campaigns optimized for profitable growth.", icon: FiTarget },
+      { name: "Social Growth", description: "Brand storytelling that earns attention and credibility.", icon: FiShare2 },
+      { name: "Content Strategy", description: "Thought leadership that positions you as the category leader.", icon: FiFileText },
+      { name: "CRO", description: "Precision testing to lift qualified leads and revenue.", icon: FiMousePointer },
+      { name: "Automation", description: "Luxury-funnel automation that nurtures and converts.", icon: FiRepeat },
     ],
   },
   {
     id: "saas",
     title: "SaaS",
     services: [
-      { name: "SaaS Product Development", description: "Building scalable, multi-tenant software-as-a-service.", icon: FiCloud },
-      { name: "SaaS MVP Development", description: "Rapid prototyping to validate your product idea.", icon: FiZap },
-      { name: "SaaS UI/UX Design", description: "Intuitive and engaging user interfaces for web platforms.", icon: FiEye },
-      { name: "SaaS Product Scaling", description: "Enhancing architecture to support growing user bases.", icon: FiMaximize },
-      { name: "SaaS Maintenance", description: "Ongoing support, proactive monitoring, and updates.", icon: FiTool },
+      { name: "SaaS Build", description: "Enterprise-grade SaaS engineered for scale and security.", icon: FiCloud },
+      { name: "SaaS MVP", description: "Launch a premium MVP that investors and users respect.", icon: FiZap },
+      { name: "Product UX", description: "Elegant product flows that reduce churn and support load.", icon: FiEye },
+      { name: "Scale & Grow", description: "Architecture built to handle growth without compromise.", icon: FiMaximize },
+      { name: "Care & Support", description: "Proactive monitoring, upgrades, and performance care.", icon: FiTool },
     ],
   },
 ];
@@ -131,28 +131,30 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05, ease: [0.2, 0.65, 0.3, 0.9] }}
-                className="group relative flex flex-col justify-between rounded-[20px] border border-[#0A2540]/10 bg-white p-6 sm:p-8 transition-all duration-400 hover:-translate-y-2 hover:border-[#007BFF]/30 hover:shadow-[0_20px_40px_rgba(0,123,255,0.08)] cursor-pointer overflow-hidden"
+                className="group relative flex flex-col justify-between rounded-[22px] border border-[#0A2540]/10 bg-white/95 p-3.5 sm:p-5 shadow-[0_10px_30px_rgba(10,37,64,0.06)] ring-1 ring-inset ring-[#007BFF]/5 backdrop-blur-[2px] transition-all duration-500 hover:-translate-y-2 hover:border-[#007BFF]/40 hover:shadow-[0_24px_60px_rgba(0,123,255,0.14)] hover:ring-[#007BFF]/20 cursor-pointer overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#007BFF]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,123,255,0.10),_transparent_55%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#007BFF]/10 blur-2xl transition-all duration-500 group-hover:bg-[#007BFF]/20" />
+                <div className="absolute left-6 top-0 h-1 w-12 rounded-b-full bg-gradient-to-r from-[#007BFF] to-[#00C2FF] opacity-70 transition-all duration-500 group-hover:w-16" />
                 
                 <div className="relative z-10 block">
-                  <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF] transition-all duration-400 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_8px_20px_rgba(0,123,255,0.35)] group-hover:-translate-y-1">
+                  <div className="mb-3.5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#007BFF]/15 to-[#00C2FF]/5 text-[#007BFF] shadow-[0_8px_18px_rgba(0,123,255,0.12)] transition-all duration-500 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_12px_28px_rgba(0,123,255,0.35)] group-hover:-translate-y-1">
                     <service.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-xl font-extrabold text-[#0A2540] group-hover:text-[#007BFF] transition-colors duration-300">
                     {service.name}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#0A2540]/60 font-medium h-[3.5rem]">
+                  <p className="mt-2 text-sm leading-relaxed text-[#0A2540]/65 font-medium h-[2.75rem]">
                     {service.description}
                   </p>
                 </div>
 
-                <div className="relative z-10 mt-8 flex items-center justify-between">
+                <div className="relative z-10 mt-5 flex items-center justify-between">
                   {/* Underline expanding effect */}
-                  <div className="h-[2px] w-0 bg-[#007BFF]/20 group-hover:w-12 transition-all duration-400 ease-out"></div>
+                  <div className="h-[2px] w-0 bg-gradient-to-r from-[#007BFF]/50 to-transparent group-hover:w-14 transition-all duration-500 ease-out"></div>
                   
                   {/* Arrow Icon */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4F6F8] text-[#0A2540] transition-all duration-300 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_4px_15px_rgba(0,123,255,0.3)]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0A2540] shadow-[0_6px_18px_rgba(10,37,64,0.10)] transition-all duration-500 group-hover:bg-[#007BFF] group-hover:text-white group-hover:shadow-[0_10px_24px_rgba(0,123,255,0.35)]">
                     <svg
                       width="16"
                       height="16"
