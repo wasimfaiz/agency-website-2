@@ -7,6 +7,7 @@ import Footer from "../../../components/Footer";
 import { BlogHeroFade, BlogContentFade } from "../../../components/BlogFadeIn";
 import ReadingProgressBar from "../../../components/ReadingProgressBar";
 import BlogPostFooter from "../../../components/BlogPostFooter";
+import BlogTableOfContents from "../../../components/BlogTableOfContents";
 
 interface Props {
   params: Promise<{
@@ -67,8 +68,10 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <BlogContentFade>
+        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+          <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
+            <div id="blog-content">
+              <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Why CRM Automation Is No Longer Optional</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 Customer Relationship Management has always been about one thing: building meaningful relationships at scale. But for years, "at scale" came with a painful price — hours of manual data entry, inconsistent follow-ups, and sales reps spending more time updating records than actually selling.
@@ -235,8 +238,7 @@ export default async function BlogPostPage(props: Props) {
                 <div className="flex gap-4">
                    <div className="w-1.5 h-auto bg-[#0A2540] rounded-full flex-shrink-0" />
                    <p className="text-lg leading-relaxed">
-                     <strong className="text-[#0A2540] block mb-1">Over-automating too early.</strong> Automate processes you've already validated manually. Automating a broken process just scales the problem.
-                   </p>
+                    </p>
                 </div>
                 <div className="flex gap-4">
                    <div className="w-1.5 h-auto bg-[#0A2540] rounded-full flex-shrink-0" />
@@ -302,8 +304,13 @@ export default async function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">increase conversion rates with CRM</span>
                  </div>
               </div>
-           </BlogContentFade>
-            <BlogPostFooter postId="1" />
+              </BlogContentFade>
+              <BlogPostFooter postId="1" />
+            </div>
+            <div className="lg:sticky lg:top-28 h-fit">
+              <BlogTableOfContents />
+            </div>
+          </div>
         </section>
 
         <Footer />
@@ -357,8 +364,10 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <BlogContentFade>
+        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+          <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
+            <div id="blog-content">
+              <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Your Clients Are One Bad Experience Away From Leaving</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 For small business owners, every client relationship carries disproportionate weight. Lose one client at an enterprise company and it barely registers on a quarterly report. Lose one client as a small business — especially a high-value, long-term one — and you feel it immediately in your revenue, your team's morale, and your growth trajectory.
@@ -637,8 +646,13 @@ export default async function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">reduce client churn</span>
                  </div>
               </div>
-           </BlogContentFade>
-            <BlogPostFooter postId="2" />
+              </BlogContentFade>
+              <BlogPostFooter postId="2" />
+            </div>
+            <div className="lg:sticky lg:top-28 h-fit">
+              <BlogTableOfContents />
+            </div>
+          </div>
         </section>
 
         <Footer />
@@ -692,8 +706,10 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <BlogContentFade>
+        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+          <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
+            <div id="blog-content">
+              <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Moment Everything Has to Change</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 There is a precise moment every successful freelancer encounters — and almost none of them are prepared for it.
@@ -998,8 +1014,13 @@ export default async function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">agency owner tips</span>
                  </div>
               </div>
-           </BlogContentFade>
-            <BlogPostFooter postId="3" />
+              </BlogContentFade>
+              <BlogPostFooter postId="3" />
+            </div>
+            <div className="lg:sticky lg:top-28 h-fit">
+              <BlogTableOfContents />
+            </div>
+          </div>
         </section>
 
         <Footer />
@@ -1053,8 +1074,10 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-3xl mx-auto">
-           <BlogContentFade>
+        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+          <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
+            <div id="blog-content">
+              <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Most Common Conversion Killer Is Already on Your Website</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
                 You invested in the traffic. The ads are running, the SEO is working, and visitors are landing on your page. But they're not converting. They browse for a few seconds, then they leave — and you're not entirely sure why.
@@ -1322,8 +1345,13 @@ export default async function BlogPostPage(props: Props) {
                     <span className="bg-[#0A2540]/5 px-3 py-1.5 rounded-md">web design for conversions</span>
                  </div>
               </div>
-           </BlogContentFade>
-            <BlogPostFooter postId="4" />
+              </BlogContentFade>
+              <BlogPostFooter postId="4" />
+            </div>
+            <div className="lg:sticky lg:top-28 h-fit">
+              <BlogTableOfContents />
+            </div>
+          </div>
         </section>
 
         <Footer />

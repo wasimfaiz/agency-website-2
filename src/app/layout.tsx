@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
   description:
     "Setzet is a strategy-led web design and development agency helping brands launch high-converting, SEO-ready digital experiences.",
+  icons: {
+    icon: "/fevicon.jpeg",
+  },
   keywords: [
     "web development agency",
     "web design agency",
