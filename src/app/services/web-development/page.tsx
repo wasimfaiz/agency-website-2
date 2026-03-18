@@ -2,18 +2,23 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Footer from "../../../components/Footer";
 
 const reveal = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-};
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+  },
+} satisfies Variants;
 
 const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
-};
+} satisfies Variants;
 
 const trustStats = [
   { value: "40+", label: "High-converting sites shipped" },
