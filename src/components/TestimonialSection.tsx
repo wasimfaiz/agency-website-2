@@ -7,9 +7,9 @@ const testimonials = [
   {
     quote:
       "Setzet completely transformed our online presence. Our conversion rate increased by 40% in the first month. The best agency we've worked with.",
-    author: "Aastha Sharma",
+    author: "Nikita Singh",
     role: "Brand Manager, Yastudy",
-    image: "/images/ropa-roy.jpg",
+    image: "/images/nikita-singh.jpg",
   },
   {
     quote:
@@ -21,9 +21,9 @@ const testimonials = [
   {
     quote:
       "Fast, responsive, and incredibly talented. They delivered our web application ahead of schedule and the code quality is exceptional.",
-    author: "Sagar ",
+    author: "Prem Raj",
     role: "Digital Marketing Head, Uncle Makhana",
-    image: "/images/sagar-singh.jpg",
+    image: "/images/prem-imh.jpeg",
   },
 ];
 

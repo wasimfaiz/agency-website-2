@@ -52,13 +52,13 @@ const workStories = [
   },
   {
     chapter: "05",
-    title: "Nebula Stream",
-    tagline: "Ownership for Creators",
-    description: "The creator economy was broken. We helped fix it with decentralized protocols giving power back to the artist.",
-    narrative: "We built a platform where the interface is as transparent as the blockchain beneath it. Smart contracts handle the complexity, while the user enjoys a seamless, captivating streaming experience. This is Web3, humanized.",
-    tags: ["Web3", "Blockchain", "Community"],
-    image: "/images/aesthetic_ui_mockup.png",
-    color: "#8b5cf6"
+    title: "Narayan Agri Solutions",
+    tagline: "Modern Growth for Agriculture",
+    description: "A focused digital presence for an agriculture business built to communicate trust, product quality, and large-scale supply capability.",
+    narrative: "We created a clean, business-first experience for Narayan Agri Solutions that highlights its product offerings, strengthens credibility with buyers, and makes inquiries frictionless. The result is a clearer brand story and a website designed to support long-term growth in the agri sector.",
+    tags: ["Agriculture", "B2B", "Brand Website"],
+    image: "/images/narayan-agri.png",
+    color: "#16a34a"
   }
 ];
 
