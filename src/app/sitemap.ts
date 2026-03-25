@@ -39,6 +39,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/services/performance-marketing`,
+      lastModified: new Date("2026-03-25"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/social-media-marketing`,
+      lastModified: new Date("2026-03-25"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/conversion-optimization`,
+      lastModified: new Date("2026-03-25"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/marketing-automation`,
+      lastModified: new Date("2026-03-25"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/work`,
       lastModified: new Date("2026-03-08"),
       changeFrequency: "weekly",

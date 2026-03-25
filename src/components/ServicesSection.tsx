@@ -134,6 +134,14 @@ export default function ServicesSection() {
                       ? "/services/mobile-app-development"
                       : service.name === "SEO & Content Marketing"
                         ? "/services/seo-growth"
+                        : service.name === "Performance Marketing"
+                          ? "/services/performance-marketing"
+                          : service.name === "Social Media Marketing"
+                            ? "/services/social-media-marketing"
+                            : service.name === "Conversion Optimization"
+                              ? "/services/conversion-optimization"
+                              : service.name === "Marketing Automation"
+                                ? "/services/marketing-automation"
                       : null;
                 const card = (
                   <motion.div

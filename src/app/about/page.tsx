@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { FiAward, FiCompass, FiLayers, FiMessageSquare, FiShield, FiUsers, FiZap } from "react-icons/fi";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -21,6 +22,13 @@ const staggerContainer = {
 };
 
 export default function AboutPage() {
+  const stats = [
+    { val: "30+", label: "Projects Delivered", icon: FiLayers },
+    { val: "5+", label: "Years Building", icon: FiCompass },
+    { val: "8+", label: "Industries Served", icon: FiUsers },
+    { val: "24h", label: "Avg. Response Time", icon: FiMessageSquare },
+  ];
+
   return (
     <div className="bg-[#F4F6F8] text-[#0A2540] selection:bg-[#007BFF]/20 selection:text-[#0A2540] font-sans min-h-screen overflow-x-hidden">
       <style dangerouslySetInnerHTML={{__html: `
@@ -113,6 +121,9 @@ export default function AboutPage() {
                 { name: "Pure Makhana", tag: "D2C Brand" },
               ].map((brand, i) => (
                 <li key={i} className="flex flex-col items-center gap-1 shrink-0 group">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-[#007BFF]/8 text-[#007BFF]/45 transition-colors duration-300 group-hover:bg-[#007BFF]/12 group-hover:text-[#007BFF]">
+                    <FiAward className="h-4 w-4" />
+                  </span>
                   <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
                     {brand.name}
                   </span>
@@ -132,6 +143,9 @@ export default function AboutPage() {
                 { name: "Pure Makhana", tag: "D2C Brand" },
               ].map((brand, i) => (
                 <li key={i} className="flex flex-col items-center gap-1 shrink-0 group">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-[#007BFF]/8 text-[#007BFF]/45 transition-colors duration-300 group-hover:bg-[#007BFF]/12 group-hover:text-[#007BFF]">
+                    <FiAward className="h-4 w-4" />
+                  </span>
                   <span className="text-lg md:text-2xl font-extrabold font-heading text-[#0A2540]/25 group-hover:text-[#0A2540]/70 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
                     {brand.name}
                   </span>
@@ -159,11 +173,17 @@ export default function AboutPage() {
                </motion.div>
                
                <motion.div variants={staggerContainer} className="order-1 lg:order-2 text-center lg:text-left">
+                  <motion.div variants={fadeUp} className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
+                    <FiZap className="h-5 w-5" />
+                  </motion.div>
                   <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Mission</motion.h3>
                   <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-[1.1rem] font-medium leading-[1.7] mb-10 lg:mb-16">
                      We translate ambitious goals into measurable digital outcomes. Every build starts with a conversion map, a content hierarchy, and a performance budget — so the site doesn’t just look refined, it loads fast, ranks cleanly, and turns interest into qualified leads.
                   </motion.p>
                   
+                  <motion.div variants={fadeUp} className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
+                    <FiShield className="h-5 w-5" />
+                  </motion.div>
                   <motion.h3 variants={fadeUp} className="text-[#0A2540] text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-5 tracking-tight">Our Values</motion.h3>
                   <motion.p variants={fadeUp} className="text-[#0A2540]/70 text-base md:text-lg lg:text-[1.1rem] font-medium leading-[1.7]">
                      Clarity over complexity. Speed without shortcuts. We prototype in real content, design systems that scale, and ship with analytics baked in — so teams can iterate with confidence instead of guessing.
@@ -229,12 +249,7 @@ export default function AboutPage() {
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 text-center divide-x-0 lg:divide-x divide-[#0A2540]/10 mb-10 md:mb-20 max-w-5xl mx-auto">
-            {[
-              { val: "30+", label: "Projects Delivered" },
-              { val: "5+", label: "Years Building" },
-              { val: "8+", label: "Industries Served" },
-              { val: "24h", label: "Avg. Response Time" }
-            ].map((stat, i) => (
+            {stats.map((stat, i) => (
               <motion.div 
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -243,6 +258,9 @@ export default function AboutPage() {
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                   className="flex flex-col items-center justify-center p-4"
               >
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF] shadow-[0_8px_22px_rgba(0,123,255,0.12)]">
+                  <stat.icon className="h-5 w-5" />
+                </div>
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold font-heading text-[#007BFF] tracking-tighter mb-2 md:mb-4">{stat.val}</div>
                 <div className="text-[#0A2540]/50 text-[10px] md:text-sm font-bold font-mono tracking-[0.1em] md:tracking-[0.2em] uppercase">{stat.label}</div>
               </motion.div>

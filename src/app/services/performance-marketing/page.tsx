@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { FiActivity, FiBarChart2, FiCompass, FiFileText, FiFlag, FiHelpCircle, FiLayers, FiSearch, FiSettings, FiTrendingUp } from "react-icons/fi";
+import { FiActivity, FiBarChart2, FiCompass, FiDollarSign, FiHelpCircle, FiLayers, FiRefreshCw, FiTarget, FiTrendingUp, FiZap } from "react-icons/fi";
 import Footer from "../../../components/Footer";
 
 const reveal = {
@@ -22,106 +22,106 @@ const stagger = {
 } satisfies Variants;
 
 const trustStats = [
-  { value: "300%+", label: "Average search visibility growth", icon: FiTrendingUp },
-  { value: "Page 1", label: "Rankings achieved for priority terms", icon: FiSearch },
-  { value: "10x", label: "ROI from SEO and content systems", icon: FiBarChart2 },
+  { value: "4x+", label: "Average ROAS improvement", icon: FiTrendingUp },
+  { value: "35%", label: "Lower cost per qualified lead", icon: FiDollarSign },
+  { value: "90 Days", label: "To build a stable testing engine", icon: FiActivity },
 ];
 
 const anxieties = [
-  "Your website exists, but it is not earning compounding visibility.",
-  "Competitors are publishing better content and capturing demand first.",
-  "You are stuck paying for traffic because organic growth is inconsistent.",
+  "You are spending on ads, but the lead quality is inconsistent.",
+  "Campaigns are active, but scaling always increases waste.",
+  "Your landing pages and ad strategy are not working as one system.",
 ];
 
 const services = [
   {
-    title: "SEO Audit & Opportunity Mapping",
+    title: "Channel & Offer Audit",
     description:
-      "A full diagnostic across technical SEO, search visibility, content gaps, and conversion friction so the roadmap starts with facts.",
+      "We audit current ad accounts, funnel structure, creative direction, and offer clarity to identify where paid spend is leaking.",
     icon: FiCompass,
   },
   {
-    title: "Keyword & Search Intent Strategy",
+    title: "Paid Search Strategy",
     description:
-      "We prioritize revenue-driving keyword clusters that attract the right buyers instead of vanity traffic.",
-    icon: FiSearch,
+      "We build intent-led Google Ads systems focused on keyword quality, conversion signals, and profitable acquisition.",
+    icon: FiTarget,
   },
   {
-    title: "On-Page SEO Optimization",
+    title: "Paid Social Campaigns",
     description:
-      "We refine structure, metadata, internal linking, and page relevance so every key URL has a stronger chance to rank.",
+      "We structure Meta and other paid social campaigns around message testing, audience control, and offer-market fit.",
+    icon: FiZap,
+  },
+  {
+    title: "Landing Page Alignment",
+    description:
+      "We tighten the connection between ad promise, page experience, and conversion flow so traffic has a better chance to close.",
     icon: FiLayers,
   },
   {
-    title: "Technical SEO Excellence",
+    title: "Retargeting & Nurture",
     description:
-      "We strengthen crawlability, Core Web Vitals, site architecture, and indexing health to support sustainable growth.",
-    icon: FiSettings,
+      "We recover missed demand with remarketing sequences that bring warmer prospects back into the funnel.",
+    icon: FiRefreshCw,
   },
   {
-    title: "Content Strategy & Production",
+    title: "Performance Reporting",
     description:
-      "We plan and produce search-led content that expands topical authority and supports every stage of the buyer journey.",
-    icon: FiFileText,
-  },
-  {
-    title: "Authority Building",
-    description:
-      "We grow domain trust with high-quality content ecosystems, strategic distribution, and credible authority signals.",
-    icon: FiFlag,
+      "We track CAC, CPL, ROAS, conversion quality, and campaign efficiency so optimization stays grounded in business outcomes.",
+    icon: FiBarChart2,
   },
 ];
 
 const outcomes = [
-  "Compounding search visibility supported by a real content engine",
-  "Higher rankings for the keywords that influence pipeline and sales",
-  "Stronger topical authority that separates you from competitors",
-  "Lower customer acquisition pressure by reducing paid dependency",
+  "More efficient paid acquisition with tighter control over spend",
+  "Better lead quality from search, social, and landing-page alignment",
+  "A more reliable testing engine that supports scale without guesswork",
+  "Clear visibility into what channels, offers, and creatives drive revenue",
 ];
 
 const processSteps = [
   {
-    title: "Audit the Search Position",
-    text: "We review technical health, keyword footprint, content coverage, and competitor momentum to locate the most valuable gaps.",
+    title: "Audit the Paid Funnel",
+    text: "We examine account structure, campaign health, creative performance, audience setup, and conversion tracking before changing spend.",
     icon: FiCompass,
   },
   {
-    title: "Build the Content Roadmap",
-    text: "We turn those gaps into a practical strategy covering target clusters, priority pages, supporting content, and internal linking.",
-    icon: FiFileText,
+    title: "Refine Positioning and Offers",
+    text: "We tighten the messaging, audience angle, and call to action so campaigns attract the right buyers instead of cheap clicks.",
+    icon: FiTarget,
   },
   {
-    title: "Execute in Growth Sprints",
-    text: "We ship technical fixes, optimize key pages, and publish search-led content in measured, transparent monthly sprints.",
+    title: "Launch Structured Tests",
+    text: "We run disciplined experiments across channels, creatives, audiences, and landing pages to find efficient growth paths.",
     icon: FiActivity,
   },
   {
-    title: "Measure and Expand",
-    text: "We track rankings, content performance, qualified traffic, and conversions, then expand into the next growth opportunities.",
+    title: "Optimize for Profitability",
+    text: "We scale what works, cut waste faster, and use performance data to keep improving CAC, conversion rate, and ROAS.",
     icon: FiTrendingUp,
   },
 ];
 
 const faqs = [
   {
-    question: "How long does SEO and content marketing take to work?",
+    question: "What does performance marketing include?",
     answer:
-      "Search is a long-term strategy. You’ll typically see initial ranking movement within 2 to 3 months, with significant traffic and lead growth compounding between months 6 to 12.",
+      "It includes paid search, paid social, remarketing, landing-page alignment, offer testing, and the reporting needed to optimize for revenue instead of vanity metrics.",
   },
   {
-    question: "Do you guarantee Page 1 rankings?",
+    question: "Which platforms do you manage?",
     answer:
-      "No agency can honestly guarantee a #1 spot due to evolving search algorithms. However, we have a proven track record of consistently moving our clients to Page 1 for highly competitive keywords.",
+      "We typically work across Google Ads, Meta Ads, and supporting retargeting channels depending on your audience, sales cycle, and growth targets.",
   },
   {
-    question: "Is this just SEO, or content marketing too?",
+    question: "How soon can paid campaigns improve?",
     answer:
-      "It is both. SEO gives the structure, technical health, and search direction, while content marketing expands authority, supports keyword coverage, and gives your site more chances to rank and convert.",
+      "You can often see early signal improvements in the first few weeks, but stable performance usually comes from 60 to 90 days of structured testing and optimization.",
   },
   {
     question: "How do you measure success?",
     answer:
-      "We track beyond rankings alone. We look at search visibility, organic traffic quality, content performance, engagement, and most importantly the conversions and pipeline generated.",
+      "We track CPL, CAC, ROAS, conversion rate, lead quality, and pipeline impact so budget decisions are tied to real business performance.",
   },
 ];
 
@@ -157,7 +157,7 @@ const NavLink = ({
   );
 };
 
-export default function SeoGrowthPage() {
+export default function PerformanceMarketingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -171,10 +171,10 @@ export default function SeoGrowthPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans">
-      <title>SEO & Content Marketing | Setzet Digital</title>
+      <title>Performance Marketing | Setzet Digital</title>
       <meta
         name="description"
-        content="SEO and content marketing systems that build authority, capture high-intent traffic, and turn search visibility into qualified pipeline."
+        content="Performance marketing systems built around profitable paid acquisition, disciplined testing, and stronger conversion from every campaign click."
       />
 
       <header
@@ -284,25 +284,17 @@ export default function SeoGrowthPage() {
       </div>
 
       <main className="pt-0">
-        {/* Hero */}
         <section className="relative overflow-hidden px-6 pb-24 pt-36">
           <div className="absolute inset-0">
-            {/* Animated Background Blur Blobs */}
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.1, 1],
-                rotate: [0, 90, 0]
-              }}
+            <motion.div
+              animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -right-24 top-0 h-[500px] w-[500px] rounded-full bg-[#007BFF]/10 blur-[120px]" 
+              className="absolute -right-24 top-0 h-[500px] w-[500px] rounded-full bg-[#007BFF]/10 blur-[120px]"
             />
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.2, 1],
-                rotate: [0, -90, 0]
-              }}
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], rotate: [0, -90, 0] }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-[#0A2540]/10 blur-[120px]" 
+              className="absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-[#0A2540]/10 blur-[120px]"
             />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(10,37,64,0.06),_transparent_70%)]" />
           </div>
@@ -314,7 +306,7 @@ export default function SeoGrowthPage() {
               variants={reveal}
               className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#0A2540]/10 bg-white/80 backdrop-blur px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.35em] text-[#007BFF] shadow-sm"
             >
-              SEO & Content Marketing
+              Performance Marketing
             </motion.div>
 
             <motion.h1
@@ -323,7 +315,7 @@ export default function SeoGrowthPage() {
               variants={reveal}
               className="max-w-4xl text-[clamp(2.6rem,6vw,5.6rem)] font-extrabold leading-[0.95] tracking-tight font-heading text-[#0A2540]"
             >
-              Build a search presence your audience keeps <span className="text-[#007BFF] italic">finding</span> and trusting.
+              Turn paid traffic into a <span className="text-[#007BFF] italic">scalable</span> revenue engine.
             </motion.h1>
 
             <motion.p
@@ -332,7 +324,7 @@ export default function SeoGrowthPage() {
               variants={reveal}
               className="mt-8 max-w-2xl text-[1.1rem] leading-relaxed text-[#0A2540]/70"
             >
-              We combine technical SEO, search strategy, and authority content to help your brand rank for the right topics, attract qualified traffic, and turn attention into pipeline.
+              We build performance marketing systems around profitable acquisition, sharper messaging, disciplined testing, and landing pages that convert paid demand into qualified pipeline.
             </motion.p>
 
             <motion.div
@@ -346,7 +338,7 @@ export default function SeoGrowthPage() {
                 className="group relative overflow-hidden rounded-full bg-[#007BFF] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:shadow-[0_8px_25px_rgba(0,123,255,0.4)]"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                <span className="relative z-10">Get your free audit</span>
+                <span className="relative z-10">Request Campaign Audit</span>
               </Link>
               <Link
                 href="/work"
@@ -358,7 +350,6 @@ export default function SeoGrowthPage() {
           </div>
         </section>
 
-        {/* Trust Stats */}
         <section className="px-6 pb-20">
           <motion.div
             initial="hidden"
@@ -368,10 +359,10 @@ export default function SeoGrowthPage() {
             className="mx-auto grid max-w-6xl gap-0 overflow-hidden rounded-[32px] border border-[#0A2540]/10 bg-white/60 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.02)] md:grid-cols-3"
           >
             {trustStats.map((stat, i) => (
-              <motion.div 
-                key={stat.label} 
-                variants={reveal} 
-                className={`relative p-10 ${i !== trustStats.length - 1 ? 'border-b md:border-b-0 md:border-r border-[#0A2540]/5' : ''}`}
+              <motion.div
+                key={stat.label}
+                variants={reveal}
+                className={`relative p-10 ${i !== trustStats.length - 1 ? "border-b md:border-b-0 md:border-r border-[#0A2540]/5" : ""}`}
               >
                 <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
                   <stat.icon className="h-5 w-5" />
@@ -387,7 +378,6 @@ export default function SeoGrowthPage() {
           </motion.div>
         </section>
 
-        {/* The Problem / Psychology */}
         <section className="px-6 pb-24 relative">
           <motion.div
             initial="hidden"
@@ -401,10 +391,10 @@ export default function SeoGrowthPage() {
                 <span className="h-2 w-2 rounded-full bg-[#007BFF] animate-pulse" /> The Core Issue
               </div>
               <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540] leading-[1.1]">
-                Weak search visibility and weak content both cost you demand.
+                Ad spend without system control gets expensive fast.
               </h2>
               <p className="mt-6 text-[1.1rem] leading-relaxed text-[#0A2540]/70">
-                If your site is not ranking and your content is not answering buyer intent, competitors will keep owning discovery. That means lost clicks, weaker trust, and fewer qualified leads entering your funnel.
+                Paid acquisition works when campaign structure, offer strategy, creative, and landing pages are optimized together. Without that alignment, scale usually means more waste instead of more profit.
               </p>
             </motion.div>
             <motion.ul variants={reveal} className="space-y-4">
@@ -424,7 +414,6 @@ export default function SeoGrowthPage() {
           </motion.div>
         </section>
 
-        {/* Services / What We Do */}
         <section className="px-6 pb-32">
           <motion.div
             initial="hidden"
@@ -438,7 +427,7 @@ export default function SeoGrowthPage() {
                 Our Expertise
               </p>
               <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540]">
-                A full-stack system for SEO and content growth.
+                A full-stack system for paid growth performance.
               </h2>
             </motion.div>
 
@@ -468,7 +457,6 @@ export default function SeoGrowthPage() {
           </motion.div>
         </section>
 
-        {/* Outcomes */}
         <section className="px-6 pb-32">
           <motion.div
             initial="hidden"
@@ -477,18 +465,17 @@ export default function SeoGrowthPage() {
             variants={stagger}
             className="mx-auto grid max-w-6xl gap-16 rounded-[40px] border border-[#007BFF]/20 bg-gradient-to-br from-[#ffffff] to-[#f4f9ff] p-10 md:p-16 md:grid-cols-[1.1fr_1fr] relative overflow-hidden"
           >
-            {/* Background glowing orb */}
             <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#007BFF]/10 rounded-full blur-[100px] pointer-events-none" />
-            
+
             <motion.div variants={reveal} className="relative z-10">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
                 The Payoff
               </p>
               <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540] leading-[1.1]">
-                Visibility that turns into qualified pipeline.
+                Paid growth that stays measurable and profitable.
               </h2>
               <p className="mt-6 text-[1.1rem] leading-relaxed text-[#0A2540]/70">
-                Rankings alone are not the goal. We focus on the combination of search visibility, useful content, and conversion intent that drives real revenue outcomes.
+                Click volume is not the objective. We focus on the blend of targeting, creative quality, landing-page conversion, and reporting clarity that supports profitable scale.
               </p>
             </motion.div>
             <motion.ul variants={reveal} className="space-y-4 relative z-10">
@@ -507,7 +494,6 @@ export default function SeoGrowthPage() {
           </motion.div>
         </section>
 
-        {/* Process */}
         <section className="px-6 pb-32">
           <motion.div
             initial="hidden"
@@ -521,10 +507,10 @@ export default function SeoGrowthPage() {
                 The Blueprint
               </p>
               <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540]">
-                A practical framework for search-led growth.
+                A practical framework for performance scaling.
               </h2>
               <p className="mt-6 text-base md:text-lg text-[#0A2540]/70">
-                SEO and content marketing work when strategy, execution, and measurement stay aligned. Our process is built to keep that engine moving every month.
+                Paid acquisition improves when testing discipline, creative learning, and conversion data stay tightly connected. That is the system we build.
               </p>
             </motion.div>
             <div className="space-y-6">
@@ -548,7 +534,6 @@ export default function SeoGrowthPage() {
           </motion.div>
         </section>
 
-        {/* FAQ */}
         <section className="px-6 pb-32">
           <motion.div
             initial="hidden"
@@ -584,7 +569,6 @@ export default function SeoGrowthPage() {
           </motion.div>
         </section>
 
-        {/* CTA */}
         <section className="px-6 pb-28">
           <motion.div
             initial="hidden"
@@ -593,18 +577,17 @@ export default function SeoGrowthPage() {
             variants={reveal}
             className="mx-auto flex max-w-6xl flex-col items-center rounded-[40px] border border-[#0A2540]/10 bg-[#0A2540] px-10 py-20 text-center relative overflow-hidden"
           >
-            {/* Dark background subtle glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,123,255,0.15),_transparent_50%)]" />
 
             <div className="relative z-10 w-full flex flex-col items-center">
               <p className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF] mb-6 backdrop-blur">
-                SEO & Content Marketing
+                Performance Marketing
               </p>
               <h2 className="text-4xl font-extrabold tracking-tight md:text-6xl font-heading text-white max-w-3xl">
-                Ready to turn search demand into pipeline?
+                Ready to make paid acquisition more profitable?
               </h2>
               <p className="mt-6 max-w-2xl text-[1.1rem] leading-relaxed text-white/70">
-                If you want SEO and content to work as one growth system, we can map the gaps, prioritize the right topics, and build a plan around qualified demand.
+                If your campaigns need better structure, cleaner reporting, and stronger conversion from every click, we can build the system around that.
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
                 <Link
@@ -612,7 +595,7 @@ export default function SeoGrowthPage() {
                   className="group relative overflow-hidden rounded-full bg-[#007BFF] px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)]"
                 >
                   <div className="absolute inset-0 bg-black/10 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                  <span className="relative z-10">Request Strategy Audit</span>
+                  <span className="relative z-10">Request Campaign Audit</span>
                 </Link>
                 <Link
                   href="/work"
