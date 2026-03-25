@@ -17,13 +17,13 @@ export default function Footer() {
         <div className="grid gap-8 border-b border-[#0A2540]/10 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <div className="inline-flex items-center gap-3 rounded-full border border-[#0A2540]/10 bg-white/80 px-3 py-2 shadow-sm">
-              <div className="relative h-9 w-9 overflow-hidden rounded-full bg-white p-1 ring-1 ring-[#0A2540]/8">
+              <div className="relative h-12 w-12 flex-shrink-0">
                 <Image
                   src="/setzet-logo.png"
                   alt="Setzet logo"
                   fill
                   className="object-contain"
-                  sizes="36px"
+                  sizes="48px"
                 />
               </div>
               <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-[#007BFF]">

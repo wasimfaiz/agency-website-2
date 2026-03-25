@@ -466,7 +466,7 @@ export default function WebDevelopmentPage() {
             variants={stagger}
             className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1fr_1.1fr]"
           >
-            <motion.div variants={reveal}>
+            <motion.div variants={reveal} className="md:sticky md:top-32 self-start">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
                 Our process
               </p>
@@ -477,12 +477,13 @@ export default function WebDevelopmentPage() {
                 Clear milestones, fast feedback, and transparent delivery.
               </p>
             </motion.div>
-            <div className="space-y-6">
+            <div className="space-y-6 pb-12">
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.title}
                   variants={reveal}
-                  className="rounded-[22px] border border-[#0A2540]/10 bg-white p-6"
+                  className="sticky rounded-[22px] border border-[#0A2540]/10 bg-white p-6 shadow-sm transition-all duration-300"
+                  style={{ top: `calc(7rem + ${index * 1.5}rem)` }}
                 >
                   <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
                     Step 0{index + 1}

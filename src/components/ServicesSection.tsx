@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   FiMonitor, FiSmartphone, FiCode, FiPenTool, FiServer, FiShoppingCart,
   FiBriefcase, FiCheckCircle, FiLink, FiUsers, FiCpu,
-  FiSearch, FiTarget, FiShare2, FiFileText, FiMousePointer, FiRepeat,
+  FiSearch, FiTarget, FiShare2, FiMousePointer, FiRepeat,
   FiCloud, FiZap, FiEye, FiMaximize, FiTool
 } from "react-icons/fi";
 
@@ -24,26 +24,25 @@ const categories = [
     ],
   },
   {
+    id: "marketing",
+    title: "Digital Marketing",
+    services: [
+      { name: "SEO & Content Marketing", description: "Capture high-intent demand with search strategy, technical SEO, and authority content.", icon: FiSearch },
+      { name: "Performance Marketing", description: "Scale paid acquisition with disciplined media buying, testing, and landing-page alignment.", icon: FiTarget },
+      { name: "Social Media Marketing", description: "Build consistent brand attention through platform strategy, content, and community growth.", icon: FiShare2 },
+      { name: "Conversion Optimization", description: "Turn more visitors into qualified leads with sharper funnels, UX decisions, and experimentation.", icon: FiMousePointer },
+      { name: "Marketing Automation", description: "Automate follow-ups, lead nurturing, and CRM workflows so revenue compounds without manual drag.", icon: FiRepeat },
+    ],
+  },
+  {
     id: "erp",
-    title: "ERP Solutions",
+    title: "ERP Solution",
     services: [
       { name: "Custom ERP", description: "White-glove ERP tailored to your exact workflows and approvals.", icon: FiBriefcase },
       { name: "ERP Rollout", description: "Precision rollout with migration, training, and adoption support.", icon: FiCheckCircle },
       { name: "ERP Integrations", description: "Real-time links across CRM, finance, and inventory stacks.", icon: FiLink },
       { name: "ERP Strategy", description: "Strategic guidance to modernize operations without disruption.", icon: FiUsers },
       { name: "Workflow Automation", description: "Automate critical workflows to reduce errors and cycle time.", icon: FiCpu },
-    ],
-  },
-  {
-    id: "marketing",
-    title: "Digital Marketing",
-    services: [
-      { name: "SEO Growth", description: "Own high-intent search terms that drive premium leads.", icon: FiSearch },
-      { name: "Paid Media", description: "Investment-grade campaigns optimized for profitable growth.", icon: FiTarget },
-      { name: "Social Growth", description: "Brand storytelling that earns attention and credibility.", icon: FiShare2 },
-      { name: "Content Strategy", description: "Thought leadership that positions you as the category leader.", icon: FiFileText },
-      { name: "CRO", description: "Precision testing to lift qualified leads and revenue.", icon: FiMousePointer },
-      { name: "Automation", description: "Luxury-funnel automation that nurtures and converts.", icon: FiRepeat },
     ],
   },
   {
@@ -133,6 +132,8 @@ export default function ServicesSection() {
                     ? "/services/web-development"
                     : service.name === "Mobile App Development"
                       ? "/services/mobile-app-development"
+                      : service.name === "SEO & Content Marketing"
+                        ? "/services/seo-growth"
                       : null;
                 const card = (
                   <motion.div
