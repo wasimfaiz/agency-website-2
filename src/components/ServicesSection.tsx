@@ -7,7 +7,7 @@ import {
   FiMonitor, FiSmartphone, FiCode, FiPenTool, FiServer, FiShoppingCart,
   FiBriefcase, FiCheckCircle, FiLink, FiUsers, FiCpu,
   FiSearch, FiTarget, FiShare2, FiMousePointer, FiRepeat,
-  FiCloud, FiZap, FiEye, FiMaximize, FiTool
+  FiCloud, FiZap, FiEye, FiMaximize, FiTool, FiStar
 } from "react-icons/fi";
 
 const categories = [
@@ -32,6 +32,7 @@ const categories = [
       { name: "Social Media Marketing", description: "Build consistent brand attention through platform strategy, content, and community growth.", icon: FiShare2 },
       { name: "Conversion Optimization", description: "Turn more visitors into qualified leads with sharper funnels, UX decisions, and experimentation.", icon: FiMousePointer },
       { name: "Marketing Automation", description: "Automate follow-ups, lead nurturing, and CRM workflows so revenue compounds without manual drag.", icon: FiRepeat },
+      { name: "Influencer Marketing", description: "Weaponize the creator economy with authentic UGC, celebrity partnerships, and creator whitelisting.", icon: FiStar },
     ],
   },
   {
@@ -132,16 +133,26 @@ export default function ServicesSection() {
                     ? "/services/web-development"
                     : service.name === "Mobile App Development"
                       ? "/services/mobile-app-development"
-                      : service.name === "SEO & Content Marketing"
-                        ? "/services/seo-growth"
-                        : service.name === "Performance Marketing"
-                          ? "/services/performance-marketing"
-                          : service.name === "Social Media Marketing"
-                            ? "/services/social-media-marketing"
-                            : service.name === "Conversion Optimization"
-                              ? "/services/conversion-optimization"
-                              : service.name === "Marketing Automation"
-                                ? "/services/marketing-automation"
+                      : service.name === "Custom Software Development"
+                        ? "/services/custom-software-development"
+                      : service.name === "API Development"
+                        ? "/services/api-development"
+                      : service.name === "E-commerce Development"
+                        ? "/services/e-commerce-development"
+                      : service.name === "UI/UX Development"
+                        ? "/services/ui-ux-design"
+                        : service.name === "SEO & Content Marketing"
+                          ? "/services/seo-growth"
+                          : service.name === "Performance Marketing"
+                            ? "/services/performance-marketing"
+                            : service.name === "Social Media Marketing"
+                              ? "/services/social-media-marketing"
+                              : service.name === "Conversion Optimization"
+                                ? "/services/conversion-optimization"
+                                : service.name === "Marketing Automation"
+                                  ? "/services/marketing-automation"
+                                  : service.name === "Influencer Marketing"
+                                    ? "/services/influencer-marketing"
                       : null;
                 const card = (
                   <motion.div

@@ -4,8 +4,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { FiActivity, FiBarChart2, FiCompass, FiDollarSign, FiHelpCircle, FiLayers, FiRefreshCw, FiTarget, FiTrendingUp, FiZap } from "react-icons/fi";
+import Image from "next/image";
 import Footer from "../../../components/Footer";
+import { 
+  FiCrosshair, FiTrendingUp, FiTarget, FiFilter,
+  FiArrowRight, FiPieChart, FiMonitor, FiRepeat, FiDollarSign
+} from "react-icons/fi";
+import { FaFacebookSquare, FaGoogle, FaTiktok, FaInstagram } from "react-icons/fa";
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -18,110 +23,75 @@ const reveal = {
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 } satisfies Variants;
-
-const trustStats = [
-  { value: "4x+", label: "Average ROAS improvement", icon: FiTrendingUp },
-  { value: "35%", label: "Lower cost per qualified lead", icon: FiDollarSign },
-  { value: "90 Days", label: "To build a stable testing engine", icon: FiActivity },
-];
-
-const anxieties = [
-  "You are spending on ads, but the lead quality is inconsistent.",
-  "Campaigns are active, but scaling always increases waste.",
-  "Your landing pages and ad strategy are not working as one system.",
-];
 
 const services = [
   {
-    title: "Channel & Offer Audit",
-    description:
-      "We audit current ad accounts, funnel structure, creative direction, and offer clarity to identify where paid spend is leaking.",
-    icon: FiCompass,
+    title: "Paid Search (PPC)",
+    description: "Intercept high-intent search queries. We manage bids, exact-match logic, and conversion tracking to ensure zero wasted ad spend.",
+    icon: FaGoogle,
   },
   {
-    title: "Paid Search Strategy",
-    description:
-      "We build intent-led Google Ads systems focused on keyword quality, conversion signals, and profitable acquisition.",
-    icon: FiTarget,
+    title: "Paid Social Media",
+    description: "Scroll-stopping creative paired with ruthless algorithmic targeting across Meta, TikTok, and LinkedIn ad networks.",
+    icon: FiMonitor,
   },
   {
-    title: "Paid Social Campaigns",
-    description:
-      "We structure Meta and other paid social campaigns around message testing, audience control, and offer-market fit.",
-    icon: FiZap,
+    title: "Conversion Rate Optimization",
+    description: "Traffic means nothing without action. We run aggressive A/B tests on landing pages to drastically lower your Cost Per Acquisition.",
+    icon: FiPieChart,
   },
   {
-    title: "Landing Page Alignment",
-    description:
-      "We tighten the connection between ad promise, page experience, and conversion flow so traffic has a better chance to close.",
-    icon: FiLayers,
+    title: "Retargeting Architectures",
+    description: "Complex, dynamic multi-channel funnels that stalk abandoned carts and unconverted leads until they finally buy.",
+    icon: FiRepeat,
   },
   {
-    title: "Retargeting & Nurture",
-    description:
-      "We recover missed demand with remarketing sequences that bring warmer prospects back into the funnel.",
-    icon: FiRefreshCw,
+    title: "Ad Copy & Creative",
+    description: "We don't just buy media; we engineer the hooks. Direct-response copywriting and high-converting visual assets.",
+    icon: FiCrosshair,
   },
   {
-    title: "Performance Reporting",
-    description:
-      "We track CAC, CPL, ROAS, conversion quality, and campaign efficiency so optimization stays grounded in business outcomes.",
-    icon: FiBarChart2,
+    title: "Growth Modeling / ROAS",
+    description: "Deep attribution tracking to ensure every single dollar you input yields a mathematically predictable return on ad spend.",
+    icon: FiDollarSign,
   },
-];
-
-const outcomes = [
-  "More efficient paid acquisition with tighter control over spend",
-  "Better lead quality from search, social, and landing-page alignment",
-  "A more reliable testing engine that supports scale without guesswork",
-  "Clear visibility into what channels, offers, and creatives drive revenue",
 ];
 
 const processSteps = [
   {
-    title: "Audit the Paid Funnel",
-    text: "We examine account structure, campaign health, creative performance, audience setup, and conversion tracking before changing spend.",
-    icon: FiCompass,
+    title: "Top of Funnel: Acquisition",
+    text: "Casting a laser-targeted net to drive cheap, relevant clicks using broad creative hooks and algorithmic audience prospecting.",
   },
   {
-    title: "Refine Positioning and Offers",
-    text: "We tighten the messaging, audience angle, and call to action so campaigns attract the right buyers instead of cheap clicks.",
-    icon: FiTarget,
+    title: "Middle of Funnel: Engagement",
+    text: "Qualifying traffic through education and trust building. Segmenting visitors based on their exact interactions with your brand.",
   },
   {
-    title: "Launch Structured Tests",
-    text: "We run disciplined experiments across channels, creatives, audiences, and landing pages to find efficient growth paths.",
-    icon: FiActivity,
+    title: "Bottom of Funnel: Conversion",
+    text: "Aggressive direct-response tactics. Hard offers, scarcity, and dynamic retargeting to force a definitive action.",
   },
   {
-    title: "Optimize for Profitability",
-    text: "We scale what works, cut waste faster, and use performance data to keep improving CAC, conversion rate, and ROAS.",
-    icon: FiTrendingUp,
+    title: "Post-Click: LTV Expansion",
+    text: "Maximizing the lifetime value of acquired customers through upsells, cross-sells, and loyalty marketing loops.",
   },
 ];
 
-const faqs = [
+const featuredProjects = [
   {
-    question: "What does performance marketing include?",
-    answer:
-      "It includes paid search, paid social, remarketing, landing-page alignment, offer testing, and the reporting needed to optimize for revenue instead of vanity metrics.",
+    title: "D2C Skincare Scaling",
+    category: "Paid Social & CRO",
+    image: "/images/project1.png", // Reuse existing provided paths
+    summary:
+      "Scaled ad spend from $5k to $50k/mo while maintaining an irrefutable 4.2x ROAS by hyper-optimizing TikTok video hooks.",
   },
   {
-    question: "Which platforms do you manage?",
-    answer:
-      "We typically work across Google Ads, Meta Ads, and supporting retargeting channels depending on your audience, sales cycle, and growth targets.",
-  },
-  {
-    question: "How soon can paid campaigns improve?",
-    answer:
-      "You can often see early signal improvements in the first few weeks, but stable performance usually comes from 60 to 90 days of structured testing and optimization.",
-  },
-  {
-    question: "How do you measure success?",
-    answer:
-      "We track CPL, CAC, ROAS, conversion rate, lead quality, and pipeline impact so budget decisions are tied to real business performance.",
+    title: "B2B SaaS Lead Generation",
+    category: "Paid Search & LinkedIn",
+    image: "/images/zenfora-food.png",
+    summary:
+      "Slashed Cost-Per-Lead (CPL) by 64% within 90 days completely restructuring Google Ads broad match into single keyword ad groups.",
   },
 ];
 
@@ -138,18 +108,14 @@ const NavLink = ({
     <Link
       href={href}
       className={`group relative overflow-hidden inline-block h-[1.2em] font-semibold transition-colors duration-300 ${
-        isScrolled
-          ? "text-[#0A2540]/70 hover:text-[#007BFF]"
-          : "text-[#0A2540]/70 hover:text-[#007BFF]"
+        "text-[#0A2540]/80 hover:text-[#FF4A3F]"
       }`}
     >
       <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
         {children}
       </span>
       <span
-        className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 ${
-          isScrolled ? "text-[#007BFF] font-bold" : "text-[#007BFF] font-bold"
-        }`}
+        className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 text-[#FF4A3F] font-bold`}
       >
         {children}
       </span>
@@ -170,445 +136,466 @@ export default function PerformanceMarketingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans">
-      <title>Performance Marketing | Setzet Digital</title>
+    <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#FF4A3F] selection:text-white">
+      <title>Premium Performance Marketing | Setzet</title>
       <meta
         name="description"
-        content="Performance marketing systems built around profitable paid acquisition, disciplined testing, and stronger conversion from every campaign click."
+        content="We buy attention profitably. Direct-response media buying, algorithmic targeting, and merciless CRO to maximize your return on ad spend."
       />
 
+      {/* Header - Light Mode */}
       <header
-        className={`fixed top-0 z-30 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
+        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
           isScrolled
-            ? "bg-[#F4F6F8]/90 text-[#0A2540]/60 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
-            : "bg-[#F4F6F8]/80 text-[#0A2540]/70 shadow-[0_4px_20px_rgba(10,37,64,0.04)] backdrop-blur-md py-5"
+            ? "bg-[#F4F6F8]/90 text-[#0A2540]/80 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-4"
+            : "bg-transparent text-[#0A2540]/90 py-6"
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
           <Link
             href="/"
-            className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#0A2540]" : "text-[#0A2540]"}`}
+            className="font-bold text-[#0A2540] transition-colors duration-300 hover:text-[#FF4A3F]"
           >
             Setzet
           </Link>
           <nav className="hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex">
-            <NavLink href="/" isScrolled={isScrolled}>
-              Home
-            </NavLink>
-            <NavLink href="/about" isScrolled={isScrolled}>
-              About
-            </NavLink>
-            <NavLink href="/services" isScrolled={isScrolled}>
-              Services
-            </NavLink>
-            <NavLink href="/work" isScrolled={isScrolled}>
-              Work
-            </NavLink>
-            <NavLink href="/product" isScrolled={isScrolled}>
-              Product
-            </NavLink>
-            <NavLink href="/blogs" isScrolled={isScrolled}>
-              Blogs
-            </NavLink>
+            <NavLink href="/" isScrolled={isScrolled}>Home</NavLink>
+            <NavLink href="/about" isScrolled={isScrolled}>About</NavLink>
+            <NavLink href="/services" isScrolled={isScrolled}>Services</NavLink>
+            <NavLink href="/work" isScrolled={isScrolled}>Work</NavLink>
+            <NavLink href="/blogs" isScrolled={isScrolled}>Blogs</NavLink>
           </nav>
           <div className="flex items-center gap-3">
             <Link
-              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 md:inline-flex ${
-                isScrolled
-                  ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
-                  : "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
-              }`}
+              className="hidden rounded-full border border-[#0A2540]/10 bg-white/50 backdrop-blur-md px-6 py-2.5 text-[11px] font-bold transition-all duration-300 hover:bg-[#FF4A3F] hover:border-[#FF4A3F] hover:text-white md:inline-flex text-[#0A2540]"
               href="/#contact"
             >
               Start a Project
             </Link>
             <button
-              className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
-                isScrolled
-                  ? "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
-                  : "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
-              }`}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-              onClick={() => setMenuOpen((prev) => !prev)}
+              className="inline-flex h-10 items-center justify-center rounded-full border border-[#0A2540]/20 px-4 text-[11px] font-semibold transition md:hidden text-[#0A2540] hover:border-[#FF4A3F]"
+              onClick={() => setMenuOpen(!menuOpen)}
             >
               <span className="mr-2">{menuOpen ? "Close" : "Menu"}</span>
-              <span className="relative block h-3 w-4">
-                <span
-                  className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
-                    menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  } bg-[#0A2540]`}
-                />
-                <span
-                  className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
-                    menuOpen ? "opacity-0" : "opacity-100"
-                  } bg-[#0A2540]`}
-                />
-                <span
-                  className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
-                    menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  } bg-[#0A2540]`}
-                />
-              </span>
             </button>
           </div>
         </div>
       </header>
 
-      <div
-        id="mobile-menu"
-        className={`fixed right-4 top-16 z-40 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-[#0A2540]/10 bg-white p-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A2540]/70 shadow-lg transition-all duration-300 md:hidden ${
-          menuOpen
-            ? "scale-100 translate-y-0 opacity-100"
-            : "pointer-events-none scale-95 -translate-y-2 opacity-0"
-        }`}
-      >
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/">
-          Home
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/about">
-          About
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/services">
-          Services
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/work">
-          Work
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/product">
-          Product
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/blogs">
-          Blogs
-        </Link>
-      </div>
-
-      <main className="pt-0">
-        <section className="relative overflow-hidden px-6 pb-24 pt-36">
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -right-24 top-0 h-[500px] w-[500px] rounded-full bg-[#007BFF]/10 blur-[120px]"
+      <main className="pt-0 relative overflow-hidden">
+        
+        {/* =========================================
+            HERO SECTION - THE PERFORMANCE DASHBOARD
+            ========================================= */}
+        <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 px-6">
+          {/* Animated Background Ambience */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Fiery Sunset Ad Gradients */}
+            <motion.div 
+              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-[-5%] right-[5%] w-[45vw] h-[45vw] rounded-full bg-[#FF4A3F]/15 blur-[160px]" 
             />
-            <motion.div
-              animate={{ scale: [1, 1.2, 1], rotate: [0, -90, 0] }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-[#0A2540]/10 blur-[120px]"
+            <motion.div 
+              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute bottom-[-10%] left-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#FFB01A]/10 blur-[150px]" 
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(10,37,64,0.06),_transparent_70%)]" />
+            {/* Target Reticle Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(10,37,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(10,37,64,0.03)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_60%,transparent_100%)]" />
           </div>
 
-          <div className="relative mx-auto max-w-6xl">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#0A2540]/10 bg-white/80 backdrop-blur px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.35em] text-[#007BFF] shadow-sm"
-            >
-              Performance Marketing
-            </motion.div>
-
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="max-w-4xl text-[clamp(2.6rem,6vw,5.6rem)] font-extrabold leading-[0.95] tracking-tight font-heading text-[#0A2540]"
-            >
-              Turn paid traffic into a <span className="text-[#007BFF] italic">scalable</span> revenue engine.
-            </motion.h1>
-
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="mt-8 max-w-2xl text-[1.1rem] leading-relaxed text-[#0A2540]/70"
-            >
-              We build performance marketing systems around profitable acquisition, sharper messaging, disciplined testing, and landing pages that convert paid demand into qualified pipeline.
-            </motion.p>
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="mt-12 flex flex-wrap gap-5"
-            >
-              <Link
-                href="/#contact"
-                className="group relative overflow-hidden rounded-full bg-[#007BFF] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:shadow-[0_8px_25px_rgba(0,123,255,0.4)]"
-              >
-                <div className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                <span className="relative z-10">Request Campaign Audit</span>
-              </Link>
-              <Link
-                href="/work"
-                className="group rounded-full border border-[#0A2540]/20 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-[#0A2540]/70 transition hover:border-[#007BFF] hover:text-[#007BFF] hover:bg-[#007BFF]/5"
-              >
-                Explore case studies
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="px-6 pb-20">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-0 overflow-hidden rounded-[32px] border border-[#0A2540]/10 bg-white/60 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.02)] md:grid-cols-3"
-          >
-            {trustStats.map((stat, i) => (
+          <div className="mx-auto max-w-7xl w-full grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-8 items-center relative z-10">
+            
+            {/* Left: Copy & Actions */}
+            <div className="max-w-xl lg:pr-4">
               <motion.div
-                key={stat.label}
-                variants={reveal}
-                className={`relative p-10 ${i !== trustStats.length - 1 ? "border-b md:border-b-0 md:border-r border-[#0A2540]/5" : ""}`}
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+                className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0A2540]/10 bg-white/70 backdrop-blur-md px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF4A3F] shadow-sm"
               >
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
-                  <stat.icon className="h-5 w-5" />
-                </div>
-                <p className="text-5xl font-extrabold text-[#007BFF] tracking-tighter drop-shadow-sm font-heading">
-                  {stat.value}
-                </p>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#0A2540]/50">
-                  {stat.label}
-                </p>
+                <FiTarget className="text-sm" /> Paid Media & Acquisition
               </motion.div>
-            ))}
-          </motion.div>
-        </section>
 
-        <section className="px-6 pb-24 relative">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.1fr_1fr] items-center"
-          >
-            <motion.div variants={reveal}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#007BFF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF] mb-6">
-                <span className="h-2 w-2 rounded-full bg-[#007BFF] animate-pulse" /> The Core Issue
-              </div>
-              <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540] leading-[1.1]">
-                Ad spend without system control gets expensive fast.
-              </h2>
-              <p className="mt-6 text-[1.1rem] leading-relaxed text-[#0A2540]/70">
-                Paid acquisition works when campaign structure, offer strategy, creative, and landing pages are optimized together. Without that alignment, scale usually means more waste instead of more profit.
-              </p>
-            </motion.div>
-            <motion.ul variants={reveal} className="space-y-4">
-              {anxieties.map((anxiety) => (
-                <motion.li
-                  key={anxiety}
-                  whileHover={{ scale: 1.02, translateX: 5 }}
-                  className="flex items-center gap-4 rounded-2xl border border-[#0A2540]/5 bg-white p-6 text-sm md:text-base font-medium text-[#0A2540]/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all cursor-default"
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight font-heading text-[#0A2540]"
+              >
+                Buy attention. <br />
+                Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4A3F] to-[#FFB01A]">Profitably.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-6 text-lg md:text-xl text-[#0A2540]/70 leading-relaxed font-light"
+              >
+                We stop bleeding ad budgets. Our direct-response media buyers execute aggressive cross-channel campaigns built strictly to mathematically scale your Return on Ad Spend.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
+                className="mt-10 flex flex-wrap gap-5 items-center"
+              >
+                <Link
+                  href="/#contact"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#0A2540] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_10px_30px_rgba(10,37,64,0.3)] hover:scale-[1.02] hover:bg-[#1a365d]"
                 >
-                  <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-red-50 text-red-500">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <span className="relative z-10 flex items-center gap-3">
+                    Audit My Ad Account <FiArrowRight className="text-lg transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+                
+                <div className="flex items-center gap-3 px-4 py-3 bg-white/50 backdrop-blur-sm border border-[#0A2540]/10 rounded-full shadow-sm">
+                  <FiDollarSign className="text-xl text-[#FFB01A]" />
+                  <div className="text-[10px] font-bold text-[#0A2540]/80 uppercase tracking-widest">
+                    Ruthlessly ROI Obsessed
                   </div>
-                  {anxiety}
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right: Floating Campaign ROI Graphic */}
+            <div className="relative h-[600px] w-full hidden md:block perspective-[1400px]">
+              
+              {/* Back Layer: Ad Manager Campaign List */}
+              <motion.div 
+                animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-6, -4, -6], rotateY: [-15, -10, -15] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[10%] left-[5%] w-[400px] rounded-[24px] border border-[#0A2540]/10 bg-white/90 backdrop-blur-md shadow-2xl p-6 z-10"
+              >
+                  <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+                     <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded-[4px] bg-blue-500 flex items-center justify-center text-[10px] text-white font-bold">M</div>
+                        <div className="font-bold text-[11px] uppercase tracking-widest text-gray-500">Live Campaigns</div>
+                     </div>
+                     <div className="bg-[#27C93F]/10 text-[#27C93F] px-2 py-1 rounded-md text-[10px] font-bold uppercase">Active</div>
+                  </div>
+                  {[
+                    { name: "RETARGETING_Q4_OFFER", spend: "$4.1k", roas: "6.2x", cpa: "$14.10" },
+                    { name: "COLD_PROSPECTING_VIDS", spend: "$12.8k", roas: "3.4x", cpa: "$32.40" },
+                    { name: "SEARCH_BRAND_DEFENSE", spend: "$1.2k", roas: "14.1x", cpa: "$8.50" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col gap-1 py-3 group border-b border-gray-50 last:border-0">
+                       <div className="text-[10px] font-bold text-[#0A2540] font-mono opacity-60 group-hover:text-[#FF4A3F]">{item.name}</div>
+                       <div className="flex justify-between items-center w-full">
+                          <div className="text-[10px] text-gray-400">Spend: <span className="font-bold text-[#0A2540]">{item.spend}</span></div>
+                          <div className="text-[10px] text-gray-400">CPA: <span className="font-bold text-[#0A2540]">{item.cpa}</span></div>
+                          <div className="text-xs font-bold text-[#27C93F] tracking-wide">ROAS {item.roas}</div>
+                       </div>
+                    </div>
+                  ))}
+              </motion.div>
+              
+              {/* Middle Layer: Direct Response Ad Creative Block */}
+              <motion.div 
+                animate={{ y: [-5, 15, -5], rotateX: [12, 17, 12], rotateZ: [-2, 0, -2], rotateY: [-10, -5, -10] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-[45%] right-[0%] w-[280px] rounded-[24px] border border-white bg-white shadow-[0_30px_60px_rgba(10,37,64,0.1)] p-4 z-20"
+              >
+                  <div className="flex items-center gap-3 mb-3">
+                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF4A3F] to-[#FFB01A]" />
+                     <div>
+                        <div className="text-xs font-bold text-[#0A2540]">Premium Brand</div>
+                        <div className="text-[9px] text-gray-400">Sponsored</div>
+                     </div>
+                  </div>
+                  <div className="text-xs text-[#0A2540]/80 mb-3 leading-tight">Stop wasting media budget on agencies that don't scale. Get your free ad account audit today. 👇</div>
+                  <div className="w-full h-32 bg-[#F4F6F8] rounded-xl flex items-center justify-center border border-gray-100 overflow-hidden relative">
+                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-200 to-transparent opacity-50" />
+                     <FiTarget className="text-4xl text-[#FF4A3F] opacity-30" />
+                     <div className="absolute bottom-2 left-3 bg-[#FF4A3F] text-white text-[8px] px-2 py-0.5 rounded font-bold uppercase tracking-widest leading-none">Limited Time</div>
+                  </div>
+                  <div className="flex items-center justify-between mt-3 px-1">
+                     <div className="text-[10px] font-bold text-[#0A2540] uppercase tracking-wide">Claim Your Audit</div>
+                     <div className="px-4 py-1.5 bg-[#F4F6F8] rounded-md text-[10px] font-bold text-[#007BFF]">Apply Now</div>
+                  </div>
+              </motion.div>
+
+              {/* Front Top Layer: Total Revenue ROAS Gauge */}
+              <motion.div 
+                animate={{ y: [0, 20, 0], rotateX: [5, 10, 5], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute bottom-[0%] left-[20%] w-[340px] rounded-[32px] border border-white/50 bg-white shadow-[0_40px_80px_rgba(255,74,63,0.15)] p-6 z-30 flex items-center gap-6"
+              >
+                 {/* Circle ROAS graph */}
+                 <div className="relative w-24 h-24 shrink-0">
+                    <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                       <circle cx="50" cy="50" r="45" fill="none" stroke="#F4F6F8" strokeWidth="10" />
+                       <circle cx="50" cy="50" r="45" fill="none" stroke="#FF4A3F" strokeWidth="10" strokeLinecap="round" strokeDasharray="283" strokeDashoffset="50" className="drop-shadow-sm" />
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                       <div className="text-2xl font-black text-[#0A2540]">4.8x</div>
+                       <div className="text-[7px] uppercase font-bold text-gray-400 tracking-widest">Global ROAS</div>
+                    </div>
+                 </div>
+                 
+                 <div className="flex flex-col gap-3 w-full">
+                    <div>
+                       <div className="text-[9px] uppercase tracking-widest font-bold text-gray-400 mb-0.5">Total Attributed Revenue</div>
+                       <div className="text-2xl font-black font-heading text-[#0A2540]">$642,800.00</div>
+                    </div>
+                    <div className="w-full h-8 bg-gradient-to-r from-[#27C93F]/10 to-[#27C93F]/5 rounded-lg border border-[#27C93F]/20 flex items-center px-3 justify-between">
+                       <span className="text-[9px] font-bold text-[#27C93F] uppercase tracking-wider">Target Exceeded</span>
+                       <FiTrendingUp className="text-[#27C93F]" />
+                    </div>
+                 </div>
+              </motion.div>
+
+            </div>
+          </div>
         </section>
 
-        <section className="px-6 pb-32">
+
+        {/* =========================================
+            SECTION 2: TECH STACK 
+            ========================================= */}
+        <section className="px-6 py-12 border-y border-[#0A2540]/5 bg-white">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-center text-[10px] uppercase tracking-[0.3em] font-bold text-[#0A2540]/40 mb-8">
+              Industry-Standard Acquisition Platforms
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="flex items-center gap-2 text-xl font-bold font-heading text-[#0A2540]"><FaFacebookSquare className="text-blue-600 text-3xl" /> Meta Ads</div>
+              <div className="flex items-center gap-2 text-xl font-bold font-heading text-[#0A2540]"><FaGoogle className="text-red-500 text-3xl" /> Google Ads</div>
+              <div className="flex items-center gap-2 text-xl font-bold font-heading text-[#0A2540]"><FaTiktok className="text-black text-3xl" /> TikTok Ads</div>
+              <div className="flex items-center gap-2 text-xl font-bold font-heading text-[#0A2540]"><FaInstagram className="text-pink-500 text-3xl" /> Instagram</div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* =========================================
+            SECTION 3: CORE CAPABILITIES (SERVICES GRID)
+            ========================================= */}
+        <section className="px-6 py-32 relative bg-[#F4F6F8]">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={stagger}
             className="mx-auto max-w-6xl"
           >
-            <motion.div variants={reveal} className="mb-14 max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                Our Expertise
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540]">
-                A full-stack system for paid growth performance.
-              </h2>
-            </motion.div>
+            <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
+              <motion.div variants={reveal} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4A3F]/10 border border-[#FF4A3F]/20 text-[#FF4A3F] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">
+                <FiCrosshair className="w-3 h-3" /> Growth Vectors
+              </motion.div>
+              <motion.h2 variants={reveal} className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading text-[#0A2540] max-w-3xl">
+                We engineer scalable media campaigns.
+              </motion.h2>
+            </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, idx) => (
                 <motion.div
                   key={service.title}
                   variants={reveal}
-                  whileHover={{ y: -5 }}
-                  className="group relative overflow-hidden rounded-[28px] border border-[#0A2540]/10 bg-white p-8 transition-all hover:border-[#007BFF]/30 hover:shadow-[0_20px_40px_rgba(0,123,255,0.08)]"
+                  className="group relative rounded-[32px] border border-[#0A2540]/10 bg-white p-8 overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgba(10,37,64,0.03)] hover:shadow-[0_40px_60px_rgba(255,74,63,0.08)] hover:-translate-y-2 hover:border-[#FF4A3F]/30"
                 >
-                  <div className="absolute top-0 right-0 p-8 opacity-5 font-heading text-8xl font-bold italic tracking-tighter transform translate-x-4 -translate-y-4 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 text-[#0A2540]">
-                    0{idx + 1}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF4A3F] rounded-full blur-[100px] opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" />
+                  
+                  <div className="absolute top-8 right-8 text-8xl font-black font-heading text-[#0A2540]/5 italic transform rotate-12 transition-transform duration-500 group-hover:scale-110">
+                    {idx + 1}
                   </div>
-                  <div className="relative z-10 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF] shadow-[0_10px_24px_rgba(0,123,255,0.12)]">
-                    <service.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="relative z-10 text-xl font-bold text-[#0A2540] font-heading pr-8">
-                    {service.title}
-                  </h3>
-                  <p className="relative z-10 mt-4 text-[0.95rem] leading-relaxed text-[#0A2540]/65">
-                    {service.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
 
-        <section className="px-6 pb-32">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-16 rounded-[40px] border border-[#007BFF]/20 bg-gradient-to-br from-[#ffffff] to-[#f4f9ff] p-10 md:p-16 md:grid-cols-[1.1fr_1fr] relative overflow-hidden"
-          >
-            <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#007BFF]/10 rounded-full blur-[100px] pointer-events-none" />
-
-            <motion.div variants={reveal} className="relative z-10">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                The Payoff
-              </p>
-              <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540] leading-[1.1]">
-                Paid growth that stays measurable and profitable.
-              </h2>
-              <p className="mt-6 text-[1.1rem] leading-relaxed text-[#0A2540]/70">
-                Click volume is not the objective. We focus on the blend of targeting, creative quality, landing-page conversion, and reporting clarity that supports profitable scale.
-              </p>
-            </motion.div>
-            <motion.ul variants={reveal} className="space-y-4 relative z-10">
-              {outcomes.map((outcome) => (
-                <li
-                  key={outcome}
-                  className="group flex flex-col md:flex-row items-start gap-4 rounded-3xl border border-white bg-white/50 backdrop-blur-md p-5 text-[0.95rem] font-medium text-[#0A2540]/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:bg-white transition-colors"
-                >
-                  <span className="flex-shrink-0 mt-0.5 inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#007BFF]/10 text-[#007BFF] group-hover:scale-110 transition-transform">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                  </span>
-                  <span className="pt-1">{outcome}</span>
-                </li>
-              ))}
-            </motion.ul>
-          </motion.div>
-        </section>
-
-        <section className="px-6 pb-32">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-16 md:grid-cols-[1fr_1.2fr]"
-          >
-            <motion.div variants={reveal} className="md:sticky md:top-32 self-start">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                The Blueprint
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540]">
-                A practical framework for performance scaling.
-              </h2>
-              <p className="mt-6 text-base md:text-lg text-[#0A2540]/70">
-                Paid acquisition improves when testing discipline, creative learning, and conversion data stay tightly connected. That is the system we build.
-              </p>
-            </motion.div>
-            <div className="space-y-6">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.title}
-                  variants={reveal}
-                  className="relative rounded-[32px] border border-[#0A2540]/10 bg-white p-8 md:p-10 hover:shadow-[0_15px_30px_rgba(0,0,0,0.04)] transition-shadow"
-                >
-                  <div className="absolute top-8 right-8 w-12 h-12 bg-[#F4F6F8] rounded-full flex items-center justify-center text-[#007BFF]">
-                    <step.icon className="h-5 w-5" />
-                  </div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                    Phase
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold font-heading text-[#0A2540] pr-12">{step.title}</h3>
-                  <p className="mt-4 text-[0.95rem] leading-relaxed text-[#0A2540]/70">{step.text}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
-        <section className="px-6 pb-32">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto max-w-6xl"
-          >
-            <motion.div variants={reveal} className="mb-14 text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl font-heading text-[#0A2540]">
-                Common Questions, Answered Honestly.
-              </h2>
-            </motion.div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {faqs.map((faq) => (
-                <motion.div
-                  key={faq.question}
-                  variants={reveal}
-                  className="rounded-[24px] border border-[#0A2540]/10 bg-white p-8"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
-                      <FiHelpCircle className="h-4 w-4" />
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-[#F4F6F8] flex items-center justify-center text-[#FF4A3F] mb-8 transition-colors duration-500 group-hover:bg-[#FF4A3F] group-hover:text-white">
+                      <service.icon className="w-6 h-6" />
                     </div>
-                    <p className="text-lg font-bold text-[#0A2540] font-heading leading-tight">
-                      {faq.question}
+                    <h3 className="text-2xl font-bold font-heading mb-4 text-[#0A2540] pr-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-[0.95rem] text-[#0A2540]/70 leading-relaxed font-light">
+                      {service.description}
                     </p>
                   </div>
-                  <p className="mt-4 text-[0.95rem] leading-relaxed text-[#0A2540]/65">{faq.answer}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </section>
 
-        <section className="px-6 pb-28">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={reveal}
-            className="mx-auto flex max-w-6xl flex-col items-center rounded-[40px] border border-[#0A2540]/10 bg-[#0A2540] px-10 py-20 text-center relative overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,123,255,0.15),_transparent_50%)]" />
 
-            <div className="relative z-10 w-full flex flex-col items-center">
-              <p className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF] mb-6 backdrop-blur">
-                Performance Marketing
-              </p>
-              <h2 className="text-4xl font-extrabold tracking-tight md:text-6xl font-heading text-white max-w-3xl">
-                Ready to make paid acquisition more profitable?
+        {/* =========================================
+            SECTION 4: PORTFOLIO TEASER
+            ========================================= */}
+        <section className="px-6 pb-32 bg-[#F4F6F8]">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFB01A]/10 border border-[#FFB01A]/20 text-[#FFB01A] text-[10px] font-bold uppercase tracking-[0.3em] mb-4">
+                  <FiDollarSign className="w-3 h-3" /> Tangible Outcomes
+                </div>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight font-heading text-[#0A2540]">
+                  Media buying that<br/>directly scales companies.
+                </h2>
+              </motion.div>
+              <Link href="/work" className="group flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#0A2540] hover:text-[#FF4A3F] transition-colors">
+                View All Case Studies <FiArrowRight className="transition-transform group-hover:translate-x-2" />
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {featuredProjects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="group overflow-hidden rounded-[32px] bg-white border border-[#0A2540]/10 shadow-[0_10px_40px_rgba(10,37,64,0.03)] relative hover:shadow-[0_20px_60px_rgba(255,74,63,0.08)] transition-all duration-500"
+                >
+                  <div className="relative h-[340px] w-full overflow-hidden bg-[#EAF1F7] p-8 flex flex-col justify-end">
+                    <div className="absolute inset-0 z-0">
+                       <Image
+                         src={project.image}
+                         alt={project.title}
+                         fill
+                         className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-multiply"
+                       />
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540] via-[#0A2540]/60 to-transparent" />
+                    </div>
+                    
+                    <div className="relative z-10 w-full mb-2">
+                      <div className="inline-flex items-center gap-2 rounded-md bg-white/20 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 text-[#FFD4A3]">
+                        {project.category}
+                      </div>
+                      <h3 className="text-3xl font-extrabold font-heading text-white">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <p className="text-lg leading-relaxed text-[#0A2540]/70 font-light">
+                      {project.summary}
+                    </p>
+                    <div className="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center text-sm font-bold uppercase text-[#FF4A3F]">
+                       <span className="tracking-widest">Read Study</span>
+                       <FiArrowRight />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* =========================================
+            SECTION 5: THE PROCESS (THE OPTIMIZATION FUNNEL)
+            ========================================= */}
+        <section className="px-6 py-32 border-y border-[#0A2540]/5 bg-white relative overflow-hidden">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center mb-24 relative z-20">
+              <span className="inline-block rounded-full bg-[#FF4A3F]/10 border border-[#FF4A3F]/20 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.35em] text-[#FF4A3F] mb-6 shadow-sm">
+                The Mathematics of Scaling
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight text-[#0A2540]">
+                The Optimization Funnel.
               </h2>
-              <p className="mt-6 max-w-2xl text-[1.1rem] leading-relaxed text-white/70">
-                If your campaigns need better structure, cleaner reporting, and stronger conversion from every click, we can build the system around that.
+              <p className="mt-6 text-lg text-[#0A2540]/70 font-light max-w-2xl mx-auto">
+                Hope is not a strategy. We map exact user journeys and layer ad logic per stage—ensuring you don't overpay for traffic or lose potential conversions.
               </p>
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+            </div>
+
+            {/* Desktop Graphical Funnel Chart */}
+            <div className="hidden lg:flex flex-col items-center max-w-5xl mx-auto relative group">
+               {/* Background glowing triangle/funnel shape */}
+               <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border-[120px] border-solid border-t-[#FF4A3F]/5 border-x-transparent border-b-transparent w-[800px] h-[800px] -z-10 blur-xl transition-all duration-700 group-hover:border-t-[#FF4A3F]/10" />
+
+               {processSteps.map((step, index) => {
+                  const widthMap = ["w-[900px]", "w-[750px]", "w-[600px]", "w-[450px]"];
+                  const width = widthMap[index];
+                  
+                  return (
+                     <motion.div 
+                        key={index}
+                        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-10%" }} transition={{ delay: index * 0.1 }}
+                        className={`mb-6 relative h-28 ${width} transition-all duration-500 hover:scale-105 z-10`}
+                     >
+                        {/* The trapezoid/layered block structure */}
+                        <div className="absolute inset-0 bg-[#F4F6F8] border border-[#0A2540]/5 shadow-sm overflow-hidden flex items-center px-12 rounded-[24px]">
+                           {/* Small gradient overlay on left for aesthetics */}
+                           <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-[#FF4A3F] to-[#FFB01A] opacity-80" />
+                           
+                           <div className="grid grid-cols-[auto_1fr] items-center gap-12 w-full">
+                              <div className="font-heading font-black text-[#0A2540]/10 text-6xl italic">0{index + 1}</div>
+                              <div>
+                                 <h3 className="text-xl font-bold font-heading text-[#0A2540]">{step.title}</h3>
+                                 <p className="text-sm text-[#0A2540]/70 mt-1 max-w-2xl font-light">{step.text}</p>
+                              </div>
+                           </div>
+                        </div>
+                     </motion.div>
+                  );
+               })}
+               
+               {/* Bottom Output Spout (Money logic) */}
+               <motion.div 
+                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-10%" }} transition={{ delay: 0.5 }}
+                  className="w-20 h-20 bg-gradient-to-br from-[#FF4A3F] to-[#FFB01A] rounded-full mt-4 flex items-center justify-center shadow-[0_10px_30px_rgba(255,74,63,0.3)] z-20"
+               >
+                  <FiDollarSign className="text-white text-3xl font-bold" />
+               </motion.div>
+            </div>
+
+            {/* Mobile Vertical Blocks */}
+            <div className="lg:hidden space-y-6 max-w-xl mx-auto">
+               {processSteps.map((step, index) => (
+                  <motion.div key={index} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#F4F6F8] p-8 rounded-[24px] border border-[#0A2540]/5 border-l-4 border-l-[#FF4A3F]">
+                     <div className="font-heading font-black text-[#0A2540]/10 text-4xl italic absolute right-8">0{index+1}</div>
+                     <h3 className="text-xl font-bold font-heading text-[#0A2540] mb-2">{step.title}</h3>
+                     <p className="text-sm text-[#0A2540]/70">{step.text}</p>
+                  </motion.div>
+               ))}
+               <div className="w-16 h-16 bg-[#FF4A3F] rounded-full mx-auto mt-8 flex items-center justify-center shadow-lg">
+                  <FiDollarSign className="text-white text-2xl" />
+               </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        {/* =========================================
+            SECTION 6: FINAL CTA 
+            ========================================= */}
+        <section className="px-6 pb-24 relative bg-[#F4F6F8] py-16">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}
+            className="mx-auto max-w-6xl relative overflow-hidden rounded-[40px] bg-[#0A2540] px-10 py-24 text-center shadow-[0_20px_60px_rgba(10,37,64,0.3)]"
+          >
+            {/* Background dynamic ad lighting */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(255,74,63,0.4)_0%,_transparent_70%)] blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(255,176,26,0.25)_0%,_transparent_70%)] blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+            
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
+
+            <div className="relative z-10 flex flex-col items-center">
+              <span className="inline-block rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.35em] text-[#FFB01A] mb-8 backdrop-blur-md">
+                Stop Bleeding Spend
+              </span>
+              <h2 className="text-4xl lg:text-6xl font-extrabold tracking-tight font-heading max-w-4xl mx-auto leading-[1.05] text-white">
+                Ready to predictably scale your customer acquisition?
+              </h2>
+              <p className="mt-8 max-w-2xl text-lg text-white/70 mx-auto font-light">
+                Submit your current ad metrics. We'll audit your funnel, identify exactly where your budget is being wasted, and mathematically map your path to higher scaling.
+              </p>
+              
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
                 <Link
                   href="/#contact"
-                  className="group relative overflow-hidden rounded-full bg-[#007BFF] px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)]"
+                  className="group rounded-full bg-[#FF4A3F] px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_10px_30px_rgba(255,74,63,0.4)] hover:scale-105 hover:bg-[#d63f35] flex items-center gap-3"
                 >
-                  <div className="absolute inset-0 bg-black/10 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                  <span className="relative z-10">Request Campaign Audit</span>
+                  Audit My Account <FiArrowRight className="transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/work"
-                  className="rounded-full border border-white/20 px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:border-white hover:bg-white/5"
+                  className="rounded-full border border-white/20 px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-white/10 backdrop-blur-sm"
                 >
-                  View Case Studies
+                  View ROAS Case Studies
                 </Link>
               </div>
             </div>
           </motion.div>
         </section>
-      </main>
 
+      </main>
       <Footer />
     </div>
   );

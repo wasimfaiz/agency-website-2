@@ -4,8 +4,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { FiActivity, FiBarChart2, FiCompass, FiEdit3, FiHelpCircle, FiImage, FiMessageCircle, FiShare2, FiTrendingUp, FiUsers } from "react-icons/fi";
+import Image from "next/image";
 import Footer from "../../../components/Footer";
+import { 
+  FiHeart, FiMessageCircle, FiShare2, FiVideo,
+  FiArrowRight, FiUsers, FiTrendingUp, FiSmartphone, FiEdit3
+} from "react-icons/fi";
+import { FaInstagram, FaTiktok, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -18,110 +23,75 @@ const reveal = {
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 } satisfies Variants;
-
-const trustStats = [
-  { value: "3x+", label: "Average engagement lift", icon: FiTrendingUp },
-  { value: "Weekly", label: "Content systems with consistent output", icon: FiEdit3 },
-  { value: "Always-on", label: "Brand visibility across channels", icon: FiShare2 },
-];
-
-const anxieties = [
-  "Your brand posts regularly, but attention does not convert into real momentum.",
-  "Content looks active on the surface, but it lacks direction and consistency.",
-  "Social channels are disconnected from brand positioning, offers, and growth goals.",
-];
 
 const services = [
   {
-    title: "Social Strategy & Positioning",
-    description:
-      "We define the narrative, platform priorities, content pillars, and messaging direction so your channels stop feeling random.",
-    icon: FiCompass,
+    title: "Short-Form Video Production",
+    description: "High-retention TikToks, Reels, and Shorts. We script, shoot, and edit vertical content designed specifically for the algorithm.",
+    icon: FiVideo,
   },
   {
-    title: "Content Planning Systems",
-    description:
-      "We build calendars, repeatable formats, and campaign themes that make content production consistent and scalable.",
-    icon: FiEdit3,
-  },
-  {
-    title: "Creative Direction",
-    description:
-      "We shape hooks, visual references, and platform-native storytelling that aligns your brand voice with audience attention.",
-    icon: FiImage,
-  },
-  {
-    title: "Community Growth Support",
-    description:
-      "We help strengthen reach, engagement quality, and audience interaction so social becomes a stronger trust layer for the brand.",
-    icon: FiUsers,
-  },
-  {
-    title: "Campaign-Led Social Content",
-    description:
-      "We align launches, offers, and brand moments with content sequences that support visibility and conversion goals.",
-    icon: FiShare2,
-  },
-  {
-    title: "Performance Review & Optimization",
-    description:
-      "We track reach, saves, shares, audience response, and content efficiency to refine what gets attention and why.",
-    icon: FiBarChart2,
-  },
-];
-
-const outcomes = [
-  "Stronger brand recall through consistent and sharper social presence",
-  "A more disciplined content engine with clearer themes and output",
-  "Higher-quality audience attention instead of empty posting volume",
-  "Social channels that support trust, demand generation, and brand growth",
-];
-
-const processSteps = [
-  {
-    title: "Audit the Brand Presence",
-    text: "We review current channels, audience behavior, visual consistency, and content performance to understand what is missing.",
-    icon: FiCompass,
-  },
-  {
-    title: "Define the Social Narrative",
-    text: "We shape the messaging pillars, posting direction, and platform priorities so your content starts supporting real business positioning.",
+    title: "Community Management",
+    description: "Turning passive followers into loyal advocates through active engagement, authentic replies, and conversation building.",
     icon: FiMessageCircle,
   },
   {
-    title: "Build and Publish the System",
-    text: "We create repeatable content formats, campaign-led ideas, and execution rhythms that keep publishing structured and sustainable.",
-    icon: FiActivity,
+    title: "Creator Partnerships",
+    description: "We source, negotiate, and manage micro and macro-influencers that possess the exact demographic trust you need to tap into.",
+    icon: FiUsers,
   },
   {
-    title: "Measure Attention and Improve",
-    text: "We analyze engagement quality, content response, and reach patterns to keep improving social output over time.",
+    title: "Brand Voice & Copywriting",
+    description: "Thumb-stopping captions and thread hooks. We establish a distinct, unignorable personality for your organic profiles.",
+    icon: FiEdit3,
+  },
+  {
+    title: "Algorithmic Strategy",
+    description: "We constantly reverse-engineer platform updates to ensure your organic content actually reaches the explore page or 'For You' feed.",
+    icon: FiSmartphone,
+  },
+  {
+    title: "Social Analytics & Listening",
+    description: "Deep tracking of share velocity, saves, audience sentiment, and demographic shifts to double down on what genuinely works.",
     icon: FiTrendingUp,
   },
 ];
 
-const faqs = [
+const processSteps = [
   {
-    question: "What does social media marketing include?",
-    answer:
-      "It includes social strategy, content planning, creative direction, posting systems, campaign support, and performance review across the platforms that matter to your brand.",
+    title: "Audience & Cultural Blueprint",
+    text: "We map your exact target personas and align your brand with the micro-trends and communities they actively engage with.",
   },
   {
-    question: "Do you focus on growth or branding?",
-    answer:
-      "Both. Social media should build brand memory and credibility, but it should also support traffic, engagement, and downstream conversion goals.",
+    title: "High-Volume Content Engine",
+    text: "Producing a relentless stream of high-quality, platform-native assets—balancing education, entertainment, and conversion.",
   },
   {
-    question: "Which platforms do you work on?",
-    answer:
-      "That depends on the audience and offer, but we usually structure for Instagram, LinkedIn, Facebook, and other platforms where your brand can build meaningful attention.",
+    title: "Algorithmic Ignition",
+    text: "Deploying content at peak engagement windows with aggressive early-action strategies to signal high value to platform algorithms.",
   },
   {
-    question: "How do you measure success on social media?",
-    answer:
-      "We look beyond vanity metrics. We track engagement quality, saves, shares, reach consistency, audience response, and how social supports broader brand and pipeline goals.",
+    title: "Community Cultivation",
+    text: "Reacting to comments, sparking DMs, and fostering user-generated content to turn a sheer volume metric into a loyal community.",
+  },
+];
+
+const featuredProjects = [
+  {
+    title: "Consumer Tech Launch",
+    category: "TikTok & Reels Growth",
+    image: "/images/project1.png", // Reuse existing provided paths
+    summary:
+      "Generated 12.4M organic views and 45k new followers in 30 days through a strategic short-form educational video sprint.",
+  },
+  {
+    title: "B2B Executive Positioning",
+    category: "LinkedIn Thought Leadership",
+    image: "/images/zenfora-food.png",
+    summary:
+      "Established founder authority through daily textual and video insights, driving a 200% increase in inbound enterprise deals.",
   },
 ];
 
@@ -138,18 +108,14 @@ const NavLink = ({
     <Link
       href={href}
       className={`group relative overflow-hidden inline-block h-[1.2em] font-semibold transition-colors duration-300 ${
-        isScrolled
-          ? "text-[#0A2540]/70 hover:text-[#007BFF]"
-          : "text-[#0A2540]/70 hover:text-[#007BFF]"
+        "text-[#0A2540]/80 hover:text-[#D946EF]"
       }`}
     >
       <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
         {children}
       </span>
       <span
-        className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 ${
-          isScrolled ? "text-[#007BFF] font-bold" : "text-[#007BFF] font-bold"
-        }`}
+        className={`absolute left-0 top-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 text-[#D946EF] font-bold`}
       >
         {children}
       </span>
@@ -170,445 +136,488 @@ export default function SocialMediaMarketingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans">
-      <title>Social Media Marketing | Setzet Digital</title>
+    <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#D946EF] selection:text-white">
+      <title>Premium Social Media Marketing | Setzet</title>
       <meta
         name="description"
-        content="Social media marketing systems built around brand positioning, content consistency, audience attention, and platform-specific growth."
+        content="We engineer virality and build fiercely loyal communities. Platform-native content strategies designed to dominate the timeline."
       />
 
+      {/* Header - Light Mode */}
       <header
-        className={`fixed top-0 z-30 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
+        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
           isScrolled
-            ? "bg-[#F4F6F8]/90 text-[#0A2540]/60 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
-            : "bg-[#F4F6F8]/80 text-[#0A2540]/70 shadow-[0_4px_20px_rgba(10,37,64,0.04)] backdrop-blur-md py-5"
+            ? "bg-[#F4F6F8]/90 text-[#0A2540]/80 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-4"
+            : "bg-transparent text-[#0A2540]/90 py-6"
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
           <Link
             href="/"
-            className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#0A2540]" : "text-[#0A2540]"}`}
+            className="font-bold text-[#0A2540] transition-colors duration-300 hover:text-[#D946EF]"
           >
             Setzet
           </Link>
           <nav className="hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex">
-            <NavLink href="/" isScrolled={isScrolled}>
-              Home
-            </NavLink>
-            <NavLink href="/about" isScrolled={isScrolled}>
-              About
-            </NavLink>
-            <NavLink href="/services" isScrolled={isScrolled}>
-              Services
-            </NavLink>
-            <NavLink href="/work" isScrolled={isScrolled}>
-              Work
-            </NavLink>
-            <NavLink href="/product" isScrolled={isScrolled}>
-              Product
-            </NavLink>
-            <NavLink href="/blogs" isScrolled={isScrolled}>
-              Blogs
-            </NavLink>
+            <NavLink href="/" isScrolled={isScrolled}>Home</NavLink>
+            <NavLink href="/about" isScrolled={isScrolled}>About</NavLink>
+            <NavLink href="/services" isScrolled={isScrolled}>Services</NavLink>
+            <NavLink href="/work" isScrolled={isScrolled}>Work</NavLink>
+            <NavLink href="/blogs" isScrolled={isScrolled}>Blogs</NavLink>
           </nav>
           <div className="flex items-center gap-3">
             <Link
-              className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 md:inline-flex ${
-                isScrolled
-                  ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
-                  : "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
-              }`}
+              className="hidden rounded-full border border-[#0A2540]/10 bg-white/50 backdrop-blur-md px-6 py-2.5 text-[11px] font-bold transition-all duration-300 hover:bg-[#D946EF] hover:border-[#D946EF] hover:text-white md:inline-flex text-[#0A2540]"
               href="/#contact"
             >
               Start a Project
             </Link>
             <button
-              className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition md:hidden ${
-                isScrolled
-                  ? "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
-                  : "border-[#0A2540]/20 text-[#0A2540] hover:border-[#007BFF]"
-              }`}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-              onClick={() => setMenuOpen((prev) => !prev)}
+              className="inline-flex h-10 items-center justify-center rounded-full border border-[#0A2540]/20 px-4 text-[11px] font-semibold transition md:hidden text-[#0A2540] hover:border-[#D946EF]"
+              onClick={() => setMenuOpen(!menuOpen)}
             >
               <span className="mr-2">{menuOpen ? "Close" : "Menu"}</span>
-              <span className="relative block h-3 w-4">
-                <span
-                  className={`absolute left-0 top-0 h-[2px] w-full transition-transform duration-300 ${
-                    menuOpen ? "translate-y-[5px] rotate-45" : ""
-                  } bg-[#0A2540]`}
-                />
-                <span
-                  className={`absolute left-0 top-[5px] h-[2px] w-full transition-opacity duration-300 ${
-                    menuOpen ? "opacity-0" : "opacity-100"
-                  } bg-[#0A2540]`}
-                />
-                <span
-                  className={`absolute left-0 top-[10px] h-[2px] w-full transition-transform duration-300 ${
-                    menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  } bg-[#0A2540]`}
-                />
-              </span>
             </button>
           </div>
         </div>
       </header>
 
-      <div
-        id="mobile-menu"
-        className={`fixed right-4 top-16 z-40 w-[min(240px,calc(100vw-2rem))] origin-top-right rounded-2xl border border-[#0A2540]/10 bg-white p-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A2540]/70 shadow-lg transition-all duration-300 md:hidden ${
-          menuOpen
-            ? "scale-100 translate-y-0 opacity-100"
-            : "pointer-events-none scale-95 -translate-y-2 opacity-0"
-        }`}
-      >
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/">
-          Home
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/about">
-          About
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/services">
-          Services
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/work">
-          Work
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/product">
-          Product
-        </Link>
-        <Link className="block py-2 transition hover:text-[#007BFF]" href="/blogs">
-          Blogs
-        </Link>
-      </div>
-
-      <main className="pt-0">
-        <section className="relative overflow-hidden px-6 pb-24 pt-36">
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -right-24 top-0 h-[500px] w-[500px] rounded-full bg-[#007BFF]/10 blur-[120px]"
+      <main className="pt-0 relative overflow-hidden">
+        
+        {/* =========================================
+            HERO SECTION - THE VIRALITY FEED
+            ========================================= */}
+        <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 px-6">
+          {/* Animated Background Ambience */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Fuchsia/Violet Social Gradients */}
+            <motion.div 
+              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-[-5%] right-[0%] w-[45vw] h-[45vw] rounded-full bg-[#D946EF]/15 blur-[160px]" 
             />
-            <motion.div
-              animate={{ scale: [1, 1.2, 1], rotate: [0, -90, 0] }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-[#0A2540]/10 blur-[120px]"
+            <motion.div 
+              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute bottom-[-10%] left-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#8B5CF6]/15 blur-[150px]" 
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(10,37,64,0.06),_transparent_70%)]" />
+            {/* Minimal Background Grid */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(10,37,64,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(10,37,64,0.03)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_60%,transparent_100%)]" />
           </div>
 
-          <div className="relative mx-auto max-w-6xl">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#0A2540]/10 bg-white/80 backdrop-blur px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.35em] text-[#007BFF] shadow-sm"
-            >
-              Social Media Marketing
-            </motion.div>
-
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="max-w-4xl text-[clamp(2.6rem,6vw,5.6rem)] font-extrabold leading-[0.95] tracking-tight font-heading text-[#0A2540]"
-            >
-              Build a social presence people actually <span className="text-[#007BFF] italic">notice</span> and remember.
-            </motion.h1>
-
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="mt-8 max-w-2xl text-[1.1rem] leading-relaxed text-[#0A2540]/70"
-            >
-              We create social media systems that combine strategy, content planning, platform-native creative, and consistent execution so your brand earns attention without looking repetitive or lost.
-            </motion.p>
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={reveal}
-              className="mt-12 flex flex-wrap gap-5"
-            >
-              <Link
-                href="/#contact"
-                className="group relative overflow-hidden rounded-full bg-[#007BFF] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:shadow-[0_8px_25px_rgba(0,123,255,0.4)]"
-              >
-                <div className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                <span className="relative z-10">Request Social Audit</span>
-              </Link>
-              <Link
-                href="/work"
-                className="group rounded-full border border-[#0A2540]/20 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-[#0A2540]/70 transition hover:border-[#007BFF] hover:text-[#007BFF] hover:bg-[#007BFF]/5"
-              >
-                Explore case studies
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="px-6 pb-20">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-0 overflow-hidden rounded-[32px] border border-[#0A2540]/10 bg-white/60 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.02)] md:grid-cols-3"
-          >
-            {trustStats.map((stat, i) => (
+          <div className="mx-auto max-w-7xl w-full grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-8 items-center relative z-10">
+            
+            {/* Left: Copy & Actions */}
+            <div className="max-w-xl lg:pr-4">
               <motion.div
-                key={stat.label}
-                variants={reveal}
-                className={`relative p-10 ${i !== trustStats.length - 1 ? "border-b md:border-b-0 md:border-r border-[#0A2540]/5" : ""}`}
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+                className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0A2540]/10 bg-white/70 backdrop-blur-md px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#D946EF] shadow-sm"
               >
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
-                  <stat.icon className="h-5 w-5" />
-                </div>
-                <p className="text-5xl font-extrabold text-[#007BFF] tracking-tighter drop-shadow-sm font-heading">
-                  {stat.value}
-                </p>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#0A2540]/50">
-                  {stat.label}
-                </p>
+                <FiHeart className="text-sm fill-current" /> Organic Reach & Community
               </motion.div>
-            ))}
-          </motion.div>
-        </section>
 
-        <section className="px-6 pb-24 relative">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.1fr_1fr] items-center"
-          >
-            <motion.div variants={reveal}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#007BFF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF] mb-6">
-                <span className="h-2 w-2 rounded-full bg-[#007BFF] animate-pulse" /> The Core Issue
-              </div>
-              <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540] leading-[1.1]">
-                Posting without a system makes brands look active, not memorable.
-              </h2>
-              <p className="mt-6 text-[1.1rem] leading-relaxed text-[#0A2540]/70">
-                Social media works when brand positioning, content themes, visual execution, and platform behavior all reinforce each other. Without that system, output becomes inconsistent and forgettable.
-              </p>
-            </motion.div>
-            <motion.ul variants={reveal} className="space-y-4">
-              {anxieties.map((anxiety) => (
-                <motion.li
-                  key={anxiety}
-                  whileHover={{ scale: 1.02, translateX: 5 }}
-                  className="flex items-center gap-4 rounded-2xl border border-[#0A2540]/5 bg-white p-6 text-sm md:text-base font-medium text-[#0A2540]/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all cursor-default"
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight font-heading text-[#0A2540]"
+              >
+                Stop posting. <br />
+                Start <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D946EF] to-[#8B5CF6]">trending.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-6 text-lg md:text-xl text-[#0A2540]/70 leading-relaxed font-light"
+              >
+                We engineer algorithmic attention. From short-form video hooks to community mastery, we transform silent brand accounts into absolute cultural forces.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
+                className="mt-10 flex flex-wrap gap-5 items-center"
+              >
+                <Link
+                  href="/#contact"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#0A2540] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_10px_30px_rgba(10,37,64,0.3)] hover:scale-[1.02] hover:bg-[#1a365d]"
                 >
-                  <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-red-50 text-red-500">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <span className="relative z-10 flex items-center gap-3">
+                    Grow Your Audience <FiArrowRight className="text-lg transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+                
+                <div className="flex items-center gap-3 px-4 py-3 bg-white/50 backdrop-blur-sm border border-[#0A2540]/10 rounded-full shadow-sm">
+                  <FiShare2 className="text-xl text-[#8B5CF6]" />
+                  <div className="text-[10px] font-bold text-[#0A2540]/80 uppercase tracking-widest">
+                    Virality as a Science
                   </div>
-                  {anxiety}
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right: Floating Social Feed Graphic  */}
+            <div className="relative h-[600px] w-full hidden md:block perspective-[1400px]">
+              
+              {/* Back Layer: The Content Phone UI */}
+              <motion.div 
+                animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-2, 0, -2], rotateY: [-10, -5, -10] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[5%] left-[10%] w-[320px] h-[520px] rounded-[40px] border-[10px] border-[#0A2540] bg-[#121212] overflow-hidden shadow-[0_30px_60px_rgba(10,37,64,0.2)] z-10"
+              >
+                 <div className="w-full h-full relative p-4 flex flex-col justify-between overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/20 to-[#D946EF]/20" />
+                    {/* Fake short-form video overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                       <FiVideo className="text-7xl text-white" />
+                    </div>
+                    {/* Header bar */}
+                    <div className="relative z-10 flex justify-center mt-2">
+                       <div className="w-20 h-5 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+                          <span className="text-[8px] font-bold text-white uppercase tracking-wider">LIVE</span>
+                       </div>
+                    </div>
+                    {/* Bottom engagement area */}
+                    <div className="relative z-10 grid grid-cols-[1fr_auto] items-end pb-2">
+                       <div>
+                          <div className="font-bold text-base text-white mb-1">@your.premium.brand</div>
+                          <p className="text-xs text-white/80 line-clamp-2 pr-4">How we completely scaled our D2C brand using just three short form content tricks 📈🔥 #marketing #growth</p>
+                          <div className="flex items-center gap-2 mt-3 text-[10px] bg-black/40 backdrop-blur w-fit px-3 py-1.5 rounded-full text-white">
+                             <FiTrendingUp /> Original Audio - Viral Trends
+                          </div>
+                       </div>
+                       <div className="flex flex-col gap-5 items-center mr-1">
+                          <div className="flex flex-col items-center gap-1 group">
+                             <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white text-xl transition-transform group-hover:scale-110">
+                                <FiHeart className="fill-current text-[#EC4899]" />
+                             </div>
+                             <span className="text-[10px] font-bold text-white">24.5K</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1">
+                             <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white text-xl">
+                                <FiMessageCircle className="fill-current text-white/90" />
+                             </div>
+                             <span className="text-[10px] font-bold text-white">1,204</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1">
+                             <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white text-xl">
+                                <FiShare2 />
+                             </div>
+                             <span className="text-[10px] font-bold text-white">Share</span>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </motion.div>
+              
+              {/* Middle Layer: Interaction Alerts */}
+              <motion.div 
+                animate={{ y: [-5, 15, -5], rotateX: [5, 10, 5], rotateZ: [4, 6, 4], rotateY: [-10, -5, -10] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-[20%] right-[-5%] w-[240px] rounded-[24px] border border-white bg-white/95 backdrop-blur-xl shadow-[0_20px_40px_rgba(217,70,239,0.15)] p-4 flex flex-col gap-3 z-20"
+              >
+                  {[
+                     { user: "jessica_m", action: "shared your video", time: "2m", color: "text-[#D946EF]", bg: "bg-[#D946EF]/10" },
+                     { user: "alex.growth", action: "mentioned you", time: "5m", color: "text-[#8B5CF6]", bg: "bg-[#8B5CF6]/10" },
+                     { user: "marketing_daily", action: "started following", time: "12m", color: "text-[#00B873]", bg: "bg-[#00B873]/10" },
+                  ].map((notif, i) => (
+                     <div key={i} className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-full ${notif.bg} ${notif.color} flex items-center justify-center text-xs font-bold`}>
+                           {notif.user.charAt(0).toUpperCase()}
+                        </div>
+                        <div className="flex-1">
+                           <div className="text-[10px] font-bold text-[#0A2540]">{notif.user}</div>
+                           <div className="text-[9px] text-[#0A2540]/60">{notif.action}</div>
+                        </div>
+                        <div className="text-[8px] font-bold text-gray-300">{notif.time}</div>
+                     </div>
+                  ))}
+              </motion.div>
+
+              {/* Front Top Layer: Profile Growth Chart */}
+              <motion.div 
+                animate={{ y: [0, 20, 0], rotateX: [5, 10, 5], rotateZ: [-2, 0, -2], rotateY: [-5, 0, -5] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute bottom-[5%] left-[45%] w-[320px] rounded-[32px] border border-white/50 bg-white shadow-[0_40px_80px_rgba(10,37,64,0.15)] p-6 z-30"
+              >
+                 <div className="flex justify-between items-center mb-6">
+                    <div>
+                       <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">Weekly Reach</div>
+                       <div className="text-3xl font-black font-heading text-[#0A2540]">3.2M</div>
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#D946EF] to-[#8B5CF6] rounded-full flex items-center justify-center shadow-lg transform -rotate-12">
+                       <FiTrendingUp className="text-white text-2xl" />
+                    </div>
+                 </div>
+                 
+                 <div className="text-[10px] font-bold uppercase tracking-wider text-[#0A2540] mb-2">Audience Expansion Rate</div>
+                 <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden mb-6">
+                    <motion.div 
+                      initial={{ width: 0 }} animate={{ width: "85%" }} transition={{ duration: 2, delay: 0.5 }}
+                      className="h-full bg-gradient-to-r from-[#D946EF] to-[#8B5CF6]"
+                    />
+                 </div>
+
+                 <div className="flex items-center justify-between text-[10px] uppercase font-bold text-[#0A2540]/50 tracking-wider">
+                    <span>Mentions</span>
+                    <span className="text-[#8B5CF6]">+ 425%</span>
+                 </div>
+              </motion.div>
+
+            </div>
+          </div>
         </section>
 
-        <section className="px-6 pb-32">
+
+        {/* =========================================
+            SECTION 2: TECH STACK 
+            ========================================= */}
+        <section className="px-6 py-12 border-y border-[#0A2540]/5 bg-white">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-center text-[10px] uppercase tracking-[0.3em] font-bold text-[#0A2540]/40 mb-8">
+              Dominating Core Digital Platforms
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="flex items-center gap-2 text-lg md:text-xl font-bold font-heading text-[#0A2540]"><FaInstagram className="text-[#E1306C] text-2xl md:text-3xl" /> Instagram</div>
+              <div className="flex items-center gap-2 text-lg md:text-xl font-bold font-heading text-[#0A2540]"><FaTiktok className="text-black text-2xl md:text-3xl" /> TikTok</div>
+              <div className="flex items-center gap-2 text-lg md:text-xl font-bold font-heading text-[#0A2540]"><FaLinkedin className="text-[#0A66C2] text-2xl md:text-3xl" /> LinkedIn</div>
+              <div className="flex items-center gap-2 text-lg md:text-xl font-bold font-heading text-[#0A2540]"><FaYoutube className="text-[#FF0000] text-2xl md:text-3xl" /> YouTube Shorts</div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* =========================================
+            SECTION 3: CORE CAPABILITIES (SERVICES GRID)
+            ========================================= */}
+        <section className="px-6 py-32 relative bg-[#F4F6F8]">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={stagger}
             className="mx-auto max-w-6xl"
           >
-            <motion.div variants={reveal} className="mb-14 max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                Our Expertise
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540]">
-                A structured system for social attention and brand growth.
-              </h2>
-            </motion.div>
+            <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
+              <motion.div variants={reveal} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D946EF]/10 border border-[#D946EF]/20 text-[#D946EF] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">
+                <FiUsers className="w-3 h-3" /> Organic Domination
+              </motion.div>
+              <motion.h2 variants={reveal} className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading text-[#0A2540] max-w-3xl">
+                We design cultural capital for brands.
+              </motion.h2>
+            </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, idx) => (
                 <motion.div
                   key={service.title}
                   variants={reveal}
-                  whileHover={{ y: -5 }}
-                  className="group relative overflow-hidden rounded-[28px] border border-[#0A2540]/10 bg-white p-8 transition-all hover:border-[#007BFF]/30 hover:shadow-[0_20px_40px_rgba(0,123,255,0.08)]"
+                  className="group relative rounded-[32px] border border-[#0A2540]/10 bg-white p-8 overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgba(10,37,64,0.03)] hover:shadow-[0_40px_60px_rgba(217,70,239,0.08)] hover:-translate-y-2 hover:border-[#D946EF]/30"
                 >
-                  <div className="absolute top-0 right-0 p-8 opacity-5 font-heading text-8xl font-bold italic tracking-tighter transform translate-x-4 -translate-y-4 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 text-[#0A2540]">
-                    0{idx + 1}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#D946EF] rounded-full blur-[100px] opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" />
+                  
+                  <div className="absolute top-8 right-8 text-8xl font-black font-heading text-[#0A2540]/5 italic transform rotate-12 transition-transform duration-500 group-hover:scale-110">
+                    {idx + 1}
                   </div>
-                  <div className="relative z-10 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF] shadow-[0_10px_24px_rgba(0,123,255,0.12)]">
-                    <service.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="relative z-10 text-xl font-bold text-[#0A2540] font-heading pr-8">
-                    {service.title}
-                  </h3>
-                  <p className="relative z-10 mt-4 text-[0.95rem] leading-relaxed text-[#0A2540]/65">
-                    {service.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
 
-        <section className="px-6 pb-32">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-16 rounded-[40px] border border-[#007BFF]/20 bg-gradient-to-br from-[#ffffff] to-[#f4f9ff] p-10 md:p-16 md:grid-cols-[1.1fr_1fr] relative overflow-hidden"
-          >
-            <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#007BFF]/10 rounded-full blur-[100px] pointer-events-none" />
-
-            <motion.div variants={reveal} className="relative z-10">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                The Payoff
-              </p>
-              <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540] leading-[1.1]">
-                Social channels that actually strengthen the brand.
-              </h2>
-              <p className="mt-6 text-[1.1rem] leading-relaxed text-[#0A2540]/70">
-                The goal is not to post more for the sake of activity. The goal is to create a recognizable, consistent social presence that compounds trust and keeps attention moving in your direction.
-              </p>
-            </motion.div>
-            <motion.ul variants={reveal} className="space-y-4 relative z-10">
-              {outcomes.map((outcome) => (
-                <li
-                  key={outcome}
-                  className="group flex flex-col md:flex-row items-start gap-4 rounded-3xl border border-white bg-white/50 backdrop-blur-md p-5 text-[0.95rem] font-medium text-[#0A2540]/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:bg-white transition-colors"
-                >
-                  <span className="flex-shrink-0 mt-0.5 inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#007BFF]/10 text-[#007BFF] group-hover:scale-110 transition-transform">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                  </span>
-                  <span className="pt-1">{outcome}</span>
-                </li>
-              ))}
-            </motion.ul>
-          </motion.div>
-        </section>
-
-        <section className="px-6 pb-32">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto grid max-w-6xl gap-16 md:grid-cols-[1fr_1.2fr]"
-          >
-            <motion.div variants={reveal} className="md:sticky md:top-32 self-start">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                The Blueprint
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl font-heading text-[#0A2540]">
-                A practical framework for social consistency.
-              </h2>
-              <p className="mt-6 text-base md:text-lg text-[#0A2540]/70">
-                Social media improves when strategy, format, visuals, and publishing rhythm all support the same narrative. That is the discipline we bring.
-              </p>
-            </motion.div>
-            <div className="space-y-6">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.title}
-                  variants={reveal}
-                  className="relative rounded-[32px] border border-[#0A2540]/10 bg-white p-8 md:p-10 hover:shadow-[0_15px_30px_rgba(0,0,0,0.04)] transition-shadow"
-                >
-                  <div className="absolute top-8 right-8 w-12 h-12 bg-[#F4F6F8] rounded-full flex items-center justify-center text-[#007BFF]">
-                    <step.icon className="h-5 w-5" />
-                  </div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#007BFF]">
-                    Phase
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold font-heading text-[#0A2540] pr-12">{step.title}</h3>
-                  <p className="mt-4 text-[0.95rem] leading-relaxed text-[#0A2540]/70">{step.text}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
-        <section className="px-6 pb-32">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={stagger}
-            className="mx-auto max-w-6xl"
-          >
-            <motion.div variants={reveal} className="mb-14 text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl font-heading text-[#0A2540]">
-                Common Questions, Answered Honestly.
-              </h2>
-            </motion.div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {faqs.map((faq) => (
-                <motion.div
-                  key={faq.question}
-                  variants={reveal}
-                  className="rounded-[24px] border border-[#0A2540]/10 bg-white p-8"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[#007BFF]/10 text-[#007BFF]">
-                      <FiHelpCircle className="h-4 w-4" />
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-[#F4F6F8] flex items-center justify-center text-[#D946EF] mb-8 transition-colors duration-500 group-hover:bg-[#D946EF] group-hover:text-white">
+                      <service.icon className="w-6 h-6" />
                     </div>
-                    <p className="text-lg font-bold text-[#0A2540] font-heading leading-tight">
-                      {faq.question}
+                    <h3 className="text-2xl font-bold font-heading mb-4 text-[#0A2540] pr-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-[0.95rem] text-[#0A2540]/70 leading-relaxed font-light">
+                      {service.description}
                     </p>
                   </div>
-                  <p className="mt-4 text-[0.95rem] leading-relaxed text-[#0A2540]/65">{faq.answer}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </section>
 
-        <section className="px-6 pb-28">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={reveal}
-            className="mx-auto flex max-w-6xl flex-col items-center rounded-[40px] border border-[#0A2540]/10 bg-[#0A2540] px-10 py-20 text-center relative overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,123,255,0.15),_transparent_50%)]" />
 
-            <div className="relative z-10 w-full flex flex-col items-center">
-              <p className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#007BFF] mb-6 backdrop-blur">
-                Social Media Marketing
-              </p>
-              <h2 className="text-4xl font-extrabold tracking-tight md:text-6xl font-heading text-white max-w-3xl">
-                Ready to make your brand more visible and memorable?
+        {/* =========================================
+            SECTION 4: PORTFOLIO TEASER
+            ========================================= */}
+        <section className="px-6 pb-32 bg-[#F4F6F8]">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 text-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.3em] mb-4">
+                  <FiHeart className="w-3 h-3" /> Tangible Outcomes
+                </div>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight font-heading text-[#0A2540]">
+                  Engagement that drives<br/>measurable bottom-line.
+                </h2>
+              </motion.div>
+              <Link href="/work" className="group flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#0A2540] hover:text-[#D946EF] transition-colors">
+                View All Case Studies <FiArrowRight className="transition-transform group-hover:translate-x-2" />
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {featuredProjects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="group overflow-hidden rounded-[32px] bg-white border border-[#0A2540]/10 shadow-[0_10px_40px_rgba(10,37,64,0.03)] relative hover:shadow-[0_20px_60px_rgba(217,70,239,0.08)] transition-all duration-500"
+                >
+                  <div className="relative h-[340px] w-full overflow-hidden bg-[#EAF1F7] p-8 flex flex-col justify-end">
+                    <div className="absolute inset-0 z-0">
+                       <Image
+                         src={project.image}
+                         alt={project.title}
+                         fill
+                         className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-multiply"
+                       />
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540] via-[#0A2540]/60 to-transparent" />
+                    </div>
+                    
+                    <div className="relative z-10 w-full mb-2">
+                      <div className="inline-flex items-center gap-2 rounded-md bg-white/20 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 text-[#F3E8FF]">
+                        {project.category}
+                      </div>
+                      <h3 className="text-3xl font-extrabold font-heading text-white">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <p className="text-lg leading-relaxed text-[#0A2540]/70 font-light">
+                      {project.summary}
+                    </p>
+                    <div className="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center text-sm font-bold uppercase text-[#D946EF]">
+                       <span className="tracking-widest">Read Study</span>
+                       <FiArrowRight />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* =========================================
+            SECTION 5: THE PROCESS (THE HYPER-REACH LOOP)
+            ========================================= */}
+        <section className="px-6 py-32 border-y border-[#0A2540]/5 bg-white relative overflow-hidden">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center mb-24 relative z-20">
+              <span className="inline-block rounded-full bg-[#D946EF]/10 border border-[#D946EF]/20 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.35em] text-[#D946EF] mb-6 shadow-sm">
+                The Hyper-Reach Loop
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight text-[#0A2540]">
+                Predictable viral mechanics.
               </h2>
-              <p className="mt-6 max-w-2xl text-[1.1rem] leading-relaxed text-white/70">
-                If your social channels need more direction, stronger creative structure, and a better content system, we can build that foundation with you.
+              <p className="mt-6 text-lg text-[#0A2540]/70 font-light max-w-2xl mx-auto">
+                We do not post and pray. We utilize an infinite loop of testing, hook-optimization, community farming, and scaling the exact formats the algorithm demands.
               </p>
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+            </div>
+
+            {/* Desktop Graphical Hyper-Reach Loop (Infinity sign / 8 shape graphic) */}
+            <div className="hidden lg:flex flex-col items-center max-w-6xl mx-auto relative group py-8">
+               {/* Background abstract infinity shape using borders */}
+               <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                  <div className="w-[400px] h-[400px] rounded-full border-[20px] border-[#D946EF] blur-2xl -translate-x-[150px]" />
+                  <div className="w-[400px] h-[400px] rounded-full border-[20px] border-[#8B5CF6] blur-2xl translate-x-[150px]" />
+               </div>
+
+               <div className="grid grid-cols-2 gap-16 w-full relative z-10 px-12">
+                  {processSteps.map((step, index) => {
+                     const isLeft = index % 2 === 0;
+                     // Stagger vertical positioning to create an alternating wave flow
+                     const translateY = index === 0 ? "translate-y-0" : index === 1 ? "translate-y-20" : index === 2 ? "translate-y-8" : "translate-y-28";
+                     return (
+                        <motion.div 
+                           key={index}
+                           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-10%" }} transition={{ delay: index * 0.15 }}
+                           className={`relative bg-[#F4F6F8] border border-[#0A2540]/5 shadow-sm p-10 rounded-[32px] hover:shadow-[0_20px_40px_rgba(217,70,239,0.06)] hover:border-[#D946EF]/20 transition-all duration-300 ${translateY}`}
+                        >
+                           <div className="absolute -top-6 -left-6 text-[100px] font-black font-heading text-[#0A2540]/5 italic leading-none select-none">0{index+1}</div>
+                           <h3 className="text-2xl font-bold font-heading text-[#0A2540] mb-4 relative z-10">{step.title}</h3>
+                           <p className="text-base text-[#0A2540]/70 leading-relaxed font-light relative z-10">{step.text}</p>
+                           
+                           {/* Decorative connector dots */}
+                           <div className="absolute bottom-6 right-6 w-8 h-8 rounded-full bg-gradient-to-r from-[#D946EF] to-[#8B5CF6] opacity-20" />
+                        </motion.div>
+                     );
+                  })}
+               </div>
+               
+               {/* Center Node indicating continuous loop */}
+               <motion.div 
+                  animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border-4 border-dashed border-[#8B5CF6]/30 flex items-center justify-center -z-0"
+               >
+                  <div className="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center">
+                     <FiTrendingUp className="text-2xl text-[#8B5CF6]" />
+                  </div>
+               </motion.div>
+            </div>
+
+            {/* Mobile Vertical Blocks */}
+            <div className="lg:hidden space-y-6 max-w-xl mx-auto relative px-4">
+               <div className="absolute left-10 top-10 bottom-10 w-1 bg-gradient-to-b from-[#D946EF] to-[#8B5CF6] opacity-20 rounded-full" />
+               {processSteps.map((step, index) => (
+                  <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative bg-[#F4F6F8] p-8 rounded-[24px] border border-[#0A2540]/5 ml-14">
+                     <div className="absolute -left-16 top-6 w-10 h-10 bg-white rounded-full border-4 border-[#D946EF] flex items-center justify-center font-bold text-[#D946EF] text-sm">
+                        0{index+1}
+                     </div>
+                     <h3 className="text-xl font-bold font-heading text-[#0A2540] mb-2">{step.title}</h3>
+                     <p className="text-sm text-[#0A2540]/70 font-light">{step.text}</p>
+                  </motion.div>
+               ))}
+            </div>
+
+          </div>
+        </section>
+
+
+        {/* =========================================
+            SECTION 6: FINAL CTA 
+            ========================================= */}
+        <section className="px-6 pb-24 relative bg-[#F4F6F8] py-16">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}
+            className="mx-auto max-w-6xl relative overflow-hidden rounded-[40px] bg-[#0A2540] px-10 py-24 text-center shadow-[0_20px_60px_rgba(10,37,64,0.3)]"
+          >
+            {/* Background dynamic social lighting */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(217,70,239,0.35)_0%,_transparent_70%)] blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(139,92,246,0.35)_0%,_transparent_70%)] blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+            
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
+
+            <div className="relative z-10 flex flex-col items-center">
+              <span className="inline-block rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.35em] text-[#F3E8FF] mb-8 backdrop-blur-md">
+                Command The Feed
+              </span>
+              <h2 className="text-4xl lg:text-6xl font-extrabold tracking-tight font-heading max-w-4xl mx-auto leading-[1.05] text-white">
+                Ready to become impossible to ignore?
+              </h2>
+              <p className="mt-8 max-w-2xl text-lg text-white/70 mx-auto font-light">
+                Secure your social momentum. We'll audit your current organic approach and deliver a complete blueprint for generating cult-like digital engagement.
+              </p>
+              
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
                 <Link
                   href="/#contact"
-                  className="group relative overflow-hidden rounded-full bg-[#007BFF] px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:shadow-[0_8px_30px_rgba(0,123,255,0.5)]"
+                  className="group rounded-full bg-[#D946EF] px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all shadow-[0_10px_30px_rgba(217,70,239,0.4)] hover:scale-105 hover:bg-[#c026d3] flex items-center gap-3"
                 >
-                  <div className="absolute inset-0 bg-black/10 translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                  <span className="relative z-10">Request Social Audit</span>
+                  Initiate Social Strategy <FiArrowRight className="transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/work"
-                  className="rounded-full border border-white/20 px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:border-white hover:bg-white/5"
+                  className="rounded-full border border-white/20 px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-white/10 backdrop-blur-sm"
                 >
-                  View Case Studies
+                  View Viral Case Studies
                 </Link>
               </div>
             </div>
           </motion.div>
         </section>
-      </main>
 
+      </main>
       <Footer />
     </div>
   );
