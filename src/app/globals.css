@@ -27,7 +27,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 h1,
@@ -68,7 +68,6 @@ h6 {
   pointer-events: none;
   mix-blend-mode: multiply;
   z-index: -1;
-  animation: particleDriftA 32s linear infinite;
 }
 
 .noise-bg::after {
@@ -88,7 +87,6 @@ h6 {
   pointer-events: none;
   mix-blend-mode: multiply;
   z-index: -1;
-  animation: particleDriftB 44s linear infinite;
 }
 
 @keyframes particleDriftA {

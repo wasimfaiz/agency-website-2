@@ -10,9 +10,9 @@ type SmoothScrollProps = {
 export default function SmoothScroll({ children }: SmoothScrollProps) {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.045,
+      lerp: 0.1,
       smoothWheel: true,
-      wheelMultiplier: 0.85,
+      wheelMultiplier: 1.0,
     });
 
     let rafId = 0;
