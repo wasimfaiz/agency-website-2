@@ -18,7 +18,7 @@ const projects = [
         category: "Brand Experience",
         year: "2025",
         image: "/images/aesthetic-img2.png",
-        href: "#",
+        href: "https://unclemakhana.com",
         summary:
             "Designed a vibrant and appetizing digital experience that perfectly captures the playful essence of the Uncle Makhana brand.",
     },
@@ -27,16 +27,16 @@ const projects = [
         category: "Brand Website",
         year: "2026",
         image: "/images/pure-makhana.png",
-        href: "#",
+        href: "https://www.makhanapure.com/",
         summary:
             "A premium, luxury, and ultra-clean website for a high-end makhana brand, designed to communicate purity and modern elegance.",
     },
     {
-        title: "Zenfora Food",
+        title: "Zenvora Food",
         category: "E-Commerce / Brand Strategy",
         year: "2026",
         image: "/images/zenfora-food.png",
-        href: "#",
+        href: "https://zenvorafood.com/",
         summary:
             "Crafted a vibrant, appetite-inducing digital storefront that highlights the nutritional power of foxnuts with a seamless D2C checkout experience.",
     },

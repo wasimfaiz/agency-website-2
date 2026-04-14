@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ContactModal from "./ContactModal";
 
 const NavLink = ({
   href,
@@ -39,6 +40,7 @@ const NavLink = ({
 export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const useDarkTheme = isScrolled || forceDarkAtTop;
   const pathname = usePathname();
 
@@ -96,16 +98,16 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
             </NavLink>
           </nav>
           <div className="flex items-center gap-3">
-            <Link
+            <button
+              onClick={() => setIsContactModalOpen(true)}
               className={`hidden rounded-full border px-5 py-2.5 text-[11px] font-bold transition-all duration-300 lg:inline-flex ${
                 useDarkTheme
                   ? "border-[#007BFF] bg-[#007BFF]/10 text-[#007BFF] hover:bg-[#007BFF] hover:text-white"
                   : "border-white/30 text-white hover:bg-white hover:text-[#0A2540]"
               }`}
-              href="/#contact"
             >
               Start a Project
-            </Link>
+            </button>
             <button
               className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-[11px] font-semibold transition lg:hidden ${
                 useDarkTheme
@@ -166,7 +168,21 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
         <Link className={`block py-2 transition hover:text-[#007BFF] ${isBlogsActive ? "text-[#007BFF] font-bold" : ""}`} href="/blogs" onClick={() => setMenuOpen(false)}>
           Blogs
         </Link>
+        <button
+          className="mt-4 w-full rounded-xl bg-[#007BFF] py-3 text-center text-[11px] font-bold text-white transition hover:bg-[#0056b3]"
+          onClick={() => {
+            setMenuOpen(false);
+            setIsContactModalOpen(true);
+          }}
+        >
+          Start a Project
+        </button>
       </div>
+
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </>
   );
 }
