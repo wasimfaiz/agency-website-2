@@ -46,7 +46,7 @@ export default async function BlogPostPage(props: Props) {
             
             <div className="flex items-center gap-4 mb-12">
                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#0A2540]/10">
-                 <Image src="/images/sagar-singh.jpg" alt="Sagar Singh" fill className="object-cover" />
+                 <Image src="/images/sagar-singh.jpg" alt="Sagar Singh" fill className="object-cover" sizes="48px" />
                </div>
                <div>
                   <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Sagar Singh</p>

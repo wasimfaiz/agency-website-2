@@ -129,6 +129,7 @@ function Card({ i, project }: any) {
                             src={project.image}
                             alt={project.title}
                             className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                         />
                     </div>
                 </div>

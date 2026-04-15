@@ -84,15 +84,15 @@ export default function AboutPage() {
 
              {/* Image 1: Top Left */}
              <div className="absolute top-[-5%] lg:top-[0%] left-[0%] lg:left-[5%] w-[50%] lg:w-[50%] aspect-[4/3] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-xl z-20">
-                <Image src="/images/company-image1.png" fill alt="Engineering" className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/company-image1.png" fill alt="Engineering" className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700" sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 500px" />
              </div>
              {/* Image 2: Middle Right */}
              <div className="absolute top-[20%] lg:top-[20%] right-[-5%] lg:right-[-10%] w-[45%] lg:w-[50%] aspect-square rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-[0_20px_40px_rgba(10,37,64,0.1)] z-30">
-                <Image src="/images/company-image4.png" fill alt="Aesthetics" className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
+                <Image src="/images/company-image4.png" fill alt="Aesthetics" className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" sizes="(max-width: 768px) 45vw, (max-width: 1200px) 40vw, 500px" />
              </div>
              {/* Image 3: Bottom Left, overlapping slightly */}
              <div className="absolute top-[45%] lg:top-[42%] left-[10%] lg:left-[15%] w-[40%] lg:w-[40%] aspect-[3/4] rounded-2xl overflow-hidden border border-[#0A2540]/10 bg-[#e2e6eb] shadow-lg z-10">
-                <Image src="/images/company-image3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" />
+                <Image src="/images/company-image3.png" fill alt="Productivity" className="object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700" sizes="(max-width: 768px) 40vw, (max-width: 1200px) 35vw, 400px" />
              </div>
           </motion.div>
         </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
           >
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
                <motion.div variants={fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[4/3] rounded-[1.5rem] overflow-hidden shadow-sm border border-[#0A2540]/5 w-full order-2 lg:order-1 mt-6 lg:mt-0">
-                  <Image src="/images/company-image2.png" fill alt="Our Mission" className="object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]" />
+                  <Image src="/images/company-image2.png" fill alt="Our Mission" className="object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/10 to-transparent pointer-events-none" />
                </motion.div>
                
@@ -221,7 +221,7 @@ export default function AboutPage() {
                 className="group flex flex-col bg-white rounded-2xl border border-[#0A2540]/10 p-3 pb-6 shadow-[0_4px_20px_rgba(10,37,64,0.03)] hover:shadow-[0_20px_40px_rgba(10,37,64,0.08)] hover:-translate-y-2 transition-all duration-300 cursor-default"
               >
                 <div className="relative aspect-[4/5] rounded-[14px] overflow-hidden mb-5 bg-[#e2e6eb] border border-[#0A2540]/5">
-                   <Image src={member.image} fill alt={member.name} className="object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
+                   <Image src={member.image} fill alt={member.name} className="object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" sizes="(max-width: 768px) 45vw, (max-width: 1024px) 30vw, 250px" />
                 </div>
                 <div className="text-center px-1">
                    <h4 className="font-heading font-extrabold text-lg lg:text-xl text-[#0A2540] tracking-tight truncate">{member.name}</h4>

@@ -264,7 +264,7 @@ export default function EcommerceDevelopmentPage() {
               >
                  {/* Product Image Mock */}
                  <div className="w-full h-48 bg-[#F4F6F8] rounded-xl flex items-center justify-center mb-6 relative">
-                    <Image src="/images/zenfora-food.png" alt="product mock" fill className="object-cover rounded-xl" />
+                    <Image src="/images/zenfora-food.png" alt="product mock" fill className="object-cover rounded-xl" sizes="340px" />
                     <div className="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-md text-[9px] font-bold uppercase tracking-widest text-[#0A2540]">New Arrival</div>
                  </div>
                  
