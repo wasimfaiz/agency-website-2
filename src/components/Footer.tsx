@@ -194,20 +194,9 @@ export default function Footer() {
           {/* Bottom Half: Address and Time */}
           <div className="bg-white p-6 lg:p-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6 h-full">
              <div>
-               <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-full border border-[#0A2540]/10 bg-[#FAFAFA] px-3 py-1.5 opacity-80 transition-all hover:opacity-100">
-                 <div className="relative h-5 w-5 flex-shrink-0">
-                   <Image
-                     src="/setzet-logo.png"
-                     alt="Setzet logo"
-                     fill
-                     className="object-contain"
-                     sizes="20px"
-                   />
-                 </div>
-                 <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#0A2540]">
-                   Setzet
-                 </p>
-               </div>
+               <Link href="/" className="mb-6 inline-block opacity-80 transition-opacity hover:opacity-100">
+                 <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
+               </Link>
 
                <div>
                   <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/40">
