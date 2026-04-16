@@ -160,9 +160,9 @@ export default function Home() {
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
-          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#0A2540]" : "text-[#0A2540]"}`}>
-            Setzet
-          </span>
+          <a href="/" className="block transition-opacity duration-300 hover:opacity-80">
+            <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
+          </a>
           <nav
             className={`hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex`}
           >
