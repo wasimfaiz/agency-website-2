@@ -30,7 +30,14 @@ const services = [
     title: "Development",
     description: "Scalable, High-Performance Architectures",
     detail: "We engineer robust web, mobile, and custom software solutions designed for scale. From pixel-perfect UI/UX to secure backend APIs and e-commerce platforms, we build digital products that perform flawlessly.",
-    meta: ["Web & Mobile Apps", "Custom Software", "API & E-commerce"],
+    links: [
+      { name: "Web Development", href: "/services/web-development" },
+      { name: "Mobile App Development", href: "/services/mobile-app-development" },
+      { name: "Custom Software Development", href: "/services/custom-software-development" },
+      { name: "UI/UX Development", href: "/services/ui-ux-design" },
+      { name: "API Development", href: "/services/api-development" },
+      { name: "E-Commerce Development", href: "/services/e-commerce-development" }
+    ],
     outcomes: [
       "Lightning-fast digital experiences",
       "Scalable and secure architectures",
@@ -38,16 +45,40 @@ const services = [
     ],
     deliverables: [
       "Full-stack web & mobile apps",
-      "Custom API development",
-      "E-commerce platforms",
+      "Custom API architectures",
+      "High-converting storefronts",
       "UI/UX systems",
+    ],
+  },
+  {
+    title: "Digital Marketing",
+    description: "Focused Acquisition and Conversion Systems",
+    detail: "We structure digital marketing into clear growth pillars: SEO and content, performance marketing, social media, conversion optimization, marketing automation, and influencer partnerships.",
+    links: [
+      { name: "SEO & Content Marketing", href: "/services/seo-growth" },
+      { name: "Performance Marketing", href: "/services/performance-marketing" },
+      { name: "Social Media Marketing", href: "/services/social-media-marketing" },
+      { name: "Conversion Optimization", href: "/services/conversion-optimization" },
+      { name: "Marketing Automation", href: "/services/marketing-automation" },
+      { name: "Influencer Marketing", href: "/services/influencer-marketing" }
+    ],
+    outcomes: [
+      "Higher ranking across search engines",
+      "Lower CPA and better ROAS",
+      "Massive brand awareness and high conversion rates",
+    ],
+    deliverables: [
+      "SEO & Paid media campaigns",
+      "Social media growth frameworks",
+      "CRO and automation workflows",
+      "Influencer partnerships",
     ],
   },
   {
     title: "ERP Solutions",
     description: "Streamlined Enterprise Operations",
     detail: "We specialize in developing, implementing, and integrating robust Enterprise Resource Planning (ERP) systems. We automate business processes and connect third-party tools to give you total control over your operations.",
-    meta: ["Custom ERP Development", "Implementation", "Process Automation"],
+    links: [],
     outcomes: [
       "Centralized operational data",
       "Automated repetitive business processes",
@@ -61,27 +92,10 @@ const services = [
     ],
   },
   {
-    title: "Digital Marketing",
-    description: "Focused Acquisition and Conversion Systems",
-    detail: "We structure digital marketing into five clear growth pillars: SEO and content, performance marketing, social media, conversion optimization, and marketing automation. That gives you dedicated services that are easier to scale, measure, and turn into focused landing pages.",
-    meta: ["SEO & Content", "Performance Marketing", "Automation"],
-    outcomes: [
-      "Clearer service positioning across the funnel",
-      "Better conversion from organic, paid, and social traffic",
-      "A scalable lead generation engine with less overlap",
-    ],
-    deliverables: [
-      "SEO and content growth programs",
-      "Paid media campaign systems",
-      "Social media growth frameworks",
-      "CRO and marketing automation workflows",
-    ],
-  },
-  {
     title: "SaaS",
     description: "Next-Generation Software Platforms",
     detail: "We build, scale, and maintain sophisticated SaaS applications. From rapid MVP development to scaling architecture for growing user bases, we deliver multi-tenant solutions that retain users.",
-    meta: ["SaaS Product Dev", "MVP Prototyping", "Product Scaling"],
+    links: [],
     outcomes: [
       "Accelerated time-to-market for MVPs",
       "High user retention and engagement",
@@ -102,7 +116,7 @@ type Service = {
   title: string;
   description: string;
   detail: string;
-  meta: string[];
+  links: { name: string; href: string }[];
   outcomes: string[];
   deliverables: string[];
 };
@@ -118,24 +132,24 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
       variants={reveal}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative border-t border-[#0A2540]/10 py-12 md:py-24 transition-all hover:bg-white hover:shadow-[0_8px_30px_rgba(10,37,64,0.04)]"
+      className="group relative border-t border-[#0A2540]/10 py-12 md:py-24 transition-all hover:bg-[#FAFAFA]"
     >
-      <div className="container mx-auto px-6 grid md:grid-cols-[1fr_2fr_1fr] gap-8 items-start">
+      <div className="container mx-auto px-6 grid lg:grid-cols-[1fr_2fr_auto] gap-10 items-start">
         {/* Column 1: Title */}
         <div>
            <span className="font-mono text-xs font-bold text-[#007BFF] mb-4 bg-[#007BFF]/10 inline-block px-2 py-1 rounded-md tracking-wider">0{index + 1}</span>
-           <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-[#0A2540] transition-colors group-hover:text-[#007BFF]">{item.title}</h2>
+           <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-[#0A2540] transition-colors group-hover:text-[#007BFF] pr-4">{item.title}</h2>
         </div>
 
         {/* Column 2: Description + Detail */}
-        <div className="md:pl-10 relative">
+        <div className="relative">
            <h4 className="text-xl md:text-2xl text-[#0A2540]/50 font-medium mb-6 transition-colors group-hover:text-[#0A2540]">
              {item.description}
            </h4>
            <p className="text-lg text-[#0A2540]/70 leading-relaxed max-w-xl font-medium">
              {item.detail}
            </p>
-           <div className="mt-8 grid gap-8 md:grid-cols-2">
+           <div className="mt-8 grid gap-8 sm:grid-cols-2">
              <div>
                <p className="mb-3 text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#0A2540]/40">
                  Outcome Highlights
@@ -163,16 +177,30 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
            </div>
         </div>
 
-        {/* Column 3: Tags */}
-        <div className="flex flex-col items-start gap-3 md:items-end">
-           {item.meta.map((tag: string, i: number) => (
-             <span key={i} className="text-xs font-mono font-bold uppercase tracking-widest text-[#0A2540]/50 border border-[#0A2540]/10 px-3 py-1 rounded-full group-hover:border-[#007BFF]/30 group-hover:bg-[#007BFF]/5 transition-colors">
-               {tag}
-             </span>
+        {/* Column 3: Links */}
+        <div className="flex flex-col items-start gap-3 w-full lg:w-64 pt-6 lg:pt-0">
+           {item.links && item.links.length > 0 && (
+             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0A2540]/40 mb-1 lg:ml-auto">Specific Services</p>
+           )}
+           {item.links.map((link, i) => (
+             <Link 
+                key={i} 
+                href={link.href}
+                className="group/btn relative w-full text-[11px] font-bold uppercase tracking-widest text-[#0A2540] border border-[#0A2540]/10 px-5 py-3 rounded-xl hover:border-[#007BFF] hover:bg-white hover:text-[#007BFF] transition-all flex items-center justify-between shadow-sm hover:shadow-md"
+             >
+                <span className="truncate max-w-[80%]">{link.name}</span>
+                <span className="text-[16px] leading-none transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+             </Link>
            ))}
-           <div className={`mt-4 transition-transform duration-500 ${hovered ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}>
-              <span className="text-[#007BFF] text-2xl font-bold">&rarr;</span>
-           </div>
+           {(!item.links || item.links.length === 0) && (
+             <Link 
+                href="/#contact"
+                className="group/btn relative w-full text-[11px] font-bold uppercase tracking-widest text-white bg-[#007BFF] px-5 py-3 rounded-xl hover:bg-[#0056b3] transition-all flex items-center justify-between shadow-[0_8px_20px_rgba(0,123,255,0.2)] hover:shadow-[0_8px_30px_rgba(0,123,255,0.4)]"
+             >
+                <span>Talk to an Expert</span>
+                <span className="text-[16px] leading-none transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+             </Link>
+           )}
         </div>
       </div>
     </motion.div>
