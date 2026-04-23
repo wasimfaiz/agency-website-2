@@ -360,10 +360,10 @@ export default function ServicesPage() {
                     Start Project
                  </Link>
                   <Link 
-                    href="mailto:info@setzet.com"
+                    href="mailto:wasim@setzet.com"
                     className="px-10 py-4 border border-[#0A2540]/20 rounded-full font-bold uppercase tracking-widest hover:bg-[#F4F6F8] hover:border-[#007BFF]/30 transition-colors"
                   >
-                    info@setzet.com
+                    wasim@setzet.com
                   </Link>
               </div>
           </div>
