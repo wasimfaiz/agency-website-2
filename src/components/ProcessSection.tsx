@@ -5,7 +5,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaSearch, FaPenNib, FaCode, FaRocket } from "react-icons/fa";
 
 const steps = [
@@ -41,7 +41,11 @@ const steps = [
 
 const AnimatedNumber = ({ value }: { value: number }) => {
   const spring = useSpring(0, { stiffness: 120, damping: 24 });
-  spring.set(value);
+  
+  useEffect(() => {
+    spring.set(value);
+  }, [spring, value]);
+
   const rounded = useTransform(spring, (v) => Math.round(v));
   return <motion.span>{rounded}</motion.span>;
 };
@@ -72,39 +76,17 @@ export default function ProcessSection() {
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(15,23,42,0.06),_transparent_60%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(255,255,255,0.65),_rgba(248,250,252,0.9))]" />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-gradient-to-br from-rose-200/70 to-amber-200/40 blur-3xl"
-          animate={
-            shouldReduceMotion ? undefined : { y: [0, -20, 0], x: [0, 15, 0] }
-          }
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { duration: 12, repeat: Infinity, ease: "easeInOut" }
-          }
         />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-200/60 to-sky-200/40 blur-3xl"
-          animate={
-            shouldReduceMotion ? undefined : { y: [0, 18, 0], x: [0, -12, 0] }
-          }
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { duration: 14, repeat: Infinity, ease: "easeInOut" }
-          }
         />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute left-24 bottom-12 h-64 w-64 rounded-full bg-gradient-to-br from-emerald-200/60 to-lime-200/40 blur-3xl"
-          animate={shouldReduceMotion ? undefined : { y: [0, 22, 0] }}
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { duration: 16, repeat: Infinity, ease: "easeInOut" }
-          }
         />
       </div>
 
@@ -182,6 +164,7 @@ export default function ProcessSection() {
                   <motion.li
                     key={step.title}
                     variants={cardVariants}
+                    layout="position"
                     className={`group rounded-3xl border border-slate-200/70 bg-white/85 p-5 shadow-[0_18px_40px_-26px_rgba(15,23,42,0.4)] backdrop-blur ${
                       isOpen ? "ring-1 ring-slate-900/10" : ""
                     }`}
@@ -203,16 +186,19 @@ export default function ProcessSection() {
                         </div>
                         <div>
                           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                            Step 0{index + 1}
+                            Step {String(index + 1).padStart(2, "0")}
                           </p>
                           <h3 className="text-xl font-semibold text-slate-900">
                             {step.title}
                           </h3>
                         </div>
                       </div>
-                      <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+                      <motion.div
+                        layout="position"
+                        className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400"
+                      >
                         {isOpen ? "Close" : "Open"}
-                      </span>
+                      </motion.div>
                     </button>
 
                     <motion.div
