@@ -63,6 +63,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/services/e-commerce-development`,
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/api-development`,
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/custom-software-development`,
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/influencer-marketing`,
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/seo-growth`,
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/ui-ux-design`,
+      lastModified: new Date("2026-04-26"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/work`,
       lastModified: new Date("2026-03-08"),
       changeFrequency: "weekly",
