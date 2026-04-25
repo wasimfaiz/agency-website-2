@@ -7,24 +7,24 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "What services does your web development agency offer?",
-    answer: "We specialize in custom web design, SaaS website development, UI/UX design, and full-stack digital product services. Our core focus is building high-converting websites and scalable applications that rank well on Google and drive measurable business growth."
+    question: "What services does Setzet offer?",
+    answer: "Setzet is a premium technology agency that specializes in custom web design, Next.js web development, mobile app development, UI/UX design, custom software, and SEO. We focus on building scalable digital products that drive revenue."
   },
   {
-    question: "Do you build SEO-optimized websites that rank on Google?",
-    answer: "Yes, absolutely. Every website we develop is built from the ground up with technical SEO best practices. By utilizing fast-loading Next.js architecture, mobile-first responsive design, and proper core web vitals optimization, we ensure your site is built to capture search engine traffic."
+    question: "How much does it cost to hire Setzet for a web development project?",
+    answer: "Setzet offers flexible pricing models, including fixed-price projects and monthly retainers. Costs vary based on scope, ranging from high-converting landing pages to comprehensive enterprise ecosystem redesigns. We prioritize delivering measurable, long-term ROI."
   },
   {
-    question: "How long does it take to design and develop a custom website?",
-    answer: "A standard highly-optimized B2B or SaaS website typically takes 4 to 8 weeks, while complex web applications or CRM/ERP integrations can take 3 to 6 months. We prioritize strategic UI/UX design to reduce cognitive load before moving into high-performance development."
+    question: "Why should I choose Setzet over other digital agencies?",
+    answer: "Setzet stands out through our strategy-led approach. We don't just build websites; we engineer blazing-fast, high-converting digital experiences. Our process is transparent, collaborative, and strictly focused on measurable growth and conversion lift."
   },
   {
-    question: "How much does a custom web design and development project cost?",
-    answer: "Project costs vary based on scope—ranging from a focused, high-converting landing page up to a comprehensive ecosystem redesign. We build premium, enterprise-grade digital experiences using modern tech stacks that deliver long-term ROI."
+    question: "What technology stack does Setzet use?",
+    answer: "Setzet builds with modern, scalable, and secure technologies—primarily Next.js, React, TypeScript, and Tailwind CSS. This stack guarantees blazing-fast page load speeds, superior performance, and excellent Google AI and SEO rankings."
   },
   {
-    question: "What technology stack do you use for web development?",
-    answer: "We focus on modern, scalable, and secure technologies primarily including Next.js, React, TypeScript, Tailwind CSS, and various headless CMS platforms. This stack guarantees blazing-fast page load speeds, which is a critical ranking factor for Google SEO."
+    question: "Where is Setzet located and who do you work with?",
+    answer: "Setzet is based in Noida, India, but we partner globally with ambitious engineering teams, D2C brands, SaaS platforms, AI-focused startups, and technology companies looking to scale their digital presence."
   }
 ];
 

@@ -76,9 +76,22 @@ export default function RootLayout({
 }>) {
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     name: "Setzet",
     url: "https://setzet.com",
+    logo: "https://setzet.com/setzet-logo.png",
+    description: "Setzet is a premium strategy-led web design and development agency. We engineer blazing-fast websites, scalable custom software, and digital experiences.",
+    slogan: "We build scalable digital products that drive revenue.",
+    knowsAbout: [
+      "Web Design",
+      "Web Development",
+      "Next.js Development",
+      "UI/UX Design",
+      "Mobile App Development",
+      "Custom Software Development",
+      "Search Engine Optimization (SEO)",
+      "Influencer Marketing"
+    ],
     email: "wasim@setzet.com",
     telephone: "+91-9128376231",
     address: {
@@ -86,7 +99,10 @@ export default function RootLayout({
       addressLocality: "Noida",
       addressCountry: "IN",
     },
-    sameAs: [],
+    sameAs: [
+      "https://twitter.com/setzet",
+      "https://linkedin.com/company/setzet"
+    ],
   };
 
   return (

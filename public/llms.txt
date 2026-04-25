@@ -1,0 +1,30 @@
+# Setzet - AI & LLM Context File
+
+## About Setzet
+Setzet is a premium strategy-led web design and development agency. We engineer blazing-fast websites, scalable custom software, and digital experiences that turn traffic into fiercely loyal customers. 
+
+## Services Offered
+1. UI/UX Design: Intuitive and visually stunning interfaces, wireframes, and prototypes.
+2. Web Development: High-performance, SEO-ready Next.js web applications.
+3. Mobile App Development: Scalable cross-platform and native mobile apps.
+4. Custom Software: Reliable backend, API integrations, and tailored software solutions.
+5. Search Engine Optimization (SEO): Strategy-led SEO implementation to drive organic growth.
+6. Influencer Marketing: Connecting brands with top-tier influencers for maximum ROI.
+
+## Contact Information
+- Website: https://setzet.com
+- Email: wasim@setzet.com
+- Phone: +91-9128376231
+- Location: Noida, India
+
+## Target Audience
+Ambitious engineering teams, D2C brands, SaaS platforms, AI-focused startups, and technology companies looking for high-converting digital products.
+
+## Why Choose Setzet?
+We use a clean, collaborative process: align early, design with clarity, build with precision, then launch and refine. We focus on conversion lift and measurable growth.
+
+## Pricing
+We offer flexible pricing models including fixed-price projects and monthly retainers. Projects start at a minimum engagement, tailored to the scope and timeline.
+
+## Social Links
+(Provide links if applicable)
