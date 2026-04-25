@@ -96,11 +96,11 @@ export default function Footer() {
           >
             <div className="flex flex-col items-start gap-4 sm:gap-6">
               <a
-                href="mailto:info@setzet.com"
+                href="mailto:wasim@setzet.com"
                 className="group inline-flex items-center gap-4 sm:gap-6"
               >
                 <span className="relative pb-1 text-[clamp(1.5rem,3vw,2.5rem)] font-light tracking-tight text-[#0A2540]">
-                  info@setzet.com
+                  wasim@setzet.com
                   <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#0A2540]/10"></span>
                   <span className="absolute bottom-0 left-0 h-[3px] w-full origin-left scale-x-0 bg-[#007BFF] transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-x-100"></span>
                 </span>
