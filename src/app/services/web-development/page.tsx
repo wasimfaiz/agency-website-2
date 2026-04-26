@@ -137,11 +137,6 @@ export default function WebDevelopmentPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#007BFF] selection:text-white">
-      <title>Premium Web Development | Setzet</title>
-      <meta
-        name="description"
-        content="We build award-winning, high-performance web experiences."
-      />
 
       {/* Header - Light Mode Optimized */}
       <header
@@ -191,13 +186,15 @@ export default function WebDevelopmentPage() {
           {/* Animated Background Ambience */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div 
-              animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.1, 1] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              transition={{ duration: 1.5 }}
               className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#007BFF]/10 blur-[150px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
               className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#00C6FF]/10 blur-[150px]" 
             />
             {/* Grid grid dots overlay (Light mode) */}
@@ -264,9 +261,10 @@ export default function WebDevelopmentPage() {
               
               {/* Main Center UI Card (Dashboard Mockup) */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [2, -2, 2], rotateY: [-5, 5, -5] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[340px] rounded-[24px] border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl shadow-[0_30px_100px_rgba(10,37,64,0.15)] overflow-hidden z-20"
+                initial={{ opacity: 0, y: "-40%", x: "-50%" }}
+                animate={{ opacity: 1, y: "-50%", x: "-50%" }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-1/2 left-1/2 w-[480px] h-[340px] rounded-[24px] border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl shadow-[0_30px_100px_rgba(10,37,64,0.15)] overflow-hidden z-20"
               >
                 {/* Mac Header */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-[#0A2540]/5 bg-[#F4F6F8]">
@@ -309,9 +307,10 @@ export default function WebDevelopmentPage() {
 
               {/* Floating Element 1: Performance Badge (Top Right) */}
               <motion.div 
-                animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-10 right-4 w-[200px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_rgba(10,37,64,0.1)] z-30"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute top-10 right-4 w-[200px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_rgba(10,37,64,0.1)] z-30 hover:-translate-y-2 transition-transform duration-300"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full border-4 border-[#27C93F] bg-green-50 flex items-center justify-center">
@@ -326,9 +325,10 @@ export default function WebDevelopmentPage() {
 
               {/* Floating Element 2: Code Window (Bottom Left) */}
               <motion.div 
-                animate={{ y: [0, 15, 0], rotate: [-2, 0, -2] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-16 left-0 w-[260px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-5 shadow-[0_30px_60px_rgba(10,37,64,0.1)] z-30 font-mono text-xs"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="absolute bottom-16 left-0 w-[260px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-5 shadow-[0_30px_60px_rgba(10,37,64,0.1)] z-30 font-mono text-xs hover:-translate-y-2 transition-transform duration-300"
               >
                 <div className="flex gap-1.5 mb-4">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#0A2540]/20" />
@@ -346,9 +346,10 @@ export default function WebDevelopmentPage() {
               
               {/* Floating Element 3: Speed Icon */}
               <motion.div 
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[40%] text-[#00C6FF] left-4 text-4xl blur-[2px] z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 0.8, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute top-[40%] text-[#00C6FF] left-4 text-4xl blur-[2px] z-10 hover:scale-110 hover:opacity-100 transition-all duration-300"
               >
                 <FiZap />
               </motion.div>
