@@ -53,7 +53,7 @@ const BLOG_DATA: Record<
     ],
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-    author: "Neha Pol",
+    author: "Nikita Singh",
     datePublished: "2026-02-23",
   },
   "3": {
@@ -73,7 +73,7 @@ const BLOG_DATA: Record<
     ],
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop",
-    author: "Priya Sharma",
+    author: "Ropa Roy",
     datePublished: "2026-02-24",
   },
   "4": {
@@ -93,7 +93,7 @@ const BLOG_DATA: Record<
     ],
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
-    author: "Aditi Sharma",
+    author: "Wasim Faiz",
     datePublished: "2026-02-26",
   },
 };

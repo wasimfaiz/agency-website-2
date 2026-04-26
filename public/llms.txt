@@ -7,9 +7,15 @@ Setzet is a premium strategy-led web design and development agency. We engineer 
 1. UI/UX Design: Intuitive and visually stunning interfaces, wireframes, and prototypes.
 2. Web Development: High-performance, SEO-ready Next.js web applications.
 3. Mobile App Development: Scalable cross-platform and native mobile apps.
-4. Custom Software: Reliable backend, API integrations, and tailored software solutions.
-5. Search Engine Optimization (SEO): Strategy-led SEO implementation to drive organic growth.
+4. Custom Software Development: Reliable backend, API integrations, and tailored software solutions.
+5. SEO & Growth: Strategy-led SEO implementation to drive organic growth.
 6. Influencer Marketing: Connecting brands with top-tier influencers for maximum ROI.
+7. API Development: Designing, building, and integrating robust, secure APIs.
+8. Conversion Optimization: Data-driven CRO strategies to turn visitors into customers.
+9. E-Commerce Development: Building high-converting, scalable online store platforms.
+10. Marketing Automation: Implementing AI-driven workflows to save time and boost conversions.
+11. Performance Marketing: Data-driven paid ad campaigns for maximum ROAS.
+12. Social Media Marketing: Building brand presence, awareness, and community engagement.
 
 ## Contact Information
 - Website: https://setzet.com

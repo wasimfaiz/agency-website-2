@@ -26,7 +26,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
@@ -322,7 +322,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
@@ -342,10 +342,10 @@ export default async function BlogPostPage(props: Props) {
             
             <div className="flex items-center gap-4 mb-12">
                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#0A2540]/10">
-                 <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" alt="Author" fill className="object-cover" />
+                 <Image src="/images/nikita-singh.jpg" alt="Nikita Singh" fill className="object-cover" sizes="48px" />
                </div>
                <div>
-                  <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Neha Pol</p>
+                  <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Nikita Singh</p>
                   <p className="text-[11px] font-medium text-[#0A2540]/40 tracking-widest uppercase">Technical Writer</p>
                </div>
             </div>
@@ -664,7 +664,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
@@ -684,10 +684,10 @@ export default async function BlogPostPage(props: Props) {
             
             <div className="flex items-center gap-4 mb-12">
                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#0A2540]/10">
-                 <Image src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" alt="Author" fill className="object-cover" />
+                 <Image src="/images/ropa-roy.jpg" alt="Ropa Roy" fill className="object-cover" sizes="48px" />
                </div>
                <div>
-                  <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Priya Sharma</p>
+                  <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Ropa Roy</p>
                   <p className="text-[11px] font-medium text-[#0A2540]/40 tracking-widest uppercase">Agency Growth Lead</p>
                </div>
             </div>
@@ -1032,7 +1032,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-5xl mx-auto">
+        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
             <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
@@ -1052,10 +1052,10 @@ export default async function BlogPostPage(props: Props) {
             
             <div className="flex items-center gap-4 mb-12">
                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-[#0A2540]/10">
-                 <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" alt="Author" fill className="object-cover" />
+                 <Image src="/images/wasim-faiz.png" alt="Wasim Faiz" fill className="object-cover" sizes="48px" />
                </div>
                <div>
-                  <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Aditi Sharma</p>
+                  <p className="text-sm font-bold text-[#0A2540] tracking-wider uppercase">Wasim Faiz</p>
                   <p className="text-[11px] font-medium text-[#0A2540]/40 tracking-widest uppercase">Lead UX Designer</p>
                </div>
             </div>
