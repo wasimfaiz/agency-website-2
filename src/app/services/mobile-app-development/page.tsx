@@ -137,11 +137,6 @@ export default function MobileAppDevelopmentPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#007BFF] selection:text-white">
-      <title>Premium Mobile App Development | Setzet</title>
-      <meta
-        name="description"
-        content="We build award-winning, high-performance mobile applications that users return to every day."
-      />
 
       {/* Header - Light Mode Optimized */}
       <header
@@ -191,13 +186,15 @@ export default function MobileAppDevelopmentPage() {
           {/* Animated Background Ambience */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div 
-              animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.1, 1] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              transition={{ duration: 1.5 }}
               className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#007BFF]/10 blur-[150px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
               className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#00C6FF]/10 blur-[150px]" 
             />
             {/* Grid grid dots overlay */}
@@ -264,9 +261,10 @@ export default function MobileAppDevelopmentPage() {
               
               {/* Main Center UI Card (Mobile Phone Mockup) */}
               <motion.div 
-                animate={{ y: [-15, 15, -15], rotateX: [3, -3, 3], rotateY: [-6, 6, -6] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[580px] rounded-[40px] border-[10px] border-[#0A2540] bg-white shadow-[0_30px_100px_rgba(10,37,64,0.15)] overflow-hidden z-20"
+                initial={{ opacity: 0, y: "-40%", x: "-50%" }}
+                animate={{ opacity: 1, y: "-50%", x: "-50%" }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-1/2 left-1/2 w-[280px] h-[580px] rounded-[40px] border-[10px] border-[#0A2540] bg-white shadow-[0_30px_100px_rgba(10,37,64,0.15)] overflow-hidden z-20"
               >
                 {/* Dynamic Island / Notch */}
                 <div className="absolute top-0 inset-x-0 h-7 flex justify-center z-30">
@@ -338,9 +336,10 @@ export default function MobileAppDevelopmentPage() {
 
               {/* Floating Element 1: Store Rank Badge */}
               <motion.div 
-                animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-20 right-0 w-[190px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_rgba(10,37,64,0.1)] z-30"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute top-20 right-0 w-[190px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_rgba(10,37,64,0.1)] z-30 hover:-translate-y-2 transition-transform duration-300"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full border-4 border-[#FFB800] bg-yellow-50 flex items-center justify-center text-[#FFB800] text-xl">
@@ -355,9 +354,10 @@ export default function MobileAppDevelopmentPage() {
 
               {/* Floating Element 2: Tech Notification */}
               <motion.div 
-                animate={{ y: [0, 15, 0], rotate: [-2, 0, -2] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-32 left-0 w-[240px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-4 shadow-[0_30px_60px_rgba(10,37,64,0.1)] z-30 flex items-center gap-4"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="absolute bottom-32 left-0 w-[240px] rounded-2xl border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl p-4 shadow-[0_30px_60px_rgba(10,37,64,0.1)] z-30 flex items-center gap-4 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
                     <FiSmartphone className="text-2xl" />
@@ -370,9 +370,10 @@ export default function MobileAppDevelopmentPage() {
               
               {/* Floating Element 3: Speed Icon */}
               <motion.div 
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[30%] text-[#00C6FF] left-10 text-4xl blur-[2px] z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 0.8, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute top-[30%] text-[#00C6FF] left-10 text-4xl blur-[2px] z-10 hover:scale-110 hover:opacity-100 transition-all duration-300"
               >
                 <FiZap />
               </motion.div>
