@@ -394,7 +394,7 @@ export default function Home() {
                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#F59E0B]" />
                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#10B981]" />
                      <div className="ml-4 flex-1 h-6 sm:h-7 bg-white rounded-md border border-[#0A2540]/5 flex items-center px-3 justify-center">
-                        <span className="text-[9px] sm:text-[10px] font-mono text-[#0A2540]/40 flex items-center gap-2"><FiLock className="w-3 h-3"/> setztupd.com</span>
+                        <span className="text-[9px] sm:text-[10px] font-mono text-[#0A2540]/40 flex items-center gap-2"><FiLock className="w-3 h-3"/> setzet.com</span>
                      </div>
                   </div>
                   {/* Video Player */}

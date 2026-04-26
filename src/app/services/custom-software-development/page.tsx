@@ -137,11 +137,6 @@ export default function CustomSoftwareDevelopmentPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#2563EB] selection:text-white">
-      <title>Premium Custom Software Development | Setzet</title>
-      <meta
-        name="description"
-        content="We engineer complex, highly-scalable software solutions. Modernizing legacy systems, building enterprise SaaS, and deploying cloud infrastructures."
-      />
 
       {/* Header - Light Mode */}
       <header
@@ -192,13 +187,15 @@ export default function CustomSoftwareDevelopmentPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Cobalt Blue & Cyan Gradients */}
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              transition={{ duration: 1.5 }}
               className="absolute top-[-5%] right-[0%] w-[50vw] h-[50vw] rounded-full bg-[#2563EB]/15 blur-[160px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
               className="absolute bottom-[-10%] left-[0%] w-[45vw] h-[45vw] rounded-full bg-[#06B6D4]/15 blur-[150px]" 
             />
             {/* Tech Server Grid Background */}
@@ -258,9 +255,10 @@ export default function CustomSoftwareDevelopmentPage() {
               
               {/* Back Node: Server Node Status */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [10, 15, 10], rotateZ: [-4, -2, -4], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[10%] left-[20%] w-[320px] rounded-[16px] border border-[#0A2540]/10 bg-white/95 backdrop-blur-md shadow-2xl p-6 z-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, rotateX: 10, rotateZ: -2, rotateY: -5 }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-[10%] left-[20%] w-[320px] rounded-[16px] border border-[#0A2540]/10 bg-white/95 backdrop-blur-md shadow-2xl p-6 z-10 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="flex justify-between items-center mb-6">
                     <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
@@ -293,9 +291,10 @@ export default function CustomSoftwareDevelopmentPage() {
               
               {/* Middle Layer: VS Code / Terminal Mockup */}
               <motion.div 
-                animate={{ y: [-5, 15, -5], rotateX: [15, 20, 15], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-[30%] right-[0%] w-[380px] rounded-[16px] border border-gray-800 bg-[#0A1929] shadow-[0_30px_60px_rgba(37,99,235,0.2)] overflow-hidden z-20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, rotateX: 15, rotateZ: 2, rotateY: -2 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute top-[30%] right-[0%] w-[380px] rounded-[16px] border border-gray-800 bg-[#0A1929] shadow-[0_30px_60px_rgba(37,99,235,0.2)] overflow-hidden z-20 hover:-translate-y-2 transition-transform duration-300"
               >
                  {/* Window Controls */}
                  <div className="w-full h-8 bg-black/40 flex items-center px-4 gap-1.5 border-b border-white/10">
@@ -321,9 +320,10 @@ export default function CustomSoftwareDevelopmentPage() {
 
               {/* Front Top Layer: Docker / Deployment Success Alert */}
               <motion.div 
-                animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-                className="absolute bottom-[10%] left-[10%] w-[300px] rounded-full border border-white/50 bg-gradient-to-r from-white to-[#EFF6FF] shadow-[0_40px_80px_rgba(37,99,235,0.15)] p-3 pr-6 z-30 flex items-center gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute bottom-[10%] left-[10%] w-[300px] rounded-full border border-white/50 bg-gradient-to-r from-white to-[#EFF6FF] shadow-[0_40px_80px_rgba(37,99,235,0.15)] p-3 pr-6 z-30 flex items-center gap-4 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-white shadow-[0_10px_20px_rgba(37,99,235,0.3)]">
                     <FiCheckCircle className="text-xl" />
