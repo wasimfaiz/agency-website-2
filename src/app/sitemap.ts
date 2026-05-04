@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const corePages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date("2026-03-11"),
+      lastModified: new Date("2026-05-04"),
       changeFrequency: "weekly",
       priority: 1.0,
     },

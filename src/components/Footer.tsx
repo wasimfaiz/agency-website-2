@@ -5,13 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const ClientTime = () => {
+const ClientTime = ({ timeZone = "Asia/Kolkata" }: { timeZone?: string }) => {
   const [time, setTime] = useState("");
   useEffect(() => {
     const update = () => {
       setTime(
         new Date().toLocaleTimeString("en-IN", {
-          timeZone: "Asia/Kolkata",
+          timeZone,
           hour: "2-digit",
           minute: "2-digit",
         })
@@ -20,8 +20,8 @@ const ClientTime = () => {
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
-  }, []);
-  return <span className="inline-block min-w-[100px] sm:min-w-[140px]">{time || "—:—"}</span>;
+  }, [timeZone]);
+  return <span className="inline-block min-w-[80px] sm:min-w-[110px]">{time || "—:—"}</span>;
 };
 
 const Marquee = () => {
@@ -170,7 +170,7 @@ export default function Footer() {
                   { name: "LinkedIn", href: "https://www.linkedin.com/company/setzet/" },
                   { name: "Instagram", href: "https://www.instagram.com/setzet.in/" },
                   { name: "X / Twitter", href: "https://x.com/setzetin" },
-                  { name: "Dribbble", href: "#" },
+                  
                 ].map((link, i) => (
                   <a
                     key={i}
@@ -198,26 +198,46 @@ export default function Footer() {
                  <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
                </Link>
 
-               <div>
-                  <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/40">
-                     Local Time HQ
-                  </p>
-                  <div className="flex items-center gap-3">
-                     <p className="text-2xl sm:text-3xl font-light tracking-tight text-[#0A2540]">
-                        <ClientTime />
-                     </p>
-                     <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                     </span>
-                  </div>
-                  <p className="mt-1 text-xs font-medium text-[#0A2540]/60">
-                     Noida, India
-                  </p>
+               <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
+                 <div>
+                    <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/40">
+                       India HQ
+                    </p>
+                    <div className="flex items-center gap-3">
+                       <p className="text-2xl sm:text-3xl font-light tracking-tight text-[#0A2540]">
+                          <ClientTime timeZone="Asia/Kolkata" />
+                       </p>
+                       <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                       </span>
+                    </div>
+                    <p className="mt-1 text-xs font-medium text-[#0A2540]/60">
+                       Noida, Sector 132, Uttar Pradesh, India
+                    </p>
+                 </div>
+
+                 <div>
+                    <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/40">
+                       Germany Office
+                    </p>
+                    <div className="flex items-center gap-3">
+                       <p className="text-2xl sm:text-3xl font-light tracking-tight text-[#0A2540]">
+                          <ClientTime timeZone="Europe/Berlin" />
+                       </p>
+                       <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
+                       </span>
+                    </div>
+                    <p className="mt-1 text-xs font-medium text-[#0A2540]/60">
+                       Vöttinger Str. 34B, 85354 Freising, Germany
+                    </p>
+                 </div>
                </div>
              </div>
              
-             <div className="hidden lg:block text-right pb-1">
+             <div className="hidden lg:block text-right pb-1 shrink-0">
                 <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#0A2540]/30 mb-2">Build Better.</p>
                 <p className="text-sm font-medium text-[#0A2540]/50 max-w-[140px] leading-relaxed">
                    Delivering premium experiences globally.
