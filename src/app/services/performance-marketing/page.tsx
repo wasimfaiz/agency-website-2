@@ -192,13 +192,15 @@ export default function PerformanceMarketingPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Fiery Sunset Ad Gradients */}
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 0.5, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
               className="absolute top-[-5%] right-[5%] w-[45vw] h-[45vw] rounded-full bg-[#FF4A3F]/15 blur-[160px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 0.4, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
               className="absolute bottom-[-10%] left-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#FFB01A]/10 blur-[150px]" 
             />
             {/* Target Reticle Grid Background */}
@@ -258,8 +260,9 @@ export default function PerformanceMarketingPage() {
               
               {/* Back Layer: Ad Manager Campaign List */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-6, -4, -6], rotateY: [-15, -10, -15] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 30, rotateX: 15, rotateZ: -6, rotateY: -15 }}
+                animate={{ opacity: 1, y: 0, rotateX: 15, rotateZ: -6, rotateY: -15 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute top-[10%] left-[5%] w-[400px] rounded-[24px] border border-[#0A2540]/10 bg-white/90 backdrop-blur-md shadow-2xl p-6 z-10"
               >
                   <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
@@ -287,8 +290,9 @@ export default function PerformanceMarketingPage() {
               
               {/* Middle Layer: Direct Response Ad Creative Block */}
               <motion.div 
-                animate={{ y: [-5, 15, -5], rotateX: [12, 17, 12], rotateZ: [-2, 0, -2], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                initial={{ opacity: 0, y: 30, rotateX: 12, rotateZ: -2, rotateY: -10 }}
+                animate={{ opacity: 1, y: 0, rotateX: 12, rotateZ: -2, rotateY: -10 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                 className="absolute top-[45%] right-[0%] w-[280px] rounded-[24px] border border-white bg-white shadow-[0_30px_60px_rgba(10,37,64,0.1)] p-4 z-20"
               >
                   <div className="flex items-center gap-3 mb-3">
@@ -312,8 +316,9 @@ export default function PerformanceMarketingPage() {
 
               {/* Front Top Layer: Total Revenue ROAS Gauge */}
               <motion.div 
-                animate={{ y: [0, 20, 0], rotateX: [5, 10, 5], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                initial={{ opacity: 0, y: 30, rotateX: 5, rotateZ: 2, rotateY: -5 }}
+                animate={{ opacity: 1, y: 0, rotateX: 5, rotateZ: 2, rotateY: -5 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                 className="absolute bottom-[0%] left-[20%] w-[340px] rounded-[32px] border border-white/50 bg-white shadow-[0_40px_80px_rgba(255,74,63,0.15)] p-6 z-30 flex items-center gap-6"
               >
                  {/* Circle ROAS graph */}

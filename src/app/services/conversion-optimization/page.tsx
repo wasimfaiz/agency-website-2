@@ -197,13 +197,15 @@ export default function CROPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Cyan/Coral CRO Gradients */}
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 0.5, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
               className="absolute top-[0%] left-[-5%] w-[45vw] h-[45vw] rounded-full bg-[#06B6D4]/15 blur-[160px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 0.4, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
               className="absolute bottom-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#F43F5E]/10 blur-[150px]" 
             />
             {/* Minimal Grid Data Background */}
@@ -263,9 +265,10 @@ export default function CROPage() {
               
               {/* Back Layer: Variant A (Control) */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-6, -4, -6], rotateY: [-15, -10, -15] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[10%] left-[5%] w-[320px] rounded-[16px] border border-[#0A2540]/10 bg-white/80 backdrop-blur-sm shadow-xl p-0 overflow-hidden z-10 opacity-70 grayscale"
+                initial={{ opacity: 0, y: 30, rotateX: 15, rotateZ: -6, rotateY: -15 }}
+                animate={{ opacity: 0.7, y: 0, rotateX: 15, rotateZ: -6, rotateY: -15 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute top-[10%] left-[5%] w-[320px] rounded-[16px] border border-[#0A2540]/10 bg-white/80 backdrop-blur-sm shadow-xl p-0 overflow-hidden z-10 grayscale"
               >
                  <div className="w-full h-8 bg-gray-100 flex items-center px-4 gap-1.5 border-b border-gray-200">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -284,8 +287,9 @@ export default function CROPage() {
               
               {/* Middle Layer: Variant B (Challenger) with Fake Heatmap */}
               <motion.div 
-                animate={{ y: [-5, 15, -5], rotateX: [10, 15, 10], rotateZ: [-2, 0, -2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                initial={{ opacity: 0, y: 30, rotateX: 10, rotateZ: -2, rotateY: -5 }}
+                animate={{ opacity: 1, y: 0, rotateX: 10, rotateZ: -2, rotateY: -5 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                 className="absolute top-[20%] right-[5%] w-[360px] rounded-[16px] border border-[#06B6D4]/30 bg-white shadow-[0_30px_60px_rgba(6,182,212,0.15)] p-0 overflow-hidden z-20"
               >
                  <div className="w-full h-8 bg-white flex items-center px-4 gap-1.5 border-b border-gray-100">
@@ -314,8 +318,9 @@ export default function CROPage() {
 
               {/* Front Top Layer: Test Results Confidence Chart */}
               <motion.div 
-                animate={{ y: [0, 20, 0], rotateX: [5, 10, 5], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                initial={{ opacity: 0, y: 30, rotateX: 5, rotateZ: 2, rotateY: -5 }}
+                animate={{ opacity: 1, y: 0, rotateX: 5, rotateZ: 2, rotateY: -5 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                 className="absolute bottom-[5%] left-[15%] w-[420px] rounded-[32px] border border-white/50 bg-white shadow-[0_40px_80px_rgba(244,63,94,0.1)] p-6 z-30 flex items-center gap-6"
               >
                  <div className="flex-1">

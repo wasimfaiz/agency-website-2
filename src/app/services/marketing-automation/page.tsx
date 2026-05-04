@@ -17,65 +17,52 @@ const reveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  },
-} satisfies Variants;
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } } } satisfies Variants;
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-} satisfies Variants;
+  visible: { transition: { staggerChildren: 0.12 } } } satisfies Variants;
 
 const services = [
   {
     title: "Email & SMS Sequencing",
     description: "Multi-channel drip sequences that automatically nurture leads, recover abandoned carts, and re-engage lapsed customers without lifting a finger.",
-    icon: FiMail,
-  },
+    icon: FiMail },
   {
     title: "CRM Architecture",
     description: "Flawless implementation of HubSpot, Salesforce, or ActiveCampaign to unify your sales pipelines and eliminate disorganized lead management.",
-    icon: FiDatabase,
-  },
+    icon: FiDatabase },
   {
     title: "Lead Scoring & Routing",
     description: "Algorithmic logic that tracks user engagement to automatically score leads and instantly route hot prospects directly to your sales team.",
-    icon: FiActivity,
-  },
+    icon: FiActivity },
   {
     title: "Dynamic Segmentation",
     description: "Segmenting arrays based on behavioral triggers—ensuring your audience only receives hyper-relevant, personalized messaging.",
-    icon: FiGitMerge,
-  },
+    icon: FiGitMerge },
   {
     title: "API & Zapier Blueprints",
     description: "Connecting disparate marketing software via intricate webhooks and APIs to eliminate manual data entry and human error.",
-    icon: FiSettings,
-  },
+    icon: FiSettings },
   {
     title: "Cross-Channel Journeys",
     description: "Building complex if/then logic trees that seamlessly hand off users between email, SMS, retargeting ads, and direct mail.",
-    icon: FiMessageCircle,
-  },
+    icon: FiMessageCircle },
 ];
 
 const processSteps = [
   {
     title: "System Discovery",
-    text: "We audit your entire tech stack and map out the manual bottlenecks currently throttling your sales velocity or causing lead drop-off.",
-  },
+    text: "We audit your entire tech stack and map out the manual bottlenecks currently throttling your sales velocity or causing lead drop-off." },
   {
     title: "Logic Tree Engineering",
-    text: "Architecting the exact behavioral triggers, wait steps, and if/then conditional statements required to automate your customer journey.",
-  },
+    text: "Architecting the exact behavioral triggers, wait steps, and if/then conditional statements required to automate your customer journey." },
   {
     title: "Integration & Development",
-    text: "Wiring the APIs, connecting the CRM pipelines, and writing the direct-response copy for every automated email and SMS touchpoint.",
-  },
+    text: "Wiring the APIs, connecting the CRM pipelines, and writing the direct-response copy for every automated email and SMS touchpoint." },
   {
     title: "Optimization & Scaling",
-    text: "Monitoring the live automated logic to eliminate friction points, boost open rates, and maximize the closing velocity of the funnel.",
-  },
+    text: "Monitoring the live automated logic to eliminate friction points, boost open rates, and maximize the closing velocity of the funnel." },
 ];
 
 const featuredProjects = [
@@ -84,22 +71,19 @@ const featuredProjects = [
     category: "CRM & HubSpot Routing",
     image: "/images/project1.png", // Reuse existing provided paths
     summary:
-      "Engineered an automated lead scoring logic that reduced the sales team's time spent on unqualified calls by 74%, immediately boosting close rates.",
-  },
+      "Engineered an automated lead scoring logic that reduced the sales team's time spent on unqualified calls by 74%, immediately boosting close rates." },
   {
     title: "E-Commerce Cart Recovery",
     category: "Klaviyo & SMS Logic",
     image: "/images/zenfora-food.png",
     summary:
-      "Designed an aggressive 4-step dynamic email and SMS cart abandonment workflow that recovered $1.2M in annualized revenue.",
-  },
+      "Designed an aggressive 4-step dynamic email and SMS cart abandonment workflow that recovered $1.2M in annualized revenue." },
 ];
 
 const NavLink = ({
   href,
   children,
-  isScrolled,
-}: {
+  isScrolled }: {
   href: string;
   children: string;
   isScrolled: boolean;
@@ -193,12 +177,12 @@ export default function MarketingAutomationPage() {
             {/* Amber/Violet Gradients */}
             <motion.div 
               animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 10, ease: "easeInOut" }}
               className="absolute top-[-10%] right-[0%] w-[50vw] h-[50vw] rounded-full bg-[#F59E0B]/15 blur-[160px]" 
             />
             <motion.div 
               animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              transition={{ duration: 12, ease: "easeInOut", delay: 2 }}
               className="absolute bottom-[-10%] left-[0%] w-[45vw] h-[45vw] rounded-full bg-[#8B5CF6]/15 blur-[150px]" 
             />
             {/* Workflow Grid Line Background */}
@@ -268,7 +252,7 @@ export default function MarketingAutomationPage() {
 
               {/* Node 1: Audience Trigger */}
               <motion.div 
-                animate={{ y: [-5, 5, -5] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ y: [-5, 5, -5] }} transition={{ duration: 6, ease: "easeInOut" }}
                 className="absolute top-[5%] left-[50%] -translate-x-1/2 w-[280px] rounded-[20px] border border-[#F59E0B]/30 bg-white/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(245,158,11,0.15)] p-4 z-10"
               >
                  <div className="flex items-center gap-3">
@@ -288,7 +272,7 @@ export default function MarketingAutomationPage() {
 
               {/* Node 2: Logic/Condition */}
               <motion.div 
-                animate={{ y: [0, 8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                animate={{ y: [0, 8, 0] }} transition={{ duration: 6, ease: "easeInOut", delay: 1 }}
                 className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[220px] rounded-[16px] border border-[#8B5CF6]/30 bg-white/95 backdrop-blur-xl shadow-[0_20px_40px_rgba(139,92,246,0.15)] p-4 z-10"
               >
                  <div className="flex flex-col items-center text-center">
@@ -302,7 +286,7 @@ export default function MarketingAutomationPage() {
 
               {/* Node 3: True Branch (High Value) */}
               <motion.div 
-                animate={{ y: [-4, 4, -4] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                animate={{ y: [-4, 4, -4] }} transition={{ duration: 6, ease: "easeInOut", delay: 2 }}
                 className="absolute bottom-[10%] left-[10%] w-[260px] rounded-[24px] border border-green-500/30 bg-white shadow-[0_30px_60px_rgba(39,201,63,0.1)] p-5 z-10"
               >
                  <div className="border border-green-500/20 bg-green-500/10 text-green-600 text-[8px] uppercase tracking-widest font-bold px-2 py-0.5 rounded absolute -top-2 left-6 bg-white">Yes Branch</div>
@@ -320,7 +304,7 @@ export default function MarketingAutomationPage() {
 
               {/* Node 4: False Branch (Nurture) */}
               <motion.div 
-                animate={{ y: [-4, 4, -4] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                animate={{ y: [-4, 4, -4] }} transition={{ duration: 6, ease: "easeInOut", delay: 2.5 }}
                 className="absolute bottom-[10%] right-[5%] w-[260px] rounded-[24px] border border-red-500/30 bg-white shadow-[0_30px_60px_rgba(244,63,94,0.1)] p-5 z-10"
               >
                  <div className="border border-red-500/20 bg-red-500/10 text-red-600 text-[8px] uppercase tracking-widest font-bold px-2 py-0.5 rounded absolute -top-2 left-6 bg-white">No Branch</div>

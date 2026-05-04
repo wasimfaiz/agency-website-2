@@ -17,65 +17,52 @@ const reveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  },
-} satisfies Variants;
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } } } satisfies Variants;
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-} satisfies Variants;
+  visible: { transition: { staggerChildren: 0.12 } } } satisfies Variants;
 
 const services = [
   {
     title: "Headless Commerce Architecture",
     description: "Decoupling the frontend from the backend to deliver blazing-fast, sub-second page loads that dramatically decrease cart abandonment.",
-    icon: FiBox,
-  },
+    icon: FiBox },
   {
     title: "Shopify Plus & Magento",
     description: "Enterprise-grade storefront engineering. We completely manipulate core platforms to handle extreme transaction volumes without crashing.",
-    icon: FiShoppingCart,
-  },
+    icon: FiShoppingCart },
   {
     title: "Frictionless Checkout Flows",
     description: "Designing hyper-optimized payment and cart experiences mathematically proven to maximize Average Order Value (AOV) and conversion rates.",
-    icon: FiCreditCard,
-  },
+    icon: FiCreditCard },
   {
     title: "Subscriptions & Memberships",
     description: "Architecting custom recurring revenue models, loyalty point systems, and VIP tiers directly into your product buying lifecycle.",
-    icon: FiHeart,
-  },
+    icon: FiHeart },
   {
     title: "ERP & Inventory Syncing",
     description: "Building custom API bridges that perfectly sync your live storefront inventory with complex backend warehouses and fulfillment centers.",
-    icon: FiShield,
-  },
+    icon: FiShield },
   {
     title: "Omnichannel Integrations",
     description: "Connecting your central inventory grid natively to TikTok Shop, Instagram Checkout, and Amazon to capture sales wherever the user resides.",
-    icon: FiSmartphone,
-  },
+    icon: FiSmartphone },
 ];
 
 const processSteps = [
   {
     title: "Conversion Blueprinting",
-    text: "Before writing code, we map the exact user flow—from the moment they hit the product page to the final seamless checkout click.",
-  },
+    text: "Before writing code, we map the exact user flow—from the moment they hit the product page to the final seamless checkout click." },
   {
     title: "Backend Data Structuring",
-    text: "Configuring the product taxonomy, variants, ERP integrations, and payment gateways so the store can handle massive operational scale.",
-  },
+    text: "Configuring the product taxonomy, variants, ERP integrations, and payment gateways so the store can handle massive operational scale." },
   {
     title: "Frontend Engineering",
-    text: "Building the custom UI components, micro-animations, and responsive cart behaviors that make the storefront feel undeniably premium.",
-  },
+    text: "Building the custom UI components, micro-animations, and responsive cart behaviors that make the storefront feel undeniably premium." },
   {
     title: "Load Testing & Launch",
-    text: "Subjecting the architecture to simulated traffic spikes to ensure zero downtime during Black Friday, product drops, or viral media hits.",
-  },
+    text: "Subjecting the architecture to simulated traffic spikes to ensure zero downtime during Black Friday, product drops, or viral media hits." },
 ];
 
 const featuredProjects = [
@@ -84,22 +71,19 @@ const featuredProjects = [
     category: "Shopify Plus Headless",
     image: "/images/project1.png", // Reuse existing provided paths
     summary:
-      "Transitioned a high-fashion label to a custom headless Shopify architecture, reducing page load by 3.2s and boosting conversion rate by 18%.",
-  },
+      "Transitioned a high-fashion label to a custom headless Shopify architecture, reducing page load by 3.2s and boosting conversion rate by 18%." },
   {
     title: "B2B Wholesale Distributer",
     category: "Magento & ERP Sync",
     image: "/images/zenfora-food.png",
     summary:
-      "Engineered a massive B2B portal syncing 500k+ SKUs in real-time with internal warehouse software, fully automating legacy manual ordering.",
-  },
+      "Engineered a massive B2B portal syncing 500k+ SKUs in real-time with internal warehouse software, fully automating legacy manual ordering." },
 ];
 
 const NavLink = ({
   href,
   children,
-  isScrolled,
-}: {
+  isScrolled }: {
   href: string;
   children: string;
   isScrolled: boolean;
@@ -193,12 +177,12 @@ export default function EcommerceDevelopmentPage() {
             {/* Emerald Green & Amber Gradients */}
             <motion.div 
               animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 10, ease: "easeInOut" }}
               className="absolute top-[-5%] right-[0%] w-[50vw] h-[50vw] rounded-full bg-[#10B981]/15 blur-[160px]" 
             />
             <motion.div 
               animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              transition={{ duration: 12, ease: "easeInOut", delay: 2 }}
               className="absolute bottom-[-10%] left-[0%] w-[45vw] h-[45vw] rounded-full bg-[#F59E0B]/15 blur-[150px]" 
             />
             {/* Soft grid background */}
@@ -259,7 +243,7 @@ export default function EcommerceDevelopmentPage() {
               {/* Main Node: The Product Card UX */}
               <motion.div 
                 animate={{ y: [-10, 10, -10], rotateX: [10, 15, 10], rotateZ: [-4, -2, -4], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 8, ease: "easeInOut" }}
                 className="absolute top-[10%] left-[10%] w-[340px] rounded-[24px] border border-[#0A2540]/10 bg-white/95 backdrop-blur-xl shadow-[0_40px_80px_rgba(10,37,64,0.1)] p-6 z-10 overflow-hidden"
               >
                  {/* Product Image Mock */}
@@ -287,7 +271,7 @@ export default function EcommerceDevelopmentPage() {
               {/* Floating Layer 2: Revenue Velocity Dashboard */}
               <motion.div 
                 animate={{ y: [-5, 15, -5], rotateX: [15, 20, 15], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{ duration: 9, ease: "easeInOut", delay: 1 }}
                 className="absolute bottom-[20%] right-[5%] w-[260px] rounded-[20px] border border-[#10B981]/20 bg-white shadow-[0_30px_60px_rgba(16,185,129,0.15)] p-5 z-20"
               >
                  <div className="flex items-center gap-3 mb-4">
@@ -313,7 +297,7 @@ export default function EcommerceDevelopmentPage() {
               {/* Mobile Stripe Notification */}
               <motion.div 
                 animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                transition={{ duration: 7, ease: "easeInOut", delay: 2.5 }}
                 className="absolute top-[5%] right-[0%] w-[250px] rounded-2xl border border-white/50 bg-gradient-to-br from-white to-[#F0FDF4] shadow-[0_20px_40px_rgba(16,185,129,0.1)] p-4 pr-6 z-30 flex items-center gap-3"
               >
                  <div className="w-10 h-10 rounded-full bg-[#10B981] flex items-center justify-center text-white shadow-inner">

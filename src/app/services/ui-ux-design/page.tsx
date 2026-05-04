@@ -17,63 +17,50 @@ const reveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
-} satisfies Variants;
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } } } satisfies Variants;
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-} satisfies Variants;
+  visible: { transition: { staggerChildren: 0.12 } } } satisfies Variants;
 
 const services = [
   {
     title: "User Experience (UX) Strategy",
     description: "Deep user research, persona maping, and wireframing to ensure the core product solves real problems without friction.",
-    icon: FiCrosshair,
-  },
+    icon: FiCrosshair },
   {
     title: "High-Fidelity UI Design",
     description: "Creating stunning, luxury-grade interfaces that command authority, build instant trust, and outclass competitors.",
-    icon: FiLayout,
-  },
+    icon: FiLayout },
   {
     title: "Interactive Prototyping",
     description: "Clickable, high-fidelity prototypes that mimic the final product so you can secure stakeholder buy-in before coding.",
-    icon: FiMousePointer,
-  },
+    icon: FiMousePointer },
   {
     title: "Design Systems",
     description: "Comprehensive token libraries, component sets, and documentation to ensure consistency as your platform scales.",
-    icon: FiBox,
-  },
+    icon: FiBox },
 ];
 
 const processSteps = [
   {
     title: "Discovery & Analysis",
-    text: "We audit competitors, map out user personas, and define the absolute shortest path to conversion or product adoption.",
-  },
+    text: "We audit competitors, map out user personas, and define the absolute shortest path to conversion or product adoption." },
   {
     title: "Information Architecture",
-    text: "Organizing complex data and features into an intuitive hierarchy so users never feel lost or overwhelmed.",
-  },
+    text: "Organizing complex data and features into an intuitive hierarchy so users never feel lost or overwhelmed." },
   {
     title: "Low-Fidelity Wireframing",
-    text: "Rapid, structural layouts focused entirely on functionality, screen flow, and CTA placement—before visuals distract.",
-  },
+    text: "Rapid, structural layouts focused entirely on functionality, screen flow, and CTA placement—before visuals distract." },
   {
     title: "Visual Identity & System",
-    text: "Defining typography, spacing grids, and bespoke color palettes that align perfectly with your brand's psychological goals.",
-  },
+    text: "Defining typography, spacing grids, and bespoke color palettes that align perfectly with your brand's psychological goals." },
   {
     title: "Polished UI Execution",
-    text: "Applying the design system to wireframes, crafting modern glassmorphic, neomorphic, or flat visual masterpieces.",
-  },
+    text: "Applying the design system to wireframes, crafting modern glassmorphic, neomorphic, or flat visual masterpieces." },
   {
     title: "Developer Handoff",
-    text: "Delivering annotated design files, exportable assets, and comprehensive styling tokens directly to the engineering team.",
-  },
+    text: "Delivering annotated design files, exportable assets, and comprehensive styling tokens directly to the engineering team." },
 ];
 
 const featuredProjects = [
@@ -82,22 +69,19 @@ const featuredProjects = [
     category: "SaaS Application",
     image: "/images/project1.png", // Reuse existing provided paths
     summary:
-      "A complete redesign of a complex fintech application, turning massive data tables into an intuitive, elegant dashboard experience.",
-  },
+      "A complete redesign of a complex fintech application, turning massive data tables into an intuitive, elegant dashboard experience." },
   {
     title: "Luxury E-Commerce",
     category: "Web Interface",
     image: "/images/zenfora-food.png",
     summary:
-      "A conversion-optimized, premium digital storefront featuring fluid micro-interactions and dramatic typography.",
-  },
+      "A conversion-optimized, premium digital storefront featuring fluid micro-interactions and dramatic typography." },
 ];
 
 const NavLink = ({
   href,
   children,
-  isScrolled,
-}: {
+  isScrolled }: {
   href: string;
   children: string;
   isScrolled: boolean;
@@ -193,12 +177,12 @@ export default function UiUxDevelopmentPage() {
              {/* Large soft color gradients representing a design palette */}
             <motion.div 
               animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 10, ease: "easeInOut" }}
               className="absolute top-[-5%] left-[-5%] w-[45vw] h-[45vw] rounded-full bg-[#007BFF]/10 blur-[130px]" 
             />
             <motion.div 
               animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              transition={{ duration: 12, ease: "easeInOut", delay: 2 }}
               className="absolute bottom-[0%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#FF2E93]/10 blur-[150px]" 
             />
             {/* Design Grid Background */}
@@ -258,7 +242,7 @@ export default function UiUxDevelopmentPage() {
               {/* Back Layer: Wireframe */}
               <motion.div 
                 animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-6, -4, -6], rotateY: [-15, -10, -15] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 8, ease: "easeInOut" }}
                 className="absolute top-1/2 left-1/2 -translate-x-[40%] -translate-y-[60%] w-[400px] h-[280px] rounded-[24px] border-2 border-[#0A2540]/20 bg-white/40 backdrop-blur-md shadow-lg p-6 opacity-60 z-10"
               >
                  <div className="w-1/3 h-6 bg-gray-200 rounded-md mb-6" />
@@ -272,7 +256,7 @@ export default function UiUxDevelopmentPage() {
               {/* Middle Layer: Component System */}
               <motion.div 
                 animate={{ y: [-5, 15, -5], rotateX: [12, 17, 12], rotateZ: [-2, 0, -2], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{ duration: 9, ease: "easeInOut", delay: 1 }}
                 className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-[420px] h-[300px] rounded-[24px] border border-white bg-white/80 backdrop-blur-xl shadow-2xl p-6 z-20"
               >
                   <div className="flex gap-3 mb-6">
@@ -294,7 +278,7 @@ export default function UiUxDevelopmentPage() {
               {/* Front Top Layer: Polished UI */}
               <motion.div 
                 animate={{ y: [0, 20, 0], rotateX: [5, 10, 5], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                transition={{ duration: 7, ease: "easeInOut", delay: 2 }}
                 className="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-[40%] w-[440px] h-[320px] rounded-[32px] border border-white/50 bg-white shadow-[0_40px_80px_rgba(10,37,64,0.15)] p-2 z-30"
               >
                   <div className="w-full h-full bg-[#F4F6F8] rounded-[24px] overflow-hidden p-6 relative">
@@ -323,7 +307,7 @@ export default function UiUxDevelopmentPage() {
                   {/* Floating Cursor interaction */}
                   <motion.div 
                     animate={{ x: [0, 80, 0], y: [0, -40, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{ duration: 4, ease: "easeInOut" }}
                     className="absolute bottom-[30%] right-[30%] z-40 text-black text-3xl drop-shadow-xl"
                   >
                     <FiMousePointer className="fill-black" />

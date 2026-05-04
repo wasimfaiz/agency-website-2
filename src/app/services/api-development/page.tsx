@@ -17,65 +17,52 @@ const reveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  },
-} satisfies Variants;
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } } } satisfies Variants;
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-} satisfies Variants;
+  visible: { transition: { staggerChildren: 0.12 } } } satisfies Variants;
 
 const services = [
   {
     title: "Custom REST Architecture",
     description: "Designing hyper-efficient, stateless RESTful APIs following strict OpenAPI standards for fast, predictable, and fully-documented integrations.",
-    icon: FiServer,
-  },
+    icon: FiServer },
   {
     title: "GraphQL Engineering",
     description: "Building powerful GraphQL endpoints that eliminate over-fetching, allowing your frontend to request the exact data relationships needed in a single query.",
-    icon: FiGlobe,
-  },
+    icon: FiGlobe },
   {
     title: "Military-Grade Authenication",
     description: "Securing your data pipes using OAuth 2.0, JWT stateless tokens, and IP allow-listing to ensure absolute fortification against external threats.",
-    icon: FiLock,
-  },
+    icon: FiLock },
   {
     title: "Third-Party Abstraction",
     description: "Bridging the gap between disparate SaaS systems (Stripe, Twilio, Salesforce) by building custom middleware that unifies all external endpoints.",
-    icon: FiLayers,
-  },
+    icon: FiLayers },
   {
     title: "High-Concurrency Tuning",
     description: "Optimizing database queries and deploying Redis caching layers so your API can process millions of concurrent requests with sub-50ms latency.",
-    icon: FiCloudLightning,
-  },
+    icon: FiCloudLightning },
   {
     title: "Legacy System Bridging",
     description: "Wrapping outdated, inaccessible monolithic systems in modern API wrappers, allowing modern web and mobile apps to seamlessly communicate with legacy data.",
-    icon: FiDatabase,
-  },
+    icon: FiDatabase },
 ];
 
 const processSteps = [
   {
     title: "Data Payload Strategy",
-    text: "Before writing endpoints, we define the exact JSON payload structures, query parameters, and error-handling status codes to construct a developer-friendly DX.",
-  },
+    text: "Before writing endpoints, we define the exact JSON payload structures, query parameters, and error-handling status codes to construct a developer-friendly DX." },
   {
     title: "Security Fortification",
-    text: "Integrating API gateways, rate-limiting algorithms, and bearer-token authentication layers to ensure public and private endpoints remain sterile from abuse.",
-  },
+    text: "Integrating API gateways, rate-limiting algorithms, and bearer-token authentication layers to ensure public and private endpoints remain sterile from abuse." },
   {
     title: "Microservice Engineering",
-    text: "Decoupling complex monolithic logic to write discrete, highly specific microservices executing isolated database transactions for maximum speed.",
-  },
+    text: "Decoupling complex monolithic logic to write discrete, highly specific microservices executing isolated database transactions for maximum speed." },
   {
     title: "Stress Testing & Docs",
-    text: "Bombarding the endpoints with synthetic load vectors to ensure stability, followed by generating beautiful, interactive Swagger documentation.",
-  },
+    text: "Bombarding the endpoints with synthetic load vectors to ensure stability, followed by generating beautiful, interactive Swagger documentation." },
 ];
 
 const featuredProjects = [
@@ -84,22 +71,19 @@ const featuredProjects = [
     category: "High-Volume REST API",
     image: "/images/project1.png", // Reuse existing provided paths
     summary:
-      "Engineered an ultra-secure transaction API capable of clearing 10,000+ complex ledger entries per second with guaranteed atomic integrity.",
-  },
+      "Engineered an ultra-secure transaction API capable of clearing 10,000+ complex ledger entries per second with guaranteed atomic integrity." },
   {
     title: "E-commerce Sync Middleware",
     category: "GraphQL & Caching",
     image: "/images/zenfora-food.png",
     summary:
-      "Replaced a bloated REST architecture with a streamlined GraphQL schema, reducing mobile app data consumption by 74% and completely eliminating latency.",
-  },
+      "Replaced a bloated REST architecture with a streamlined GraphQL schema, reducing mobile app data consumption by 74% and completely eliminating latency." },
 ];
 
 const NavLink = ({
   href,
   children,
-  isScrolled,
-}: {
+  isScrolled }: {
   href: string;
   children: string;
   isScrolled: boolean;
@@ -193,12 +177,12 @@ export default function ApiDevelopmentPage() {
             {/* Indigo & Cyan Gradients */}
             <motion.div 
               animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 10, ease: "easeInOut" }}
               className="absolute top-[-5%] right-[0%] w-[50vw] h-[50vw] rounded-full bg-[#4F46E5]/15 blur-[160px]" 
             />
             <motion.div 
               animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              transition={{ duration: 12, ease: "easeInOut", delay: 2 }}
               className="absolute bottom-[-10%] left-[0%] w-[45vw] h-[45vw] rounded-full bg-[#22D3EE]/15 blur-[150px]" 
             />
             {/* Tech Wireframe grid background */}
@@ -259,7 +243,7 @@ export default function ApiDevelopmentPage() {
               {/* Back Node: Endpoint Routing Window */}
               <motion.div 
                 animate={{ y: [-10, 10, -10], rotateX: [10, 15, 10], rotateZ: [-4, -2, -4], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 8, ease: "easeInOut" }}
                 className="absolute top-[15%] left-[5%] w-[380px] rounded-[16px] border border-[#0A1929] bg-[#0A1929] shadow-2xl p-6 z-10 overflow-hidden"
               >
                  <div className="flex justify-between items-center mb-6 border-b border-gray-800 pb-4">
@@ -290,7 +274,7 @@ export default function ApiDevelopmentPage() {
               {/* Middle Layer: Live JSON Response View */}
               <motion.div 
                 animate={{ y: [-5, 15, -5], rotateX: [15, 20, 15], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{ duration: 9, ease: "easeInOut", delay: 1 }}
                 className="absolute top-[40%] right-[5%] w-[340px] rounded-[16px] border border-[#0A1929] bg-[#0F172A] shadow-[0_30px_60px_rgba(79,70,229,0.25)] overflow-hidden z-20"
               >
                  {/* Window Header */}
@@ -321,7 +305,7 @@ export default function ApiDevelopmentPage() {
               {/* Front Top Layer: Database Connection Status */}
               <motion.div 
                 animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                transition={{ duration: 7, ease: "easeInOut", delay: 2.5 }}
                 className="absolute bottom-[2%] left-[10%] w-[280px] rounded-full border border-white/50 bg-gradient-to-r from-white to-[#F8FAFC] shadow-[0_40px_80px_rgba(79,70,229,0.15)] p-3 pr-6 z-30 flex items-center gap-4"
               >
                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#22D3EE] flex items-center justify-center text-white shadow-[0_10px_20px_rgba(79,70,229,0.3)]">

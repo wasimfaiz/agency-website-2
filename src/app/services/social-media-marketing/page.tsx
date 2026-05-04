@@ -192,13 +192,15 @@ export default function SocialMediaMarketingPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Fuchsia/Violet Social Gradients */}
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 0.5, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
               className="absolute top-[-5%] right-[0%] w-[45vw] h-[45vw] rounded-full bg-[#D946EF]/15 blur-[160px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 0.4, scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
               className="absolute bottom-[-10%] left-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#8B5CF6]/15 blur-[150px]" 
             />
             {/* Minimal Background Grid */}
@@ -258,8 +260,9 @@ export default function SocialMediaMarketingPage() {
               
               {/* Back Layer: The Content Phone UI */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-2, 0, -2], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 30, rotateX: 15, rotateZ: -2, rotateY: -10 }}
+                animate={{ opacity: 1, y: 0, rotateX: 15, rotateZ: -2, rotateY: -10 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute top-[5%] left-[10%] w-[320px] h-[520px] rounded-[40px] border-[10px] border-[#0A2540] bg-[#121212] overflow-hidden shadow-[0_30px_60px_rgba(10,37,64,0.2)] z-10"
               >
                  <div className="w-full h-full relative p-4 flex flex-col justify-between overflow-hidden">
@@ -310,8 +313,9 @@ export default function SocialMediaMarketingPage() {
               
               {/* Middle Layer: Interaction Alerts */}
               <motion.div 
-                animate={{ y: [-5, 15, -5], rotateX: [5, 10, 5], rotateZ: [4, 6, 4], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                initial={{ opacity: 0, y: 30, rotateX: 5, rotateZ: 4, rotateY: -10 }}
+                animate={{ opacity: 1, y: 0, rotateX: 5, rotateZ: 4, rotateY: -10 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                 className="absolute top-[20%] right-[-5%] w-[240px] rounded-[24px] border border-white bg-white/95 backdrop-blur-xl shadow-[0_20px_40px_rgba(217,70,239,0.15)] p-4 flex flex-col gap-3 z-20"
               >
                   {[
@@ -334,8 +338,9 @@ export default function SocialMediaMarketingPage() {
 
               {/* Front Top Layer: Profile Growth Chart */}
               <motion.div 
-                animate={{ y: [0, 20, 0], rotateX: [5, 10, 5], rotateZ: [-2, 0, -2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                initial={{ opacity: 0, y: 30, rotateX: 5, rotateZ: -2, rotateY: -5 }}
+                animate={{ opacity: 1, y: 0, rotateX: 5, rotateZ: -2, rotateY: -5 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                 className="absolute bottom-[5%] left-[45%] w-[320px] rounded-[32px] border border-white/50 bg-white shadow-[0_40px_80px_rgba(10,37,64,0.15)] p-6 z-30"
               >
                  <div className="flex justify-between items-center mb-6">
@@ -547,7 +552,10 @@ export default function SocialMediaMarketingPage() {
                
                {/* Center Node indicating continuous loop */}
                <motion.div 
-                  animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, ease: "easeOut" }}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border-4 border-dashed border-[#8B5CF6]/30 flex items-center justify-center -z-0"
                >
                   <div className="w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center">
