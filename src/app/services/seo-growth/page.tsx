@@ -138,11 +138,6 @@ export default function SeoGrowthPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#00B873] selection:text-white">
-      <title>Premium SEO & Content Marketing | Setzet</title>
-      <meta
-        name="description"
-        content="SEO and content marketing systems that build unshakeable authority, capture high-intent traffic, and turn search visibility into qualified pipeline."
-      />
 
       {/* Header - Light Mode */}
       <header
@@ -193,13 +188,15 @@ export default function SeoGrowthPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Emerald/Green & Blue Growth Gradients */}
             <motion.div 
-              animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              transition={{ duration: 1.5 }}
               className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#00B873]/15 blur-[140px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.2, 0.4, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
               className="absolute bottom-[-10%] left-[-10%] w-[45vw] h-[45vw] rounded-full bg-[#0A2540]/10 blur-[150px]" 
             />
             {/* Minimal Grid Background */}
@@ -259,9 +256,10 @@ export default function SeoGrowthPage() {
               
               {/* Back Layer: Rankings UI */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [10, 15, 10], rotateZ: [-4, -2, -4], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[20%] right-[10%] w-[380px] rounded-[24px] border border-[#0A2540]/10 bg-white backdrop-blur-xl shadow-2xl p-6 z-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, rotateX: 10, rotateZ: -2, rotateY: -5 }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-[20%] right-[10%] w-[380px] rounded-[24px] border border-[#0A2540]/10 bg-white backdrop-blur-xl shadow-2xl p-6 z-10 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
                     <div className="font-bold text-[11px] uppercase tracking-widest text-gray-500">Target Keywords</div>
@@ -285,9 +283,10 @@ export default function SeoGrowthPage() {
               
               {/* Middle Layer: Search Bar & Intent UI */}
               <motion.div 
-                animate={{ y: [-5, 15, -5], rotateX: [5, 10, 5], rotateZ: [0, 2, 0], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-[40%] left-[5%] w-[420px] rounded-full border border-gray-200 bg-white shadow-[0_20px_40px_rgba(10,37,64,0.1)] p-4 flex items-center gap-4 z-20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, rotateX: 5, rotateY: -2 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute top-[40%] left-[5%] w-[420px] rounded-full border border-gray-200 bg-white shadow-[0_20px_40px_rgba(10,37,64,0.1)] p-4 flex items-center gap-4 z-20 hover:-translate-y-2 transition-transform duration-300"
               >
                  <FiSearch className="text-gray-400 text-2xl ml-2" />
                  <div className="flex-1 text-[#0A2540] font-semibold text-lg overflow-hidden border-r-2 border-[#00B873] whitespace-nowrap animate-[typing_4s_steps(40,end)_infinite]">
@@ -300,9 +299,10 @@ export default function SeoGrowthPage() {
 
               {/* Front Top Layer: Growth Chart */}
               <motion.div 
-                animate={{ y: [0, 20, 0], rotateX: [0, 5, 0], rotateZ: [2, 4, 2], rotateY: [0, 5, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute bottom-[10%] left-[20%] w-[460px] rounded-[32px] border border-white/50 bg-white/90 backdrop-blur-md shadow-[0_40px_80px_rgba(0,184,115,0.15)] p-6 z-30"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, rotateZ: 2 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute bottom-[10%] left-[20%] w-[460px] rounded-[32px] border border-white/50 bg-white/90 backdrop-blur-md shadow-[0_40px_80px_rgba(0,184,115,0.15)] p-6 z-30 hover:-translate-y-2 transition-transform duration-300"
               >
                   <div className="flex justify-between items-end mb-8">
                      <div>
@@ -495,18 +495,18 @@ export default function SeoGrowthPage() {
                  initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}
                  className="w-80 h-80 shrink-0 relative flex items-center justify-center order-1 md:order-2"
                >
-                  {/* Rotating Outer Rings */}
+                  {/* Static Outer Rings */}
                   <motion.div 
-                     animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                     initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.5 }}
                      className="absolute inset-0 rounded-full border border-dashed border-[#00B873]/40" 
                   />
                   <motion.div 
-                     animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                     initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.5, delay: 0.2 }}
                      className="absolute inset-4 rounded-full border-[3px] border-[#0A2540]/5" 
                   />
                   
                   {/* Orbiting Nodes */}
-                  <motion.div animate={{ rotate: 360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }} className="absolute inset-0">
+                  <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.5, delay: 0.4 }} className="absolute inset-0">
                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#0A2540] rounded-full shadow-lg" />
                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-[#007BFF] rounded-full shadow-lg" />
                      <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#00B873] rounded-full shadow-lg flex items-center justify-center">

@@ -137,11 +137,6 @@ export default function InfluencerMarketingPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F6F8] text-[#0A2540] font-sans selection:bg-[#D946EF] selection:text-white">
-      <title>Premium Influencer Marketing | Setzet</title>
-      <meta
-        name="description"
-        content="We weaponize the Creator Economy. Authentic UGC, celebrity partnerships, and performance-driven creator whitelisting."
-      />
 
       {/* Header - Light Mode */}
       <header
@@ -192,13 +187,15 @@ export default function InfluencerMarketingPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Sunset Magenta to Peach Gradients */}
             <motion.div 
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              transition={{ duration: 1.5 }}
               className="absolute top-[-5%] left-[0%] w-[50vw] h-[50vw] rounded-full bg-[#D946EF]/15 blur-[160px]" 
             />
             <motion.div 
-              animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.2, 1] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
               className="absolute bottom-[-10%] right-[0%] w-[45vw] h-[45vw] rounded-full bg-[#F97316]/15 blur-[150px]" 
             />
             {/* Minimal Dots Background */}
@@ -258,9 +255,10 @@ export default function InfluencerMarketingPage() {
               
               {/* Back Layer: The Influencer Analytics Matrix */}
               <motion.div 
-                animate={{ y: [-10, 10, -10], rotateX: [15, 20, 15], rotateZ: [-4, -2, -4], rotateY: [-10, -5, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[10%] left-[5%] w-[380px] rounded-[24px] border border-[#0A2540]/10 bg-white shadow-2xl overflow-hidden z-10 opacity-90"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 0.9, y: 0, rotateX: 15, rotateZ: -2, rotateY: -5 }}
+                transition={{ duration: 0.8 }}
+                className="absolute top-[10%] left-[5%] w-[380px] rounded-[24px] border border-[#0A2540]/10 bg-white shadow-2xl overflow-hidden z-10 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="w-full h-32 bg-gradient-to-br from-[#D946EF] to-[#F97316] relative">
                     <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md rounded-full px-3 py-1 text-white text-[10px] font-bold tracking-widest uppercase">
@@ -302,9 +300,10 @@ export default function InfluencerMarketingPage() {
               
               {/* Front Floating Layer 1: Content Approval Status */}
               <motion.div 
-                animate={{ y: [-5, 15, -5], rotateX: [10, 15, 10], rotateZ: [2, 4, 2], rotateY: [-5, 0, -5] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-[50%] right-[-5%] w-[260px] rounded-[24px] border border-[#D946EF]/20 bg-white shadow-[0_30px_60px_rgba(217,70,239,0.15)] p-5 z-20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, rotateX: 10, rotateZ: 2, rotateY: -2 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute top-[50%] right-[-5%] w-[260px] rounded-[24px] border border-[#D946EF]/20 bg-white shadow-[0_30px_60px_rgba(217,70,239,0.15)] p-5 z-20 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="flex justify-between items-start mb-4">
                     <div className="flex gap-3">
@@ -331,9 +330,10 @@ export default function InfluencerMarketingPage() {
 
               {/* Front Top Layer: Promo Code Alert */}
               <motion.div 
-                animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-                className="absolute bottom-[5%] left-[0%] w-[240px] rounded-full border border-white/50 bg-gradient-to-r from-white to-[#FDF4FF] shadow-[0_20px_40px_rgba(217,70,239,0.1)] p-2 pr-4 z-30 flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute bottom-[5%] left-[0%] w-[240px] rounded-full border border-white/50 bg-gradient-to-r from-white to-[#FDF4FF] shadow-[0_20px_40px_rgba(217,70,239,0.1)] p-2 pr-4 z-30 flex items-center gap-3 hover:-translate-y-2 transition-transform duration-300"
               >
                  <div className="w-10 h-10 rounded-full bg-[#D946EF] flex items-center justify-center text-white shadow-inner">
                     <FaShopify className="text-lg" />
