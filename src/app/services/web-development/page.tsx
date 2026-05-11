@@ -147,11 +147,8 @@ export default function WebDevelopmentPage() {
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
-          <Link
-            href="/"
-            className="font-bold text-[#0A2540] transition-colors duration-300 hover:text-[#007BFF]"
-          >
-            Setzet
+          <Link href="/" className="block transition-opacity duration-300 hover:opacity-80">
+            <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
           </Link>
           <nav className="hidden items-center gap-8 text-[11px] font-semibold transition-colors duration-300 md:flex">
             <NavLink href="/" isScrolled={isScrolled}>Home</NavLink>
