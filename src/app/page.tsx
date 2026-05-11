@@ -366,13 +366,24 @@ export default function Home() {
                 custom={4} initial="hidden" animate="visible" variants={fadeInUp}
                 className="mt-14 pt-8 border-t border-[#0A2540]/10 w-full hidden sm:block"
               >
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#0A2540]/40 mb-5">Trusted by ambitious engineering teams</p>
-                <div className="flex flex-wrap items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-opacity duration-300">
-                   {/* Clean Typography-Based Logos */}
-                   <div className="font-heading font-black text-2xl italic tracking-tighter">Velocity</div>
-                   <div className="font-heading font-bold text-xl tracking-tight">AcmeCorp</div>
-                   <div className="font-heading font-black text-xl tracking-widest uppercase">Nexus</div>
-                   <div className="font-heading font-bold text-xl flex items-center gap-1"><FiStar className="fill-current text-[#007BFF] w-4 h-4"/> Stella</div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#0A2540]/40 mb-5">Trusted by forward-thinking brands</p>
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+                   {[
+                     { name: "Narayana Agri", tag: "Agriculture" },
+                     { name: "Uncle Makhana", tag: "B2B Brand" },
+                     { name: "Yastudy", tag: "Education" },
+                     { name: "Zenfora", tag: "FMCG" },
+                     { name: "Pure Makhana", tag: "D2C Brand" },
+                   ].map((brand) => (
+                     <div key={brand.name} className="flex flex-col items-start shrink-0 group cursor-default">
+                       <span className="text-lg md:text-xl font-extrabold font-heading text-[#0A2540]/40 group-hover:text-[#0A2540]/80 tracking-tight transition-colors duration-300 whitespace-nowrap select-none">
+                         {brand.name}
+                       </span>
+                       <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#007BFF]/0 group-hover:text-[#007BFF]/70 transition-colors duration-300 -mt-0.5">
+                         {brand.tag}
+                       </span>
+                     </div>
+                   ))}
                 </div>
               </motion.div>
             </div>
