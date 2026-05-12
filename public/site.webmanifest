@@ -1,0 +1,19 @@
+{
+    "name": "Setzet",
+    "short_name": "Setzet",
+    "icons": [
+        {
+            "src": "/fevicon.jpeg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "/fevicon.jpeg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ],
+    "theme_color": "#F4F6F8",
+    "background_color": "#F4F6F8",
+    "display": "standalone"
+}

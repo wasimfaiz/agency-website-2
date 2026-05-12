@@ -21,26 +21,26 @@ export default async function BlogPostPage(props: Props) {
 
   if (id === "1") {
     return (
-      <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
+      <main className="relative w-full overflow-x-hidden min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
         <ReadingProgressBar />
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
         <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
-              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
                 <FiArrowLeft /> Back to Blogs
               </Link>
+              <span className="hidden sm:block w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span className="whitespace-nowrap">Technology</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Technology</span>
+              <span className="whitespace-nowrap">Feb 22, 2026</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Feb 22, 2026</span>
-              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>5 min read</span>
+              <span className="whitespace-nowrap">5 min read</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8 break-words">
               The Future of Automation in CRM: How AI-Driven Workflows Are Transforming Customer Relationship Management
             </h1>
             
@@ -70,7 +70,7 @@ export default async function BlogPostPage(props: Props) {
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
-            <div id="blog-content">
+            <div id="blog-content" className="min-w-0">
               <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Why CRM Automation Is No Longer Optional</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
@@ -318,25 +318,25 @@ export default async function BlogPostPage(props: Props) {
     );
   } else if (id === "2") {
     return (
-      <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
+      <main className="relative w-full overflow-x-hidden min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
         <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
-              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
                 <FiArrowLeft /> Back to Blogs
               </Link>
+              <span className="hidden sm:block w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span className="whitespace-nowrap">Strategy</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Strategy</span>
+              <span className="whitespace-nowrap">Feb 23, 2026</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Feb 23, 2026</span>
-              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>7 min read</span>
+              <span className="whitespace-nowrap">7 min read</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8 break-words">
               Mastering Client Communication: The SaaS Playbook for Small Business Owners Who Want Clients for Life
             </h1>
             
@@ -366,7 +366,7 @@ export default async function BlogPostPage(props: Props) {
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
-            <div id="blog-content">
+            <div id="blog-content" className="min-w-0">
               <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: Your Clients Are One Bad Experience Away From Leaving</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
@@ -660,25 +660,25 @@ export default async function BlogPostPage(props: Props) {
     );
   } else if (id === "3") {
     return (
-      <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
+      <main className="relative w-full overflow-x-hidden min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
         <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
-              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
                 <FiArrowLeft /> Back to Blogs
               </Link>
+              <span className="hidden sm:block w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span className="whitespace-nowrap">Business</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Business</span>
+              <span className="whitespace-nowrap">Feb 24, 2026</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Feb 24, 2026</span>
-              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>8 min read</span>
+              <span className="whitespace-nowrap">8 min read</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8 break-words">
               Scaling Your Agency: The First 100 Days — From Freelance Hustle to Structured Business
             </h1>
             
@@ -708,7 +708,7 @@ export default async function BlogPostPage(props: Props) {
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
-            <div id="blog-content">
+            <div id="blog-content" className="min-w-0">
               <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Moment Everything Has to Change</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
@@ -1028,25 +1028,25 @@ export default async function BlogPostPage(props: Props) {
     );
   } else if (id === "4") {
     return (
-      <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
+      <main className="relative w-full overflow-x-hidden min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
         <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
           <BlogHeroFade>
-            <div className="flex items-center gap-4 text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
-              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
+              <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
                 <FiArrowLeft /> Back to Blogs
               </Link>
+              <span className="hidden sm:block w-1 h-1 rounded-full bg-[#007BFF]/40" />
+              <span className="whitespace-nowrap">Design</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Design</span>
+              <span className="whitespace-nowrap">Feb 26, 2026</span>
               <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>Feb 26, 2026</span>
-              <span className="w-1 h-1 rounded-full bg-[#007BFF]/40" />
-              <span>4 min read</span>
+              <span className="whitespace-nowrap">4 min read</span>
             </div>
             
-            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-[clamp(2.5rem,5vw,4.5rem)] font-heading font-extrabold tracking-tight text-[#0A2540] leading-[1.1] mb-8 break-words">
               Why Minimalist Design Converts Better: How Reducing Cognitive Load Transforms Landing Page Performance
             </h1>
             
@@ -1076,7 +1076,7 @@ export default async function BlogPostPage(props: Props) {
         {/* Content Section */}
         <section className="px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
-            <div id="blog-content">
+            <div id="blog-content" className="min-w-0">
               <BlogContentFade>
               <h2 className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight mt-12 mb-6 text-[#0A2540]">Introduction: The Most Common Conversion Killer Is Already on Your Website</h2>
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
@@ -1361,7 +1361,7 @@ export default async function BlogPostPage(props: Props) {
 
   // Fallback for other blogs
   return (
-    <main className="min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
+    <main className="relative w-full overflow-x-hidden min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
       <Navbar forceDarkAtTop={true} />
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[60vh] text-center">
         <h1 className="text-5xl font-heading font-extrabold tracking-tight mb-6 text-[#0A2540] mt-16 mt-10">Blog Not Found</h1>
