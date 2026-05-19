@@ -6,11 +6,35 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiLayout, FiTrendingUp, FiTarget, 
   FiArrowRight, FiCode, FiZap, FiBarChart2
 } from "react-icons/fi";
 import { FaStar, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
+
+const webDevFaqs = [
+  {
+    question: "Do you build custom websites or use templates?",
+    answer: "We engineer 100% custom, scalable web solutions. We do not rely on pre-made templates; everything is designed from scratch to perfectly align with your brand strategy and business goals."
+  },
+  {
+    question: "What is the typical timeline for a web development project?",
+    answer: "A standard corporate website or high-converting landing page ecosystem typically takes 4-8 weeks from strategy to launch. More complex web applications or e-commerce platforms can take 8-12 weeks depending on feature complexity."
+  },
+  {
+    question: "Are your websites optimized for SEO and performance?",
+    answer: "Absolutely. We build with modern frameworks like Next.js, utilizing Server-Side Rendering (SSR) and optimized image delivery. Our websites consistently score 95+ on Google Lighthouse, ensuring maximum visibility and lightning-fast load times."
+  },
+  {
+    question: "Will I be able to update the website content myself?",
+    answer: "Yes, we integrate modern Headless CMS solutions that allow your marketing team to easily manage and update content without touching a single line of code."
+  },
+  {
+    question: "Do you provide ongoing support and maintenance?",
+    answer: "We offer dedicated post-launch support and growth retainers to continuously monitor performance, implement security updates, and add new features as your business scales."
+  }
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 24 },
@@ -617,10 +641,15 @@ export default function WebDevelopmentPage() {
 
 
         {/* =========================================
+            SECTION: FAQ
+            ========================================= */}
+        <FAQSection faqs={webDevFaqs} />
+
+        {/* =========================================
             SECTION 6: FINAL CTA (Light, Vibrant)
             ========================================= */}
         <section className="px-6 pb-24 relative bg-[#F4F6F8]">
-          <div className="h-32 bg-white" /> {/* White spacing bridge from prev section */}
+          <div className="h-32 bg-[#F4F6F8]" /> {/* Spacing bridge from prev section */}
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}
             className="mx-auto max-w-6xl relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#0A2540] to-[#1a365d] px-10 py-24 text-center shadow-2xl mt-[-8rem]"

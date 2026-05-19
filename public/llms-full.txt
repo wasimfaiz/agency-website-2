@@ -1,0 +1,63 @@
+# Setzet - Full Website Content & Knowledge Base
+
+## About Setzet
+Setzet is a premium strategy-led web design and development agency based in Noida, India. We engineer blazing-fast websites, scalable custom software, and digital experiences that turn traffic into fiercely loyal customers. We don't just deliver beautiful pixels; we deliver measurable business impact designed to scale, convert, and dominate markets.
+
+## Core Services
+
+### 1. Web & Custom Software Development
+Stop losing customers to slow, outdated designs. We engineer premium, lightning-fast digital experiences.
+- E-Commerce Platforms: High-conversion storefronts designed to minimize friction and maximize average order value.
+- Corporate Websites: Premium, trust-building digital headquarters that position you as an industry leader.
+- Web Applications: Complex, data-driven web apps built on fast, scalable modern frameworks.
+- Landing Pages & CRO: Laser-focused funnels engineered specifically for paid ad traffic conversion.
+
+### 2. UI/UX Design
+We focus on aesthetic precision, modern typography, and dynamic animations to create a stunning first impression. We craft interfaces that feel responsive and alive, encouraging interaction.
+
+### 3. Marketing & SEO Growth
+We offer robust SEO, marketing automation, social media marketing, and influencer marketing services to ensure digital products reach the right audiences.
+
+## Our Agile Process (Continuous Delivery Loop)
+1. Requirements Gathering: We collaborate with you to understand your business needs and objectives.
+2. Iterative Planning: We conduct iterative planning sessions to adapt to emerging requirements.
+3. Design & Prototyping: We design interactive mockups and prototypes to validate functionality.
+4. Incremental Development: Our team builds in short cycles using the latest technologies.
+5. Continuous Testing: Testing is an integral part of every sprint.
+6. Regular Releases: We frequently release updates and new features.
+
+## Featured Work & Case Studies
+
+### 1. Yastudy
+- Industry: EdTech, E-Learning
+- Description: A digital-first learning platform built to simplify language training, exam prep, and international admissions workflows.
+- Impact: 300% increase in successful university placements.
+
+### 2. Zenfora Foods
+- Industry: FMCG, E-Commerce
+- Description: A vibrant D2C storefront turning foxnuts into a lifestyle brand with a seamless checkout and subscription model.
+- Impact: Driven 3x organic traffic in 90 days.
+
+### 3. Pure Makhana
+- Industry: Luxury Wellness, Brand Website
+- Description: A premium, luxury website designed to communicate purity and modern elegance with a soft neutral color palette.
+- Impact: Delivered a +18-25% conversion lift.
+
+### 4. Uncle Makhana
+- Industry: D2C, E-Commerce
+- Description: A vibrant and appetizing digital experience that captures the playful essence of traditional foxnuts for the modern consumer.
+
+### 5. Narayan Agri Solutions
+- Industry: Agriculture, B2B
+- Description: A clean, business-first experience highlighting product offerings and large-scale supply capabilities.
+
+## Tech Stack
+- Frontend: React, Next.js, Tailwind CSS, Framer Motion
+- Design: Figma
+- Backend: Node.js
+
+## Contact Information
+- Email: wasim@setzet.com
+- Phone: +91-9128376231
+- Location: Noida, India
+- Start a Project: https://setzet.com/#contact

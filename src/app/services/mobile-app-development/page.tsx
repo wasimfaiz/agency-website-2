@@ -6,11 +6,35 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiSmartphone, FiLayers, FiCode, FiCpu,
   FiArrowRight, FiZap, FiBarChart2, FiActivity, FiTrendingUp
 } from "react-icons/fi";
 import { FaStar, FaReact, FaApple, FaAndroid } from "react-icons/fa";
+
+const mobileAppFaqs = [
+  {
+    question: "Do you develop for both iOS and Android?",
+    answer: "Yes, we develop for both platforms. Depending on your project requirements, we can build using native technologies (Swift for iOS, Kotlin for Android) or cross-platform frameworks like React Native or Flutter to optimize development time and costs."
+  },
+  {
+    question: "How long does it take to build a mobile app?",
+    answer: "The timeline varies significantly based on complexity. A simple MVP (Minimum Viable Product) might take 8-12 weeks, while a feature-rich, scalable enterprise application can take 4-6 months or more. We establish clear milestones during our initial strategy phase."
+  },
+  {
+    question: "Do you handle the App Store and Google Play submission process?",
+    answer: "Absolutely. We manage the entire deployment process, ensuring your app meets all strict App Store guidelines and Google Play policies. We handle the technical compliance so you can focus on the launch."
+  },
+  {
+    question: "Will my app be secure and scalable?",
+    answer: "Security and scalability are foundational to our architecture. We implement robust encryption, secure authentication, and build cloud-based backends that easily handle traffic spikes."
+  },
+  {
+    question: "What happens after the app is launched?",
+    answer: "We offer dedicated maintenance and growth retainers. This includes continuous monitoring, OS compatibility updates, performance tuning, and rolling out new features based on user feedback and analytics."
+  }
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 24 },
@@ -657,10 +681,15 @@ export default function MobileAppDevelopmentPage() {
 
 
         {/* =========================================
+            SECTION: FAQ
+            ========================================= */}
+        <FAQSection faqs={mobileAppFaqs} />
+
+        {/* =========================================
             SECTION 6: FINAL CTA (Light, Vibrant)
             ========================================= */}
         <section className="px-6 pb-24 relative bg-[#F4F6F8]">
-          <div className="h-32 bg-white" />
+          <div className="h-32 bg-[#F4F6F8]" />
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}
             className="mx-auto max-w-6xl relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#0A2540] to-[#1a365d] px-10 py-24 text-center shadow-2xl mt-[-8rem]"

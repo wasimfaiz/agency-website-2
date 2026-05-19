@@ -6,11 +6,35 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiLayout, FiMousePointer, FiPenTool, FiBox,
   FiArrowRight, FiZap, FiTarget, FiCommand, FiCrosshair
 } from "react-icons/fi";
 import { FaStar, FaFigma, FaReact, FaPaintBrush } from "react-icons/fa";
+
+const uiUxFaqs = [
+  {
+    question: "What is the difference between UI and UX?",
+    answer: "UX (User Experience) focuses on the logic, flow, and psychology of how a user interacts with a product to solve a problem. UI (User Interface) is the visual execution—the typography, colors, and interactive elements that make the experience aesthetically premium."
+  },
+  {
+    question: "How do you ensure the design actually converts?",
+    answer: "We don't design just to make things look pretty. We base our wireframes on deep user research, psychological principles, and competitor analysis to create intuitive funnels designed specifically to drive action and reduce bounce rates."
+  },
+  {
+    question: "Do you provide assets for our development team?",
+    answer: "Absolutely. We deliver a comprehensive developer handoff, which includes annotated Figma files, exportable assets, and a fully documented Design System (with spacing, color, and typography tokens) so your engineers can build it exactly as designed."
+  },
+  {
+    question: "Can you redesign our existing application?",
+    answer: "Yes, UX/UI audits and redesigns are our specialty. We will identify where your current interface is causing friction, and strategically overhaul it to modernize the aesthetic and drastically improve user retention."
+  },
+  {
+    question: "How long does a UI/UX project typically take?",
+    answer: "A standard landing page or small website UI can take 2-4 weeks. A comprehensive SaaS application redesign or an enterprise-grade mobile app UI/UX project typically takes 6-12 weeks, depending on the complexity of the user flows."
+  }
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 24 },
@@ -521,6 +545,11 @@ export default function UiUxDevelopmentPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            SECTION: FAQ
+            ========================================= */}
+        <FAQSection faqs={uiUxFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

@@ -6,11 +6,35 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiShoppingCart, FiCreditCard, FiTrendingUp, FiBox,
   FiArrowRight, FiShield, FiSmartphone, FiCheckCircle, FiHeart, FiLock
 } from "react-icons/fi";
 import { FaShopify, FaStripe, FaWordpress, FaMagento } from "react-icons/fa";
+
+const ecomFaqs = [
+  {
+    question: "What platforms do you develop on?",
+    answer: "We specialize in Shopify Plus, Magento, and fully custom Headless Commerce architectures. We select the optimal stack based on your SKU volume, traffic scale, and complexity."
+  },
+  {
+    question: "What is Headless Commerce?",
+    answer: "Headless commerce decouples the frontend user interface from the backend database. This allows us to deliver blazing-fast, sub-second page loads that dramatically decrease cart abandonment and improve SEO."
+  },
+  {
+    question: "Do you sync inventory with ERPs?",
+    answer: "Yes, we engineer custom API bridges that perfectly sync your storefront inventory in real-time with complex backend warehouse systems, CRMs, and fulfillment centers."
+  },
+  {
+    question: "How do you improve conversion rates?",
+    answer: "We design frictionless checkout flows and apply rigorous UX principles to product pages. By minimizing clicks, optimizing mobile layouts, and speeding up load times, we maximize Average Order Value (AOV)."
+  },
+  {
+    question: "Can you handle high-traffic product drops?",
+    answer: "Absolutely. We load-test our architectures to simulate massive traffic spikes, ensuring your storefront remains stable and lightning-fast during Black Friday, viral campaigns, or exclusive product drops."
+  }
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -502,6 +526,11 @@ export default function EcommerceDevelopmentPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            SECTION: FAQ
+            ========================================= */}
+        <FAQSection faqs={ecomFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

@@ -6,11 +6,35 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiCode, FiServer, FiDatabase, FiLayers,
   FiArrowRight, FiCpu, FiMonitor, FiSettings, FiCheckCircle, FiCloud
 } from "react-icons/fi";
 import { FaReact, FaNodeJs, FaAws, FaDocker } from "react-icons/fa";
+
+const customSoftwareFaqs = [
+  {
+    question: "What types of custom software do you build?",
+    answer: "We build everything from complex web applications, high-throughput enterprise APIs, and data pipelines to cloud-native microservices. We specialize in software that handles massive scale, complex logic, and deep integrations."
+  },
+  {
+    question: "How do you ensure the software is secure?",
+    answer: "Security is built into our architecture from day one. We use modern encryption standards, secure authentication protocols (like OAuth2 and JWT), and rigorous penetration testing. Our automated CI/CD pipelines also include vulnerability scanning before any code hits production."
+  },
+  {
+    question: "Can you modernize our existing legacy systems?",
+    answer: "Yes. We frequently help enterprises refactor and migrate outdated, monolithic codebases into modern, scalable microservice architectures—all while ensuring zero downtime and maintaining operational continuity."
+  },
+  {
+    question: "What stack do you use for enterprise applications?",
+    answer: "We primarily utilize Node.js, Next.js, and React for robust performance. For infrastructure, we rely heavily on AWS/GCP, Docker containerization, and Kubernetes to ensure 99.99% uptime and infinite scalability."
+  },
+  {
+    question: "How do you manage the development process?",
+    answer: "We use an Agile Sprint methodology. We work in two-week cycles, delivering functional, production-ready modules iteratively. This guarantees transparency, allows for rapid feedback, and ensures the final product aligns perfectly with your business needs."
+  }
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -539,6 +563,11 @@ export default function CustomSoftwareDevelopmentPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            SECTION: FAQ
+            ========================================= */}
+        <FAQSection faqs={customSoftwareFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

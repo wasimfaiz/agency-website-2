@@ -6,6 +6,7 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiMousePointer, FiEye, FiSliders, FiUsers,
   FiArrowRight, FiTarget, FiTrendingUp, FiCheckCircle
@@ -98,6 +99,29 @@ const featuredProjects = [
     summary:
       "A complete landing page copy and hierarchy overhaul lifted organic free-trial signups by 38% without a single dollar of additional ad spend.",
   },
+];
+
+const croFaqs = [
+  {
+    question: "What is Conversion Rate Optimization (CRO) and why do I need it?",
+    answer: "CRO is the systematic process of increasing the percentage of website visitors who take a desired action (like making a purchase or filling out a form). If you are driving traffic but not seeing sales, CRO fixes the 'leaks' in your funnel, maximizing the ROI of your existing traffic without spending more on ads."
+  },
+  {
+    question: "How do you decide what to test?",
+    answer: "We never guess. We use quantitative data (Google Analytics, Mixpanel) and qualitative data (Hotjar heatmaps, session recordings) to identify exact points of user friction. We then formulate data-backed hypotheses and run rigorous A/B tests to prove what actually increases revenue."
+  },
+  {
+    question: "Will A/B testing slow down my website?",
+    answer: "No. We use enterprise-grade testing tools (like VWO or Optimizely) and implement them via asynchronous scripts. We also utilize server-side testing for complex changes to ensure zero flicker and maintain optimal Core Web Vitals."
+  },
+  {
+    question: "How long does a typical A/B test run?",
+    answer: "A test runs until it reaches statistical significance (typically 95%+ confidence). Depending on your traffic volume and the baseline conversion rate, this usually takes between 2 to 4 weeks. We never call a test early based on gut feeling."
+  },
+  {
+    question: "Do you also implement the winning designs?",
+    answer: "Yes. Once a challenger variant beats the control, our development team hardcodes the winning architecture into your live website, ensuring a permanent uplift in your conversion rates."
+  }
 ];
 
 const NavLink = ({
@@ -585,6 +609,11 @@ export default function CROPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            FAQ SECTION
+            ========================================= */}
+        <FAQSection faqs={croFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

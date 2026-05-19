@@ -6,6 +6,7 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiCrosshair, FiTrendingUp, FiTarget, FiFilter,
   FiArrowRight, FiPieChart, FiMonitor, FiRepeat, FiDollarSign
@@ -93,6 +94,29 @@ const featuredProjects = [
     summary:
       "Slashed Cost-Per-Lead (CPL) by 64% within 90 days completely restructuring Google Ads broad match into single keyword ad groups.",
   },
+];
+
+const performanceFaqs = [
+  {
+    question: "What exactly is Performance Marketing?",
+    answer: "Unlike traditional advertising focused on 'brand awareness', performance marketing is entirely data-driven and ROI-obsessed. You only pay for measurable results—like clicks, leads, or sales. We focus strictly on lowering your Cost Per Acquisition (CPA) and maximizing Return on Ad Spend (ROAS)."
+  },
+  {
+    question: "Which ad platforms are best for my business?",
+    answer: "It depends on your model. B2B SaaS typically thrives on LinkedIn and Google Search (capturing intent). E-commerce and D2C brands often see massive scale on Meta (Facebook/Instagram) and TikTok (creating demand). We audit your funnel to deploy budget where it mathematically makes the most sense."
+  },
+  {
+    question: "How long does it take to see a positive ROAS?",
+    answer: "While we often see quick wins within the first few weeks by fixing glaring account errors, a true algorithmic scaling phase takes 60-90 days. This allows the pixel data to season and our rigorous creative A/B testing to identify the most profitable angles."
+  },
+  {
+    question: "Do you handle the ad creative as well as the media buying?",
+    answer: "Yes. Ad performance is heavily dictated by creative. Our team produces the high-converting visual assets and writes the direct-response copy, ensuring the media buying strategy and the creative hook are perfectly aligned."
+  },
+  {
+    question: "What happens when iOS updates or algorithm changes occur?",
+    answer: "We build resilient, server-side tracking architectures (like Meta's Conversions API) to bypass browser restrictions. By focusing on first-party data and robust retargeting funnels, we insulate your campaigns from unpredictable algorithmic shifts."
+  }
 ];
 
 const NavLink = ({
@@ -553,6 +577,11 @@ export default function PerformanceMarketingPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            FAQ SECTION
+            ========================================= */}
+        <FAQSection faqs={performanceFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

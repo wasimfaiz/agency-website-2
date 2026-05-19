@@ -1,38 +1,21 @@
-# Setzet - AI & LLM Context File
+# Setzet - Premium Web Design & Development Agency
 
-## About Setzet
-Setzet is a premium strategy-led web design and development agency. We engineer blazing-fast websites, scalable custom software, and digital experiences that turn traffic into fiercely loyal customers. 
+> Setzet is a strategy-led web design and development agency helping brands launch high-converting, SEO-ready digital experiences.
 
-## Services Offered
-1. UI/UX Design: Intuitive and visually stunning interfaces, wireframes, and prototypes.
-2. Web Development: High-performance, SEO-ready Next.js web applications.
-3. Mobile App Development: Scalable cross-platform and native mobile apps.
-4. Custom Software Development: Reliable backend, API integrations, and tailored software solutions.
-5. SEO & Growth: Strategy-led SEO implementation to drive organic growth.
-6. Influencer Marketing: Connecting brands with top-tier influencers for maximum ROI.
-7. API Development: Designing, building, and integrating robust, secure APIs.
-8. Conversion Optimization: Data-driven CRO strategies to turn visitors into customers.
-9. E-Commerce Development: Building high-converting, scalable online store platforms.
-10. Marketing Automation: Implementing AI-driven workflows to save time and boost conversions.
-11. Performance Marketing: Data-driven paid ad campaigns for maximum ROAS.
-12. Social Media Marketing: Building brand presence, awareness, and community engagement.
+## Services
+- Web Design & Development (Next.js, React, Node.js)
+- UI/UX Design (Figma)
+- Mobile App Development
+- Custom Software Development
+- E-Commerce Platforms
+- Search Engine Optimization (SEO)
+- Influencer & Performance Marketing
 
 ## Contact Information
-- Website: https://setzet.com
 - Email: wasim@setzet.com
 - Phone: +91-9128376231
-- Locations: Noida, Sector 132, Uttar Pradesh, India | Vöttinger Str. 34B, 85354 Freising, Germany
+- Location: Noida, India
+- Website: https://setzet.com
 
-## Target Audience
-Ambitious engineering teams, D2C brands, SaaS platforms, AI-focused startups, and technology companies looking for high-converting digital products.
-
-## Why Choose Setzet?
-We use a clean, collaborative process: align early, design with clarity, build with precision, then launch and refine. We focus on conversion lift and measurable growth.
-
-## Pricing
-We offer flexible pricing models including fixed-price projects and monthly retainers. Projects start at a minimum engagement, tailored to the scope and timeline.
-
-## Social Links
-- LinkedIn: https://www.linkedin.com/company/setzet/
-- Instagram: https://www.instagram.com/setzet.in/
-- X / Twitter: https://x.com/setzetin
+## Detailed Documentation
+[Full Website Content & Context](llms-full.txt)

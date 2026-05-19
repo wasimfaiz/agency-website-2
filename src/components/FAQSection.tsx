@@ -5,7 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 
-const faqs = [
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+const defaultFaqs: FAQItem[] = [
   {
     question: "What services does Setzet offer?",
     answer: "Setzet is a premium technology agency that specializes in custom web design, Next.js web development, mobile app development, UI/UX design, custom software, and SEO. We focus on building scalable digital products that drive revenue."
@@ -28,7 +33,7 @@ const faqs = [
   }
 ];
 
-export default function FAQSection() {
+export default function FAQSection({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | 0>(0);
 
   const toggleFAQ = (index: number) => {

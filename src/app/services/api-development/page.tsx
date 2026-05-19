@@ -6,11 +6,35 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiServer, FiLock, FiDatabase, FiCloudLightning,
   FiArrowRight, FiCpu, FiGlobe, FiCode, FiLayers, FiShield
 } from "react-icons/fi";
 import { FaNodeJs, FaAws, FaPython, FaDocker } from "react-icons/fa";
+
+const apiDevFaqs = [
+  {
+    question: "What types of APIs do you build?",
+    answer: "We engineer high-performance RESTful APIs, modern GraphQL architectures, and real-time WebSocket connections. Whether you need a secure microservice or a unified backend gateway, we build for scale."
+  },
+  {
+    question: "How do you ensure API security?",
+    answer: "We deploy military-grade security standards, including OAuth 2.0, stateless JWTs, IP allow-listing, rate limiting, and encrypted payloads to guarantee absolute protection against external vulnerabilities."
+  },
+  {
+    question: "Do you integrate with third-party software?",
+    answer: "Yes, we build custom middleware to seamlessly bridge your application with external SaaS products (like Stripe, Salesforce, or Twilio) or to modernize legacy databases with accessible modern wrappers."
+  },
+  {
+    question: "Can your APIs handle high concurrency?",
+    answer: "Absolutely. We utilize advanced load balancing, Redis caching layers, and database query optimization to ensure sub-50ms latency, even when processing millions of concurrent requests."
+  },
+  {
+    question: "Do you provide developer documentation?",
+    answer: "Every API we engineer comes with meticulously generated, interactive OpenAPI/Swagger documentation, ensuring a world-class Developer Experience (DX) for your internal or external consumers."
+  }
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -518,6 +542,11 @@ export default function ApiDevelopmentPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            SECTION: FAQ
+            ========================================= */}
+        <FAQSection faqs={apiDevFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

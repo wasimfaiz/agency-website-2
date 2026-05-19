@@ -6,6 +6,7 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiMail, FiDatabase, FiSettings, FiActivity,
   FiArrowRight, FiCpu, FiMessageCircle, FiTrendingUp, FiCheckCircle, FiGitMerge
@@ -78,6 +79,29 @@ const featuredProjects = [
     image: "/images/zenfora-food.png",
     summary:
       "Designed an aggressive 4-step dynamic email and SMS cart abandonment workflow that recovered $1.2M in annualized revenue." },
+];
+
+const automationFaqs = [
+  {
+    question: "What platforms do you use for Marketing Automation?",
+    answer: "We are platform-agnostic but highly specialized in enterprise solutions like HubSpot, Salesforce, ActiveCampaign, and Klaviyo. We architect the logic and build the integrations based on your specific business requirements."
+  },
+  {
+    question: "What is Lead Scoring?",
+    answer: "Lead scoring assigns a numerical value to prospects based on their behavior (e.g., opening an email, visiting a pricing page). When a lead crosses a certain threshold, our automation instantly routes them to your sales team, ensuring they only talk to hot, qualified prospects."
+  },
+  {
+    question: "How do you prevent automated emails from feeling robotic?",
+    answer: "Through dynamic segmentation and behavioral triggers. We build complex logic trees so users only receive messages relevant to their specific actions. Combined with expert direct-response copywriting, the emails feel highly personalized and timely."
+  },
+  {
+    question: "Can you connect my existing CRM with other tools?",
+    answer: "Absolutely. We specialize in API and Webhook integrations (often utilizing tools like Zapier or Make) to connect disparate systems. Whether tying your e-commerce platform to your CRM or syncing lead data with Slack, we eliminate manual data entry."
+  },
+  {
+    question: "What kind of workflows do you typically build?",
+    answer: "We build everything from B2B lead nurture sequences and automated webinar follow-ups to complex e-commerce flows like dynamic cart abandonment, post-purchase cross-sells, and VIP customer retention loops."
+  }
 ];
 
 const NavLink = ({
@@ -517,6 +541,11 @@ export default function MarketingAutomationPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            FAQ SECTION
+            ========================================= */}
+        <FAQSection faqs={automationFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

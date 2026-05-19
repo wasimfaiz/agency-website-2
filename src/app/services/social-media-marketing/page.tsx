@@ -6,6 +6,7 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiHeart, FiMessageCircle, FiShare2, FiVideo,
   FiArrowRight, FiUsers, FiTrendingUp, FiSmartphone, FiEdit3
@@ -93,6 +94,29 @@ const featuredProjects = [
     summary:
       "Established founder authority through daily textual and video insights, driving a 200% increase in inbound enterprise deals.",
   },
+];
+
+const socialFaqs = [
+  {
+    question: "Do you focus on specific social platforms?",
+    answer: "We dominate the core digital platforms: Instagram, TikTok, LinkedIn, and YouTube Shorts. Our strategy dictates the platform; we place your brand exactly where your specific target audience's attention currently lives."
+  },
+  {
+    question: "What is the 'Hyper-Reach Loop'?",
+    answer: "It's our proprietary methodology for engineering virality. Instead of posting randomly, we test various hooks, analyze the algorithmic response, double down on the winning formats, and actively farm community engagement to artificially boost organic reach."
+  },
+  {
+    question: "Do you create the video content?",
+    answer: "Absolutely. Short-form vertical video is the current language of the internet. We script, shoot, and edit high-retention content specifically designed to appease the algorithms of TikTok and Instagram Reels."
+  },
+  {
+    question: "How do you measure success on organic social media?",
+    answer: "While we track reach and follower velocity, we are ultimately focused on conversion. We measure success by how well we turn passive scrollers into active community members, tracking link clicks, profile visits, and inbound inquiries."
+  },
+  {
+    question: "Can you manage our community interactions?",
+    answer: "Yes. A brand's voice lives in the comments section. We provide dedicated community management, actively responding to comments, sparking conversations, and fostering a fiercely loyal digital community around your brand."
+  }
 ];
 
 const NavLink = ({
@@ -578,6 +602,11 @@ export default function SocialMediaMarketingPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            FAQ SECTION
+            ========================================= */}
+        <FAQSection faqs={socialFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 

@@ -6,6 +6,7 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
+import FAQSection from "../../../components/FAQSection";
 import { 
   FiActivity, FiBarChart2, FiCompass, FiFileText, FiFlag, FiLayers, 
   FiSearch, FiSettings, FiTrendingUp, FiArrowRight, FiTarget,
@@ -94,6 +95,29 @@ const featuredProjects = [
     summary:
       "Secured #1 positions for hyper-competitive product categories, completely eliminating the client's dependency on paid search.",
   },
+];
+
+const seoFaqs = [
+  {
+    question: "How is your SEO approach different from traditional agencies?",
+    answer: "We don't chase vanity traffic or arbitrary keyword quotas. Our strategy is entirely revenue-driven. We focus on high-intent 'bottom of funnel' keywords that actively convert, backed by deep technical execution and authoritative content clusters."
+  },
+  {
+    question: "How long does it take to see results from SEO?",
+    answer: "SEO is a compounding asset, not an overnight hack. While technical fixes can yield immediate bumps, significant organic growth and pipeline generation typically materialize between months 4 to 6, scaling exponentially thereafter."
+  },
+  {
+    question: "What does Technical SEO actually mean?",
+    answer: "It involves optimizing the underlying architecture of your website so search engines can easily crawl and index it. This includes fixing site speed (Core Web Vitals), repairing broken links, structuring XML sitemaps, and ensuring flawless mobile responsiveness."
+  },
+  {
+    question: "Do you write the content for us?",
+    answer: "Yes. We don't use basic copywriters; we use subject-matter experts to produce 'Authority Content.' We build deep, semantically optimized content silos that satisfy search intent and position your brand as the definitive leader in your space."
+  },
+  {
+    question: "How do you build backlinks safely?",
+    answer: "We strictly adhere to white-hat link acquisition. We utilize Digital PR, data-driven outreach, and high-value guest placements to earn links from authoritative, relevant domains. We never use spam networks or toxic link farms."
+  }
 ];
 
 const NavLink = ({
@@ -544,6 +568,11 @@ export default function SeoGrowthPage() {
           </div>
         </section>
 
+
+        {/* =========================================
+            FAQ SECTION
+            ========================================= */}
+        <FAQSection faqs={seoFaqs} />
 
         {/* =========================================
             SECTION 6: FINAL CTA 
