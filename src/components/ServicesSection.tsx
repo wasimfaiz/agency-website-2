@@ -65,8 +65,9 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="mx-auto w-full max-w-6xl px-4 pb-24 pt-8 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32"
+      className="w-full pb-24 pt-8 sm:pb-28 lg:pb-32 px-6 sm:px-12"
     >
+      <div className="mx-auto w-full max-w-7xl">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between mb-12">
         <div>
           <p
@@ -254,6 +255,7 @@ export default function ServicesSection() {
           </div>
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }

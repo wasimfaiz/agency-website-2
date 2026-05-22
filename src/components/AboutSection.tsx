@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="bg-[#F4F6F8] text-[#0A2540]">
+        <section id="about" className="bg-[#F4F6F8] text-[#0A2540] px-6 sm:px-12">
             {/* ── Section Header ── */}
-            <div className="mx-auto w-full max-w-6xl px-4 pt-20 pb-6 sm:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-7xl pt-20 pb-6">
                 <motion.p
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function AboutSection() {
             </div>
 
             {/* ── Intro / Photo Card ── */}
-            <div className="mx-auto w-full max-w-6xl px-4 pb-20 sm:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-7xl pb-20">
                 <motion.div
                     initial={{ opacity: 0, y: 32 }}
                     whileInView={{ opacity: 1, y: 0 }}

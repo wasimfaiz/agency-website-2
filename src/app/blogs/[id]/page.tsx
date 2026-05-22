@@ -26,7 +26,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="pt-40 pb-12 px-6 sm:px-12 max-w-7xl mx-auto">
           <BlogHeroFade>
             <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
@@ -68,7 +68,7 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="px-6 sm:px-12 max-w-7xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
             <div id="blog-content" className="min-w-0">
               <BlogContentFade>
@@ -322,7 +322,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="pt-40 pb-12 px-6 sm:px-12 max-w-7xl mx-auto">
           <BlogHeroFade>
             <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
@@ -364,7 +364,7 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="px-6 sm:px-12 max-w-7xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
             <div id="blog-content" className="min-w-0">
               <BlogContentFade>
@@ -664,7 +664,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="pt-40 pb-12 px-6 sm:px-12 max-w-7xl mx-auto">
           <BlogHeroFade>
             <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
@@ -706,7 +706,7 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="px-6 sm:px-12 max-w-7xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
             <div id="blog-content" className="min-w-0">
               <BlogContentFade>
@@ -1032,7 +1032,7 @@ export default async function BlogPostPage(props: Props) {
         <Navbar forceDarkAtTop={true} />
 
         {/* Hero Section */}
-        <section className="pt-40 pb-12 px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="pt-40 pb-12 px-6 sm:px-12 max-w-7xl mx-auto">
           <BlogHeroFade>
             <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-[#007BFF] mb-6">
               <Link href="/blogs" className="hover:text-[#0056b3] transition-colors flex items-center gap-2 whitespace-nowrap">
@@ -1074,7 +1074,7 @@ export default async function BlogPostPage(props: Props) {
         </section>
 
         {/* Content Section */}
-        <section className="px-6 md:px-12 max-w-6xl mx-auto">
+        <section className="px-6 sm:px-12 max-w-7xl mx-auto">
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
             <div id="blog-content" className="min-w-0">
               <BlogContentFade>
@@ -1363,7 +1363,7 @@ export default async function BlogPostPage(props: Props) {
   return (
     <main className="relative w-full overflow-x-hidden min-h-screen bg-[#F4F6F8] selection:bg-[#007BFF]/20 selection:text-[#0A2540] pb-20">
       <Navbar forceDarkAtTop={true} />
-      <section className="pt-40 pb-20 px-6 md:px-12 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <section className="pt-40 pb-20 px-6 sm:px-12 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[60vh] text-center">
         <h1 className="text-5xl font-heading font-extrabold tracking-tight mb-6 text-[#0A2540] mt-16 mt-10">Blog Not Found</h1>
         <p className="text-lg text-[#0A2540]/60 mb-10 max-w-md mx-auto">The blog post you're looking for doesn't exist yet or has been moved.</p>
         <Link href="/blogs" className="text-xs font-bold uppercase tracking-widest border border-[#0A2540]/10 px-8 py-4 rounded-full hover:bg-[#0A2540]/5 transition-colors inline-block mb-32">

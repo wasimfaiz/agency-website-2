@@ -69,7 +69,7 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={targetRef}
-      className="relative scroll-mt-28 overflow-hidden bg-[#F8F7F3] text-slate-900"
+      className="relative scroll-mt-28 overflow-hidden bg-[#F8F7F3] text-slate-900 px-6 sm:px-12"
       aria-labelledby="process-title"
       aria-describedby="process-summary"
     >
@@ -90,7 +90,7 @@ export default function ProcessSection() {
         />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8 sm:py-24">
+      <div className="mx-auto w-full max-w-7xl py-16 sm:py-24">
         <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <header className="lg:sticky lg:top-24">
             <motion.p

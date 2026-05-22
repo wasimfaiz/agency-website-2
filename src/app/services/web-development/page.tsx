@@ -164,13 +164,13 @@ export default function WebDevelopmentPage() {
 
       {/* Header - Light Mode Optimized */}
       <header
-        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
+        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs px-6 sm:px-12 ${
           isScrolled
-            ? "bg-[#F4F6F8]/90 text-[#0A2540]/80 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-4"
+            ? "bg-[#F4F6F8]/90 text-[#0A2540]/80 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
             : "bg-transparent text-[#0A2540]/90 py-6"
         }`}
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
+        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4">
           <Link href="/" className="block transition-opacity duration-300 hover:opacity-80">
             <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
           </Link>
@@ -203,7 +203,7 @@ export default function WebDevelopmentPage() {
         {/* =========================================
             HERO SECTION - LIGHT, VISUAL & FLOATING
             ========================================= */}
-        <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 px-6">
+        <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 px-6 sm:px-12">
           {/* Animated Background Ambience */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div 
@@ -383,8 +383,8 @@ export default function WebDevelopmentPage() {
         {/* =========================================
             SECTION 2: TECH STACK 
             ========================================= */}
-        <section className="px-6 py-12 border-y border-[#0A2540]/5 bg-white">
-          <div className="mx-auto max-w-6xl">
+        <section className="px-6 sm:px-12 py-12 border-y border-[#0A2540]/5 bg-white">
+          <div className="mx-auto max-w-7xl">
             <p className="text-center text-[10px] uppercase tracking-[0.3em] font-bold text-[#0A2540]/40 mb-8">
               Powered by industry-leading technology
             </p>
@@ -402,10 +402,10 @@ export default function WebDevelopmentPage() {
         {/* =========================================
             SECTION 3: WHAT WE BUILD (SERVICES GRID)
             ========================================= */}
-        <section className="px-6 py-32 relative bg-[#F4F6F8]">
+        <section className="px-6 sm:px-12 py-32 relative bg-[#F4F6F8]">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={stagger}
-            className="mx-auto max-w-6xl"
+            className="mx-auto max-w-7xl"
           >
             <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
               <motion.div variants={reveal} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#007BFF]/10 border border-[#007BFF]/20 text-[#007BFF] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">
@@ -447,7 +447,7 @@ export default function WebDevelopmentPage() {
         {/* =========================================
             SECTION 4: PREMIUM PORTFOLIO TEASER
             ========================================= */}
-        <section className="px-6 pb-32">
+        <section className="px-6 sm:px-12 pb-32">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}>
@@ -505,7 +505,7 @@ export default function WebDevelopmentPage() {
         {/* =========================================
             SECTION 5: THE PROCESS (AGILE LOOP)
             ========================================= */}
-        <section className="px-6 py-28 border-t border-[#0A2540]/5 bg-white relative overflow-hidden">
+        <section className="px-6 sm:px-12 py-28 border-t border-[#0A2540]/5 bg-white relative overflow-hidden">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-24">
               <span className="inline-block rounded-full bg-[#4aab56]/10 border border-[#4aab56]/20 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.35em] text-[#4aab56] mb-6 shadow-sm">
@@ -520,7 +520,7 @@ export default function WebDevelopmentPage() {
             </div>
 
             {/* Desktop Graphical Agile Loop */}
-            <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-x-8 items-center max-w-6xl mx-auto">
+            <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-x-8 items-center max-w-7xl mx-auto">
               
               {/* Left Column Text Nodes */}
               <div className="flex flex-col gap-16 text-right relative z-10 p-4">
@@ -648,11 +648,11 @@ export default function WebDevelopmentPage() {
         {/* =========================================
             SECTION 6: FINAL CTA (Light, Vibrant)
             ========================================= */}
-        <section className="px-6 pb-24 relative bg-[#F4F6F8]">
+        <section className="px-6 sm:px-12 pb-24 relative bg-[#F4F6F8]">
           <div className="h-32 bg-[#F4F6F8]" /> {/* Spacing bridge from prev section */}
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}
-            className="mx-auto max-w-6xl relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#0A2540] to-[#1a365d] px-10 py-24 text-center shadow-2xl mt-[-8rem]"
+            className="mx-auto max-w-7xl relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#0A2540] to-[#1a365d] px-10 py-24 text-center shadow-2xl mt-[-8rem]"
           >
             {/* Visual background elements within CTA */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#007BFF]/30 to-transparent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />

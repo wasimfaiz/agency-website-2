@@ -88,8 +88,8 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
     const yContent = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
     return (
-        <section ref={containerRef} className="py-24 relative z-10 overflow-hidden">
-            <div className="container mx-auto px-6 lg:px-12 relative flex items-center justify-center min-h-[80vh]">
+        <section ref={containerRef} className="py-24 relative z-10 overflow-hidden px-6 sm:px-12">
+            <div className="mx-auto w-full max-w-7xl relative flex items-center justify-center min-h-[80vh]">
                 
                 {/* Massive Typography Behind Everything */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 hidden lg:block opacity-[0.02]">
@@ -174,8 +174,8 @@ const StoryItem = ({ project, i }: { project: typeof workStories[0], i: number }
 // 2. IMPACT SECTION (Replaces ConceptLab)
 const ImpactSection = () => {
     return (
-        <section className="py-32 px-6 bg-[#F4F6F8] relative z-10 border-t border-[#0A2540]/5">
-            <div className="container mx-auto">
+        <section className="py-32 px-6 sm:px-12 bg-[#F4F6F8] relative z-10 border-t border-[#0A2540]/5">
+            <div className="mx-auto w-full max-w-7xl">
                 <div className="grid md:grid-cols-2 gap-20 mb-20 items-end">
                     <div>
                         <span className="font-mono text-sm font-bold uppercase tracking-[0.3em] text-[#0A2540]/40 block mb-6">Our Impact</span>
@@ -228,7 +228,7 @@ export default function WorkPage() {
       <Navbar forceDarkAtTop={true} />
 
       {/* --- HERO: Setting the Scene --- */}
-      <section className="min-h-[100dvh] flex flex-col items-center justify-center relative px-6 pt-32 pb-32">
+      <section className="min-h-[100dvh] flex flex-col items-center justify-center relative px-6 sm:px-12 pt-32 pb-32">
           {/* Background Ambient Glow */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
               <motion.div 
@@ -320,8 +320,8 @@ export default function WorkPage() {
       </div>
 
       {/* --- INTERLUDE: Text Section --- */}
-      <section className="py-40 px-6 bg-white border-y border-[#0A2540]/10 text-center">
-          <div className="container mx-auto max-w-4xl space-y-10">
+      <section className="py-40 px-6 sm:px-12 bg-white border-y border-[#0A2540]/10 text-center">
+          <div className="mx-auto w-full max-w-4xl space-y-10">
               <h2 className="text-4xl md:text-6xl font-heading font-extrabold leading-tight text-[#0A2540]">
                   "The details are not the details. <br/> They make the design."
               </h2>

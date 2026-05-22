@@ -54,7 +54,7 @@ export default function FAQSection({ faqs = defaultFaqs }: { faqs?: FAQItem[] })
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F4F6F8] border-t border-[#0A2540]/5 py-24 sm:py-32 px-6 sm:px-12 lg:px-24">
+    <section className="relative w-full overflow-hidden bg-[#F4F6F8] border-t border-[#0A2540]/5 py-24 sm:py-32 px-6 sm:px-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -63,7 +63,7 @@ export default function FAQSection({ faqs = defaultFaqs }: { faqs?: FAQItem[] })
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#007BFF]/5 rounded-full blur-[120px] pointer-events-none" />
       
-      <div className="mx-auto max-w-[1400px] flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
+      <div className="mx-auto w-full max-w-7xl flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
         
         {/* Left Column: Heading & CTA */}
         <div className="lg:w-1/3 flex flex-col items-start lg:sticky lg:top-32 self-start">

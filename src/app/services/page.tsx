@@ -132,9 +132,9 @@ const ServiceItem = ({ item, index }: { item: Service; index: number }) => {
       variants={reveal}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative border-t border-[#0A2540]/10 py-12 md:py-24 transition-all hover:bg-[#FAFAFA]"
+      className="group relative border-t border-[#0A2540]/10 py-12 md:py-24 transition-all hover:bg-[#FAFAFA] px-6 sm:px-12"
     >
-      <div className="container mx-auto px-6 grid lg:grid-cols-[1fr_2fr_auto] gap-10 items-start">
+      <div className="mx-auto w-full max-w-7xl grid lg:grid-cols-[1fr_2fr_auto] gap-10 items-start">
         {/* Column 1: Title */}
         <div>
            <span className="font-mono text-xs font-bold text-[#007BFF] mb-4 bg-[#007BFF]/10 inline-block px-2 py-1 rounded-md tracking-wider">0{index + 1}</span>
@@ -245,14 +245,14 @@ export default function ServicesPage() {
 
 
       {/* 1. HERO SECTION - Conversion & Sales Focused */}
-      <section className="relative min-h-[95vh] flex flex-col justify-center px-6 pt-32 pb-20 overflow-hidden">
+      <section className="relative min-h-[95vh] flex flex-col justify-center px-6 sm:px-12 pt-32 pb-20 overflow-hidden">
          <div className="absolute inset-0 z-0 bg-[#F4F6F8]">
              {/* Dynamic background elements */}
              <div className="absolute -top-20 right-0 w-[60vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[140px]" />
              <div className="absolute bottom-10 -left-20 w-[50vw] h-[50vh] bg-[#0A2540]/5 rounded-full blur-[100px]" />
          </div>
 
-         <div className="container mx-auto relative z-10">
+         <div className="mx-auto w-full max-w-7xl relative z-10">
              <div className="max-w-5xl">
                  <motion.div
                    initial={{ opacity: 0, y: 20 }}
@@ -321,8 +321,8 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. APPROACH / PROCESS */}
-      <section className="py-20 md:py-32 px-6 bg-[#F4F6F8]">
-         <div className="container mx-auto grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
+      <section className="py-20 md:py-32 px-6 sm:px-12 bg-[#F4F6F8]">
+         <div className="mx-auto w-full max-w-7xl grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
              <div className="static md:sticky md:top-32 h-fit z-10">
                  <h2 className="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold mb-6 md:mb-8 text-[#0A2540] tracking-tight">
                     The Growth <br className="hidden lg:block"/> Sequence
@@ -347,7 +347,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. CTA SECTION */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 bg-white text-[#0A2540] relative overflow-hidden border-t border-[#0A2540]/5">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 sm:px-12 bg-white text-[#0A2540] relative overflow-hidden border-t border-[#0A2540]/5">
           <div className="relative z-10 max-w-4xl">
               <h2 className="text-[clamp(3rem,8vw,8rem)] font-heading font-extrabold leading-none tracking-tighter mb-10">
                  Scale Your Revenue.

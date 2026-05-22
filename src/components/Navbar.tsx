@@ -63,13 +63,13 @@ export default function Navbar({ forceDarkAtTop = false }: { forceDarkAtTop?: bo
   return (
     <>
       <header
-        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
+        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs px-6 sm:px-12 ${
           useDarkTheme
             ? "bg-[#F4F6F8]/90 text-[#0A2540]/60 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
             : "bg-transparent text-white py-6"
         }`}
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
+        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4">
           <Link href="/" className="block transition-opacity duration-300 hover:opacity-80">
             <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
           </Link>

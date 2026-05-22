@@ -46,9 +46,9 @@ export default function FeaturedProjects() {
     return (
         <section
             id="work"
-            className="bg-[#F4F6F8]"
+            className="bg-[#F4F6F8] px-6 sm:px-12"
         >
-            <div className="mx-auto w-full max-w-6xl px-4 pt-10 sm:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-7xl pt-10">
                 <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
                     <div>
                         <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#007BFF]">
@@ -106,7 +106,7 @@ function Card({ i, project }: any) {
         <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
             <div
                 ref={cardRef}
-                className="relative flex h-[70vh] w-full max-w-6xl origin-top flex-col justify-between overflow-hidden rounded-3xl border border-[#0A2540]/10 bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] sm:h-[80vh] sm:p-12 transform-gpu will-change-transform"
+                className="relative flex h-[70vh] w-full max-w-7xl origin-top flex-col justify-between overflow-hidden rounded-3xl border border-[#0A2540]/10 bg-white p-6 shadow-[0_8px_30px_rgba(10,37,64,0.08)] sm:h-[80vh] sm:p-12 transform-gpu will-change-transform"
                 style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? "translate3d(0, 0px, 0)" : "translate3d(0, 40px, 0)",

@@ -164,13 +164,13 @@ export default function CustomSoftwareDevelopmentPage() {
 
       {/* Header - Light Mode */}
       <header
-        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs ${
+        className={`fixed top-0 z-50 w-full text-[10px] uppercase tracking-[0.35em] transition-all duration-300 sm:text-xs px-6 sm:px-12 ${
           isScrolled
-            ? "bg-[#F4F6F8]/90 text-[#0A2540]/80 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-4"
+            ? "bg-[#F4F6F8]/90 text-[#0A2540]/80 shadow-[0_4px_30px_rgba(10,37,64,0.05)] backdrop-blur-md py-3"
             : "bg-transparent text-[#0A2540]/90 py-6"
         }`}
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 sm:px-10">
+        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4">
           <Link href="/" className="block transition-opacity duration-300 hover:opacity-80">
             <img src="/setzet-nav-logoo.png" alt="Setzet Logo" className="h-8 sm:h-10 xl:h-12 w-auto object-contain" />
           </Link>
@@ -203,7 +203,7 @@ export default function CustomSoftwareDevelopmentPage() {
         {/* =========================================
             HERO SECTION - THE SOFTWARE ARCHITECTURE
             ========================================= */}
-        <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 px-6">
+        <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 px-6 sm:px-12">
           {/* Animated Background Ambience */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Cobalt Blue & Cyan Gradients */}
@@ -364,8 +364,8 @@ export default function CustomSoftwareDevelopmentPage() {
         {/* =========================================
             SECTION 2: TECH STACK 
             ========================================= */}
-        <section className="px-6 py-12 border-y border-[#0A2540]/5 bg-white">
-          <div className="mx-auto max-w-6xl">
+        <section className="px-6 sm:px-12 py-12 border-y border-[#0A2540]/5 bg-white">
+          <div className="mx-auto max-w-7xl">
             <p className="text-center text-[10px] uppercase tracking-[0.3em] font-bold text-[#0A2540]/40 mb-8">
               Engineered Using The Modern Enterprise Stack
             </p>
@@ -382,10 +382,10 @@ export default function CustomSoftwareDevelopmentPage() {
         {/* =========================================
             SECTION 3: CORE CAPABILITIES (SERVICES GRID)
             ========================================= */}
-        <section className="px-6 py-32 relative bg-[#F4F6F8]">
+        <section className="px-6 sm:px-12 py-32 relative bg-[#F4F6F8]">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10%" }} variants={stagger}
-            className="mx-auto max-w-6xl"
+            className="mx-auto max-w-7xl"
           >
             <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
               <motion.div variants={reveal} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">
@@ -430,7 +430,7 @@ export default function CustomSoftwareDevelopmentPage() {
         {/* =========================================
             SECTION 4: PORTFOLIO TEASER
             ========================================= */}
-        <section className="px-6 pb-32 bg-[#F4F6F8]">
+        <section className="px-6 sm:px-12 pb-32 bg-[#F4F6F8]">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}>
@@ -495,7 +495,7 @@ export default function CustomSoftwareDevelopmentPage() {
         {/* =========================================
             SECTION 5: THE PROCESS (AGILE ENGINEERING)
             ========================================= */}
-        <section className="px-6 py-32 border-y border-[#0A2540]/5 bg-white relative overflow-hidden">
+        <section className="px-6 sm:px-12 py-32 border-y border-[#0A2540]/5 bg-white relative overflow-hidden">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-24 relative z-20">
               <span className="inline-block rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.35em] text-[#2563EB] mb-6 shadow-sm">
@@ -510,7 +510,7 @@ export default function CustomSoftwareDevelopmentPage() {
             </div>
 
             {/* Desktop Graphical Nested Deployment Blocks */}
-            <div className="hidden lg:flex justify-between items-center max-w-6xl mx-auto relative group pt-8 pb-12">
+            <div className="hidden lg:flex justify-between items-center max-w-7xl mx-auto relative group pt-8 pb-12">
                
                {/* Arrow Connectors mapping the iteration flow */}
                <div className="absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent -translate-y-1/2 z-0" />
@@ -572,10 +572,10 @@ export default function CustomSoftwareDevelopmentPage() {
         {/* =========================================
             SECTION 6: FINAL CTA 
             ========================================= */}
-        <section className="px-6 pb-24 relative bg-[#F4F6F8] py-16">
+        <section className="px-6 sm:px-12 pb-24 relative bg-[#F4F6F8] py-16">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}
-            className="mx-auto max-w-6xl relative overflow-hidden rounded-[40px] bg-[#0A2540] px-10 py-24 text-center shadow-[0_20px_60px_rgba(10,37,64,0.3)]"
+            className="mx-auto max-w-7xl relative overflow-hidden rounded-[40px] bg-[#0A2540] px-10 py-24 text-center shadow-[0_20px_60px_rgba(10,37,64,0.3)]"
           >
             {/* Background dynamic Code/Server lighting */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(37,99,235,0.35)_0%,_transparent_70%)] blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />

@@ -66,7 +66,7 @@ export default function BlogsPage() {
       <div className="absolute top-[40vh] left-[-10vw] w-[40vw] h-[40vh] bg-[#0A2540]/5 blur-[100px] rounded-full pointer-events-none -z-10" />
 
       {/* Hero Section */}
-      <section className="pt-48 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+      <section className="pt-48 pb-12 px-6 sm:px-12 max-w-7xl mx-auto">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export default function BlogsPage() {
       </section>
 
       {/* Category Filter */}
-      <div className="px-6 md:px-12 max-w-7xl mx-auto mb-16">
+      <div className="px-6 sm:px-12 max-w-7xl mx-auto mb-16">
         <div className="w-full h-px bg-[#0A2540]/10 mb-10" />
         <div className="flex flex-wrap items-center gap-3">
           {CATEGORIES.map((cat) => (
@@ -108,7 +108,7 @@ export default function BlogsPage() {
       </div>
 
       {/* Blog Listing */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto min-h-[40vh]">
+      <section className="px-6 sm:px-12 max-w-7xl mx-auto min-h-[40vh]">
         <div className="flex flex-col gap-24">
           <AnimatePresence mode="wait">
             {filteredBlogs.length > 0 ? (

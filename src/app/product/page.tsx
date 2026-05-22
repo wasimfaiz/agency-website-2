@@ -20,12 +20,12 @@ import Navbar from "../../components/Navbar";
 
 function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center overflow-hidden bg-[#F4F6F8] pt-[20vh] pb-[10vh]">
+    <section className="relative flex flex-col items-center justify-center overflow-hidden bg-[#F4F6F8] pt-[20vh] pb-[10vh] px-6 sm:px-12">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] h-[60vh] bg-[#007BFF]/10 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-30 flex flex-col items-center justify-center px-4 text-center w-full max-w-7xl mx-auto">
+      <div className="relative z-30 flex flex-col items-center justify-center text-center w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -83,7 +83,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="relative mt-24 w-[95vw] max-w-5xl mx-auto"
+        className="relative mt-24 w-full max-w-7xl mx-auto"
       >
         <div className="rounded-2xl border border-[#0A2540]/10 bg-white shadow-2xl overflow-hidden ring-1 ring-[#0A2540]/5">
             <div className="h-12 w-full border-b border-[#0A2540]/5 bg-[#F4F6F8] flex items-center px-4 gap-2">
@@ -239,8 +239,8 @@ function FeatureListSection() {
   ];
 
   return (
-    <section id="features" className="py-32 bg-[#F4F6F8] overflow-hidden border-b border-[#0A2540]/5">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-32">
+    <section id="features" className="py-32 bg-[#F4F6F8] overflow-hidden border-b border-[#0A2540]/5 px-6 sm:px-12">
+      <div className="mx-auto w-full max-w-7xl flex flex-col gap-32">
          {content.map((item, idx) => (
             <motion.div 
                initial={{ opacity: 0, y: 40 }}
@@ -381,8 +381,8 @@ function FeatureListSection() {
 
 function BentoFeatures() {
    return (
-      <section className="bg-white py-32 border-b border-[#0A2540]/5">
-         <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-white py-32 border-b border-[#0A2540]/5 px-6 sm:px-12">
+         <div className="mx-auto w-full max-w-7xl">
             <div className="text-center mb-20">
                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A2540] mb-6">Everything you need to scale.</h2>
                <p className="text-lg md:text-xl text-[#0A2540]/60 max-w-2xl mx-auto font-medium">We abstracted away the complexity so your team can focus on what they do best: building relationships and closing deals.</p>
@@ -436,10 +436,10 @@ function BentoFeatures() {
 
 function BottomCta() {
   return (
-    <section className="py-32 bg-[#F4F6F8] text-center relative overflow-hidden">
+    <section className="py-32 bg-[#F4F6F8] text-center relative overflow-hidden px-6 sm:px-12">
        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,123,255,0.08)_0%,transparent_70%)] pointer-events-none" />
        
-       <div className="max-w-4xl mx-auto px-6 relative z-10">
+       <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-[clamp(3.5rem,7vw,5.5rem)] font-extrabold tracking-tighter text-[#0A2540] mb-8 leading-[1.05]">
              Convert higher. <br/> Grow faster.
           </h2>
@@ -468,8 +468,8 @@ function ProductSuiteSection() {
   ];
 
   return (
-    <section className="py-32 bg-white relative z-10 border-b border-[#0A2540]/5">
-       <div className="max-w-6xl mx-auto px-6">
+    <section className="py-32 bg-white relative z-10 border-b border-[#0A2540]/5 px-6 sm:px-12">
+       <div className="mx-auto w-full max-w-7xl">
           <div className="text-center mb-16">
              <h2 className="text-3xl md:text-5xl font-extrabold text-[#0A2540] mb-4 tracking-tight">Our Enterprise Suite</h2>
              <p className="text-lg text-[#0A2540]/60 max-w-2xl mx-auto font-medium">Purpose-built software systems designed to run your entire organization from a single pane of glass.</p>
@@ -496,8 +496,8 @@ function ProductSuiteSection() {
 
 function SocialProof() {
   return (
-    <section className="py-12 border-b border-[#0A2540]/5 bg-white overflow-hidden relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-12 border-b border-[#0A2540]/5 bg-white overflow-hidden relative z-10 px-6 sm:px-12">
+      <div className="mx-auto w-full max-w-7xl">
         <p className="text-center text-[10px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#0A2540]/40 mb-8 md:mb-10">
           Trusted by forward-thinking brands
         </p>
